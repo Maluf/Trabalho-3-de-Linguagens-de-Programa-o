@@ -4,11 +4,28 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate sCH "http://www.pucrs.fm/br/SCH"
 
 Model:
+	expressions+=TerminalExpression*;
+
+/* 
+Model:
 	expressions+=Expression*;
+*/
+/*Expression:
+	x = Value | '(' Expression ')'  // | '(' Operator Expression Expression ')'  
+;*/
+
+/* 
+ Expression:
+     TerminalExpression (op='+' ({Operation.left=current} 
+     right=TerminalExpression) );
+*/
 
 Expression:
-	x = Value | '(' Expression ')' // '(' Operator Expression Expression ')' | 
-;
+     op=Operator terminalExpression=TerminalExpression;
+
+TerminalExpression returns Expression:
+    '(' Expression ')' |
+    /*{IntLiteral}*/ value+=INT+;
 
 Value:
 	INT | DOUBLE
@@ -27,28 +44,22 @@ Operator:
 ;
 
 Subtract:
-	x = "-"
+	minus = "-"
 ;
 
 Add:
-	x = '+'
+	plus = '+'
 ;
 
 Multiply:
-	x = '*'
+	times = '*'
 ;
 
 Divide:
-	x = "/"
+	diveded = "/"
 ;
 
 
 /*
-  Expression:
-    TerminalExpression ({Operation.left=current} 
-    op='+' right=TerminalExpression)*
- 
-TerminalExpression returns Expression:
-    '(' Expression ')' |
-    {IntLiteral} value=INT;
+
  */

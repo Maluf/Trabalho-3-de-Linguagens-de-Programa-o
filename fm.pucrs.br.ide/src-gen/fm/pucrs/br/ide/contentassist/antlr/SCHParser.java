@@ -31,10 +31,19 @@ public class SCHParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getTerminalExpressionAccess().getAlternatives(), "rule__TerminalExpression__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
+					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
+					put(grammarAccess.getTerminalExpressionAccess().getGroup_0(), "rule__TerminalExpression__Group_0__0");
 					put(grammarAccess.getModelAccess().getExpressionsAssignment(), "rule__Model__ExpressionsAssignment");
-					put(grammarAccess.getExpressionAccess().getXAssignment(), "rule__Expression__XAssignment");
+					put(grammarAccess.getExpressionAccess().getOpAssignment_0(), "rule__Expression__OpAssignment_0");
+					put(grammarAccess.getExpressionAccess().getTerminalExpressionAssignment_1(), "rule__Expression__TerminalExpressionAssignment_1");
+					put(grammarAccess.getTerminalExpressionAccess().getValueAssignment_1(), "rule__TerminalExpression__ValueAssignment_1");
+					put(grammarAccess.getSubtractAccess().getMinusAssignment(), "rule__Subtract__MinusAssignment");
+					put(grammarAccess.getAddAccess().getPlusAssignment(), "rule__Add__PlusAssignment");
+					put(grammarAccess.getMultiplyAccess().getTimesAssignment(), "rule__Multiply__TimesAssignment");
+					put(grammarAccess.getDivideAccess().getDivededAssignment(), "rule__Divide__DivededAssignment");
 				}
 			};
 		}

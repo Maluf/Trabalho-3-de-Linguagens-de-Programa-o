@@ -10,7 +10,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Model/expressions"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Expression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/x"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/terminalExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Operator"/>
+    <genClasses ecoreClass="SCH.ecore#//Subtract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Subtract/minus"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Add">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Add/plus"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Multiply">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Multiply/times"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Divide">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Divide/diveded"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

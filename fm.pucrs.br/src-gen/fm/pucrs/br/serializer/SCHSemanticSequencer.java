@@ -4,9 +4,13 @@
 package fm.pucrs.br.serializer;
 
 import com.google.inject.Inject;
+import fm.pucrs.br.sCH.Add;
+import fm.pucrs.br.sCH.Divide;
 import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.Model;
+import fm.pucrs.br.sCH.Multiply;
 import fm.pucrs.br.sCH.SCHPackage;
+import fm.pucrs.br.sCH.Subtract;
 import fm.pucrs.br.services.SCHGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -33,11 +37,30 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SCHPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SCHPackage.EXPRESSION:
-				sequence_Expression(context, (Expression) semanticObject); 
+			case SCHPackage.ADD:
+				sequence_Add(context, (Add) semanticObject); 
 				return; 
+			case SCHPackage.DIVIDE:
+				sequence_Divide(context, (Divide) semanticObject); 
+				return; 
+			case SCHPackage.EXPRESSION:
+				if (rule == grammarAccess.getExpressionRule()) {
+					sequence_Expression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTerminalExpressionRule()) {
+					sequence_Expression_TerminalExpression(context, (Expression) semanticObject); 
+					return; 
+				}
+				else break;
 			case SCHPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case SCHPackage.MULTIPLY:
+				sequence_Multiply(context, (Multiply) semanticObject); 
+				return; 
+			case SCHPackage.SUBTRACT:
+				sequence_Subtract(context, (Subtract) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,19 +69,72 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Operator returns Add
+	 *     Add returns Add
+	 *
+	 * Constraint:
+	 *     plus='+'
+	 */
+	protected void sequence_Add(ISerializationContext context, Add semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.ADD__PLUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.ADD__PLUS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAddAccess().getPlusPlusSignKeyword_0(), semanticObject.getPlus());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operator returns Divide
+	 *     Divide returns Divide
+	 *
+	 * Constraint:
+	 *     diveded='/'
+	 */
+	protected void sequence_Divide(ISerializationContext context, Divide semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.DIVIDE__DIVEDED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.DIVIDE__DIVEDED));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0(), semanticObject.getDiveded());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     x=Value
+	 *     (op=Operator terminalExpression=TerminalExpression)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__X));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__OP));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__TERMINAL_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__TERMINAL_EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpressionAccess().getXValueParserRuleCall_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getExpressionAccess().getOpOperatorParserRuleCall_0_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getExpressionAccess().getTerminalExpressionTerminalExpressionParserRuleCall_1_0(), semanticObject.getTerminalExpression());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminalExpression returns Expression
+	 *
+	 * Constraint:
+	 *     ((op=Operator terminalExpression=TerminalExpression) | value+=INT+)
+	 */
+	protected void sequence_Expression_TerminalExpression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -67,10 +143,48 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     expressions+=Expression+
+	 *     expressions+=TerminalExpression+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operator returns Multiply
+	 *     Multiply returns Multiply
+	 *
+	 * Constraint:
+	 *     times='*'
+	 */
+	protected void sequence_Multiply(ISerializationContext context, Multiply semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.MULTIPLY__TIMES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.MULTIPLY__TIMES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0(), semanticObject.getTimes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operator returns Subtract
+	 *     Subtract returns Subtract
+	 *
+	 * Constraint:
+	 *     minus='-'
+	 */
+	protected void sequence_Subtract(ISerializationContext context, Subtract semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.SUBTRACT__MINUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.SUBTRACT__MINUS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0(), semanticObject.getMinus());
+		feeder.finish();
 	}
 	
 	

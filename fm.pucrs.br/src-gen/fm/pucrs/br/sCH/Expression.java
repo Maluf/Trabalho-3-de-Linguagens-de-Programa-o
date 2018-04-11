@@ -3,6 +3,8 @@
  */
 package fm.pucrs.br.sCH;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fm.pucrs.br.sCH.Expression#getX <em>X</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see fm.pucrs.br.sCH.SCHPackage#getExpression()
@@ -24,29 +28,71 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>X</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>X</em>' attribute isn't clear,
+   * If the meaning of the '<em>Op</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>X</em>' attribute.
-   * @see #setX(String)
-   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_X()
-   * @model
+   * @return the value of the '<em>Op</em>' containment reference.
+   * @see #setOp(Operator)
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Op()
+   * @model containment="true"
    * @generated
    */
-  String getX();
+  Operator getOp();
 
   /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getX <em>X</em>}' attribute.
+   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>X</em>' attribute.
-   * @see #getX()
+   * @param value the new value of the '<em>Op</em>' containment reference.
+   * @see #getOp()
    * @generated
    */
-  void setX(String value);
+  void setOp(Operator value);
+
+  /**
+   * Returns the value of the '<em><b>Terminal Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Terminal Expression</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Terminal Expression</em>' containment reference.
+   * @see #setTerminalExpression(Expression)
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_TerminalExpression()
+   * @model containment="true"
+   * @generated
+   */
+  Expression getTerminalExpression();
+
+  /**
+   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Terminal Expression</em>' containment reference.
+   * @see #getTerminalExpression()
+   * @generated
+   */
+  void setTerminalExpression(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Value</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' attribute list.
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Value()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getValue();
 
 } // Expression

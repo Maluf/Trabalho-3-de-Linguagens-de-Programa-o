@@ -4,14 +4,23 @@
 package fm.pucrs.br.sCH.impl;
 
 import fm.pucrs.br.sCH.Expression;
+import fm.pucrs.br.sCH.Operator;
 import fm.pucrs.br.sCH.SCHPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +30,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getX <em>X</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getTerminalExpression <em>Terminal Expression</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +40,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
 {
   /**
-   * The default value of the '{@link #getX() <em>X</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String X_EDEFAULT = null;
+  protected Operator op;
 
   /**
-   * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+   * The cached value of the '{@link #getTerminalExpression() <em>Terminal Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getTerminalExpression()
    * @generated
    * @ordered
    */
-  protected String x = X_EDEFAULT;
+  protected Expression terminalExpression;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> value;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +95,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getX()
+  public Operator getOp()
   {
-    return x;
+    return op;
   }
 
   /**
@@ -84,12 +105,117 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setX(String newX)
+  public NotificationChain basicSetOp(Operator newOp, NotificationChain msgs)
   {
-    String oldX = x;
-    x = newX;
+    Operator oldOp = op;
+    op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__X, oldX, x));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__OP, oldOp, newOp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(Operator newOp)
+  {
+    if (newOp != op)
+    {
+      NotificationChain msgs = null;
+      if (op != null)
+        msgs = ((InternalEObject)op).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__OP, null, msgs);
+      if (newOp != null)
+        msgs = ((InternalEObject)newOp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__OP, null, msgs);
+      msgs = basicSetOp(newOp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__OP, newOp, newOp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression getTerminalExpression()
+  {
+    return terminalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTerminalExpression(Expression newTerminalExpression, NotificationChain msgs)
+  {
+    Expression oldTerminalExpression = terminalExpression;
+    terminalExpression = newTerminalExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, oldTerminalExpression, newTerminalExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTerminalExpression(Expression newTerminalExpression)
+  {
+    if (newTerminalExpression != terminalExpression)
+    {
+      NotificationChain msgs = null;
+      if (terminalExpression != null)
+        msgs = ((InternalEObject)terminalExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, null, msgs);
+      if (newTerminalExpression != null)
+        msgs = ((InternalEObject)newTerminalExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, null, msgs);
+      msgs = basicSetTerminalExpression(newTerminalExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, newTerminalExpression, newTerminalExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Integer> getValue()
+  {
+    if (value == null)
+    {
+      value = new EDataTypeEList<Integer>(Integer.class, this, SCHPackage.EXPRESSION__VALUE);
+    }
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SCHPackage.EXPRESSION__OP:
+        return basicSetOp(null, msgs);
+      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
+        return basicSetTerminalExpression(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,8 +228,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case SCHPackage.EXPRESSION__X:
-        return getX();
+      case SCHPackage.EXPRESSION__OP:
+        return getOp();
+      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
+        return getTerminalExpression();
+      case SCHPackage.EXPRESSION__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -113,13 +243,21 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SCHPackage.EXPRESSION__X:
-        setX((String)newValue);
+      case SCHPackage.EXPRESSION__OP:
+        setOp((Operator)newValue);
+        return;
+      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
+        setTerminalExpression((Expression)newValue);
+        return;
+      case SCHPackage.EXPRESSION__VALUE:
+        getValue().clear();
+        getValue().addAll((Collection<? extends Integer>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +273,14 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case SCHPackage.EXPRESSION__X:
-        setX(X_EDEFAULT);
+      case SCHPackage.EXPRESSION__OP:
+        setOp((Operator)null);
+        return;
+      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
+        setTerminalExpression((Expression)null);
+        return;
+      case SCHPackage.EXPRESSION__VALUE:
+        getValue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +296,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case SCHPackage.EXPRESSION__X:
-        return X_EDEFAULT == null ? x != null : !X_EDEFAULT.equals(x);
+      case SCHPackage.EXPRESSION__OP:
+        return op != null;
+      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
+        return terminalExpression != null;
+      case SCHPackage.EXPRESSION__VALUE:
+        return value != null && !value.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +317,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (x: ");
-    result.append(x);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

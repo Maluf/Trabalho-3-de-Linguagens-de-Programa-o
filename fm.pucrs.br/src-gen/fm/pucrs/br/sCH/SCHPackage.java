@@ -96,13 +96,31 @@ public interface SCHPackage extends EPackage
   int EXPRESSION = 1;
 
   /**
-   * The feature id for the '<em><b>X</b></em>' attribute.
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__X = 0;
+  int EXPRESSION__OP = 0;
+
+  /**
+   * The feature id for the '<em><b>Terminal Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__TERMINAL_EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__VALUE = 2;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -111,7 +129,138 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 1;
+  int EXPRESSION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.OperatorImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getOperator()
+   * @generated
+   */
+  int OPERATOR = 2;
+
+  /**
+   * The number of structural features of the '<em>Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATOR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.SubtractImpl <em>Subtract</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.SubtractImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSubtract()
+   * @generated
+   */
+  int SUBTRACT = 3;
+
+  /**
+   * The feature id for the '<em><b>Minus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACT__MINUS = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Subtract</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACT_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.AddImpl <em>Add</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.AddImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getAdd()
+   * @generated
+   */
+  int ADD = 4;
+
+  /**
+   * The feature id for the '<em><b>Plus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD__PLUS = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Add</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.MultiplyImpl <em>Multiply</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.MultiplyImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMultiply()
+   * @generated
+   */
+  int MULTIPLY = 5;
+
+  /**
+   * The feature id for the '<em><b>Times</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY__TIMES = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Multiply</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLY_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DivideImpl <em>Divide</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.DivideImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDivide()
+   * @generated
+   */
+  int DIVIDE = 6;
+
+  /**
+   * The feature id for the '<em><b>Diveded</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVIDE__DIVEDED = OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Divide</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVIDE_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 1;
 
 
   /**
@@ -146,15 +295,131 @@ public interface SCHPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Expression#getX <em>X</em>}'.
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X</em>'.
-   * @see fm.pucrs.br.sCH.Expression#getX()
+   * @return the meta object for the containment reference '<em>Op</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getOp()
    * @see #getExpression()
    * @generated
    */
-  EAttribute getExpression_X();
+  EReference getExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Terminal Expression</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getTerminalExpression()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_TerminalExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Value</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getValue()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Value();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Operator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operator</em>'.
+   * @see fm.pucrs.br.sCH.Operator
+   * @generated
+   */
+  EClass getOperator();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Subtract <em>Subtract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subtract</em>'.
+   * @see fm.pucrs.br.sCH.Subtract
+   * @generated
+   */
+  EClass getSubtract();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Subtract#getMinus <em>Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Minus</em>'.
+   * @see fm.pucrs.br.sCH.Subtract#getMinus()
+   * @see #getSubtract()
+   * @generated
+   */
+  EAttribute getSubtract_Minus();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Add <em>Add</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Add</em>'.
+   * @see fm.pucrs.br.sCH.Add
+   * @generated
+   */
+  EClass getAdd();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Add#getPlus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Plus</em>'.
+   * @see fm.pucrs.br.sCH.Add#getPlus()
+   * @see #getAdd()
+   * @generated
+   */
+  EAttribute getAdd_Plus();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Multiply <em>Multiply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiply</em>'.
+   * @see fm.pucrs.br.sCH.Multiply
+   * @generated
+   */
+  EClass getMultiply();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Multiply#getTimes <em>Times</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Times</em>'.
+   * @see fm.pucrs.br.sCH.Multiply#getTimes()
+   * @see #getMultiply()
+   * @generated
+   */
+  EAttribute getMultiply_Times();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Divide <em>Divide</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Divide</em>'.
+   * @see fm.pucrs.br.sCH.Divide
+   * @generated
+   */
+  EClass getDivide();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Divide#getDiveded <em>Diveded</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Diveded</em>'.
+   * @see fm.pucrs.br.sCH.Divide#getDiveded()
+   * @see #getDivide()
+   * @generated
+   */
+  EAttribute getDivide_Diveded();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -208,12 +473,110 @@ public interface SCHPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION__X = eINSTANCE.getExpression_X();
+    EReference EXPRESSION__OP = eINSTANCE.getExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Terminal Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__TERMINAL_EXPRESSION = eINSTANCE.getExpression_TerminalExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__VALUE = eINSTANCE.getExpression_Value();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.OperatorImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getOperator()
+     * @generated
+     */
+    EClass OPERATOR = eINSTANCE.getOperator();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.SubtractImpl <em>Subtract</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.SubtractImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSubtract()
+     * @generated
+     */
+    EClass SUBTRACT = eINSTANCE.getSubtract();
+
+    /**
+     * The meta object literal for the '<em><b>Minus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUBTRACT__MINUS = eINSTANCE.getSubtract_Minus();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.AddImpl <em>Add</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.AddImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getAdd()
+     * @generated
+     */
+    EClass ADD = eINSTANCE.getAdd();
+
+    /**
+     * The meta object literal for the '<em><b>Plus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ADD__PLUS = eINSTANCE.getAdd_Plus();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.MultiplyImpl <em>Multiply</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.MultiplyImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMultiply()
+     * @generated
+     */
+    EClass MULTIPLY = eINSTANCE.getMultiply();
+
+    /**
+     * The meta object literal for the '<em><b>Times</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLY__TIMES = eINSTANCE.getMultiply_Times();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.DivideImpl <em>Divide</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.DivideImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDivide()
+     * @generated
+     */
+    EClass DIVIDE = eINSTANCE.getDivide();
+
+    /**
+     * The meta object literal for the '<em><b>Diveded</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIVIDE__DIVEDED = eINSTANCE.getDivide_Diveded();
 
   }
 

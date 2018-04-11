@@ -67,6 +67,11 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
     {
       case SCHPackage.MODEL: return createModel();
       case SCHPackage.EXPRESSION: return createExpression();
+      case SCHPackage.OPERATOR: return createOperator();
+      case SCHPackage.SUBTRACT: return createSubtract();
+      case SCHPackage.ADD: return createAdd();
+      case SCHPackage.MULTIPLY: return createMultiply();
+      case SCHPackage.DIVIDE: return createDivide();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -92,6 +97,61 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operator createOperator()
+  {
+    OperatorImpl operator = new OperatorImpl();
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Subtract createSubtract()
+  {
+    SubtractImpl subtract = new SubtractImpl();
+    return subtract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Add createAdd()
+  {
+    AddImpl add = new AddImpl();
+    return add;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multiply createMultiply()
+  {
+    MultiplyImpl multiply = new MultiplyImpl();
+    return multiply;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Divide createDivide()
+  {
+    DivideImpl divide = new DivideImpl();
+    return divide;
   }
 
   /**
