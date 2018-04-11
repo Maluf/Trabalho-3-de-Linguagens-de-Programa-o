@@ -97,14 +97,14 @@ ruleModel returns [EObject current=null]
 ;
 
 // Entry rule entryRuleExpression
-entryRuleExpression returns [String current=null]:
+entryRuleExpression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getExpressionRule()); }
 	iv_ruleExpression=ruleExpression
-	{ $current=$iv_ruleExpression.current.getText(); }
+	{ $current=$iv_ruleExpression.current; }
 	EOF;
 
 // Rule Expression
-ruleExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleExpression returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -113,81 +113,22 @@ ruleExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 }:
 	(
 		(
-			kw='('
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_0_0());
+				newCompositeNode(grammarAccess.getExpressionAccess().getXValueParserRuleCall_0());
 			}
+			lv_x_0_0=ruleValue
 			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getOperatorParserRuleCall_0_1());
-			}
-			this_Operator_1=ruleOperator
-			{
-				$current.merge(this_Operator_1);
-			}
-			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getExpressionRule());
+				}
+				set(
+					$current,
+					"x",
+					lv_x_0_0,
+					"fm.pucrs.br.SCH.Value");
 				afterParserOrEnumRuleCall();
-			}
-			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getExpressionParserRuleCall_0_2());
-			}
-			this_Expression_2=ruleExpression
-			{
-				$current.merge(this_Expression_2);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getExpressionParserRuleCall_0_3());
-			}
-			this_Expression_3=ruleExpression
-			{
-				$current.merge(this_Expression_3);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw=')'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_0_4());
 			}
 		)
-		    |
-		(
-			kw='('
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_1_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getExpressionParserRuleCall_1_1());
-			}
-			this_Expression_6=ruleExpression
-			{
-				$current.merge(this_Expression_6);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw=')'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_1_2());
-			}
-		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getValueParserRuleCall_2());
-		}
-		this_Value_8=ruleValue
-		{
-			$current.merge(this_Value_8);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -221,68 +162,6 @@ ruleValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		}
 		{
 			newLeafNode(this_DOUBLE_1, grammarAccess.getValueAccess().getDOUBLETerminalRuleCall_1());
-		}
-	)
-;
-
-// Entry rule entryRuleOperator
-entryRuleOperator returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getOperatorRule()); }
-	iv_ruleOperator=ruleOperator
-	{ $current=$iv_ruleOperator.current.getText(); }
-	EOF;
-
-// Rule Operator
-ruleOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getOperatorAccess().getDivideParserRuleCall_0());
-		}
-		this_Divide_0=ruleDivide
-		{
-			$current.merge(this_Divide_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getOperatorAccess().getMultiplyParserRuleCall_1());
-		}
-		this_Multiply_1=ruleMultiply
-		{
-			$current.merge(this_Multiply_1);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getOperatorAccess().getAddParserRuleCall_2());
-		}
-		this_Add_2=ruleAdd
-		{
-			$current.merge(this_Add_2);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getOperatorAccess().getSubtractParserRuleCall_3());
-		}
-		this_Subtract_3=ruleSubtract
-		{
-			$current.merge(this_Subtract_3);
-		}
-		{
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -375,7 +254,7 @@ ruleDivide returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	}
 ;
 
-RULE_DOUBLE : RULE_INT '.' RULE_INT;
+RULE_DOUBLE : RULE_INT ('.' RULE_INT)?;
 
 RULE_INT : ('0'..'9')+;
 

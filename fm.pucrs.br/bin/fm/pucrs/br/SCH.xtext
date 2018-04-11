@@ -7,17 +7,18 @@ Model:
 	expressions+=Expression*;
 
 Expression:
-	'(' Operator Expression Expression ')' | '(' Expression ')' | Value
+	x = Value | '(' Expression ')' // '(' Operator Expression Expression ')' | 
 ;
 
 Value:
 	INT | DOUBLE
 ;
 
-terminal DOUBLE returns ecore::EDouble: 
-	INT "." INT;
 
-//...
+terminal DOUBLE returns ecore::EDouble: 
+	INT "." INT ;
+
+@Override
 terminal INT returns ecore::EInt: 
     ('0'..'9')+;
 
@@ -26,17 +27,28 @@ Operator:
 ;
 
 Subtract:
-	"-"
+	x = "-"
 ;
 
 Add:
-	'+'
+	x = '+'
 ;
 
 Multiply:
-	'*'
+	x = '*'
 ;
 
 Divide:
-	"/"
+	x = "/"
 ;
+
+
+/*
+  Expression:
+    TerminalExpression ({Operation.left=current} 
+    op='+' right=TerminalExpression)*
+ 
+TerminalExpression returns Expression:
+    '(' Expression ')' |
+    {IntLiteral} value=INT;
+ */

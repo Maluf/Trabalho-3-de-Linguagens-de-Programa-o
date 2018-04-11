@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Expressions</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
+   * The list contents are of type {@link fm.pucrs.br.sCH.Expression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expressions</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expressions</em>' attribute list.
+   * @return the value of the '<em>Expressions</em>' containment reference list.
    * @see fm.pucrs.br.sCH.SCHPackage#getModel_Expressions()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getExpressions();
+  EList<Expression> getExpressions();
 
 } // Model

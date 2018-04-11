@@ -3,18 +3,23 @@
  */
 package fm.pucrs.br.sCH.impl;
 
+import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.Model;
 import fm.pucrs.br.sCH.SCHPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +37,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' attribute list.
+   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExpressions()
    * @generated
    * @ordered
    */
-  protected EList<String> expressions;
+  protected EList<Expression> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +72,29 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getExpressions()
+  public EList<Expression> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EDataTypeEList<String>(String.class, this, SCHPackage.MODEL__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, SCHPackage.MODEL__EXPRESSIONS);
     }
     return expressions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SCHPackage.MODEL__EXPRESSIONS:
+        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -105,7 +126,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SCHPackage.MODEL__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends String>)newValue);
+        getExpressions().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,23 +163,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return expressions != null && !expressions.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (expressions: ");
-    result.append(expressions);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModelImpl

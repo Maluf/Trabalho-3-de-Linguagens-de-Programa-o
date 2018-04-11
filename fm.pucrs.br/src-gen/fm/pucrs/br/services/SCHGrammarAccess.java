@@ -10,7 +10,6 @@ import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
@@ -39,58 +38,19 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Expression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cOperatorParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final RuleCall cExpressionParserRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
-		private final RuleCall cExpressionParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
-		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final RuleCall cValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Assignment cXAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cXValueParserRuleCall_0 = (RuleCall)cXAssignment.eContents().get(0);
 		
 		//Expression:
-		//	'(' Operator Expression Expression ')' | '(' Expression ')' | Value;
+		//	x=Value //'(' Operator Expression Expression ')' | '(' Expression ')' | 
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Operator Expression Expression ')' | '(' Expression ')' | Value
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'(' Operator Expression Expression ')'
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
-		
-		//Operator
-		public RuleCall getOperatorParserRuleCall_0_1() { return cOperatorParserRuleCall_0_1; }
-		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_0_2() { return cExpressionParserRuleCall_0_2; }
-		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_0_3() { return cExpressionParserRuleCall_0_3; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
-		
-		//'(' Expression ')'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
-		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_1_1() { return cExpressionParserRuleCall_1_1; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		//x=Value
+		public Assignment getXAssignment() { return cXAssignment; }
 		
 		//Value
-		public RuleCall getValueParserRuleCall_2() { return cValueParserRuleCall_2; }
+		public RuleCall getXValueParserRuleCall_0() { return cXValueParserRuleCall_0; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Value");
@@ -254,7 +214,8 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	'(' Operator Expression Expression ')' | '(' Expression ')' | Value;
+	//	x=Value //'(' Operator Expression Expression ')' | '(' Expression ')' | 
+	//;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -274,12 +235,12 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal DOUBLE returns ecore::EDouble:
-	//	INT "." INT;
+	//	INT ("." INT)?;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
 	}
 	
-	//terminal INT returns ecore::EInt:
+	//@ Override terminal INT returns ecore::EInt:
 	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return tINT;

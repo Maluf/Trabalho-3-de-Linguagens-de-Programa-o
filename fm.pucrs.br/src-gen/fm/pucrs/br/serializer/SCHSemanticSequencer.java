@@ -4,6 +4,7 @@
 package fm.pucrs.br.serializer;
 
 import com.google.inject.Inject;
+import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.Model;
 import fm.pucrs.br.sCH.SCHPackage;
 import fm.pucrs.br.services.SCHGrammarAccess;
@@ -14,7 +15,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -30,6 +33,9 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SCHPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SCHPackage.EXPRESSION:
+				sequence_Expression(context, (Expression) semanticObject); 
+				return; 
 			case SCHPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -37,6 +43,24 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Expression returns Expression
+	 *
+	 * Constraint:
+	 *     x=Value
+	 */
+	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__X));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExpressionAccess().getXValueParserRuleCall_0(), semanticObject.getX());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:

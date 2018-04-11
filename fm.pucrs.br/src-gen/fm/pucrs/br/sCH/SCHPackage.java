@@ -6,6 +6,7 @@ package fm.pucrs.br.sCH;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +68,7 @@ public interface SCHPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' attribute list.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -84,6 +85,34 @@ public interface SCHPackage extends EPackage
    */
   int MODEL_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.ExpressionImpl <em>Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.ExpressionImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getExpression()
+   * @generated
+   */
+  int EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__X = 0;
+
+  /**
+   * The number of structural features of the '<em>Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link fm.pucrs.br.sCH.Model <em>Model</em>}'.
@@ -96,15 +125,36 @@ public interface SCHPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Model#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference list '{@link fm.pucrs.br.sCH.Model#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Expressions</em>'.
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
    * @see fm.pucrs.br.sCH.Model#getExpressions()
    * @see #getModel()
    * @generated
    */
-  EAttribute getModel_Expressions();
+  EReference getModel_Expressions();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see fm.pucrs.br.sCH.Expression
+   * @generated
+   */
+  EClass getExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Expression#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getX()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_X();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -140,12 +190,30 @@ public interface SCHPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODEL__EXPRESSIONS = eINSTANCE.getModel_Expressions();
+    EReference MODEL__EXPRESSIONS = eINSTANCE.getModel_Expressions();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.ExpressionImpl <em>Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.ExpressionImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getExpression()
+     * @generated
+     */
+    EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__X = eINSTANCE.getExpression_X();
 
   }
 

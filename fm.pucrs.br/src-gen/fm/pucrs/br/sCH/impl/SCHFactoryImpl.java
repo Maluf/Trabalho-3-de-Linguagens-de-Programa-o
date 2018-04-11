@@ -66,6 +66,7 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
     switch (eClass.getClassifierID())
     {
       case SCHPackage.MODEL: return createModel();
+      case SCHPackage.EXPRESSION: return createExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -80,6 +81,17 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
