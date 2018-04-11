@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.pucrs.fm/br/SCH"
+			class = "fm.pucrs.br.sCH.SCHPackage"
+			genModel = "model/generated/SCH.genmodel" />
+	</extension>
+</plugin>
