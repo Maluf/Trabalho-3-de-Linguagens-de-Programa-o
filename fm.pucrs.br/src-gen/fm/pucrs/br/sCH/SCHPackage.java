@@ -96,13 +96,22 @@ public interface SCHPackage extends EPackage
   int EXPRESSION = 1;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__VALUE = 0;
+
+  /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__OP = 0;
+  int EXPRESSION__OP = 1;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -111,7 +120,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__LEFT = 1;
+  int EXPRESSION__LEFT = 2;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference list.
@@ -120,16 +129,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__RIGHT = 2;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__VALUE = 3;
+  int EXPRESSION__RIGHT = 3;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -141,6 +141,79 @@ public interface SCHPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DefineImpl <em>Define</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.DefineImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDefine()
+   * @generated
+   */
+  int DEFINE = 2;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__VALUE = EXPRESSION__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__OP = EXPRESSION__OP;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__LEFT = EXPRESSION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__RIGHT = EXPRESSION__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__ID = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Ex</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__EX = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Define</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,7 +221,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getOperator()
    * @generated
    */
-  int OPERATOR = 2;
+  int OPERATOR = 3;
 
   /**
    * The number of structural features of the '<em>Operator</em>' class.
@@ -167,7 +240,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSubtract()
    * @generated
    */
-  int SUBTRACT = 3;
+  int SUBTRACT = 4;
 
   /**
    * The feature id for the '<em><b>Minus</b></em>' attribute.
@@ -195,7 +268,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getAdd()
    * @generated
    */
-  int ADD = 4;
+  int ADD = 5;
 
   /**
    * The feature id for the '<em><b>Plus</b></em>' attribute.
@@ -223,7 +296,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 5;
+  int MULTIPLY = 6;
 
   /**
    * The feature id for the '<em><b>Times</b></em>' attribute.
@@ -251,7 +324,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDivide()
    * @generated
    */
-  int DIVIDE = 6;
+  int DIVIDE = 7;
 
   /**
    * The feature id for the '<em><b>Diveded</b></em>' attribute.
@@ -304,6 +377,17 @@ public interface SCHPackage extends EPackage
   EClass getExpression();
 
   /**
+   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Value</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getValue()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Value();
+
+  /**
    * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -337,15 +421,36 @@ public interface SCHPackage extends EPackage
   EReference getExpression_Right();
 
   /**
-   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}'.
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Define <em>Define</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Value</em>'.
-   * @see fm.pucrs.br.sCH.Expression#getValue()
-   * @see #getExpression()
+   * @return the meta object for class '<em>Define</em>'.
+   * @see fm.pucrs.br.sCH.Define
    * @generated
    */
-  EAttribute getExpression_Value();
+  EClass getDefine();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Define#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see fm.pucrs.br.sCH.Define#getId()
+   * @see #getDefine()
+   * @generated
+   */
+  EAttribute getDefine_Id();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link fm.pucrs.br.sCH.Define#getEx <em>Ex</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ex</em>'.
+   * @see fm.pucrs.br.sCH.Define#getEx()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_Ex();
 
   /**
    * Returns the meta object for class '{@link fm.pucrs.br.sCH.Operator <em>Operator</em>}'.
@@ -493,6 +598,14 @@ public interface SCHPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__VALUE = eINSTANCE.getExpression_Value();
+
+    /**
      * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -517,12 +630,30 @@ public interface SCHPackage extends EPackage
     EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.DefineImpl <em>Define</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.DefineImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDefine()
+     * @generated
+     */
+    EClass DEFINE = eINSTANCE.getDefine();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION__VALUE = eINSTANCE.getExpression_Value();
+    EAttribute DEFINE__ID = eINSTANCE.getDefine_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Ex</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__EX = eINSTANCE.getDefine_Ex();
 
     /**
      * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.

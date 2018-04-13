@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getRight <em>Right</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see fm.pucrs.br.sCH.SCHPackage#getExpression()
@@ -28,6 +28,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Expression extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Value</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' attribute list.
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Value()
+   * @model unique="false"
+   * @generated
+   */
+  EList<Integer> getValue();
+
   /**
    * Returns the value of the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -95,21 +111,5 @@ public interface Expression extends EObject
    * @generated
    */
   EList<Expression> getRight();
-
-  /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Value</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute list.
-   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Value()
-   * @model unique="false"
-   * @generated
-   */
-  EList<Integer> getValue();
 
 } // Expression

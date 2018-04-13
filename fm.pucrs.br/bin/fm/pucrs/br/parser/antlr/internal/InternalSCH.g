@@ -96,6 +96,81 @@ ruleModel returns [EObject current=null]
 	)*
 ;
 
+// Entry rule entryRuleTerminalExpression
+entryRuleTerminalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTerminalExpressionRule()); }
+	iv_ruleTerminalExpression=ruleTerminalExpression
+	{ $current=$iv_ruleTerminalExpression.current; }
+	EOF;
+
+// Rule TerminalExpression
+ruleTerminalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='('
+			{
+				newLeafNode(otherlv_0, grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_0_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getTerminalExpressionAccess().getExpressionParserRuleCall_0_1());
+			}
+			this_Expression_1=ruleExpression
+			{
+				$current = $this_Expression_1.current;
+				afterParserOrEnumRuleCall();
+			}
+			otherlv_2=')'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_0_2());
+			}
+		)
+		    |
+		(
+			otherlv_3='('
+			{
+				newLeafNode(otherlv_3, grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_1_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getTerminalExpressionAccess().getDefineParserRuleCall_1_1());
+			}
+			this_Define_4=ruleDefine
+			{
+				$current = $this_Define_4.current;
+				afterParserOrEnumRuleCall();
+			}
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_1_2());
+			}
+		)
+		    |
+		(
+			(
+				lv_value_6_0=RULE_INT
+				{
+					newLeafNode(lv_value_6_0, grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTerminalExpressionRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"value",
+						lv_value_6_0,
+						"fm.pucrs.br.SCH.INT");
+				}
+			)
+		)+
+	)
+;
+
 // Entry rule entryRuleExpression
 entryRuleExpression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getExpressionRule()); }
@@ -172,15 +247,15 @@ ruleExpression returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleTerminalExpression
-entryRuleTerminalExpression returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTerminalExpressionRule()); }
-	iv_ruleTerminalExpression=ruleTerminalExpression
-	{ $current=$iv_ruleTerminalExpression.current; }
+// Entry rule entryRuleDefine
+entryRuleDefine returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefineRule()); }
+	iv_ruleDefine=ruleDefine
+	{ $current=$iv_ruleDefine.current; }
 	EOF;
 
-// Rule TerminalExpression
-ruleTerminalExpression returns [EObject current=null]
+// Rule Define
+ruleDefine returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -188,43 +263,47 @@ ruleTerminalExpression returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			otherlv_0='('
-			{
-				newLeafNode(otherlv_0, grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_0_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getTerminalExpressionAccess().getExpressionParserRuleCall_0_1());
-			}
-			this_Expression_1=ruleExpression
-			{
-				$current = $this_Expression_1.current;
-				afterParserOrEnumRuleCall();
-			}
-			otherlv_2=')'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_0_2());
-			}
-		)
-		    |
+		otherlv_0='define'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDefineKeyword_0());
+		}
 		(
 			(
-				lv_value_3_0=RULE_INT
+				lv_id_1_0=RULE_ID
 				{
-					newLeafNode(lv_value_3_0, grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_1_0());
+					newLeafNode(lv_id_1_0, grammarAccess.getDefineAccess().getIdIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTerminalExpressionRule());
+						$current = createModelElement(grammarAccess.getDefineRule());
 					}
-					addWithLastConsumed(
+					setWithLastConsumed(
 						$current,
-						"value",
-						lv_value_3_0,
-						"fm.pucrs.br.SCH.INT");
+						"id",
+						lv_id_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)+
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDefineAccess().getExTerminalExpressionParserRuleCall_2_0());
+				}
+				lv_ex_2_0=ruleTerminalExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDefineRule());
+					}
+					add(
+						$current,
+						"ex",
+						lv_ex_2_0,
+						"fm.pucrs.br.SCH.TerminalExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 

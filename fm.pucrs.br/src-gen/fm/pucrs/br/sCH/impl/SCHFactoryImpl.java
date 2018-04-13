@@ -67,6 +67,7 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
     {
       case SCHPackage.MODEL: return createModel();
       case SCHPackage.EXPRESSION: return createExpression();
+      case SCHPackage.DEFINE: return createDefine();
       case SCHPackage.OPERATOR: return createOperator();
       case SCHPackage.SUBTRACT: return createSubtract();
       case SCHPackage.ADD: return createAdd();
@@ -97,6 +98,17 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Define createDefine()
+  {
+    DefineImpl define = new DefineImpl();
+    return define;
   }
 
   /**

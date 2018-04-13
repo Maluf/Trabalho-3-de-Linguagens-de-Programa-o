@@ -4,6 +4,7 @@
 package fm.pucrs.br.sCH.impl;
 
 import fm.pucrs.br.sCH.Add;
+import fm.pucrs.br.sCH.Define;
 import fm.pucrs.br.sCH.Divide;
 import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.Model;
@@ -41,6 +42,13 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * @generated
    */
   private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defineEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -175,9 +183,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Op()
+  public EAttribute getExpression_Value()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -185,7 +193,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Left()
+  public EReference getExpression_Op()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -195,7 +203,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Right()
+  public EReference getExpression_Left()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -205,9 +213,39 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpression_Value()
+  public EReference getExpression_Right()
   {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(3);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDefine()
+  {
+    return defineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDefine_Id()
+  {
+    return (EAttribute)defineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDefine_Ex()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -334,10 +372,14 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     createEReference(modelEClass, MODEL__EXPRESSIONS);
 
     expressionEClass = createEClass(EXPRESSION);
+    createEAttribute(expressionEClass, EXPRESSION__VALUE);
     createEReference(expressionEClass, EXPRESSION__OP);
     createEReference(expressionEClass, EXPRESSION__LEFT);
     createEReference(expressionEClass, EXPRESSION__RIGHT);
-    createEAttribute(expressionEClass, EXPRESSION__VALUE);
+
+    defineEClass = createEClass(DEFINE);
+    createEAttribute(defineEClass, DEFINE__ID);
+    createEReference(defineEClass, DEFINE__EX);
 
     operatorEClass = createEClass(OPERATOR);
 
@@ -383,6 +425,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    defineEClass.getESuperTypes().add(this.getExpression());
     subtractEClass.getESuperTypes().add(this.getOperator());
     addEClass.getESuperTypes().add(this.getOperator());
     multiplyEClass.getESuperTypes().add(this.getOperator());
@@ -393,10 +436,14 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     initEReference(getModel_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExpression_Value(), ecorePackage.getEInt(), "value", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Op(), this.getOperator(), null, "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpression_Value(), ecorePackage.getEInt(), "value", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefine_Id(), ecorePackage.getEString(), "id", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefine_Ex(), this.getExpression(), null, "ex", null, 0, -1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

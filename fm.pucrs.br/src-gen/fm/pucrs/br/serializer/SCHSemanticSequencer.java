@@ -5,6 +5,7 @@ package fm.pucrs.br.serializer;
 
 import com.google.inject.Inject;
 import fm.pucrs.br.sCH.Add;
+import fm.pucrs.br.sCH.Define;
 import fm.pucrs.br.sCH.Divide;
 import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.Model;
@@ -39,6 +40,9 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			switch (semanticObject.eClass().getClassifierID()) {
 			case SCHPackage.ADD:
 				sequence_Add(context, (Add) semanticObject); 
+				return; 
+			case SCHPackage.DEFINE:
+				sequence_Define(context, (Define) semanticObject); 
 				return; 
 			case SCHPackage.DIVIDE:
 				sequence_Divide(context, (Divide) semanticObject); 
@@ -88,6 +92,19 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     TerminalExpression returns Define
+	 *     Define returns Define
+	 *
+	 * Constraint:
+	 *     (id=ID ex+=TerminalExpression*)
+	 */
+	protected void sequence_Define(ISerializationContext context, Define semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Operator returns Divide
 	 *     Divide returns Divide
 	 *
@@ -122,7 +139,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TerminalExpression returns Expression
 	 *
 	 * Constraint:
-	 *     ((op=Operator left=TerminalExpression right+=TerminalExpression*) | value+=INT+)
+	 *     (value+=INT+ | (op=Operator left=TerminalExpression right+=TerminalExpression*))
 	 */
 	protected void sequence_Expression_TerminalExpression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

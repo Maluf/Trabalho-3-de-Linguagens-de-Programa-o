@@ -86,6 +86,11 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
+      public Adapter caseDefine(Define object)
+      {
+        return createDefineAdapter();
+      }
+      @Override
       public Adapter caseOperator(Operator object)
       {
         return createOperatorAdapter();
@@ -158,6 +163,21 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.Define <em>Define</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.Define
+   * @generated
+   */
+  public Adapter createDefineAdapter()
   {
     return null;
   }

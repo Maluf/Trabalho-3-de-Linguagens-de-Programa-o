@@ -32,16 +32,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getRight <em>Right</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
 {
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> value;
+
   /**
    * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -73,16 +83,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   protected EList<Expression> right;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected EList<Integer> value;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -101,6 +101,20 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   protected EClass eStaticClass()
   {
     return SCHPackage.Literals.EXPRESSION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Integer> getValue()
+  {
+    if (value == null)
+    {
+      value = new EDataTypeEList<Integer>(Integer.class, this, SCHPackage.EXPRESSION__VALUE);
+    }
+    return value;
   }
 
   /**
@@ -218,20 +232,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Integer> getValue()
-  {
-    if (value == null)
-    {
-      value = new EDataTypeEList<Integer>(Integer.class, this, SCHPackage.EXPRESSION__VALUE);
-    }
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -257,14 +257,14 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
+      case SCHPackage.EXPRESSION__VALUE:
+        return getValue();
       case SCHPackage.EXPRESSION__OP:
         return getOp();
       case SCHPackage.EXPRESSION__LEFT:
         return getLeft();
       case SCHPackage.EXPRESSION__RIGHT:
         return getRight();
-      case SCHPackage.EXPRESSION__VALUE:
-        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -280,6 +280,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
+      case SCHPackage.EXPRESSION__VALUE:
+        getValue().clear();
+        getValue().addAll((Collection<? extends Integer>)newValue);
+        return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)newValue);
         return;
@@ -289,10 +293,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__RIGHT:
         getRight().clear();
         getRight().addAll((Collection<? extends Expression>)newValue);
-        return;
-      case SCHPackage.EXPRESSION__VALUE:
-        getValue().clear();
-        getValue().addAll((Collection<? extends Integer>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -308,6 +308,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
+      case SCHPackage.EXPRESSION__VALUE:
+        getValue().clear();
+        return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)null);
         return;
@@ -316,9 +319,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return;
       case SCHPackage.EXPRESSION__RIGHT:
         getRight().clear();
-        return;
-      case SCHPackage.EXPRESSION__VALUE:
-        getValue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -334,14 +334,14 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
+      case SCHPackage.EXPRESSION__VALUE:
+        return value != null && !value.isEmpty();
       case SCHPackage.EXPRESSION__OP:
         return op != null;
       case SCHPackage.EXPRESSION__LEFT:
         return left != null;
       case SCHPackage.EXPRESSION__RIGHT:
         return right != null && !right.isEmpty();
-      case SCHPackage.EXPRESSION__VALUE:
-        return value != null && !value.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -42,6 +42,15 @@ public interface SCHFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Define</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Define</em>'.
+   * @generated
+   */
+  Define createDefine();
+
+  /**
    * Returns a new object of class '<em>Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

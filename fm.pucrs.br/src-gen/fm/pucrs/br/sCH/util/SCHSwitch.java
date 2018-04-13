@@ -87,6 +87,14 @@ public class SCHSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SCHPackage.DEFINE:
+      {
+        Define define = (Define)theEObject;
+        T result = caseDefine(define);
+        if (result == null) result = caseExpression(define);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SCHPackage.OPERATOR:
       {
         Operator operator = (Operator)theEObject;
@@ -158,6 +166,22 @@ public class SCHSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Define</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Define</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefine(Define object)
   {
     return null;
   }

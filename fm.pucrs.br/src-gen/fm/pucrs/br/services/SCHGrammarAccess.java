@@ -37,6 +37,57 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		//TerminalExpression
 		public RuleCall getExpressionsTerminalExpressionParserRuleCall_0() { return cExpressionsTerminalExpressionParserRuleCall_0; }
 	}
+	public class TerminalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.TerminalExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cDefineParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cValueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cValueINTTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//TerminalExpression Expression:
+		//	'(' Expression ')' | '(' Define ')' | value+=INT+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'(' Expression ')' | '(' Define ')' | value+=INT+
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'(' Expression ')'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
+		
+		//Expression
+		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+		
+		//'(' Define ')'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//Define
+		public RuleCall getDefineParserRuleCall_1_1() { return cDefineParserRuleCall_1_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		
+		//value+=INT+
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_2_0() { return cValueINTTerminalRuleCall_2_0; }
+	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Expression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -47,16 +98,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRightTerminalExpressionParserRuleCall_2_0 = (RuleCall)cRightAssignment_2.eContents().get(0);
 		
-		///* 
-		//Model:
-		//	expressions+=Expression*;
-		//*/ /*Expression:
-		//	x = Value | '(' Expression ')'  // | '(' Operator Expression Expression ')'  
-		//;*/ /* 
-		// Expression:
-		//     TerminalExpression (op='+' ({Operation.left=current} 
-		//     right=TerminalExpression) );
-		//*/ Expression:
+		//Expression:
 		//	op=Operator left=TerminalExpression right+=TerminalExpression*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -81,40 +123,36 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		//TerminalExpression
 		public RuleCall getRightTerminalExpressionParserRuleCall_2_0() { return cRightTerminalExpressionParserRuleCall_2_0; }
 	}
-	public class TerminalExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.TerminalExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+	public class DefineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Define");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDefineKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cExAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExTerminalExpressionParserRuleCall_2_0 = (RuleCall)cExAssignment_2.eContents().get(0);
 		
-		//TerminalExpression Expression:
-		//	'(' Expression ')' | value+=INT+;
+		//Define:
+		//	'define' id=ID ex+=TerminalExpression*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | value+=INT+
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//'define' id=ID ex+=TerminalExpression*
+		public Group getGroup() { return cGroup; }
 		
-		//'(' Expression ')'
-		public Group getGroup_0() { return cGroup_0; }
+		//'define'
+		public Keyword getDefineKeyword_0() { return cDefineKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
+		//id=ID
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
 		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+		//ex+=TerminalExpression*
+		public Assignment getExAssignment_2() { return cExAssignment_2; }
 		
-		//value+=INT+
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
-		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_1_0() { return cValueINTTerminalRuleCall_1_0; }
+		//TerminalExpression
+		public RuleCall getExTerminalExpressionParserRuleCall_2_0() { return cExTerminalExpressionParserRuleCall_2_0; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Value");
@@ -225,8 +263,9 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
-	private final ExpressionElements pExpression;
 	private final TerminalExpressionElements pTerminalExpression;
+	private final ExpressionElements pExpression;
+	private final DefineElements pDefine;
 	private final ValueElements pValue;
 	private final TerminalRule tDOUBLE;
 	private final TerminalRule tINT;
@@ -246,8 +285,9 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pExpression = new ExpressionElements();
 		this.pTerminalExpression = new TerminalExpressionElements();
+		this.pExpression = new ExpressionElements();
+		this.pDefine = new DefineElements();
 		this.pValue = new ValueElements();
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.DOUBLE");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.INT");
@@ -295,16 +335,17 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	///* 
-	//Model:
-	//	expressions+=Expression*;
-	//*/ /*Expression:
-	//	x = Value | '(' Expression ')'  // | '(' Operator Expression Expression ')'  
-	//;*/ /* 
-	// Expression:
-	//     TerminalExpression (op='+' ({Operation.left=current} 
-	//     right=TerminalExpression) );
-	//*/ Expression:
+	//TerminalExpression Expression:
+	//	'(' Expression ')' | '(' Define ')' | value+=INT+;
+	public TerminalExpressionElements getTerminalExpressionAccess() {
+		return pTerminalExpression;
+	}
+	
+	public ParserRule getTerminalExpressionRule() {
+		return getTerminalExpressionAccess().getRule();
+	}
+	
+	//Expression:
 	//	op=Operator left=TerminalExpression right+=TerminalExpression*;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -314,14 +355,14 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionAccess().getRule();
 	}
 	
-	//TerminalExpression Expression:
-	//	'(' Expression ')' | value+=INT+;
-	public TerminalExpressionElements getTerminalExpressionAccess() {
-		return pTerminalExpression;
+	//Define:
+	//	'define' id=ID ex+=TerminalExpression*;
+	public DefineElements getDefineAccess() {
+		return pDefine;
 	}
 	
-	public ParserRule getTerminalExpressionRule() {
-		return getTerminalExpressionAccess().getRule();
+	public ParserRule getDefineRule() {
+		return getDefineAccess().getRule();
 	}
 	
 	//Value:
