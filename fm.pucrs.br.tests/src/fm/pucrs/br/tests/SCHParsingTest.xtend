@@ -19,9 +19,41 @@ class SCHParsingTest {
 	ParseHelper<Model> parseHelper
 	
 	@Test
-	def void loadModel() {
+	def void loadModel1() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			(/ 3 3)
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	@Test
+	def void loadModel2() {
+		val result = parseHelper.parse('''
+			(* 3 3 3 3 3)
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	@Test
+	def void loadModel3() {
+		val result = parseHelper.parse('''
+			(+ 2)
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	@Test
+	def void loadModel4() {
+		val result = parseHelper.parse('''
+			(+ 3 (* 3 ) )
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	@Test
+	def void loadModel5() {
+		val result = parseHelper.parse('''
+			2
 		''')
 		Assert.assertNotNull(result)
 		Assert.assertTrue(result.eResource.errors.isEmpty)

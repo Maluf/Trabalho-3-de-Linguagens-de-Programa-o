@@ -110,19 +110,10 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (op=Operator terminalExpression=TerminalExpression)
+	 *     (op=Operator left=TerminalExpression right+=TerminalExpression*)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__OP));
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EXPRESSION__TERMINAL_EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EXPRESSION__TERMINAL_EXPRESSION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpressionAccess().getOpOperatorParserRuleCall_0_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getExpressionAccess().getTerminalExpressionTerminalExpressionParserRuleCall_1_0(), semanticObject.getTerminalExpression());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -131,7 +122,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TerminalExpression returns Expression
 	 *
 	 * Constraint:
-	 *     ((op=Operator terminalExpression=TerminalExpression) | value+=INT+)
+	 *     ((op=Operator left=TerminalExpression right+=TerminalExpression*) | value+=INT+)
 	 */
 	protected void sequence_Expression_TerminalExpression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,8 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * </p>
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getOp <em>Op</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getTerminalExpression <em>Terminal Expression</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getRight <em>Right</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -50,14 +53,24 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   protected Operator op;
 
   /**
-   * The cached value of the '{@link #getTerminalExpression() <em>Terminal Expression</em>}' containment reference.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTerminalExpression()
+   * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected Expression terminalExpression;
+  protected Expression left;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expression> right;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
@@ -143,9 +156,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getTerminalExpression()
+  public Expression getLeft()
   {
-    return terminalExpression;
+    return left;
   }
 
   /**
@@ -153,13 +166,13 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTerminalExpression(Expression newTerminalExpression, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    Expression oldTerminalExpression = terminalExpression;
-    terminalExpression = newTerminalExpression;
+    Expression oldLeft = left;
+    left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, oldTerminalExpression, newTerminalExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -170,20 +183,34 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTerminalExpression(Expression newTerminalExpression)
+  public void setLeft(Expression newLeft)
   {
-    if (newTerminalExpression != terminalExpression)
+    if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (terminalExpression != null)
-        msgs = ((InternalEObject)terminalExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, null, msgs);
-      if (newTerminalExpression != null)
-        msgs = ((InternalEObject)newTerminalExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, null, msgs);
-      msgs = basicSetTerminalExpression(newTerminalExpression, msgs);
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.EXPRESSION__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__TERMINAL_EXPRESSION, newTerminalExpression, newTerminalExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__LEFT, newLeft, newLeft));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expression> getRight()
+  {
+    if (right == null)
+    {
+      right = new EObjectContainmentEList<Expression>(Expression.class, this, SCHPackage.EXPRESSION__RIGHT);
+    }
+    return right;
   }
 
   /**
@@ -212,8 +239,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case SCHPackage.EXPRESSION__OP:
         return basicSetOp(null, msgs);
-      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
-        return basicSetTerminalExpression(null, msgs);
+      case SCHPackage.EXPRESSION__LEFT:
+        return basicSetLeft(null, msgs);
+      case SCHPackage.EXPRESSION__RIGHT:
+        return ((InternalEList<?>)getRight()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -230,8 +259,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case SCHPackage.EXPRESSION__OP:
         return getOp();
-      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
-        return getTerminalExpression();
+      case SCHPackage.EXPRESSION__LEFT:
+        return getLeft();
+      case SCHPackage.EXPRESSION__RIGHT:
+        return getRight();
       case SCHPackage.EXPRESSION__VALUE:
         return getValue();
     }
@@ -252,8 +283,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)newValue);
         return;
-      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
-        setTerminalExpression((Expression)newValue);
+      case SCHPackage.EXPRESSION__LEFT:
+        setLeft((Expression)newValue);
+        return;
+      case SCHPackage.EXPRESSION__RIGHT:
+        getRight().clear();
+        getRight().addAll((Collection<? extends Expression>)newValue);
         return;
       case SCHPackage.EXPRESSION__VALUE:
         getValue().clear();
@@ -276,8 +311,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)null);
         return;
-      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
-        setTerminalExpression((Expression)null);
+      case SCHPackage.EXPRESSION__LEFT:
+        setLeft((Expression)null);
+        return;
+      case SCHPackage.EXPRESSION__RIGHT:
+        getRight().clear();
         return;
       case SCHPackage.EXPRESSION__VALUE:
         getValue().clear();
@@ -298,8 +336,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case SCHPackage.EXPRESSION__OP:
         return op != null;
-      case SCHPackage.EXPRESSION__TERMINAL_EXPRESSION:
-        return terminalExpression != null;
+      case SCHPackage.EXPRESSION__LEFT:
+        return left != null;
+      case SCHPackage.EXPRESSION__RIGHT:
+        return right != null && !right.isEmpty();
       case SCHPackage.EXPRESSION__VALUE:
         return value != null && !value.isEmpty();
     }

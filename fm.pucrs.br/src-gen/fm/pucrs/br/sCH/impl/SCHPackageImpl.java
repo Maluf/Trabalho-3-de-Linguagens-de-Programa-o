@@ -185,7 +185,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_TerminalExpression()
+  public EReference getExpression_Left()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -195,9 +195,19 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getExpression_Right()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getExpression_Value()
   {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -325,7 +335,8 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__OP);
-    createEReference(expressionEClass, EXPRESSION__TERMINAL_EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__LEFT);
+    createEReference(expressionEClass, EXPRESSION__RIGHT);
     createEAttribute(expressionEClass, EXPRESSION__VALUE);
 
     operatorEClass = createEClass(OPERATOR);
@@ -383,7 +394,8 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_Op(), this.getOperator(), null, "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_TerminalExpression(), this.getExpression(), null, "terminalExpression", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExpression_Value(), ecorePackage.getEInt(), "value", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

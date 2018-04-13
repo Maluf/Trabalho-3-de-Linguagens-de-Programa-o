@@ -134,22 +134,41 @@ ruleExpression returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getTerminalExpressionTerminalExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getExpressionAccess().getLeftTerminalExpressionParserRuleCall_1_0());
 				}
-				lv_terminalExpression_1_0=ruleTerminalExpression
+				lv_left_1_0=ruleTerminalExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getExpressionRule());
 					}
 					set(
 						$current,
-						"terminalExpression",
-						lv_terminalExpression_1_0,
+						"left",
+						lv_left_1_0,
 						"fm.pucrs.br.SCH.TerminalExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getRightTerminalExpressionParserRuleCall_2_0());
+				}
+				lv_right_2_0=ruleTerminalExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getExpressionRule());
+					}
+					add(
+						$current,
+						"right",
+						lv_right_2_0,
+						"fm.pucrs.br.SCH.TerminalExpression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
 	)
 ;
 

@@ -21,11 +21,11 @@ Model:
 */
 
 Expression:
-     op=Operator terminalExpression=TerminalExpression;
+     op=Operator left=TerminalExpression right+=TerminalExpression* ;
 
 TerminalExpression returns Expression:
-    '(' Expression ')' |
-    /*{IntLiteral}*/ value+=INT+;
+    '('Expression')' |
+     value+=INT+;
 
 Value:
 	INT | DOUBLE

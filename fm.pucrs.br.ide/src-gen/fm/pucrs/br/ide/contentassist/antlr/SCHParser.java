@@ -38,7 +38,8 @@ public class SCHParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTerminalExpressionAccess().getGroup_0(), "rule__TerminalExpression__Group_0__0");
 					put(grammarAccess.getModelAccess().getExpressionsAssignment(), "rule__Model__ExpressionsAssignment");
 					put(grammarAccess.getExpressionAccess().getOpAssignment_0(), "rule__Expression__OpAssignment_0");
-					put(grammarAccess.getExpressionAccess().getTerminalExpressionAssignment_1(), "rule__Expression__TerminalExpressionAssignment_1");
+					put(grammarAccess.getExpressionAccess().getLeftAssignment_1(), "rule__Expression__LeftAssignment_1");
+					put(grammarAccess.getExpressionAccess().getRightAssignment_2(), "rule__Expression__RightAssignment_2");
 					put(grammarAccess.getTerminalExpressionAccess().getValueAssignment_1(), "rule__TerminalExpression__ValueAssignment_1");
 					put(grammarAccess.getSubtractAccess().getMinusAssignment(), "rule__Subtract__MinusAssignment");
 					put(grammarAccess.getAddAccess().getPlusAssignment(), "rule__Add__PlusAssignment");

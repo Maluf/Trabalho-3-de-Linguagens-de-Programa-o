@@ -42,8 +42,10 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cOpOperatorParserRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
-		private final Assignment cTerminalExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTerminalExpressionTerminalExpressionParserRuleCall_1_0 = (RuleCall)cTerminalExpressionAssignment_1.eContents().get(0);
+		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLeftTerminalExpressionParserRuleCall_1_0 = (RuleCall)cLeftAssignment_1.eContents().get(0);
+		private final Assignment cRightAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRightTerminalExpressionParserRuleCall_2_0 = (RuleCall)cRightAssignment_2.eContents().get(0);
 		
 		///* 
 		//Model:
@@ -55,10 +57,10 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		//     TerminalExpression (op='+' ({Operation.left=current} 
 		//     right=TerminalExpression) );
 		//*/ Expression:
-		//	op=Operator terminalExpression=TerminalExpression;
+		//	op=Operator left=TerminalExpression right+=TerminalExpression*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//op=Operator terminalExpression=TerminalExpression
+		//op=Operator left=TerminalExpression right+=TerminalExpression*
 		public Group getGroup() { return cGroup; }
 		
 		//op=Operator
@@ -67,11 +69,17 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		//Operator
 		public RuleCall getOpOperatorParserRuleCall_0_0() { return cOpOperatorParserRuleCall_0_0; }
 		
-		//terminalExpression=TerminalExpression
-		public Assignment getTerminalExpressionAssignment_1() { return cTerminalExpressionAssignment_1; }
+		//left=TerminalExpression
+		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
 		
 		//TerminalExpression
-		public RuleCall getTerminalExpressionTerminalExpressionParserRuleCall_1_0() { return cTerminalExpressionTerminalExpressionParserRuleCall_1_0; }
+		public RuleCall getLeftTerminalExpressionParserRuleCall_1_0() { return cLeftTerminalExpressionParserRuleCall_1_0; }
+		
+		//right+=TerminalExpression*
+		public Assignment getRightAssignment_2() { return cRightAssignment_2; }
+		
+		//TerminalExpression
+		public RuleCall getRightTerminalExpressionParserRuleCall_2_0() { return cRightTerminalExpressionParserRuleCall_2_0; }
 	}
 	public class TerminalExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.TerminalExpression");
@@ -102,7 +110,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 		
-		///*{IntLiteral}*/ value+=INT+
+		//value+=INT+
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
 		//INT
@@ -297,7 +305,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	//     TerminalExpression (op='+' ({Operation.left=current} 
 	//     right=TerminalExpression) );
 	//*/ Expression:
-	//	op=Operator terminalExpression=TerminalExpression;
+	//	op=Operator left=TerminalExpression right+=TerminalExpression*;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}

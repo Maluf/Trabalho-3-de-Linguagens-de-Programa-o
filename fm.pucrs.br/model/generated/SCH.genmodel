@@ -11,7 +11,8 @@
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/terminalExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/right"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/value"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Operator"/>

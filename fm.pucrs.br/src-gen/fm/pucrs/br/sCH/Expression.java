@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getRight <em>Right</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -54,30 +55,46 @@ public interface Expression extends EObject
   void setOp(Operator value);
 
   /**
-   * Returns the value of the '<em><b>Terminal Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Terminal Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Terminal Expression</em>' containment reference.
-   * @see #setTerminalExpression(Expression)
-   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_TerminalExpression()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(Expression)
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Left()
    * @model containment="true"
    * @generated
    */
-  Expression getTerminalExpression();
+  Expression getLeft();
 
   /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}' containment reference.
+   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Terminal Expression</em>' containment reference.
-   * @see #getTerminalExpression()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setTerminalExpression(Expression value);
+  void setLeft(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference list.
+   * The list contents are of type {@link fm.pucrs.br.sCH.Expression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference list.
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Right()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expression> getRight();
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute list.

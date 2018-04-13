@@ -105,13 +105,22 @@ public interface SCHPackage extends EPackage
   int EXPRESSION__OP = 0;
 
   /**
-   * The feature id for the '<em><b>Terminal Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__TERMINAL_EXPRESSION = 1;
+  int EXPRESSION__LEFT = 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__RIGHT = 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -120,7 +129,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__VALUE = 2;
+  int EXPRESSION__VALUE = 3;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -129,7 +138,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 3;
+  int EXPRESSION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.
@@ -306,15 +315,26 @@ public interface SCHPackage extends EPackage
   EReference getExpression_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getTerminalExpression <em>Terminal Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Terminal Expression</em>'.
-   * @see fm.pucrs.br.sCH.Expression#getTerminalExpression()
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getLeft()
    * @see #getExpression()
    * @generated
    */
-  EReference getExpression_TerminalExpression();
+  EReference getExpression_Left();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link fm.pucrs.br.sCH.Expression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Right</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getRight()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Right();
 
   /**
    * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}'.
@@ -481,12 +501,20 @@ public interface SCHPackage extends EPackage
     EReference EXPRESSION__OP = eINSTANCE.getExpression_Op();
 
     /**
-     * The meta object literal for the '<em><b>Terminal Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__TERMINAL_EXPRESSION = eINSTANCE.getExpression_TerminalExpression();
+    EReference EXPRESSION__LEFT = eINSTANCE.getExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__RIGHT = eINSTANCE.getExpression_Right();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute list feature.

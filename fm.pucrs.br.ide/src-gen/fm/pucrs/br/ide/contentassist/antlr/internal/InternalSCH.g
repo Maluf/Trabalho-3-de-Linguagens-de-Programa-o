@@ -343,6 +343,7 @@ rule__Expression__Group__1
 	}
 :
 	rule__Expression__Group__1__Impl
+	rule__Expression__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -354,9 +355,35 @@ rule__Expression__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getExpressionAccess().getTerminalExpressionAssignment_1()); }
-	(rule__Expression__TerminalExpressionAssignment_1)
-	{ after(grammarAccess.getExpressionAccess().getTerminalExpressionAssignment_1()); }
+	{ before(grammarAccess.getExpressionAccess().getLeftAssignment_1()); }
+	(rule__Expression__LeftAssignment_1)
+	{ after(grammarAccess.getExpressionAccess().getLeftAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Expression__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Expression__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Expression__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getExpressionAccess().getRightAssignment_2()); }
+	(rule__Expression__RightAssignment_2)*
+	{ after(grammarAccess.getExpressionAccess().getRightAssignment_2()); }
 )
 ;
 finally {
@@ -475,15 +502,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Expression__TerminalExpressionAssignment_1
+rule__Expression__LeftAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getExpressionAccess().getTerminalExpressionTerminalExpressionParserRuleCall_1_0()); }
+		{ before(grammarAccess.getExpressionAccess().getLeftTerminalExpressionParserRuleCall_1_0()); }
 		ruleTerminalExpression
-		{ after(grammarAccess.getExpressionAccess().getTerminalExpressionTerminalExpressionParserRuleCall_1_0()); }
+		{ after(grammarAccess.getExpressionAccess().getLeftTerminalExpressionParserRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Expression__RightAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getExpressionAccess().getRightTerminalExpressionParserRuleCall_2_0()); }
+		ruleTerminalExpression
+		{ after(grammarAccess.getExpressionAccess().getRightTerminalExpressionParserRuleCall_2_0()); }
 	)
 ;
 finally {
