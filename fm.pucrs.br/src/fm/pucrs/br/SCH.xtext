@@ -7,7 +7,7 @@ Model:
 	expressions+=TerminalExpression* ;
 	
 TerminalExpression returns Expression:
-    '('Expression')' | '(' Define ')' |  value+=INT+ | identifier+=ID+;
+    '(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+;
 
 Expression:
 	 op=Operator left=TerminalExpression right+=TerminalExpression* 
@@ -17,12 +17,41 @@ Define:
   'define' id=ID ex+=TerminalExpression*
 ;
 
-//Lambda:
-//	'lamnda' (ouput=ID) (ex=TerminalExpression)
-//;
+Lambda:
+	'lambda' '(' (ouput+=ID*) ')' (ex=TerminalExpression)
+;
 
+If:
+	'if' '(' logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression ')' result=TerminalExpression
+;
 
+LogicOperator:
+	 Equal | MoreOrEqual | LessOrEqual | Different | More | Less
+;
 
+Equal:
+	equal='='
+;
+
+MoreOrEqual:
+	moreOrEqual='>='
+;
+
+LessOrEqual:
+	lessOrEqual='<='
+;
+
+Different:
+	different='!='
+;
+
+More:
+	more='>'
+;
+
+Less:
+	less='<'
+;
 
 Value:
 	INT | DOUBLE

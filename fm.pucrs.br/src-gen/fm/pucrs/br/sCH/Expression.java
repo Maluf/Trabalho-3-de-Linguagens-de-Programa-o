@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getRight <em>Right</em>}</li>
@@ -43,6 +44,22 @@ public interface Expression extends EObject
    * @generated
    */
   EList<Integer> getValue();
+
+  /**
+   * Returns the value of the '<em><b>Identifier</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Identifier</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Identifier</em>' attribute list.
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Identifier()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getIdentifier();
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' containment reference.

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getIdentifier <em>Identifier</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getRight <em>Right</em>}</li>
@@ -51,6 +52,16 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * @ordered
    */
   protected EList<Integer> value;
+
+  /**
+   * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdentifier()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> identifier;
 
   /**
    * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
@@ -115,6 +126,20 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       value = new EDataTypeEList<Integer>(Integer.class, this, SCHPackage.EXPRESSION__VALUE);
     }
     return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getIdentifier()
+  {
+    if (identifier == null)
+    {
+      identifier = new EDataTypeEList<String>(String.class, this, SCHPackage.EXPRESSION__IDENTIFIER);
+    }
+    return identifier;
   }
 
   /**
@@ -259,6 +284,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case SCHPackage.EXPRESSION__VALUE:
         return getValue();
+      case SCHPackage.EXPRESSION__IDENTIFIER:
+        return getIdentifier();
       case SCHPackage.EXPRESSION__OP:
         return getOp();
       case SCHPackage.EXPRESSION__LEFT:
@@ -283,6 +310,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__VALUE:
         getValue().clear();
         getValue().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case SCHPackage.EXPRESSION__IDENTIFIER:
+        getIdentifier().clear();
+        getIdentifier().addAll((Collection<? extends String>)newValue);
         return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)newValue);
@@ -311,6 +342,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__VALUE:
         getValue().clear();
         return;
+      case SCHPackage.EXPRESSION__IDENTIFIER:
+        getIdentifier().clear();
+        return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)null);
         return;
@@ -336,6 +370,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     {
       case SCHPackage.EXPRESSION__VALUE:
         return value != null && !value.isEmpty();
+      case SCHPackage.EXPRESSION__IDENTIFIER:
+        return identifier != null && !identifier.isEmpty();
       case SCHPackage.EXPRESSION__OP:
         return op != null;
       case SCHPackage.EXPRESSION__LEFT:
@@ -359,6 +395,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (value: ");
     result.append(value);
+    result.append(", identifier: ");
+    result.append(identifier);
     result.append(')');
     return result.toString();
   }

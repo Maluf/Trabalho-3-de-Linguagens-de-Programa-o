@@ -5,9 +5,18 @@ package fm.pucrs.br.sCH.impl;
 
 import fm.pucrs.br.sCH.Add;
 import fm.pucrs.br.sCH.Define;
+import fm.pucrs.br.sCH.Different;
 import fm.pucrs.br.sCH.Divide;
+import fm.pucrs.br.sCH.Equal;
 import fm.pucrs.br.sCH.Expression;
+import fm.pucrs.br.sCH.If;
+import fm.pucrs.br.sCH.Lambda;
+import fm.pucrs.br.sCH.Less;
+import fm.pucrs.br.sCH.LessOrEqual;
+import fm.pucrs.br.sCH.LogicOperator;
 import fm.pucrs.br.sCH.Model;
+import fm.pucrs.br.sCH.More;
+import fm.pucrs.br.sCH.MoreOrEqual;
 import fm.pucrs.br.sCH.Multiply;
 import fm.pucrs.br.sCH.Operator;
 import fm.pucrs.br.sCH.SCHFactory;
@@ -49,6 +58,69 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * @generated
    */
   private EClass defineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lambdaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass logicOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass equalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moreOrEqualEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lessOrEqualEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass differentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moreEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lessEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -193,9 +265,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Op()
+  public EAttribute getExpression_Identifier()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -203,7 +275,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Left()
+  public EReference getExpression_Op()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(2);
   }
@@ -213,9 +285,19 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpression_Right()
+  public EReference getExpression_Left()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Right()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -246,6 +328,216 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
   public EReference getDefine_Ex()
   {
     return (EReference)defineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLambda()
+  {
+    return lambdaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLambda_Ouput()
+  {
+    return (EAttribute)lambdaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLambda_Ex()
+  {
+    return (EReference)lambdaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIf()
+  {
+    return ifEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_LogicOperator()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_LeftCondition()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_RightCondition()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIf_Result()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLogicOperator()
+  {
+    return logicOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEqual()
+  {
+    return equalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEqual_Equal()
+  {
+    return (EAttribute)equalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMoreOrEqual()
+  {
+    return moreOrEqualEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMoreOrEqual_MoreOrEqual()
+  {
+    return (EAttribute)moreOrEqualEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLessOrEqual()
+  {
+    return lessOrEqualEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLessOrEqual_LessOrEqual()
+  {
+    return (EAttribute)lessOrEqualEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDifferent()
+  {
+    return differentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDifferent_Different()
+  {
+    return (EAttribute)differentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMore()
+  {
+    return moreEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMore_More()
+  {
+    return (EAttribute)moreEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLess()
+  {
+    return lessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLess_Less()
+  {
+    return (EAttribute)lessEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -373,6 +665,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     expressionEClass = createEClass(EXPRESSION);
     createEAttribute(expressionEClass, EXPRESSION__VALUE);
+    createEAttribute(expressionEClass, EXPRESSION__IDENTIFIER);
     createEReference(expressionEClass, EXPRESSION__OP);
     createEReference(expressionEClass, EXPRESSION__LEFT);
     createEReference(expressionEClass, EXPRESSION__RIGHT);
@@ -380,6 +673,36 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     defineEClass = createEClass(DEFINE);
     createEAttribute(defineEClass, DEFINE__ID);
     createEReference(defineEClass, DEFINE__EX);
+
+    lambdaEClass = createEClass(LAMBDA);
+    createEAttribute(lambdaEClass, LAMBDA__OUPUT);
+    createEReference(lambdaEClass, LAMBDA__EX);
+
+    ifEClass = createEClass(IF);
+    createEReference(ifEClass, IF__LOGIC_OPERATOR);
+    createEReference(ifEClass, IF__LEFT_CONDITION);
+    createEReference(ifEClass, IF__RIGHT_CONDITION);
+    createEReference(ifEClass, IF__RESULT);
+
+    logicOperatorEClass = createEClass(LOGIC_OPERATOR);
+
+    equalEClass = createEClass(EQUAL);
+    createEAttribute(equalEClass, EQUAL__EQUAL);
+
+    moreOrEqualEClass = createEClass(MORE_OR_EQUAL);
+    createEAttribute(moreOrEqualEClass, MORE_OR_EQUAL__MORE_OR_EQUAL);
+
+    lessOrEqualEClass = createEClass(LESS_OR_EQUAL);
+    createEAttribute(lessOrEqualEClass, LESS_OR_EQUAL__LESS_OR_EQUAL);
+
+    differentEClass = createEClass(DIFFERENT);
+    createEAttribute(differentEClass, DIFFERENT__DIFFERENT);
+
+    moreEClass = createEClass(MORE);
+    createEAttribute(moreEClass, MORE__MORE);
+
+    lessEClass = createEClass(LESS);
+    createEAttribute(lessEClass, LESS__LESS);
 
     operatorEClass = createEClass(OPERATOR);
 
@@ -426,6 +749,14 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     // Add supertypes to classes
     defineEClass.getESuperTypes().add(this.getExpression());
+    lambdaEClass.getESuperTypes().add(this.getExpression());
+    ifEClass.getESuperTypes().add(this.getExpression());
+    equalEClass.getESuperTypes().add(this.getLogicOperator());
+    moreOrEqualEClass.getESuperTypes().add(this.getLogicOperator());
+    lessOrEqualEClass.getESuperTypes().add(this.getLogicOperator());
+    differentEClass.getESuperTypes().add(this.getLogicOperator());
+    moreEClass.getESuperTypes().add(this.getLogicOperator());
+    lessEClass.getESuperTypes().add(this.getLogicOperator());
     subtractEClass.getESuperTypes().add(this.getOperator());
     addEClass.getESuperTypes().add(this.getOperator());
     multiplyEClass.getESuperTypes().add(this.getOperator());
@@ -437,6 +768,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExpression_Value(), ecorePackage.getEInt(), "value", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Identifier(), ecorePackage.getEString(), "identifier", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Op(), this.getOperator(), null, "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -444,6 +776,36 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefine_Id(), ecorePackage.getEString(), "id", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDefine_Ex(), this.getExpression(), null, "ex", null, 0, -1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lambdaEClass, Lambda.class, "Lambda", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLambda_Ouput(), ecorePackage.getEString(), "ouput", null, 0, -1, Lambda.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLambda_Ex(), this.getExpression(), null, "ex", null, 0, 1, Lambda.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIf_LogicOperator(), this.getLogicOperator(), null, "logicOperator", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_LeftCondition(), this.getExpression(), null, "leftCondition", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_RightCondition(), this.getExpression(), null, "rightCondition", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Result(), this.getExpression(), null, "result", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(logicOperatorEClass, LogicOperator.class, "LogicOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(equalEClass, Equal.class, "Equal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEqual_Equal(), ecorePackage.getEString(), "equal", null, 0, 1, Equal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moreOrEqualEClass, MoreOrEqual.class, "MoreOrEqual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMoreOrEqual_MoreOrEqual(), ecorePackage.getEString(), "moreOrEqual", null, 0, 1, MoreOrEqual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lessOrEqualEClass, LessOrEqual.class, "LessOrEqual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLessOrEqual_LessOrEqual(), ecorePackage.getEString(), "lessOrEqual", null, 0, 1, LessOrEqual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(differentEClass, Different.class, "Different", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDifferent_Different(), ecorePackage.getEString(), "different", null, 0, 1, Different.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moreEClass, More.class, "More", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMore_More(), ecorePackage.getEString(), "more", null, 0, 1, More.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lessEClass, Less.class, "Less", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLess_Less(), ecorePackage.getEString(), "less", null, 0, 1, Less.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

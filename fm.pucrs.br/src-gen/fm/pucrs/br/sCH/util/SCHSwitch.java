@@ -95,6 +95,77 @@ public class SCHSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SCHPackage.LAMBDA:
+      {
+        Lambda lambda = (Lambda)theEObject;
+        T result = caseLambda(lambda);
+        if (result == null) result = caseExpression(lambda);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.IF:
+      {
+        If if_ = (If)theEObject;
+        T result = caseIf(if_);
+        if (result == null) result = caseExpression(if_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.LOGIC_OPERATOR:
+      {
+        LogicOperator logicOperator = (LogicOperator)theEObject;
+        T result = caseLogicOperator(logicOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.EQUAL:
+      {
+        Equal equal = (Equal)theEObject;
+        T result = caseEqual(equal);
+        if (result == null) result = caseLogicOperator(equal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.MORE_OR_EQUAL:
+      {
+        MoreOrEqual moreOrEqual = (MoreOrEqual)theEObject;
+        T result = caseMoreOrEqual(moreOrEqual);
+        if (result == null) result = caseLogicOperator(moreOrEqual);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.LESS_OR_EQUAL:
+      {
+        LessOrEqual lessOrEqual = (LessOrEqual)theEObject;
+        T result = caseLessOrEqual(lessOrEqual);
+        if (result == null) result = caseLogicOperator(lessOrEqual);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.DIFFERENT:
+      {
+        Different different = (Different)theEObject;
+        T result = caseDifferent(different);
+        if (result == null) result = caseLogicOperator(different);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.MORE:
+      {
+        More more = (More)theEObject;
+        T result = caseMore(more);
+        if (result == null) result = caseLogicOperator(more);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.LESS:
+      {
+        Less less = (Less)theEObject;
+        T result = caseLess(less);
+        if (result == null) result = caseLogicOperator(less);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SCHPackage.OPERATOR:
       {
         Operator operator = (Operator)theEObject;
@@ -182,6 +253,150 @@ public class SCHSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDefine(Define object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Lambda</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Lambda</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLambda(Lambda object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIf(If object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Logic Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Logic Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLogicOperator(LogicOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEqual(Equal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>More Or Equal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>More Or Equal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMoreOrEqual(MoreOrEqual object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less Or Equal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less Or Equal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLessOrEqual(LessOrEqual object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Different</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Different</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDifferent(Different object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>More</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>More</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMore(More object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLess(Less object)
   {
     return null;
   }

@@ -11,6 +11,7 @@
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Expression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/identifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/right"/>
@@ -18,6 +19,35 @@
     <genClasses ecoreClass="SCH.ecore#//Define">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Define/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Define/ex"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Lambda">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Lambda/ouput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Lambda/ex"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/logicOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/leftCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/rightCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/result"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//LogicOperator"/>
+    <genClasses ecoreClass="SCH.ecore#//Equal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Equal/equal"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//MoreOrEqual">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//MoreOrEqual/moreOrEqual"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//LessOrEqual">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//LessOrEqual/lessOrEqual"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Different">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Different/different"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//More">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//More/more"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//Less">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Less/less"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Operator"/>
     <genClasses ecoreClass="SCH.ecore#//Subtract">

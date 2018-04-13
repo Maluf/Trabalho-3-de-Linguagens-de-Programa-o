@@ -6,9 +6,17 @@ package fm.pucrs.br.serializer;
 import com.google.inject.Inject;
 import fm.pucrs.br.sCH.Add;
 import fm.pucrs.br.sCH.Define;
+import fm.pucrs.br.sCH.Different;
 import fm.pucrs.br.sCH.Divide;
+import fm.pucrs.br.sCH.Equal;
 import fm.pucrs.br.sCH.Expression;
+import fm.pucrs.br.sCH.If;
+import fm.pucrs.br.sCH.Lambda;
+import fm.pucrs.br.sCH.Less;
+import fm.pucrs.br.sCH.LessOrEqual;
 import fm.pucrs.br.sCH.Model;
+import fm.pucrs.br.sCH.More;
+import fm.pucrs.br.sCH.MoreOrEqual;
 import fm.pucrs.br.sCH.Multiply;
 import fm.pucrs.br.sCH.SCHPackage;
 import fm.pucrs.br.sCH.Subtract;
@@ -44,8 +52,14 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SCHPackage.DEFINE:
 				sequence_Define(context, (Define) semanticObject); 
 				return; 
+			case SCHPackage.DIFFERENT:
+				sequence_Different(context, (Different) semanticObject); 
+				return; 
 			case SCHPackage.DIVIDE:
 				sequence_Divide(context, (Divide) semanticObject); 
+				return; 
+			case SCHPackage.EQUAL:
+				sequence_Equal(context, (Equal) semanticObject); 
 				return; 
 			case SCHPackage.EXPRESSION:
 				if (rule == grammarAccess.getExpressionRule()) {
@@ -57,8 +71,26 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case SCHPackage.IF:
+				sequence_If(context, (If) semanticObject); 
+				return; 
+			case SCHPackage.LAMBDA:
+				sequence_Lambda(context, (Lambda) semanticObject); 
+				return; 
+			case SCHPackage.LESS:
+				sequence_Less(context, (Less) semanticObject); 
+				return; 
+			case SCHPackage.LESS_OR_EQUAL:
+				sequence_LessOrEqual(context, (LessOrEqual) semanticObject); 
+				return; 
 			case SCHPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case SCHPackage.MORE:
+				sequence_More(context, (More) semanticObject); 
+				return; 
+			case SCHPackage.MORE_OR_EQUAL:
+				sequence_MoreOrEqual(context, (MoreOrEqual) semanticObject); 
 				return; 
 			case SCHPackage.MULTIPLY:
 				sequence_Multiply(context, (Multiply) semanticObject); 
@@ -105,6 +137,25 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     LogicOperator returns Different
+	 *     Different returns Different
+	 *
+	 * Constraint:
+	 *     different='!='
+	 */
+	protected void sequence_Different(ISerializationContext context, Different semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.DIFFERENT__DIFFERENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.DIFFERENT__DIFFERENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0(), semanticObject.getDifferent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Operator returns Divide
 	 *     Divide returns Divide
 	 *
@@ -118,6 +169,25 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0(), semanticObject.getDiveded());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LogicOperator returns Equal
+	 *     Equal returns Equal
+	 *
+	 * Constraint:
+	 *     equal='='
+	 */
+	protected void sequence_Equal(ISerializationContext context, Equal semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.EQUAL__EQUAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.EQUAL__EQUAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0(), semanticObject.getEqual());
 		feeder.finish();
 	}
 	
@@ -139,10 +209,89 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TerminalExpression returns Expression
 	 *
 	 * Constraint:
-	 *     (value+=INT+ | (op=Operator left=TerminalExpression right+=TerminalExpression*))
+	 *     (value+=INT+ | identifier+=ID+ | (op=Operator left=TerminalExpression right+=TerminalExpression*))
 	 */
 	protected void sequence_Expression_TerminalExpression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminalExpression returns If
+	 *     If returns If
+	 *
+	 * Constraint:
+	 *     (logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression result=TerminalExpression)
+	 */
+	protected void sequence_If(ISerializationContext context, If semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__LOGIC_OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__LOGIC_OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__LEFT_CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__LEFT_CONDITION));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__RIGHT_CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__RIGHT_CONDITION));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__RESULT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__RESULT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIfAccess().getLogicOperatorLogicOperatorParserRuleCall_2_0(), semanticObject.getLogicOperator());
+		feeder.accept(grammarAccess.getIfAccess().getLeftConditionTerminalExpressionParserRuleCall_3_0(), semanticObject.getLeftCondition());
+		feeder.accept(grammarAccess.getIfAccess().getRightConditionTerminalExpressionParserRuleCall_4_0(), semanticObject.getRightCondition());
+		feeder.accept(grammarAccess.getIfAccess().getResultTerminalExpressionParserRuleCall_6_0(), semanticObject.getResult());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TerminalExpression returns Lambda
+	 *     Lambda returns Lambda
+	 *
+	 * Constraint:
+	 *     (ouput+=ID* ex=TerminalExpression)
+	 */
+	protected void sequence_Lambda(ISerializationContext context, Lambda semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LogicOperator returns LessOrEqual
+	 *     LessOrEqual returns LessOrEqual
+	 *
+	 * Constraint:
+	 *     lessOrEqual='<='
+	 */
+	protected void sequence_LessOrEqual(ISerializationContext context, LessOrEqual semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.LESS_OR_EQUAL__LESS_OR_EQUAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.LESS_OR_EQUAL__LESS_OR_EQUAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0(), semanticObject.getLessOrEqual());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LogicOperator returns Less
+	 *     Less returns Less
+	 *
+	 * Constraint:
+	 *     less='<'
+	 */
+	protected void sequence_Less(ISerializationContext context, Less semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.LESS__LESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.LESS__LESS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLessAccess().getLessLessThanSignKeyword_0(), semanticObject.getLess());
+		feeder.finish();
 	}
 	
 	
@@ -155,6 +304,44 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LogicOperator returns MoreOrEqual
+	 *     MoreOrEqual returns MoreOrEqual
+	 *
+	 * Constraint:
+	 *     moreOrEqual='>='
+	 */
+	protected void sequence_MoreOrEqual(ISerializationContext context, MoreOrEqual semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.MORE_OR_EQUAL__MORE_OR_EQUAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.MORE_OR_EQUAL__MORE_OR_EQUAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0(), semanticObject.getMoreOrEqual());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LogicOperator returns More
+	 *     More returns More
+	 *
+	 * Constraint:
+	 *     more='>'
+	 */
+	protected void sequence_More(ISerializationContext context, More semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.MORE__MORE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.MORE__MORE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0(), semanticObject.getMore());
+		feeder.finish();
 	}
 	
 	

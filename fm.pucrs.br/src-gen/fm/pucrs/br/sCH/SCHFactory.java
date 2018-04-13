@@ -51,6 +51,87 @@ public interface SCHFactory extends EFactory
   Define createDefine();
 
   /**
+   * Returns a new object of class '<em>Lambda</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Lambda</em>'.
+   * @generated
+   */
+  Lambda createLambda();
+
+  /**
+   * Returns a new object of class '<em>If</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If</em>'.
+   * @generated
+   */
+  If createIf();
+
+  /**
+   * Returns a new object of class '<em>Logic Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Logic Operator</em>'.
+   * @generated
+   */
+  LogicOperator createLogicOperator();
+
+  /**
+   * Returns a new object of class '<em>Equal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equal</em>'.
+   * @generated
+   */
+  Equal createEqual();
+
+  /**
+   * Returns a new object of class '<em>More Or Equal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>More Or Equal</em>'.
+   * @generated
+   */
+  MoreOrEqual createMoreOrEqual();
+
+  /**
+   * Returns a new object of class '<em>Less Or Equal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less Or Equal</em>'.
+   * @generated
+   */
+  LessOrEqual createLessOrEqual();
+
+  /**
+   * Returns a new object of class '<em>Different</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Different</em>'.
+   * @generated
+   */
+  Different createDifferent();
+
+  /**
+   * Returns a new object of class '<em>More</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>More</em>'.
+   * @generated
+   */
+  More createMore();
+
+  /**
+   * Returns a new object of class '<em>Less</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less</em>'.
+   * @generated
+   */
+  Less createLess();
+
+  /**
    * Returns a new object of class '<em>Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

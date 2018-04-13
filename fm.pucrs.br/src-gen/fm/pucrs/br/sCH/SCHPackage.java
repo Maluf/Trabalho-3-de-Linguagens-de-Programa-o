@@ -105,13 +105,22 @@ public interface SCHPackage extends EPackage
   int EXPRESSION__VALUE = 0;
 
   /**
+   * The feature id for the '<em><b>Identifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__IDENTIFIER = 1;
+
+  /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__OP = 1;
+  int EXPRESSION__OP = 2;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -120,7 +129,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__LEFT = 2;
+  int EXPRESSION__LEFT = 3;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference list.
@@ -129,7 +138,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__RIGHT = 3;
+  int EXPRESSION__RIGHT = 4;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -138,7 +147,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 4;
+  int EXPRESSION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DefineImpl <em>Define</em>}' class.
@@ -158,6 +167,15 @@ public interface SCHPackage extends EPackage
    * @ordered
    */
   int DEFINE__VALUE = EXPRESSION__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Identifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__IDENTIFIER = EXPRESSION__IDENTIFIER;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
@@ -214,6 +232,375 @@ public interface SCHPackage extends EPackage
   int DEFINE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.LambdaImpl <em>Lambda</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.LambdaImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLambda()
+   * @generated
+   */
+  int LAMBDA = 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__VALUE = EXPRESSION__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Identifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__IDENTIFIER = EXPRESSION__IDENTIFIER;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__OP = EXPRESSION__OP;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__LEFT = EXPRESSION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__RIGHT = EXPRESSION__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Ouput</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__OUPUT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Ex</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__EX = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Lambda</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.IfImpl <em>If</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.IfImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getIf()
+   * @generated
+   */
+  int IF = 4;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__VALUE = EXPRESSION__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Identifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__IDENTIFIER = EXPRESSION__IDENTIFIER;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__OP = EXPRESSION__OP;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__LEFT = EXPRESSION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__RIGHT = EXPRESSION__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Logic Operator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__LOGIC_OPERATOR = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Left Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__LEFT_CONDITION = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__RIGHT_CONDITION = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Result</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__RESULT = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>If</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.LogicOperatorImpl <em>Logic Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.LogicOperatorImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLogicOperator()
+   * @generated
+   */
+  int LOGIC_OPERATOR = 5;
+
+  /**
+   * The number of structural features of the '<em>Logic Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOGIC_OPERATOR_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.EqualImpl <em>Equal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.EqualImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getEqual()
+   * @generated
+   */
+  int EQUAL = 6;
+
+  /**
+   * The feature id for the '<em><b>Equal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUAL__EQUAL = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Equal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUAL_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.MoreOrEqualImpl <em>More Or Equal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.MoreOrEqualImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMoreOrEqual()
+   * @generated
+   */
+  int MORE_OR_EQUAL = 7;
+
+  /**
+   * The feature id for the '<em><b>More Or Equal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MORE_OR_EQUAL__MORE_OR_EQUAL = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>More Or Equal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MORE_OR_EQUAL_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.LessOrEqualImpl <em>Less Or Equal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.LessOrEqualImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLessOrEqual()
+   * @generated
+   */
+  int LESS_OR_EQUAL = 8;
+
+  /**
+   * The feature id for the '<em><b>Less Or Equal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_OR_EQUAL__LESS_OR_EQUAL = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Less Or Equal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_OR_EQUAL_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DifferentImpl <em>Different</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.DifferentImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDifferent()
+   * @generated
+   */
+  int DIFFERENT = 9;
+
+  /**
+   * The feature id for the '<em><b>Different</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFERENT__DIFFERENT = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Different</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFERENT_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.MoreImpl <em>More</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.MoreImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMore()
+   * @generated
+   */
+  int MORE = 10;
+
+  /**
+   * The feature id for the '<em><b>More</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MORE__MORE = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>More</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MORE_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.LessImpl <em>Less</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.LessImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLess()
+   * @generated
+   */
+  int LESS = 11;
+
+  /**
+   * The feature id for the '<em><b>Less</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS__LESS = LOGIC_OPERATOR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Less</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_FEATURE_COUNT = LOGIC_OPERATOR_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -221,7 +608,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getOperator()
    * @generated
    */
-  int OPERATOR = 3;
+  int OPERATOR = 12;
 
   /**
    * The number of structural features of the '<em>Operator</em>' class.
@@ -240,7 +627,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSubtract()
    * @generated
    */
-  int SUBTRACT = 4;
+  int SUBTRACT = 13;
 
   /**
    * The feature id for the '<em><b>Minus</b></em>' attribute.
@@ -268,7 +655,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getAdd()
    * @generated
    */
-  int ADD = 5;
+  int ADD = 14;
 
   /**
    * The feature id for the '<em><b>Plus</b></em>' attribute.
@@ -296,7 +683,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 6;
+  int MULTIPLY = 15;
 
   /**
    * The feature id for the '<em><b>Times</b></em>' attribute.
@@ -324,7 +711,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDivide()
    * @generated
    */
-  int DIVIDE = 7;
+  int DIVIDE = 16;
 
   /**
    * The feature id for the '<em><b>Diveded</b></em>' attribute.
@@ -386,6 +773,17 @@ public interface SCHPackage extends EPackage
    * @generated
    */
   EAttribute getExpression_Value();
+
+  /**
+   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getIdentifier <em>Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Identifier</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getIdentifier()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Identifier();
 
   /**
    * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}'.
@@ -451,6 +849,228 @@ public interface SCHPackage extends EPackage
    * @generated
    */
   EReference getDefine_Ex();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Lambda <em>Lambda</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Lambda</em>'.
+   * @see fm.pucrs.br.sCH.Lambda
+   * @generated
+   */
+  EClass getLambda();
+
+  /**
+   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Lambda#getOuput <em>Ouput</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Ouput</em>'.
+   * @see fm.pucrs.br.sCH.Lambda#getOuput()
+   * @see #getLambda()
+   * @generated
+   */
+  EAttribute getLambda_Ouput();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Lambda#getEx <em>Ex</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ex</em>'.
+   * @see fm.pucrs.br.sCH.Lambda#getEx()
+   * @see #getLambda()
+   * @generated
+   */
+  EReference getLambda_Ex();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.If <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If</em>'.
+   * @see fm.pucrs.br.sCH.If
+   * @generated
+   */
+  EClass getIf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getLogicOperator <em>Logic Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Logic Operator</em>'.
+   * @see fm.pucrs.br.sCH.If#getLogicOperator()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_LogicOperator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getLeftCondition <em>Left Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left Condition</em>'.
+   * @see fm.pucrs.br.sCH.If#getLeftCondition()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_LeftCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getRightCondition <em>Right Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right Condition</em>'.
+   * @see fm.pucrs.br.sCH.If#getRightCondition()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_RightCondition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getResult <em>Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Result</em>'.
+   * @see fm.pucrs.br.sCH.If#getResult()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Result();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.LogicOperator <em>Logic Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Logic Operator</em>'.
+   * @see fm.pucrs.br.sCH.LogicOperator
+   * @generated
+   */
+  EClass getLogicOperator();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Equal <em>Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equal</em>'.
+   * @see fm.pucrs.br.sCH.Equal
+   * @generated
+   */
+  EClass getEqual();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Equal#getEqual <em>Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Equal</em>'.
+   * @see fm.pucrs.br.sCH.Equal#getEqual()
+   * @see #getEqual()
+   * @generated
+   */
+  EAttribute getEqual_Equal();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.MoreOrEqual <em>More Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>More Or Equal</em>'.
+   * @see fm.pucrs.br.sCH.MoreOrEqual
+   * @generated
+   */
+  EClass getMoreOrEqual();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.MoreOrEqual#getMoreOrEqual <em>More Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>More Or Equal</em>'.
+   * @see fm.pucrs.br.sCH.MoreOrEqual#getMoreOrEqual()
+   * @see #getMoreOrEqual()
+   * @generated
+   */
+  EAttribute getMoreOrEqual_MoreOrEqual();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.LessOrEqual <em>Less Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Less Or Equal</em>'.
+   * @see fm.pucrs.br.sCH.LessOrEqual
+   * @generated
+   */
+  EClass getLessOrEqual();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.LessOrEqual#getLessOrEqual <em>Less Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Less Or Equal</em>'.
+   * @see fm.pucrs.br.sCH.LessOrEqual#getLessOrEqual()
+   * @see #getLessOrEqual()
+   * @generated
+   */
+  EAttribute getLessOrEqual_LessOrEqual();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Different <em>Different</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Different</em>'.
+   * @see fm.pucrs.br.sCH.Different
+   * @generated
+   */
+  EClass getDifferent();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Different#getDifferent <em>Different</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Different</em>'.
+   * @see fm.pucrs.br.sCH.Different#getDifferent()
+   * @see #getDifferent()
+   * @generated
+   */
+  EAttribute getDifferent_Different();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.More <em>More</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>More</em>'.
+   * @see fm.pucrs.br.sCH.More
+   * @generated
+   */
+  EClass getMore();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.More#getMore <em>More</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>More</em>'.
+   * @see fm.pucrs.br.sCH.More#getMore()
+   * @see #getMore()
+   * @generated
+   */
+  EAttribute getMore_More();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.Less <em>Less</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Less</em>'.
+   * @see fm.pucrs.br.sCH.Less
+   * @generated
+   */
+  EClass getLess();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Less#getLess <em>Less</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Less</em>'.
+   * @see fm.pucrs.br.sCH.Less#getLess()
+   * @see #getLess()
+   * @generated
+   */
+  EAttribute getLess_Less();
 
   /**
    * Returns the meta object for class '{@link fm.pucrs.br.sCH.Operator <em>Operator</em>}'.
@@ -606,6 +1226,14 @@ public interface SCHPackage extends EPackage
     EAttribute EXPRESSION__VALUE = eINSTANCE.getExpression_Value();
 
     /**
+     * The meta object literal for the '<em><b>Identifier</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__IDENTIFIER = eINSTANCE.getExpression_Identifier();
+
+    /**
      * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -654,6 +1282,192 @@ public interface SCHPackage extends EPackage
      * @generated
      */
     EReference DEFINE__EX = eINSTANCE.getDefine_Ex();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.LambdaImpl <em>Lambda</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.LambdaImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLambda()
+     * @generated
+     */
+    EClass LAMBDA = eINSTANCE.getLambda();
+
+    /**
+     * The meta object literal for the '<em><b>Ouput</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAMBDA__OUPUT = eINSTANCE.getLambda_Ouput();
+
+    /**
+     * The meta object literal for the '<em><b>Ex</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAMBDA__EX = eINSTANCE.getLambda_Ex();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.IfImpl <em>If</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.IfImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getIf()
+     * @generated
+     */
+    EClass IF = eINSTANCE.getIf();
+
+    /**
+     * The meta object literal for the '<em><b>Logic Operator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__LOGIC_OPERATOR = eINSTANCE.getIf_LogicOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Left Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__LEFT_CONDITION = eINSTANCE.getIf_LeftCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Right Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__RIGHT_CONDITION = eINSTANCE.getIf_RightCondition();
+
+    /**
+     * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__RESULT = eINSTANCE.getIf_Result();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.LogicOperatorImpl <em>Logic Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.LogicOperatorImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLogicOperator()
+     * @generated
+     */
+    EClass LOGIC_OPERATOR = eINSTANCE.getLogicOperator();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.EqualImpl <em>Equal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.EqualImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getEqual()
+     * @generated
+     */
+    EClass EQUAL = eINSTANCE.getEqual();
+
+    /**
+     * The meta object literal for the '<em><b>Equal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EQUAL__EQUAL = eINSTANCE.getEqual_Equal();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.MoreOrEqualImpl <em>More Or Equal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.MoreOrEqualImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMoreOrEqual()
+     * @generated
+     */
+    EClass MORE_OR_EQUAL = eINSTANCE.getMoreOrEqual();
+
+    /**
+     * The meta object literal for the '<em><b>More Or Equal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MORE_OR_EQUAL__MORE_OR_EQUAL = eINSTANCE.getMoreOrEqual_MoreOrEqual();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.LessOrEqualImpl <em>Less Or Equal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.LessOrEqualImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLessOrEqual()
+     * @generated
+     */
+    EClass LESS_OR_EQUAL = eINSTANCE.getLessOrEqual();
+
+    /**
+     * The meta object literal for the '<em><b>Less Or Equal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LESS_OR_EQUAL__LESS_OR_EQUAL = eINSTANCE.getLessOrEqual_LessOrEqual();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.DifferentImpl <em>Different</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.DifferentImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDifferent()
+     * @generated
+     */
+    EClass DIFFERENT = eINSTANCE.getDifferent();
+
+    /**
+     * The meta object literal for the '<em><b>Different</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIFFERENT__DIFFERENT = eINSTANCE.getDifferent_Different();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.MoreImpl <em>More</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.MoreImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getMore()
+     * @generated
+     */
+    EClass MORE = eINSTANCE.getMore();
+
+    /**
+     * The meta object literal for the '<em><b>More</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MORE__MORE = eINSTANCE.getMore_More();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.LessImpl <em>Less</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.LessImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getLess()
+     * @generated
+     */
+    EClass LESS = eINSTANCE.getLess();
+
+    /**
+     * The meta object literal for the '<em><b>Less</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LESS__LESS = eINSTANCE.getLess_Less();
 
     /**
      * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.OperatorImpl <em>Operator</em>}' class.

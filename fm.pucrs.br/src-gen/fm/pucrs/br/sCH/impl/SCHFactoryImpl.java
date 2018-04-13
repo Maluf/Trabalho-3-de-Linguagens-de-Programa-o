@@ -68,6 +68,15 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
       case SCHPackage.MODEL: return createModel();
       case SCHPackage.EXPRESSION: return createExpression();
       case SCHPackage.DEFINE: return createDefine();
+      case SCHPackage.LAMBDA: return createLambda();
+      case SCHPackage.IF: return createIf();
+      case SCHPackage.LOGIC_OPERATOR: return createLogicOperator();
+      case SCHPackage.EQUAL: return createEqual();
+      case SCHPackage.MORE_OR_EQUAL: return createMoreOrEqual();
+      case SCHPackage.LESS_OR_EQUAL: return createLessOrEqual();
+      case SCHPackage.DIFFERENT: return createDifferent();
+      case SCHPackage.MORE: return createMore();
+      case SCHPackage.LESS: return createLess();
       case SCHPackage.OPERATOR: return createOperator();
       case SCHPackage.SUBTRACT: return createSubtract();
       case SCHPackage.ADD: return createAdd();
@@ -109,6 +118,105 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
   {
     DefineImpl define = new DefineImpl();
     return define;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Lambda createLambda()
+  {
+    LambdaImpl lambda = new LambdaImpl();
+    return lambda;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public If createIf()
+  {
+    IfImpl if_ = new IfImpl();
+    return if_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LogicOperator createLogicOperator()
+  {
+    LogicOperatorImpl logicOperator = new LogicOperatorImpl();
+    return logicOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Equal createEqual()
+  {
+    EqualImpl equal = new EqualImpl();
+    return equal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MoreOrEqual createMoreOrEqual()
+  {
+    MoreOrEqualImpl moreOrEqual = new MoreOrEqualImpl();
+    return moreOrEqual;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LessOrEqual createLessOrEqual()
+  {
+    LessOrEqualImpl lessOrEqual = new LessOrEqualImpl();
+    return lessOrEqual;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Different createDifferent()
+  {
+    DifferentImpl different = new DifferentImpl();
+    return different;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public More createMore()
+  {
+    MoreImpl more = new MoreImpl();
+    return more;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Less createLess()
+  {
+    LessImpl less = new LessImpl();
+    return less;
   }
 
   /**

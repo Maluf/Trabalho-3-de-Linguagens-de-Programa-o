@@ -91,6 +91,51 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
         return createDefineAdapter();
       }
       @Override
+      public Adapter caseLambda(Lambda object)
+      {
+        return createLambdaAdapter();
+      }
+      @Override
+      public Adapter caseIf(If object)
+      {
+        return createIfAdapter();
+      }
+      @Override
+      public Adapter caseLogicOperator(LogicOperator object)
+      {
+        return createLogicOperatorAdapter();
+      }
+      @Override
+      public Adapter caseEqual(Equal object)
+      {
+        return createEqualAdapter();
+      }
+      @Override
+      public Adapter caseMoreOrEqual(MoreOrEqual object)
+      {
+        return createMoreOrEqualAdapter();
+      }
+      @Override
+      public Adapter caseLessOrEqual(LessOrEqual object)
+      {
+        return createLessOrEqualAdapter();
+      }
+      @Override
+      public Adapter caseDifferent(Different object)
+      {
+        return createDifferentAdapter();
+      }
+      @Override
+      public Adapter caseMore(More object)
+      {
+        return createMoreAdapter();
+      }
+      @Override
+      public Adapter caseLess(Less object)
+      {
+        return createLessAdapter();
+      }
+      @Override
       public Adapter caseOperator(Operator object)
       {
         return createOperatorAdapter();
@@ -178,6 +223,141 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.Lambda <em>Lambda</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.Lambda
+   * @generated
+   */
+  public Adapter createLambdaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.If <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.If
+   * @generated
+   */
+  public Adapter createIfAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.LogicOperator <em>Logic Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.LogicOperator
+   * @generated
+   */
+  public Adapter createLogicOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.Equal <em>Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.Equal
+   * @generated
+   */
+  public Adapter createEqualAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.MoreOrEqual <em>More Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.MoreOrEqual
+   * @generated
+   */
+  public Adapter createMoreOrEqualAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.LessOrEqual <em>Less Or Equal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.LessOrEqual
+   * @generated
+   */
+  public Adapter createLessOrEqualAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.Different <em>Different</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.Different
+   * @generated
+   */
+  public Adapter createDifferentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.More <em>More</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.More
+   * @generated
+   */
+  public Adapter createMoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.Less <em>Less</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.Less
+   * @generated
+   */
+  public Adapter createLessAdapter()
   {
     return null;
   }
