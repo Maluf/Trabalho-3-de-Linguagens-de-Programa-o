@@ -20,7 +20,7 @@ package fm.pucrs.br.sCH;
  * @model
  * @generated
  */
-public interface LessOrEqual extends LogicOperator
+public interface LessOrEqual extends LogicOperator, Operator
 {
   /**
    * Returns the value of the '<em><b>Less Or Equal</b></em>' attribute.

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getValue <em>Value</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getBool <em>Bool</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.Expression#getStr <em>Str</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.Expression#getRight <em>Right</em>}</li>
@@ -60,6 +62,48 @@ public interface Expression extends EObject
    * @generated
    */
   EList<String> getIdentifier();
+
+  /**
+   * Returns the value of the '<em><b>Bool</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bool</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bool</em>' attribute list.
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Bool()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getBool();
+
+  /**
+   * Returns the value of the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Str</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Str</em>' attribute.
+   * @see #setStr(String)
+   * @see fm.pucrs.br.sCH.SCHPackage#getExpression_Str()
+   * @model
+   * @generated
+   */
+  String getStr();
+
+  /**
+   * Sets the value of the '{@link fm.pucrs.br.sCH.Expression#getStr <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Str</em>' attribute.
+   * @see #getStr()
+   * @generated
+   */
+  void setStr(String value);
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' containment reference.

@@ -114,13 +114,31 @@ public interface SCHPackage extends EPackage
   int EXPRESSION__IDENTIFIER = 1;
 
   /**
+   * The feature id for the '<em><b>Bool</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__BOOL = 2;
+
+  /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__STR = 3;
+
+  /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__OP = 2;
+  int EXPRESSION__OP = 4;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -129,7 +147,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__LEFT = 3;
+  int EXPRESSION__LEFT = 5;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference list.
@@ -138,7 +156,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION__RIGHT = 4;
+  int EXPRESSION__RIGHT = 6;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -147,7 +165,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 5;
+  int EXPRESSION_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DefineImpl <em>Define</em>}' class.
@@ -176,6 +194,24 @@ public interface SCHPackage extends EPackage
    * @ordered
    */
   int DEFINE__IDENTIFIER = EXPRESSION__IDENTIFIER;
+
+  /**
+   * The feature id for the '<em><b>Bool</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__BOOL = EXPRESSION__BOOL;
+
+  /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__STR = EXPRESSION__STR;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
@@ -260,6 +296,24 @@ public interface SCHPackage extends EPackage
   int LAMBDA__IDENTIFIER = EXPRESSION__IDENTIFIER;
 
   /**
+   * The feature id for the '<em><b>Bool</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__BOOL = EXPRESSION__BOOL;
+
+  /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAMBDA__STR = EXPRESSION__STR;
+
+  /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -342,6 +396,24 @@ public interface SCHPackage extends EPackage
   int IF__IDENTIFIER = EXPRESSION__IDENTIFIER;
 
   /**
+   * The feature id for the '<em><b>Bool</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__BOOL = EXPRESSION__BOOL;
+
+  /**
+   * The feature id for the '<em><b>Str</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__STR = EXPRESSION__STR;
+
+  /**
    * The feature id for the '<em><b>Op</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,40 +441,31 @@ public interface SCHPackage extends EPackage
   int IF__RIGHT = EXPRESSION__RIGHT;
 
   /**
-   * The feature id for the '<em><b>Logic Operator</b></em>' containment reference.
+   * The feature id for the '<em><b>Logic Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__LOGIC_OPERATOR = EXPRESSION_FEATURE_COUNT + 0;
+  int IF__LOGIC_EX = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Left Condition</b></em>' containment reference.
+   * The feature id for the '<em><b>True Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__LEFT_CONDITION = EXPRESSION_FEATURE_COUNT + 1;
+  int IF__TRUE_EX = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right Condition</b></em>' containment reference.
+   * The feature id for the '<em><b>False Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF__RIGHT_CONDITION = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Result</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF__RESULT = EXPRESSION_FEATURE_COUNT + 3;
+  int IF__FALSE_EX = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>If</em>' class.
@@ -411,7 +474,7 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
+  int IF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.LogicOperatorImpl <em>Logic Operator</em>}' class.
@@ -786,6 +849,28 @@ public interface SCHPackage extends EPackage
   EAttribute getExpression_Identifier();
 
   /**
+   * Returns the meta object for the attribute list '{@link fm.pucrs.br.sCH.Expression#getBool <em>Bool</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Bool</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getBool()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Bool();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Expression#getStr <em>Str</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Str</em>'.
+   * @see fm.pucrs.br.sCH.Expression#getStr()
+   * @see #getExpression()
+   * @generated
+   */
+  EAttribute getExpression_Str();
+
+  /**
    * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.Expression#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -893,48 +978,37 @@ public interface SCHPackage extends EPackage
   EClass getIf();
 
   /**
-   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getLogicOperator <em>Logic Operator</em>}'.
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getLogicEx <em>Logic Ex</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Logic Operator</em>'.
-   * @see fm.pucrs.br.sCH.If#getLogicOperator()
+   * @return the meta object for the containment reference '<em>Logic Ex</em>'.
+   * @see fm.pucrs.br.sCH.If#getLogicEx()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_LogicOperator();
+  EReference getIf_LogicEx();
 
   /**
-   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getLeftCondition <em>Left Condition</em>}'.
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getTrueEx <em>True Ex</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left Condition</em>'.
-   * @see fm.pucrs.br.sCH.If#getLeftCondition()
+   * @return the meta object for the containment reference '<em>True Ex</em>'.
+   * @see fm.pucrs.br.sCH.If#getTrueEx()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_LeftCondition();
+  EReference getIf_TrueEx();
 
   /**
-   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getRightCondition <em>Right Condition</em>}'.
+   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getFalseEx <em>False Ex</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Condition</em>'.
-   * @see fm.pucrs.br.sCH.If#getRightCondition()
+   * @return the meta object for the containment reference '<em>False Ex</em>'.
+   * @see fm.pucrs.br.sCH.If#getFalseEx()
    * @see #getIf()
    * @generated
    */
-  EReference getIf_RightCondition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link fm.pucrs.br.sCH.If#getResult <em>Result</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Result</em>'.
-   * @see fm.pucrs.br.sCH.If#getResult()
-   * @see #getIf()
-   * @generated
-   */
-  EReference getIf_Result();
+  EReference getIf_FalseEx();
 
   /**
    * Returns the meta object for class '{@link fm.pucrs.br.sCH.LogicOperator <em>Logic Operator</em>}'.
@@ -1234,6 +1308,22 @@ public interface SCHPackage extends EPackage
     EAttribute EXPRESSION__IDENTIFIER = eINSTANCE.getExpression_Identifier();
 
     /**
+     * The meta object literal for the '<em><b>Bool</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__BOOL = eINSTANCE.getExpression_Bool();
+
+    /**
+     * The meta object literal for the '<em><b>Str</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION__STR = eINSTANCE.getExpression_Str();
+
+    /**
      * The meta object literal for the '<em><b>Op</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1320,36 +1410,28 @@ public interface SCHPackage extends EPackage
     EClass IF = eINSTANCE.getIf();
 
     /**
-     * The meta object literal for the '<em><b>Logic Operator</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Logic Ex</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__LOGIC_OPERATOR = eINSTANCE.getIf_LogicOperator();
+    EReference IF__LOGIC_EX = eINSTANCE.getIf_LogicEx();
 
     /**
-     * The meta object literal for the '<em><b>Left Condition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>True Ex</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__LEFT_CONDITION = eINSTANCE.getIf_LeftCondition();
+    EReference IF__TRUE_EX = eINSTANCE.getIf_TrueEx();
 
     /**
-     * The meta object literal for the '<em><b>Right Condition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>False Ex</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IF__RIGHT_CONDITION = eINSTANCE.getIf_RightCondition();
-
-    /**
-     * The meta object literal for the '<em><b>Result</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF__RESULT = eINSTANCE.getIf_Result();
+    EReference IF__FALSE_EX = eINSTANCE.getIf_FalseEx();
 
     /**
      * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.LogicOperatorImpl <em>Logic Operator</em>}' class.

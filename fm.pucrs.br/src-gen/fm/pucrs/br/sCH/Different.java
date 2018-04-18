@@ -20,7 +20,7 @@ package fm.pucrs.br.sCH;
  * @model
  * @generated
  */
-public interface Different extends LogicOperator
+public interface Different extends LogicOperator, Operator
 {
   /**
    * Returns the value of the '<em><b>Different</b></em>' attribute.

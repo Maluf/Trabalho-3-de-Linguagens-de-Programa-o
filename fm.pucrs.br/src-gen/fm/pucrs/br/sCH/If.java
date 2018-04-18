@@ -13,10 +13,9 @@ package fm.pucrs.br.sCH;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fm.pucrs.br.sCH.If#getLogicOperator <em>Logic Operator</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.If#getLeftCondition <em>Left Condition</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.If#getRightCondition <em>Right Condition</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.If#getResult <em>Result</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.If#getLogicEx <em>Logic Ex</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.If#getTrueEx <em>True Ex</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.If#getFalseEx <em>False Ex</em>}</li>
  * </ul>
  *
  * @see fm.pucrs.br.sCH.SCHPackage#getIf()
@@ -26,107 +25,81 @@ package fm.pucrs.br.sCH;
 public interface If extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Logic Operator</b></em>' containment reference.
+   * Returns the value of the '<em><b>Logic Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Logic Operator</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Logic Ex</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Logic Operator</em>' containment reference.
-   * @see #setLogicOperator(LogicOperator)
-   * @see fm.pucrs.br.sCH.SCHPackage#getIf_LogicOperator()
+   * @return the value of the '<em>Logic Ex</em>' containment reference.
+   * @see #setLogicEx(Expression)
+   * @see fm.pucrs.br.sCH.SCHPackage#getIf_LogicEx()
    * @model containment="true"
    * @generated
    */
-  LogicOperator getLogicOperator();
+  Expression getLogicEx();
 
   /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getLogicOperator <em>Logic Operator</em>}' containment reference.
+   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getLogicEx <em>Logic Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Logic Operator</em>' containment reference.
-   * @see #getLogicOperator()
+   * @param value the new value of the '<em>Logic Ex</em>' containment reference.
+   * @see #getLogicEx()
    * @generated
    */
-  void setLogicOperator(LogicOperator value);
+  void setLogicEx(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Left Condition</b></em>' containment reference.
+   * Returns the value of the '<em><b>True Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Left Condition</em>' containment reference isn't clear,
+   * If the meaning of the '<em>True Ex</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left Condition</em>' containment reference.
-   * @see #setLeftCondition(Expression)
-   * @see fm.pucrs.br.sCH.SCHPackage#getIf_LeftCondition()
+   * @return the value of the '<em>True Ex</em>' containment reference.
+   * @see #setTrueEx(Expression)
+   * @see fm.pucrs.br.sCH.SCHPackage#getIf_TrueEx()
    * @model containment="true"
    * @generated
    */
-  Expression getLeftCondition();
+  Expression getTrueEx();
 
   /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getLeftCondition <em>Left Condition</em>}' containment reference.
+   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getTrueEx <em>True Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left Condition</em>' containment reference.
-   * @see #getLeftCondition()
+   * @param value the new value of the '<em>True Ex</em>' containment reference.
+   * @see #getTrueEx()
    * @generated
    */
-  void setLeftCondition(Expression value);
+  void setTrueEx(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Right Condition</b></em>' containment reference.
+   * Returns the value of the '<em><b>False Ex</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Right Condition</em>' containment reference isn't clear,
+   * If the meaning of the '<em>False Ex</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right Condition</em>' containment reference.
-   * @see #setRightCondition(Expression)
-   * @see fm.pucrs.br.sCH.SCHPackage#getIf_RightCondition()
+   * @return the value of the '<em>False Ex</em>' containment reference.
+   * @see #setFalseEx(Expression)
+   * @see fm.pucrs.br.sCH.SCHPackage#getIf_FalseEx()
    * @model containment="true"
    * @generated
    */
-  Expression getRightCondition();
+  Expression getFalseEx();
 
   /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getRightCondition <em>Right Condition</em>}' containment reference.
+   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getFalseEx <em>False Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right Condition</em>' containment reference.
-   * @see #getRightCondition()
+   * @param value the new value of the '<em>False Ex</em>' containment reference.
+   * @see #getFalseEx()
    * @generated
    */
-  void setRightCondition(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Result</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Result</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Result</em>' containment reference.
-   * @see #setResult(Expression)
-   * @see fm.pucrs.br.sCH.SCHPackage#getIf_Result()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getResult();
-
-  /**
-   * Sets the value of the '{@link fm.pucrs.br.sCH.If#getResult <em>Result</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result</em>' containment reference.
-   * @see #getResult()
-   * @generated
-   */
-  void setResult(Expression value);
+  void setFalseEx(Expression value);
 
 } // If

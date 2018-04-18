@@ -20,7 +20,7 @@ package fm.pucrs.br.sCH;
  * @model
  * @generated
  */
-public interface Less extends LogicOperator
+public interface Less extends LogicOperator, Operator
 {
   /**
    * Returns the value of the '<em><b>Less</b></em>' attribute.

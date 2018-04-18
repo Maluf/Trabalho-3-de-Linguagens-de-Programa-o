@@ -34,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getBool <em>Bool</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getStr <em>Str</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link fm.pucrs.br.sCH.impl.ExpressionImpl#getRight <em>Right</em>}</li>
@@ -62,6 +64,36 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * @ordered
    */
   protected EList<String> identifier;
+
+  /**
+   * The cached value of the '{@link #getBool() <em>Bool</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBool()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> bool;
+
+  /**
+   * The default value of the '{@link #getStr() <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStr()
+   * @generated
+   * @ordered
+   */
+  protected static final String STR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getStr() <em>Str</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStr()
+   * @generated
+   * @ordered
+   */
+  protected String str = STR_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
@@ -140,6 +172,43 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       identifier = new EDataTypeEList<String>(String.class, this, SCHPackage.EXPRESSION__IDENTIFIER);
     }
     return identifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getBool()
+  {
+    if (bool == null)
+    {
+      bool = new EDataTypeEList<String>(String.class, this, SCHPackage.EXPRESSION__BOOL);
+    }
+    return bool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getStr()
+  {
+    return str;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStr(String newStr)
+  {
+    String oldStr = str;
+    str = newStr;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.EXPRESSION__STR, oldStr, str));
   }
 
   /**
@@ -286,6 +355,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return getValue();
       case SCHPackage.EXPRESSION__IDENTIFIER:
         return getIdentifier();
+      case SCHPackage.EXPRESSION__BOOL:
+        return getBool();
+      case SCHPackage.EXPRESSION__STR:
+        return getStr();
       case SCHPackage.EXPRESSION__OP:
         return getOp();
       case SCHPackage.EXPRESSION__LEFT:
@@ -314,6 +387,13 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__IDENTIFIER:
         getIdentifier().clear();
         getIdentifier().addAll((Collection<? extends String>)newValue);
+        return;
+      case SCHPackage.EXPRESSION__BOOL:
+        getBool().clear();
+        getBool().addAll((Collection<? extends String>)newValue);
+        return;
+      case SCHPackage.EXPRESSION__STR:
+        setStr((String)newValue);
         return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)newValue);
@@ -345,6 +425,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
       case SCHPackage.EXPRESSION__IDENTIFIER:
         getIdentifier().clear();
         return;
+      case SCHPackage.EXPRESSION__BOOL:
+        getBool().clear();
+        return;
+      case SCHPackage.EXPRESSION__STR:
+        setStr(STR_EDEFAULT);
+        return;
       case SCHPackage.EXPRESSION__OP:
         setOp((Operator)null);
         return;
@@ -372,6 +458,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
         return value != null && !value.isEmpty();
       case SCHPackage.EXPRESSION__IDENTIFIER:
         return identifier != null && !identifier.isEmpty();
+      case SCHPackage.EXPRESSION__BOOL:
+        return bool != null && !bool.isEmpty();
+      case SCHPackage.EXPRESSION__STR:
+        return STR_EDEFAULT == null ? str != null : !STR_EDEFAULT.equals(str);
       case SCHPackage.EXPRESSION__OP:
         return op != null;
       case SCHPackage.EXPRESSION__LEFT:
@@ -397,6 +487,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
     result.append(value);
     result.append(", identifier: ");
     result.append(identifier);
+    result.append(", bool: ");
+    result.append(bool);
+    result.append(", str: ");
+    result.append(str);
     result.append(')');
     return result.toString();
   }

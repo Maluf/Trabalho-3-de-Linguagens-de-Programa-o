@@ -20,7 +20,7 @@ package fm.pucrs.br.sCH;
  * @model
  * @generated
  */
-public interface Equal extends LogicOperator
+public interface Equal extends LogicOperator, Operator
 {
   /**
    * Returns the value of the '<em><b>Equal</b></em>' attribute.

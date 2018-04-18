@@ -5,7 +5,6 @@ package fm.pucrs.br.sCH.impl;
 
 import fm.pucrs.br.sCH.Expression;
 import fm.pucrs.br.sCH.If;
-import fm.pucrs.br.sCH.LogicOperator;
 import fm.pucrs.br.sCH.SCHPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,10 +23,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getLogicOperator <em>Logic Operator</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getLeftCondition <em>Left Condition</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getRightCondition <em>Right Condition</em>}</li>
- *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getResult <em>Result</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getLogicEx <em>Logic Ex</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getTrueEx <em>True Ex</em>}</li>
+ *   <li>{@link fm.pucrs.br.sCH.impl.IfImpl#getFalseEx <em>False Ex</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,44 +33,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class IfImpl extends ExpressionImpl implements If
 {
   /**
-   * The cached value of the '{@link #getLogicOperator() <em>Logic Operator</em>}' containment reference.
+   * The cached value of the '{@link #getLogicEx() <em>Logic Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLogicOperator()
+   * @see #getLogicEx()
    * @generated
    * @ordered
    */
-  protected LogicOperator logicOperator;
+  protected Expression logicEx;
 
   /**
-   * The cached value of the '{@link #getLeftCondition() <em>Left Condition</em>}' containment reference.
+   * The cached value of the '{@link #getTrueEx() <em>True Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLeftCondition()
+   * @see #getTrueEx()
    * @generated
    * @ordered
    */
-  protected Expression leftCondition;
+  protected Expression trueEx;
 
   /**
-   * The cached value of the '{@link #getRightCondition() <em>Right Condition</em>}' containment reference.
+   * The cached value of the '{@link #getFalseEx() <em>False Ex</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRightCondition()
+   * @see #getFalseEx()
    * @generated
    * @ordered
    */
-  protected Expression rightCondition;
-
-  /**
-   * The cached value of the '{@link #getResult() <em>Result</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getResult()
-   * @generated
-   * @ordered
-   */
-  protected Expression result;
+  protected Expression falseEx;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,9 +88,9 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public LogicOperator getLogicOperator()
+  public Expression getLogicEx()
   {
-    return logicOperator;
+    return logicEx;
   }
 
   /**
@@ -110,13 +98,13 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLogicOperator(LogicOperator newLogicOperator, NotificationChain msgs)
+  public NotificationChain basicSetLogicEx(Expression newLogicEx, NotificationChain msgs)
   {
-    LogicOperator oldLogicOperator = logicOperator;
-    logicOperator = newLogicOperator;
+    Expression oldLogicEx = logicEx;
+    logicEx = newLogicEx;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LOGIC_OPERATOR, oldLogicOperator, newLogicOperator);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LOGIC_EX, oldLogicEx, newLogicEx);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -127,20 +115,20 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLogicOperator(LogicOperator newLogicOperator)
+  public void setLogicEx(Expression newLogicEx)
   {
-    if (newLogicOperator != logicOperator)
+    if (newLogicEx != logicEx)
     {
       NotificationChain msgs = null;
-      if (logicOperator != null)
-        msgs = ((InternalEObject)logicOperator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LOGIC_OPERATOR, null, msgs);
-      if (newLogicOperator != null)
-        msgs = ((InternalEObject)newLogicOperator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LOGIC_OPERATOR, null, msgs);
-      msgs = basicSetLogicOperator(newLogicOperator, msgs);
+      if (logicEx != null)
+        msgs = ((InternalEObject)logicEx).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LOGIC_EX, null, msgs);
+      if (newLogicEx != null)
+        msgs = ((InternalEObject)newLogicEx).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LOGIC_EX, null, msgs);
+      msgs = basicSetLogicEx(newLogicEx, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LOGIC_OPERATOR, newLogicOperator, newLogicOperator));
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LOGIC_EX, newLogicEx, newLogicEx));
   }
 
   /**
@@ -148,9 +136,9 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getLeftCondition()
+  public Expression getTrueEx()
   {
-    return leftCondition;
+    return trueEx;
   }
 
   /**
@@ -158,13 +146,13 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeftCondition(Expression newLeftCondition, NotificationChain msgs)
+  public NotificationChain basicSetTrueEx(Expression newTrueEx, NotificationChain msgs)
   {
-    Expression oldLeftCondition = leftCondition;
-    leftCondition = newLeftCondition;
+    Expression oldTrueEx = trueEx;
+    trueEx = newTrueEx;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LEFT_CONDITION, oldLeftCondition, newLeftCondition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__TRUE_EX, oldTrueEx, newTrueEx);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -175,20 +163,20 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeftCondition(Expression newLeftCondition)
+  public void setTrueEx(Expression newTrueEx)
   {
-    if (newLeftCondition != leftCondition)
+    if (newTrueEx != trueEx)
     {
       NotificationChain msgs = null;
-      if (leftCondition != null)
-        msgs = ((InternalEObject)leftCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LEFT_CONDITION, null, msgs);
-      if (newLeftCondition != null)
-        msgs = ((InternalEObject)newLeftCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__LEFT_CONDITION, null, msgs);
-      msgs = basicSetLeftCondition(newLeftCondition, msgs);
+      if (trueEx != null)
+        msgs = ((InternalEObject)trueEx).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__TRUE_EX, null, msgs);
+      if (newTrueEx != null)
+        msgs = ((InternalEObject)newTrueEx).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__TRUE_EX, null, msgs);
+      msgs = basicSetTrueEx(newTrueEx, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__LEFT_CONDITION, newLeftCondition, newLeftCondition));
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__TRUE_EX, newTrueEx, newTrueEx));
   }
 
   /**
@@ -196,9 +184,9 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getRightCondition()
+  public Expression getFalseEx()
   {
-    return rightCondition;
+    return falseEx;
   }
 
   /**
@@ -206,13 +194,13 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRightCondition(Expression newRightCondition, NotificationChain msgs)
+  public NotificationChain basicSetFalseEx(Expression newFalseEx, NotificationChain msgs)
   {
-    Expression oldRightCondition = rightCondition;
-    rightCondition = newRightCondition;
+    Expression oldFalseEx = falseEx;
+    falseEx = newFalseEx;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__RIGHT_CONDITION, oldRightCondition, newRightCondition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__FALSE_EX, oldFalseEx, newFalseEx);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -223,68 +211,20 @@ public class IfImpl extends ExpressionImpl implements If
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRightCondition(Expression newRightCondition)
+  public void setFalseEx(Expression newFalseEx)
   {
-    if (newRightCondition != rightCondition)
+    if (newFalseEx != falseEx)
     {
       NotificationChain msgs = null;
-      if (rightCondition != null)
-        msgs = ((InternalEObject)rightCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__RIGHT_CONDITION, null, msgs);
-      if (newRightCondition != null)
-        msgs = ((InternalEObject)newRightCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__RIGHT_CONDITION, null, msgs);
-      msgs = basicSetRightCondition(newRightCondition, msgs);
+      if (falseEx != null)
+        msgs = ((InternalEObject)falseEx).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__FALSE_EX, null, msgs);
+      if (newFalseEx != null)
+        msgs = ((InternalEObject)newFalseEx).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__FALSE_EX, null, msgs);
+      msgs = basicSetFalseEx(newFalseEx, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__RIGHT_CONDITION, newRightCondition, newRightCondition));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expression getResult()
-  {
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetResult(Expression newResult, NotificationChain msgs)
-  {
-    Expression oldResult = result;
-    result = newResult;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SCHPackage.IF__RESULT, oldResult, newResult);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setResult(Expression newResult)
-  {
-    if (newResult != result)
-    {
-      NotificationChain msgs = null;
-      if (result != null)
-        msgs = ((InternalEObject)result).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__RESULT, null, msgs);
-      if (newResult != null)
-        msgs = ((InternalEObject)newResult).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SCHPackage.IF__RESULT, null, msgs);
-      msgs = basicSetResult(newResult, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__RESULT, newResult, newResult));
+      eNotify(new ENotificationImpl(this, Notification.SET, SCHPackage.IF__FALSE_EX, newFalseEx, newFalseEx));
   }
 
   /**
@@ -297,14 +237,12 @@ public class IfImpl extends ExpressionImpl implements If
   {
     switch (featureID)
     {
-      case SCHPackage.IF__LOGIC_OPERATOR:
-        return basicSetLogicOperator(null, msgs);
-      case SCHPackage.IF__LEFT_CONDITION:
-        return basicSetLeftCondition(null, msgs);
-      case SCHPackage.IF__RIGHT_CONDITION:
-        return basicSetRightCondition(null, msgs);
-      case SCHPackage.IF__RESULT:
-        return basicSetResult(null, msgs);
+      case SCHPackage.IF__LOGIC_EX:
+        return basicSetLogicEx(null, msgs);
+      case SCHPackage.IF__TRUE_EX:
+        return basicSetTrueEx(null, msgs);
+      case SCHPackage.IF__FALSE_EX:
+        return basicSetFalseEx(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -319,14 +257,12 @@ public class IfImpl extends ExpressionImpl implements If
   {
     switch (featureID)
     {
-      case SCHPackage.IF__LOGIC_OPERATOR:
-        return getLogicOperator();
-      case SCHPackage.IF__LEFT_CONDITION:
-        return getLeftCondition();
-      case SCHPackage.IF__RIGHT_CONDITION:
-        return getRightCondition();
-      case SCHPackage.IF__RESULT:
-        return getResult();
+      case SCHPackage.IF__LOGIC_EX:
+        return getLogicEx();
+      case SCHPackage.IF__TRUE_EX:
+        return getTrueEx();
+      case SCHPackage.IF__FALSE_EX:
+        return getFalseEx();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -341,17 +277,14 @@ public class IfImpl extends ExpressionImpl implements If
   {
     switch (featureID)
     {
-      case SCHPackage.IF__LOGIC_OPERATOR:
-        setLogicOperator((LogicOperator)newValue);
+      case SCHPackage.IF__LOGIC_EX:
+        setLogicEx((Expression)newValue);
         return;
-      case SCHPackage.IF__LEFT_CONDITION:
-        setLeftCondition((Expression)newValue);
+      case SCHPackage.IF__TRUE_EX:
+        setTrueEx((Expression)newValue);
         return;
-      case SCHPackage.IF__RIGHT_CONDITION:
-        setRightCondition((Expression)newValue);
-        return;
-      case SCHPackage.IF__RESULT:
-        setResult((Expression)newValue);
+      case SCHPackage.IF__FALSE_EX:
+        setFalseEx((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -367,17 +300,14 @@ public class IfImpl extends ExpressionImpl implements If
   {
     switch (featureID)
     {
-      case SCHPackage.IF__LOGIC_OPERATOR:
-        setLogicOperator((LogicOperator)null);
+      case SCHPackage.IF__LOGIC_EX:
+        setLogicEx((Expression)null);
         return;
-      case SCHPackage.IF__LEFT_CONDITION:
-        setLeftCondition((Expression)null);
+      case SCHPackage.IF__TRUE_EX:
+        setTrueEx((Expression)null);
         return;
-      case SCHPackage.IF__RIGHT_CONDITION:
-        setRightCondition((Expression)null);
-        return;
-      case SCHPackage.IF__RESULT:
-        setResult((Expression)null);
+      case SCHPackage.IF__FALSE_EX:
+        setFalseEx((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -393,14 +323,12 @@ public class IfImpl extends ExpressionImpl implements If
   {
     switch (featureID)
     {
-      case SCHPackage.IF__LOGIC_OPERATOR:
-        return logicOperator != null;
-      case SCHPackage.IF__LEFT_CONDITION:
-        return leftCondition != null;
-      case SCHPackage.IF__RIGHT_CONDITION:
-        return rightCondition != null;
-      case SCHPackage.IF__RESULT:
-        return result != null;
+      case SCHPackage.IF__LOGIC_EX:
+        return logicEx != null;
+      case SCHPackage.IF__TRUE_EX:
+        return trueEx != null;
+      case SCHPackage.IF__FALSE_EX:
+        return falseEx != null;
     }
     return super.eIsSet(featureID);
   }

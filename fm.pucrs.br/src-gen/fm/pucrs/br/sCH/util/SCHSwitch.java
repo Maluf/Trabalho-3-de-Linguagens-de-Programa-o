@@ -123,6 +123,7 @@ public class SCHSwitch<T> extends Switch<T>
         Equal equal = (Equal)theEObject;
         T result = caseEqual(equal);
         if (result == null) result = caseLogicOperator(equal);
+        if (result == null) result = caseOperator(equal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -131,6 +132,7 @@ public class SCHSwitch<T> extends Switch<T>
         MoreOrEqual moreOrEqual = (MoreOrEqual)theEObject;
         T result = caseMoreOrEqual(moreOrEqual);
         if (result == null) result = caseLogicOperator(moreOrEqual);
+        if (result == null) result = caseOperator(moreOrEqual);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -139,6 +141,7 @@ public class SCHSwitch<T> extends Switch<T>
         LessOrEqual lessOrEqual = (LessOrEqual)theEObject;
         T result = caseLessOrEqual(lessOrEqual);
         if (result == null) result = caseLogicOperator(lessOrEqual);
+        if (result == null) result = caseOperator(lessOrEqual);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,6 +150,7 @@ public class SCHSwitch<T> extends Switch<T>
         Different different = (Different)theEObject;
         T result = caseDifferent(different);
         if (result == null) result = caseLogicOperator(different);
+        if (result == null) result = caseOperator(different);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -155,6 +159,7 @@ public class SCHSwitch<T> extends Switch<T>
         More more = (More)theEObject;
         T result = caseMore(more);
         if (result == null) result = caseLogicOperator(more);
+        if (result == null) result = caseOperator(more);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -163,6 +168,7 @@ public class SCHSwitch<T> extends Switch<T>
         Less less = (Less)theEObject;
         T result = caseLess(less);
         if (result == null) result = caseLogicOperator(less);
+        if (result == null) result = caseOperator(less);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

@@ -275,9 +275,29 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getExpression_Bool()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_Str()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getExpression_Op()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -287,7 +307,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    */
   public EReference getExpression_Left()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(3);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -297,7 +317,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    */
   public EReference getExpression_Right()
   {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(4);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -375,7 +395,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIf_LogicOperator()
+  public EReference getIf_LogicEx()
   {
     return (EReference)ifEClass.getEStructuralFeatures().get(0);
   }
@@ -385,7 +405,7 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIf_LeftCondition()
+  public EReference getIf_TrueEx()
   {
     return (EReference)ifEClass.getEStructuralFeatures().get(1);
   }
@@ -395,19 +415,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIf_RightCondition()
+  public EReference getIf_FalseEx()
   {
     return (EReference)ifEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIf_Result()
-  {
-    return (EReference)ifEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -666,6 +676,8 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     expressionEClass = createEClass(EXPRESSION);
     createEAttribute(expressionEClass, EXPRESSION__VALUE);
     createEAttribute(expressionEClass, EXPRESSION__IDENTIFIER);
+    createEAttribute(expressionEClass, EXPRESSION__BOOL);
+    createEAttribute(expressionEClass, EXPRESSION__STR);
     createEReference(expressionEClass, EXPRESSION__OP);
     createEReference(expressionEClass, EXPRESSION__LEFT);
     createEReference(expressionEClass, EXPRESSION__RIGHT);
@@ -679,10 +691,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     createEReference(lambdaEClass, LAMBDA__EX);
 
     ifEClass = createEClass(IF);
-    createEReference(ifEClass, IF__LOGIC_OPERATOR);
-    createEReference(ifEClass, IF__LEFT_CONDITION);
-    createEReference(ifEClass, IF__RIGHT_CONDITION);
-    createEReference(ifEClass, IF__RESULT);
+    createEReference(ifEClass, IF__LOGIC_EX);
+    createEReference(ifEClass, IF__TRUE_EX);
+    createEReference(ifEClass, IF__FALSE_EX);
 
     logicOperatorEClass = createEClass(LOGIC_OPERATOR);
 
@@ -752,11 +763,17 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     lambdaEClass.getESuperTypes().add(this.getExpression());
     ifEClass.getESuperTypes().add(this.getExpression());
     equalEClass.getESuperTypes().add(this.getLogicOperator());
+    equalEClass.getESuperTypes().add(this.getOperator());
     moreOrEqualEClass.getESuperTypes().add(this.getLogicOperator());
+    moreOrEqualEClass.getESuperTypes().add(this.getOperator());
     lessOrEqualEClass.getESuperTypes().add(this.getLogicOperator());
+    lessOrEqualEClass.getESuperTypes().add(this.getOperator());
     differentEClass.getESuperTypes().add(this.getLogicOperator());
+    differentEClass.getESuperTypes().add(this.getOperator());
     moreEClass.getESuperTypes().add(this.getLogicOperator());
+    moreEClass.getESuperTypes().add(this.getOperator());
     lessEClass.getESuperTypes().add(this.getLogicOperator());
+    lessEClass.getESuperTypes().add(this.getOperator());
     subtractEClass.getESuperTypes().add(this.getOperator());
     addEClass.getESuperTypes().add(this.getOperator());
     multiplyEClass.getESuperTypes().add(this.getOperator());
@@ -769,6 +786,8 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExpression_Value(), ecorePackage.getEInt(), "value", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExpression_Identifier(), ecorePackage.getEString(), "identifier", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Bool(), ecorePackage.getEString(), "bool", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Str(), ecorePackage.getEString(), "str", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Op(), this.getOperator(), null, "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Right(), this.getExpression(), null, "right", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -782,10 +801,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     initEReference(getLambda_Ex(), this.getExpression(), null, "ex", null, 0, 1, Lambda.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIf_LogicOperator(), this.getLogicOperator(), null, "logicOperator", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIf_LeftCondition(), this.getExpression(), null, "leftCondition", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIf_RightCondition(), this.getExpression(), null, "rightCondition", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIf_Result(), this.getExpression(), null, "result", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_LogicEx(), this.getExpression(), null, "logicEx", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_TrueEx(), this.getExpression(), null, "trueEx", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_FalseEx(), this.getExpression(), null, "falseEx", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(logicOperatorEClass, LogicOperator.class, "LogicOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

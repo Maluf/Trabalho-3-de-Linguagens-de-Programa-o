@@ -12,6 +12,8 @@
     <genClasses ecoreClass="SCH.ecore#//Expression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/bool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Expression/str"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Expression/right"/>
@@ -25,10 +27,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Lambda/ex"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//If">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/logicOperator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/leftCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/rightCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/result"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/logicEx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/trueEx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//If/falseEx"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//LogicOperator"/>
     <genClasses ecoreClass="SCH.ecore#//Equal">

@@ -33,6 +33,7 @@ public class SCHParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getTerminalExpressionAccess().getAlternatives(), "rule__TerminalExpression__Alternatives");
 					put(grammarAccess.getLogicOperatorAccess().getAlternatives(), "rule__LogicOperator__Alternatives");
+					put(grammarAccess.getBoolAccess().getAlternatives(), "rule__Bool__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getTerminalExpressionAccess().getGroup_0(), "rule__TerminalExpression__Group_0__0");
@@ -46,6 +47,8 @@ public class SCHParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getExpressionsAssignment(), "rule__Model__ExpressionsAssignment");
 					put(grammarAccess.getTerminalExpressionAccess().getValueAssignment_4(), "rule__TerminalExpression__ValueAssignment_4");
 					put(grammarAccess.getTerminalExpressionAccess().getIdentifierAssignment_5(), "rule__TerminalExpression__IdentifierAssignment_5");
+					put(grammarAccess.getTerminalExpressionAccess().getBoolAssignment_6(), "rule__TerminalExpression__BoolAssignment_6");
+					put(grammarAccess.getTerminalExpressionAccess().getStrAssignment_7(), "rule__TerminalExpression__StrAssignment_7");
 					put(grammarAccess.getExpressionAccess().getOpAssignment_0(), "rule__Expression__OpAssignment_0");
 					put(grammarAccess.getExpressionAccess().getLeftAssignment_1(), "rule__Expression__LeftAssignment_1");
 					put(grammarAccess.getExpressionAccess().getRightAssignment_2(), "rule__Expression__RightAssignment_2");
@@ -53,10 +56,9 @@ public class SCHParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefineAccess().getExAssignment_2(), "rule__Define__ExAssignment_2");
 					put(grammarAccess.getLambdaAccess().getOuputAssignment_2(), "rule__Lambda__OuputAssignment_2");
 					put(grammarAccess.getLambdaAccess().getExAssignment_4(), "rule__Lambda__ExAssignment_4");
-					put(grammarAccess.getIfAccess().getLogicOperatorAssignment_2(), "rule__If__LogicOperatorAssignment_2");
-					put(grammarAccess.getIfAccess().getLeftConditionAssignment_3(), "rule__If__LeftConditionAssignment_3");
-					put(grammarAccess.getIfAccess().getRightConditionAssignment_4(), "rule__If__RightConditionAssignment_4");
-					put(grammarAccess.getIfAccess().getResultAssignment_6(), "rule__If__ResultAssignment_6");
+					put(grammarAccess.getIfAccess().getLogicExAssignment_1(), "rule__If__LogicExAssignment_1");
+					put(grammarAccess.getIfAccess().getTrueExAssignment_2(), "rule__If__TrueExAssignment_2");
+					put(grammarAccess.getIfAccess().getFalseExAssignment_3(), "rule__If__FalseExAssignment_3");
 					put(grammarAccess.getEqualAccess().getEqualAssignment(), "rule__Equal__EqualAssignment");
 					put(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualAssignment(), "rule__MoreOrEqual__MoreOrEqualAssignment");
 					put(grammarAccess.getLessOrEqualAccess().getLessOrEqualAssignment(), "rule__LessOrEqual__LessOrEqualAssignment");

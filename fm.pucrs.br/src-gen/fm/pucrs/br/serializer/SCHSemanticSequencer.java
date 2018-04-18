@@ -139,6 +139,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns Different
 	 *     Different returns Different
+	 *     Operator returns Different
 	 *
 	 * Constraint:
 	 *     different='!='
@@ -177,6 +178,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns Equal
 	 *     Equal returns Equal
+	 *     Operator returns Equal
 	 *
 	 * Constraint:
 	 *     equal='='
@@ -209,7 +211,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TerminalExpression returns Expression
 	 *
 	 * Constraint:
-	 *     (value+=INT+ | identifier+=ID+ | (op=Operator left=TerminalExpression right+=TerminalExpression*))
+	 *     (value+=INT+ | identifier+=ID+ | bool+=Bool+ | str=STRING | (op=Operator left=TerminalExpression right+=TerminalExpression*))
 	 */
 	protected void sequence_Expression_TerminalExpression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -222,24 +224,21 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     If returns If
 	 *
 	 * Constraint:
-	 *     (logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression result=TerminalExpression)
+	 *     (logicEx=TerminalExpression trueEx=TerminalExpression falseEx=TerminalExpression)
 	 */
 	protected void sequence_If(ISerializationContext context, If semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__LOGIC_OPERATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__LOGIC_OPERATOR));
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__LEFT_CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__LEFT_CONDITION));
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__RIGHT_CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__RIGHT_CONDITION));
-			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__RESULT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__RESULT));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__LOGIC_EX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__LOGIC_EX));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__TRUE_EX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__TRUE_EX));
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IF__FALSE_EX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IF__FALSE_EX));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIfAccess().getLogicOperatorLogicOperatorParserRuleCall_2_0(), semanticObject.getLogicOperator());
-		feeder.accept(grammarAccess.getIfAccess().getLeftConditionTerminalExpressionParserRuleCall_3_0(), semanticObject.getLeftCondition());
-		feeder.accept(grammarAccess.getIfAccess().getRightConditionTerminalExpressionParserRuleCall_4_0(), semanticObject.getRightCondition());
-		feeder.accept(grammarAccess.getIfAccess().getResultTerminalExpressionParserRuleCall_6_0(), semanticObject.getResult());
+		feeder.accept(grammarAccess.getIfAccess().getLogicExTerminalExpressionParserRuleCall_1_0(), semanticObject.getLogicEx());
+		feeder.accept(grammarAccess.getIfAccess().getTrueExTerminalExpressionParserRuleCall_2_0(), semanticObject.getTrueEx());
+		feeder.accept(grammarAccess.getIfAccess().getFalseExTerminalExpressionParserRuleCall_3_0(), semanticObject.getFalseEx());
 		feeder.finish();
 	}
 	
@@ -261,6 +260,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns LessOrEqual
 	 *     LessOrEqual returns LessOrEqual
+	 *     Operator returns LessOrEqual
 	 *
 	 * Constraint:
 	 *     lessOrEqual='<='
@@ -280,6 +280,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns Less
 	 *     Less returns Less
+	 *     Operator returns Less
 	 *
 	 * Constraint:
 	 *     less='<'
@@ -311,6 +312,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns MoreOrEqual
 	 *     MoreOrEqual returns MoreOrEqual
+	 *     Operator returns MoreOrEqual
 	 *
 	 * Constraint:
 	 *     moreOrEqual='>='
@@ -330,6 +332,7 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     LogicOperator returns More
 	 *     More returns More
+	 *     Operator returns More
 	 *
 	 * Constraint:
 	 *     more='>'

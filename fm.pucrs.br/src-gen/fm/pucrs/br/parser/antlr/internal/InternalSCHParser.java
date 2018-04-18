@@ -21,13 +21,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSCHParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_DOUBLE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'define'", "'lambda'", "'if'", "'='", "'>='", "'<='", "'!='", "'>'", "'<'", "'-'", "'+'", "'*'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_DOUBLE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'define'", "'lambda'", "'if'", "'#t'", "'#f'", "'='", "'>='", "'<='", "'!='", "'>'", "'<'", "'-'", "'+'", "'*'", "'/'"
     };
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int RULE_DOUBLE=6;
+    public static final int RULE_DOUBLE=7;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -39,6 +39,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
@@ -144,7 +146,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_ID)||LA1_0==12) ) {
+                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_STRING)||LA1_0==12||(LA1_0>=17 && LA1_0<=18)) ) {
                     alt1=1;
                 }
 
@@ -243,7 +245,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerminalExpression"
-    // InternalSCH.g:107:1: ruleTerminalExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ ) ;
+    // InternalSCH.g:107:1: ruleTerminalExpression returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ | ( (lv_bool_14_0= ruleBool ) )+ | ( (lv_str_15_0= RULE_STRING ) ) ) ;
     public final EObject ruleTerminalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -257,6 +259,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         Token otherlv_11=null;
         Token lv_value_12_0=null;
         Token lv_identifier_13_0=null;
+        Token lv_str_15_0=null;
         EObject this_Expression_1 = null;
 
         EObject this_Define_4 = null;
@@ -265,70 +268,20 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
         EObject this_If_10 = null;
 
+        AntlrDatatypeRuleToken lv_bool_14_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSCH.g:113:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ ) )
-            // InternalSCH.g:114:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ )
+            // InternalSCH.g:113:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ | ( (lv_bool_14_0= ruleBool ) )+ | ( (lv_str_15_0= RULE_STRING ) ) ) )
+            // InternalSCH.g:114:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ | ( (lv_bool_14_0= ruleBool ) )+ | ( (lv_str_15_0= RULE_STRING ) ) )
             {
-            // InternalSCH.g:114:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ )
-            int alt4=6;
-            switch ( input.LA(1) ) {
-            case 12:
-                {
-                switch ( input.LA(2) ) {
-                case 23:
-                case 24:
-                case 25:
-                case 26:
-                    {
-                    alt4=1;
-                    }
-                    break;
-                case 14:
-                    {
-                    alt4=2;
-                    }
-                    break;
-                case 15:
-                    {
-                    alt4=3;
-                    }
-                    break;
-                case 16:
-                    {
-                    alt4=4;
-                    }
-                    break;
-                default:
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 4, 1, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_INT:
-                {
-                alt4=5;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt4=6;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt4) {
+            // InternalSCH.g:114:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ | ( (lv_bool_14_0= ruleBool ) )+ | ( (lv_str_15_0= RULE_STRING ) ) )
+            int alt5=8;
+            alt5 = dfa5.predict(input);
+            switch (alt5) {
                 case 1 :
                     // InternalSCH.g:115:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
@@ -567,6 +520,101 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 7 :
+                    // InternalSCH.g:229:3: ( (lv_bool_14_0= ruleBool ) )+
+                    {
+                    // InternalSCH.g:229:3: ( (lv_bool_14_0= ruleBool ) )+
+                    int cnt4=0;
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==17) ) {
+                            alt4=1;
+                        }
+                        else if ( (LA4_0==18) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // InternalSCH.g:230:4: (lv_bool_14_0= ruleBool )
+                    	    {
+                    	    // InternalSCH.g:230:4: (lv_bool_14_0= ruleBool )
+                    	    // InternalSCH.g:231:5: lv_bool_14_0= ruleBool
+                    	    {
+
+                    	    					newCompositeNode(grammarAccess.getTerminalExpressionAccess().getBoolBoolParserRuleCall_6_0());
+                    	    				
+                    	    pushFollow(FOLLOW_11);
+                    	    lv_bool_14_0=ruleBool();
+
+                    	    state._fsp--;
+
+
+                    	    					if (current==null) {
+                    	    						current = createModelElementForParent(grammarAccess.getTerminalExpressionRule());
+                    	    					}
+                    	    					add(
+                    	    						current,
+                    	    						"bool",
+                    	    						lv_bool_14_0,
+                    	    						"fm.pucrs.br.SCH.Bool");
+                    	    					afterParserOrEnumRuleCall();
+                    	    				
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt4 >= 1 ) break loop4;
+                                EarlyExitException eee =
+                                    new EarlyExitException(4, input);
+                                throw eee;
+                        }
+                        cnt4++;
+                    } while (true);
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalSCH.g:249:3: ( (lv_str_15_0= RULE_STRING ) )
+                    {
+                    // InternalSCH.g:249:3: ( (lv_str_15_0= RULE_STRING ) )
+                    // InternalSCH.g:250:4: (lv_str_15_0= RULE_STRING )
+                    {
+                    // InternalSCH.g:250:4: (lv_str_15_0= RULE_STRING )
+                    // InternalSCH.g:251:5: lv_str_15_0= RULE_STRING
+                    {
+                    lv_str_15_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+                    					newLeafNode(lv_str_15_0, grammarAccess.getTerminalExpressionAccess().getStrSTRINGTerminalRuleCall_7_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getTerminalExpressionRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"str",
+                    						lv_str_15_0,
+                    						"org.eclipse.xtext.common.Terminals.STRING");
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -590,7 +638,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalSCH.g:232:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalSCH.g:271:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -598,8 +646,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:232:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalSCH.g:233:2: iv_ruleExpression= ruleExpression EOF
+            // InternalSCH.g:271:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalSCH.g:272:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -626,7 +674,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalSCH.g:239:1: ruleExpression returns [EObject current=null] : ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* ) ;
+    // InternalSCH.g:278:1: ruleExpression returns [EObject current=null] : ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -641,22 +689,22 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:245:2: ( ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* ) )
-            // InternalSCH.g:246:2: ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* )
+            // InternalSCH.g:284:2: ( ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* ) )
+            // InternalSCH.g:285:2: ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* )
             {
-            // InternalSCH.g:246:2: ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* )
-            // InternalSCH.g:247:3: ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )*
+            // InternalSCH.g:285:2: ( ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )* )
+            // InternalSCH.g:286:3: ( (lv_op_0_0= ruleOperator ) ) ( (lv_left_1_0= ruleTerminalExpression ) ) ( (lv_right_2_0= ruleTerminalExpression ) )*
             {
-            // InternalSCH.g:247:3: ( (lv_op_0_0= ruleOperator ) )
-            // InternalSCH.g:248:4: (lv_op_0_0= ruleOperator )
+            // InternalSCH.g:286:3: ( (lv_op_0_0= ruleOperator ) )
+            // InternalSCH.g:287:4: (lv_op_0_0= ruleOperator )
             {
-            // InternalSCH.g:248:4: (lv_op_0_0= ruleOperator )
-            // InternalSCH.g:249:5: lv_op_0_0= ruleOperator
+            // InternalSCH.g:287:4: (lv_op_0_0= ruleOperator )
+            // InternalSCH.g:288:5: lv_op_0_0= ruleOperator
             {
 
             					newCompositeNode(grammarAccess.getExpressionAccess().getOpOperatorParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_op_0_0=ruleOperator();
 
             state._fsp--;
@@ -678,16 +726,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSCH.g:266:3: ( (lv_left_1_0= ruleTerminalExpression ) )
-            // InternalSCH.g:267:4: (lv_left_1_0= ruleTerminalExpression )
+            // InternalSCH.g:305:3: ( (lv_left_1_0= ruleTerminalExpression ) )
+            // InternalSCH.g:306:4: (lv_left_1_0= ruleTerminalExpression )
             {
-            // InternalSCH.g:267:4: (lv_left_1_0= ruleTerminalExpression )
-            // InternalSCH.g:268:5: lv_left_1_0= ruleTerminalExpression
+            // InternalSCH.g:306:4: (lv_left_1_0= ruleTerminalExpression )
+            // InternalSCH.g:307:5: lv_left_1_0= ruleTerminalExpression
             {
 
             					newCompositeNode(grammarAccess.getExpressionAccess().getLeftTerminalExpressionParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             lv_left_1_0=ruleTerminalExpression();
 
             state._fsp--;
@@ -709,23 +757,23 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSCH.g:285:3: ( (lv_right_2_0= ruleTerminalExpression ) )*
-            loop5:
+            // InternalSCH.g:324:3: ( (lv_right_2_0= ruleTerminalExpression ) )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( ((LA5_0>=RULE_INT && LA5_0<=RULE_ID)||LA5_0==12) ) {
-                    alt5=1;
+                if ( ((LA6_0>=RULE_INT && LA6_0<=RULE_STRING)||LA6_0==12||(LA6_0>=17 && LA6_0<=18)) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalSCH.g:286:4: (lv_right_2_0= ruleTerminalExpression )
+            	    // InternalSCH.g:325:4: (lv_right_2_0= ruleTerminalExpression )
             	    {
-            	    // InternalSCH.g:286:4: (lv_right_2_0= ruleTerminalExpression )
-            	    // InternalSCH.g:287:5: lv_right_2_0= ruleTerminalExpression
+            	    // InternalSCH.g:325:4: (lv_right_2_0= ruleTerminalExpression )
+            	    // InternalSCH.g:326:5: lv_right_2_0= ruleTerminalExpression
             	    {
 
             	    					newCompositeNode(grammarAccess.getExpressionAccess().getRightTerminalExpressionParserRuleCall_2_0());
@@ -743,163 +791,6 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
             	    						current,
             	    						"right",
             	    						lv_right_2_0,
-            	    						"fm.pucrs.br.SCH.TerminalExpression");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleExpression"
-
-
-    // $ANTLR start "entryRuleDefine"
-    // InternalSCH.g:308:1: entryRuleDefine returns [EObject current=null] : iv_ruleDefine= ruleDefine EOF ;
-    public final EObject entryRuleDefine() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleDefine = null;
-
-
-        try {
-            // InternalSCH.g:308:47: (iv_ruleDefine= ruleDefine EOF )
-            // InternalSCH.g:309:2: iv_ruleDefine= ruleDefine EOF
-            {
-             newCompositeNode(grammarAccess.getDefineRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleDefine=ruleDefine();
-
-            state._fsp--;
-
-             current =iv_ruleDefine; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleDefine"
-
-
-    // $ANTLR start "ruleDefine"
-    // InternalSCH.g:315:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* ) ;
-    public final EObject ruleDefine() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_id_1_0=null;
-        EObject lv_ex_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSCH.g:321:2: ( (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* ) )
-            // InternalSCH.g:322:2: (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* )
-            {
-            // InternalSCH.g:322:2: (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* )
-            // InternalSCH.g:323:3: otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )*
-            {
-            otherlv_0=(Token)match(input,14,FOLLOW_12); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDefineKeyword_0());
-            		
-            // InternalSCH.g:327:3: ( (lv_id_1_0= RULE_ID ) )
-            // InternalSCH.g:328:4: (lv_id_1_0= RULE_ID )
-            {
-            // InternalSCH.g:328:4: (lv_id_1_0= RULE_ID )
-            // InternalSCH.g:329:5: lv_id_1_0= RULE_ID
-            {
-            lv_id_1_0=(Token)match(input,RULE_ID,FOLLOW_11); 
-
-            					newLeafNode(lv_id_1_0, grammarAccess.getDefineAccess().getIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getDefineRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"id",
-            						lv_id_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalSCH.g:345:3: ( (lv_ex_2_0= ruleTerminalExpression ) )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( ((LA6_0>=RULE_INT && LA6_0<=RULE_ID)||LA6_0==12) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // InternalSCH.g:346:4: (lv_ex_2_0= ruleTerminalExpression )
-            	    {
-            	    // InternalSCH.g:346:4: (lv_ex_2_0= ruleTerminalExpression )
-            	    // InternalSCH.g:347:5: lv_ex_2_0= ruleTerminalExpression
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getDefineAccess().getExTerminalExpressionParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_3);
-            	    lv_ex_2_0=ruleTerminalExpression();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getDefineRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"ex",
-            	    						lv_ex_2_0,
             	    						"fm.pucrs.br.SCH.TerminalExpression");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -934,11 +825,168 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleExpression"
+
+
+    // $ANTLR start "entryRuleDefine"
+    // InternalSCH.g:347:1: entryRuleDefine returns [EObject current=null] : iv_ruleDefine= ruleDefine EOF ;
+    public final EObject entryRuleDefine() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDefine = null;
+
+
+        try {
+            // InternalSCH.g:347:47: (iv_ruleDefine= ruleDefine EOF )
+            // InternalSCH.g:348:2: iv_ruleDefine= ruleDefine EOF
+            {
+             newCompositeNode(grammarAccess.getDefineRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDefine=ruleDefine();
+
+            state._fsp--;
+
+             current =iv_ruleDefine; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDefine"
+
+
+    // $ANTLR start "ruleDefine"
+    // InternalSCH.g:354:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* ) ;
+    public final EObject ruleDefine() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_id_1_0=null;
+        EObject lv_ex_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSCH.g:360:2: ( (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* ) )
+            // InternalSCH.g:361:2: (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* )
+            {
+            // InternalSCH.g:361:2: (otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )* )
+            // InternalSCH.g:362:3: otherlv_0= 'define' ( (lv_id_1_0= RULE_ID ) ) ( (lv_ex_2_0= ruleTerminalExpression ) )*
+            {
+            otherlv_0=(Token)match(input,14,FOLLOW_13); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDefineKeyword_0());
+            		
+            // InternalSCH.g:366:3: ( (lv_id_1_0= RULE_ID ) )
+            // InternalSCH.g:367:4: (lv_id_1_0= RULE_ID )
+            {
+            // InternalSCH.g:367:4: (lv_id_1_0= RULE_ID )
+            // InternalSCH.g:368:5: lv_id_1_0= RULE_ID
+            {
+            lv_id_1_0=(Token)match(input,RULE_ID,FOLLOW_12); 
+
+            					newLeafNode(lv_id_1_0, grammarAccess.getDefineAccess().getIdIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDefineRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"id",
+            						lv_id_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalSCH.g:384:3: ( (lv_ex_2_0= ruleTerminalExpression ) )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( ((LA7_0>=RULE_INT && LA7_0<=RULE_STRING)||LA7_0==12||(LA7_0>=17 && LA7_0<=18)) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalSCH.g:385:4: (lv_ex_2_0= ruleTerminalExpression )
+            	    {
+            	    // InternalSCH.g:385:4: (lv_ex_2_0= ruleTerminalExpression )
+            	    // InternalSCH.g:386:5: lv_ex_2_0= ruleTerminalExpression
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getDefineAccess().getExTerminalExpressionParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_3);
+            	    lv_ex_2_0=ruleTerminalExpression();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getDefineRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"ex",
+            	    						lv_ex_2_0,
+            	    						"fm.pucrs.br.SCH.TerminalExpression");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleDefine"
 
 
     // $ANTLR start "entryRuleLambda"
-    // InternalSCH.g:368:1: entryRuleLambda returns [EObject current=null] : iv_ruleLambda= ruleLambda EOF ;
+    // InternalSCH.g:407:1: entryRuleLambda returns [EObject current=null] : iv_ruleLambda= ruleLambda EOF ;
     public final EObject entryRuleLambda() throws RecognitionException {
         EObject current = null;
 
@@ -946,8 +994,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:368:47: (iv_ruleLambda= ruleLambda EOF )
-            // InternalSCH.g:369:2: iv_ruleLambda= ruleLambda EOF
+            // InternalSCH.g:407:47: (iv_ruleLambda= ruleLambda EOF )
+            // InternalSCH.g:408:2: iv_ruleLambda= ruleLambda EOF
             {
              newCompositeNode(grammarAccess.getLambdaRule()); 
             pushFollow(FOLLOW_1);
@@ -974,7 +1022,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLambda"
-    // InternalSCH.g:375:1: ruleLambda returns [EObject current=null] : (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) ) ;
+    // InternalSCH.g:414:1: ruleLambda returns [EObject current=null] : (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) ) ;
     public final EObject ruleLambda() throws RecognitionException {
         EObject current = null;
 
@@ -989,39 +1037,39 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:381:2: ( (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) ) )
-            // InternalSCH.g:382:2: (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) )
+            // InternalSCH.g:420:2: ( (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) ) )
+            // InternalSCH.g:421:2: (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) )
             {
-            // InternalSCH.g:382:2: (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) )
-            // InternalSCH.g:383:3: otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) )
+            // InternalSCH.g:421:2: (otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) ) )
+            // InternalSCH.g:422:3: otherlv_0= 'lambda' otherlv_1= '(' ( (lv_ouput_2_0= RULE_ID ) )* otherlv_3= ')' ( (lv_ex_4_0= ruleTerminalExpression ) )
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_13); 
+            otherlv_0=(Token)match(input,15,FOLLOW_14); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLambdaAccess().getLambdaKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_14); 
+            otherlv_1=(Token)match(input,12,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getLambdaAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSCH.g:391:3: ( (lv_ouput_2_0= RULE_ID ) )*
-            loop7:
+            // InternalSCH.g:430:3: ( (lv_ouput_2_0= RULE_ID ) )*
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA7_0==RULE_ID) ) {
-                    alt7=1;
+                if ( (LA8_0==RULE_ID) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalSCH.g:392:4: (lv_ouput_2_0= RULE_ID )
+            	    // InternalSCH.g:431:4: (lv_ouput_2_0= RULE_ID )
             	    {
-            	    // InternalSCH.g:392:4: (lv_ouput_2_0= RULE_ID )
-            	    // InternalSCH.g:393:5: lv_ouput_2_0= RULE_ID
+            	    // InternalSCH.g:431:4: (lv_ouput_2_0= RULE_ID )
+            	    // InternalSCH.g:432:5: lv_ouput_2_0= RULE_ID
             	    {
-            	    lv_ouput_2_0=(Token)match(input,RULE_ID,FOLLOW_14); 
+            	    lv_ouput_2_0=(Token)match(input,RULE_ID,FOLLOW_15); 
 
             	    					newLeafNode(lv_ouput_2_0, grammarAccess.getLambdaAccess().getOuputIDTerminalRuleCall_2_0());
             	    				
@@ -1043,19 +1091,19 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,13,FOLLOW_11); 
+            otherlv_3=(Token)match(input,13,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getLambdaAccess().getRightParenthesisKeyword_3());
             		
-            // InternalSCH.g:413:3: ( (lv_ex_4_0= ruleTerminalExpression ) )
-            // InternalSCH.g:414:4: (lv_ex_4_0= ruleTerminalExpression )
+            // InternalSCH.g:452:3: ( (lv_ex_4_0= ruleTerminalExpression ) )
+            // InternalSCH.g:453:4: (lv_ex_4_0= ruleTerminalExpression )
             {
-            // InternalSCH.g:414:4: (lv_ex_4_0= ruleTerminalExpression )
-            // InternalSCH.g:415:5: lv_ex_4_0= ruleTerminalExpression
+            // InternalSCH.g:453:4: (lv_ex_4_0= ruleTerminalExpression )
+            // InternalSCH.g:454:5: lv_ex_4_0= ruleTerminalExpression
             {
 
             					newCompositeNode(grammarAccess.getLambdaAccess().getExTerminalExpressionParserRuleCall_4_0());
@@ -1105,7 +1153,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIf"
-    // InternalSCH.g:436:1: entryRuleIf returns [EObject current=null] : iv_ruleIf= ruleIf EOF ;
+    // InternalSCH.g:475:1: entryRuleIf returns [EObject current=null] : iv_ruleIf= ruleIf EOF ;
     public final EObject entryRuleIf() throws RecognitionException {
         EObject current = null;
 
@@ -1113,8 +1161,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:436:43: (iv_ruleIf= ruleIf EOF )
-            // InternalSCH.g:437:2: iv_ruleIf= ruleIf EOF
+            // InternalSCH.g:475:43: (iv_ruleIf= ruleIf EOF )
+            // InternalSCH.g:476:2: iv_ruleIf= ruleIf EOF
             {
              newCompositeNode(grammarAccess.getIfRule()); 
             pushFollow(FOLLOW_1);
@@ -1141,51 +1189,43 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIf"
-    // InternalSCH.g:443:1: ruleIf returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_logicOperator_2_0= ruleLogicOperator ) ) ( (lv_leftCondition_3_0= ruleTerminalExpression ) ) ( (lv_rightCondition_4_0= ruleTerminalExpression ) ) otherlv_5= ')' ( (lv_result_6_0= ruleTerminalExpression ) ) ) ;
+    // InternalSCH.g:482:1: ruleIf returns [EObject current=null] : (otherlv_0= 'if' ( (lv_logicEx_1_0= ruleTerminalExpression ) ) ( (lv_trueEx_2_0= ruleTerminalExpression ) ) ( (lv_falseEx_3_0= ruleTerminalExpression ) ) ) ;
     public final EObject ruleIf() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_5=null;
-        EObject lv_logicOperator_2_0 = null;
+        EObject lv_logicEx_1_0 = null;
 
-        EObject lv_leftCondition_3_0 = null;
+        EObject lv_trueEx_2_0 = null;
 
-        EObject lv_rightCondition_4_0 = null;
-
-        EObject lv_result_6_0 = null;
+        EObject lv_falseEx_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSCH.g:449:2: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_logicOperator_2_0= ruleLogicOperator ) ) ( (lv_leftCondition_3_0= ruleTerminalExpression ) ) ( (lv_rightCondition_4_0= ruleTerminalExpression ) ) otherlv_5= ')' ( (lv_result_6_0= ruleTerminalExpression ) ) ) )
-            // InternalSCH.g:450:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_logicOperator_2_0= ruleLogicOperator ) ) ( (lv_leftCondition_3_0= ruleTerminalExpression ) ) ( (lv_rightCondition_4_0= ruleTerminalExpression ) ) otherlv_5= ')' ( (lv_result_6_0= ruleTerminalExpression ) ) )
+            // InternalSCH.g:488:2: ( (otherlv_0= 'if' ( (lv_logicEx_1_0= ruleTerminalExpression ) ) ( (lv_trueEx_2_0= ruleTerminalExpression ) ) ( (lv_falseEx_3_0= ruleTerminalExpression ) ) ) )
+            // InternalSCH.g:489:2: (otherlv_0= 'if' ( (lv_logicEx_1_0= ruleTerminalExpression ) ) ( (lv_trueEx_2_0= ruleTerminalExpression ) ) ( (lv_falseEx_3_0= ruleTerminalExpression ) ) )
             {
-            // InternalSCH.g:450:2: (otherlv_0= 'if' otherlv_1= '(' ( (lv_logicOperator_2_0= ruleLogicOperator ) ) ( (lv_leftCondition_3_0= ruleTerminalExpression ) ) ( (lv_rightCondition_4_0= ruleTerminalExpression ) ) otherlv_5= ')' ( (lv_result_6_0= ruleTerminalExpression ) ) )
-            // InternalSCH.g:451:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_logicOperator_2_0= ruleLogicOperator ) ) ( (lv_leftCondition_3_0= ruleTerminalExpression ) ) ( (lv_rightCondition_4_0= ruleTerminalExpression ) ) otherlv_5= ')' ( (lv_result_6_0= ruleTerminalExpression ) )
+            // InternalSCH.g:489:2: (otherlv_0= 'if' ( (lv_logicEx_1_0= ruleTerminalExpression ) ) ( (lv_trueEx_2_0= ruleTerminalExpression ) ) ( (lv_falseEx_3_0= ruleTerminalExpression ) ) )
+            // InternalSCH.g:490:3: otherlv_0= 'if' ( (lv_logicEx_1_0= ruleTerminalExpression ) ) ( (lv_trueEx_2_0= ruleTerminalExpression ) ) ( (lv_falseEx_3_0= ruleTerminalExpression ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_13); 
+            otherlv_0=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIfAccess().getIfKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_15); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getIfAccess().getLeftParenthesisKeyword_1());
-            		
-            // InternalSCH.g:459:3: ( (lv_logicOperator_2_0= ruleLogicOperator ) )
-            // InternalSCH.g:460:4: (lv_logicOperator_2_0= ruleLogicOperator )
+            // InternalSCH.g:494:3: ( (lv_logicEx_1_0= ruleTerminalExpression ) )
+            // InternalSCH.g:495:4: (lv_logicEx_1_0= ruleTerminalExpression )
             {
-            // InternalSCH.g:460:4: (lv_logicOperator_2_0= ruleLogicOperator )
-            // InternalSCH.g:461:5: lv_logicOperator_2_0= ruleLogicOperator
+            // InternalSCH.g:495:4: (lv_logicEx_1_0= ruleTerminalExpression )
+            // InternalSCH.g:496:5: lv_logicEx_1_0= ruleTerminalExpression
             {
 
-            					newCompositeNode(grammarAccess.getIfAccess().getLogicOperatorLogicOperatorParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getIfAccess().getLogicExTerminalExpressionParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_16);
-            lv_logicOperator_2_0=ruleLogicOperator();
+            pushFollow(FOLLOW_12);
+            lv_logicEx_1_0=ruleTerminalExpression();
 
             state._fsp--;
 
@@ -1195,39 +1235,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"logicOperator",
-            						lv_logicOperator_2_0,
-            						"fm.pucrs.br.SCH.LogicOperator");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalSCH.g:478:3: ( (lv_leftCondition_3_0= ruleTerminalExpression ) )
-            // InternalSCH.g:479:4: (lv_leftCondition_3_0= ruleTerminalExpression )
-            {
-            // InternalSCH.g:479:4: (lv_leftCondition_3_0= ruleTerminalExpression )
-            // InternalSCH.g:480:5: lv_leftCondition_3_0= ruleTerminalExpression
-            {
-
-            					newCompositeNode(grammarAccess.getIfAccess().getLeftConditionTerminalExpressionParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_16);
-            lv_leftCondition_3_0=ruleTerminalExpression();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getIfRule());
-            					}
-            					set(
-            						current,
-            						"leftCondition",
-            						lv_leftCondition_3_0,
+            						"logicEx",
+            						lv_logicEx_1_0,
             						"fm.pucrs.br.SCH.TerminalExpression");
             					afterParserOrEnumRuleCall();
             				
@@ -1237,17 +1246,17 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSCH.g:497:3: ( (lv_rightCondition_4_0= ruleTerminalExpression ) )
-            // InternalSCH.g:498:4: (lv_rightCondition_4_0= ruleTerminalExpression )
+            // InternalSCH.g:513:3: ( (lv_trueEx_2_0= ruleTerminalExpression ) )
+            // InternalSCH.g:514:4: (lv_trueEx_2_0= ruleTerminalExpression )
             {
-            // InternalSCH.g:498:4: (lv_rightCondition_4_0= ruleTerminalExpression )
-            // InternalSCH.g:499:5: lv_rightCondition_4_0= ruleTerminalExpression
+            // InternalSCH.g:514:4: (lv_trueEx_2_0= ruleTerminalExpression )
+            // InternalSCH.g:515:5: lv_trueEx_2_0= ruleTerminalExpression
             {
 
-            					newCompositeNode(grammarAccess.getIfAccess().getRightConditionTerminalExpressionParserRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getIfAccess().getTrueExTerminalExpressionParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_5);
-            lv_rightCondition_4_0=ruleTerminalExpression();
+            pushFollow(FOLLOW_12);
+            lv_trueEx_2_0=ruleTerminalExpression();
 
             state._fsp--;
 
@@ -1257,8 +1266,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"rightCondition",
-            						lv_rightCondition_4_0,
+            						"trueEx",
+            						lv_trueEx_2_0,
             						"fm.pucrs.br.SCH.TerminalExpression");
             					afterParserOrEnumRuleCall();
             				
@@ -1268,21 +1277,17 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,13,FOLLOW_11); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getIfAccess().getRightParenthesisKeyword_5());
-            		
-            // InternalSCH.g:520:3: ( (lv_result_6_0= ruleTerminalExpression ) )
-            // InternalSCH.g:521:4: (lv_result_6_0= ruleTerminalExpression )
+            // InternalSCH.g:532:3: ( (lv_falseEx_3_0= ruleTerminalExpression ) )
+            // InternalSCH.g:533:4: (lv_falseEx_3_0= ruleTerminalExpression )
             {
-            // InternalSCH.g:521:4: (lv_result_6_0= ruleTerminalExpression )
-            // InternalSCH.g:522:5: lv_result_6_0= ruleTerminalExpression
+            // InternalSCH.g:533:4: (lv_falseEx_3_0= ruleTerminalExpression )
+            // InternalSCH.g:534:5: lv_falseEx_3_0= ruleTerminalExpression
             {
 
-            					newCompositeNode(grammarAccess.getIfAccess().getResultTerminalExpressionParserRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getIfAccess().getFalseExTerminalExpressionParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_result_6_0=ruleTerminalExpression();
+            lv_falseEx_3_0=ruleTerminalExpression();
 
             state._fsp--;
 
@@ -1292,8 +1297,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"result",
-            						lv_result_6_0,
+            						"falseEx",
+            						lv_falseEx_3_0,
             						"fm.pucrs.br.SCH.TerminalExpression");
             					afterParserOrEnumRuleCall();
             				
@@ -1325,25 +1330,25 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleIf"
 
 
-    // $ANTLR start "entryRuleLogicOperator"
-    // InternalSCH.g:543:1: entryRuleLogicOperator returns [EObject current=null] : iv_ruleLogicOperator= ruleLogicOperator EOF ;
-    public final EObject entryRuleLogicOperator() throws RecognitionException {
-        EObject current = null;
+    // $ANTLR start "entryRuleBool"
+    // InternalSCH.g:555:1: entryRuleBool returns [String current=null] : iv_ruleBool= ruleBool EOF ;
+    public final String entryRuleBool() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleLogicOperator = null;
+        AntlrDatatypeRuleToken iv_ruleBool = null;
 
 
         try {
-            // InternalSCH.g:543:54: (iv_ruleLogicOperator= ruleLogicOperator EOF )
-            // InternalSCH.g:544:2: iv_ruleLogicOperator= ruleLogicOperator EOF
+            // InternalSCH.g:555:44: (iv_ruleBool= ruleBool EOF )
+            // InternalSCH.g:556:2: iv_ruleBool= ruleBool EOF
             {
-             newCompositeNode(grammarAccess.getLogicOperatorRule()); 
+             newCompositeNode(grammarAccess.getBoolRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleLogicOperator=ruleLogicOperator();
+            iv_ruleBool=ruleBool();
 
             state._fsp--;
 
-             current =iv_ruleLogicOperator; 
+             current =iv_ruleBool.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1358,179 +1363,58 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleLogicOperator"
+    // $ANTLR end "entryRuleBool"
 
 
-    // $ANTLR start "ruleLogicOperator"
-    // InternalSCH.g:550:1: ruleLogicOperator returns [EObject current=null] : (this_Equal_0= ruleEqual | this_MoreOrEqual_1= ruleMoreOrEqual | this_LessOrEqual_2= ruleLessOrEqual | this_Different_3= ruleDifferent | this_More_4= ruleMore | this_Less_5= ruleLess ) ;
-    public final EObject ruleLogicOperator() throws RecognitionException {
-        EObject current = null;
+    // $ANTLR start "ruleBool"
+    // InternalSCH.g:562:1: ruleBool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '#t' | kw= '#f' ) ;
+    public final AntlrDatatypeRuleToken ruleBool() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        EObject this_Equal_0 = null;
-
-        EObject this_MoreOrEqual_1 = null;
-
-        EObject this_LessOrEqual_2 = null;
-
-        EObject this_Different_3 = null;
-
-        EObject this_More_4 = null;
-
-        EObject this_Less_5 = null;
-
+        Token kw=null;
 
 
         	enterRule();
 
         try {
-            // InternalSCH.g:556:2: ( (this_Equal_0= ruleEqual | this_MoreOrEqual_1= ruleMoreOrEqual | this_LessOrEqual_2= ruleLessOrEqual | this_Different_3= ruleDifferent | this_More_4= ruleMore | this_Less_5= ruleLess ) )
-            // InternalSCH.g:557:2: (this_Equal_0= ruleEqual | this_MoreOrEqual_1= ruleMoreOrEqual | this_LessOrEqual_2= ruleLessOrEqual | this_Different_3= ruleDifferent | this_More_4= ruleMore | this_Less_5= ruleLess )
+            // InternalSCH.g:568:2: ( (kw= '#t' | kw= '#f' ) )
+            // InternalSCH.g:569:2: (kw= '#t' | kw= '#f' )
             {
-            // InternalSCH.g:557:2: (this_Equal_0= ruleEqual | this_MoreOrEqual_1= ruleMoreOrEqual | this_LessOrEqual_2= ruleLessOrEqual | this_Different_3= ruleDifferent | this_More_4= ruleMore | this_Less_5= ruleLess )
-            int alt8=6;
-            switch ( input.LA(1) ) {
-            case 17:
-                {
-                alt8=1;
-                }
-                break;
-            case 18:
-                {
-                alt8=2;
-                }
-                break;
-            case 19:
-                {
-                alt8=3;
-                }
-                break;
-            case 20:
-                {
-                alt8=4;
-                }
-                break;
-            case 21:
-                {
-                alt8=5;
-                }
-                break;
-            case 22:
-                {
-                alt8=6;
-                }
-                break;
-            default:
+            // InternalSCH.g:569:2: (kw= '#t' | kw= '#f' )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==17) ) {
+                alt9=1;
+            }
+            else if ( (LA9_0==18) ) {
+                alt9=2;
+            }
+            else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalSCH.g:558:3: this_Equal_0= ruleEqual
+                    // InternalSCH.g:570:3: kw= '#t'
                     {
+                    kw=(Token)match(input,17,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getEqualParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Equal_0=ruleEqual();
-
-                    state._fsp--;
-
-
-                    			current = this_Equal_0;
-                    			afterParserOrEnumRuleCall();
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getBoolAccess().getTKeyword_0());
                     		
 
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:567:3: this_MoreOrEqual_1= ruleMoreOrEqual
+                    // InternalSCH.g:576:3: kw= '#f'
                     {
+                    kw=(Token)match(input,18,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getMoreOrEqualParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_MoreOrEqual_1=ruleMoreOrEqual();
-
-                    state._fsp--;
-
-
-                    			current = this_MoreOrEqual_1;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSCH.g:576:3: this_LessOrEqual_2= ruleLessOrEqual
-                    {
-
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getLessOrEqualParserRuleCall_2());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_LessOrEqual_2=ruleLessOrEqual();
-
-                    state._fsp--;
-
-
-                    			current = this_LessOrEqual_2;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSCH.g:585:3: this_Different_3= ruleDifferent
-                    {
-
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getDifferentParserRuleCall_3());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Different_3=ruleDifferent();
-
-                    state._fsp--;
-
-
-                    			current = this_Different_3;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 5 :
-                    // InternalSCH.g:594:3: this_More_4= ruleMore
-                    {
-
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getMoreParserRuleCall_4());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_More_4=ruleMore();
-
-                    state._fsp--;
-
-
-                    			current = this_More_4;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 6 :
-                    // InternalSCH.g:603:3: this_Less_5= ruleLess
-                    {
-
-                    			newCompositeNode(grammarAccess.getLogicOperatorAccess().getLessParserRuleCall_5());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Less_5=ruleLess();
-
-                    state._fsp--;
-
-
-                    			current = this_Less_5;
-                    			afterParserOrEnumRuleCall();
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getBoolAccess().getFKeyword_1());
                     		
 
                     }
@@ -1554,11 +1438,11 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleLogicOperator"
+    // $ANTLR end "ruleBool"
 
 
     // $ANTLR start "entryRuleEqual"
-    // InternalSCH.g:615:1: entryRuleEqual returns [EObject current=null] : iv_ruleEqual= ruleEqual EOF ;
+    // InternalSCH.g:585:1: entryRuleEqual returns [EObject current=null] : iv_ruleEqual= ruleEqual EOF ;
     public final EObject entryRuleEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1566,8 +1450,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:615:46: (iv_ruleEqual= ruleEqual EOF )
-            // InternalSCH.g:616:2: iv_ruleEqual= ruleEqual EOF
+            // InternalSCH.g:585:46: (iv_ruleEqual= ruleEqual EOF )
+            // InternalSCH.g:586:2: iv_ruleEqual= ruleEqual EOF
             {
              newCompositeNode(grammarAccess.getEqualRule()); 
             pushFollow(FOLLOW_1);
@@ -1594,7 +1478,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEqual"
-    // InternalSCH.g:622:1: ruleEqual returns [EObject current=null] : ( (lv_equal_0_0= '=' ) ) ;
+    // InternalSCH.g:592:1: ruleEqual returns [EObject current=null] : ( (lv_equal_0_0= '=' ) ) ;
     public final EObject ruleEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1604,16 +1488,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:628:2: ( ( (lv_equal_0_0= '=' ) ) )
-            // InternalSCH.g:629:2: ( (lv_equal_0_0= '=' ) )
+            // InternalSCH.g:598:2: ( ( (lv_equal_0_0= '=' ) ) )
+            // InternalSCH.g:599:2: ( (lv_equal_0_0= '=' ) )
             {
-            // InternalSCH.g:629:2: ( (lv_equal_0_0= '=' ) )
-            // InternalSCH.g:630:3: (lv_equal_0_0= '=' )
+            // InternalSCH.g:599:2: ( (lv_equal_0_0= '=' ) )
+            // InternalSCH.g:600:3: (lv_equal_0_0= '=' )
             {
-            // InternalSCH.g:630:3: (lv_equal_0_0= '=' )
-            // InternalSCH.g:631:4: lv_equal_0_0= '='
+            // InternalSCH.g:600:3: (lv_equal_0_0= '=' )
+            // InternalSCH.g:601:4: lv_equal_0_0= '='
             {
-            lv_equal_0_0=(Token)match(input,17,FOLLOW_2); 
+            lv_equal_0_0=(Token)match(input,19,FOLLOW_2); 
 
             				newLeafNode(lv_equal_0_0, grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0());
             			
@@ -1649,7 +1533,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoreOrEqual"
-    // InternalSCH.g:646:1: entryRuleMoreOrEqual returns [EObject current=null] : iv_ruleMoreOrEqual= ruleMoreOrEqual EOF ;
+    // InternalSCH.g:616:1: entryRuleMoreOrEqual returns [EObject current=null] : iv_ruleMoreOrEqual= ruleMoreOrEqual EOF ;
     public final EObject entryRuleMoreOrEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1657,8 +1541,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:646:52: (iv_ruleMoreOrEqual= ruleMoreOrEqual EOF )
-            // InternalSCH.g:647:2: iv_ruleMoreOrEqual= ruleMoreOrEqual EOF
+            // InternalSCH.g:616:52: (iv_ruleMoreOrEqual= ruleMoreOrEqual EOF )
+            // InternalSCH.g:617:2: iv_ruleMoreOrEqual= ruleMoreOrEqual EOF
             {
              newCompositeNode(grammarAccess.getMoreOrEqualRule()); 
             pushFollow(FOLLOW_1);
@@ -1685,7 +1569,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoreOrEqual"
-    // InternalSCH.g:653:1: ruleMoreOrEqual returns [EObject current=null] : ( (lv_moreOrEqual_0_0= '>=' ) ) ;
+    // InternalSCH.g:623:1: ruleMoreOrEqual returns [EObject current=null] : ( (lv_moreOrEqual_0_0= '>=' ) ) ;
     public final EObject ruleMoreOrEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1695,16 +1579,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:659:2: ( ( (lv_moreOrEqual_0_0= '>=' ) ) )
-            // InternalSCH.g:660:2: ( (lv_moreOrEqual_0_0= '>=' ) )
+            // InternalSCH.g:629:2: ( ( (lv_moreOrEqual_0_0= '>=' ) ) )
+            // InternalSCH.g:630:2: ( (lv_moreOrEqual_0_0= '>=' ) )
             {
-            // InternalSCH.g:660:2: ( (lv_moreOrEqual_0_0= '>=' ) )
-            // InternalSCH.g:661:3: (lv_moreOrEqual_0_0= '>=' )
+            // InternalSCH.g:630:2: ( (lv_moreOrEqual_0_0= '>=' ) )
+            // InternalSCH.g:631:3: (lv_moreOrEqual_0_0= '>=' )
             {
-            // InternalSCH.g:661:3: (lv_moreOrEqual_0_0= '>=' )
-            // InternalSCH.g:662:4: lv_moreOrEqual_0_0= '>='
+            // InternalSCH.g:631:3: (lv_moreOrEqual_0_0= '>=' )
+            // InternalSCH.g:632:4: lv_moreOrEqual_0_0= '>='
             {
-            lv_moreOrEqual_0_0=(Token)match(input,18,FOLLOW_2); 
+            lv_moreOrEqual_0_0=(Token)match(input,20,FOLLOW_2); 
 
             				newLeafNode(lv_moreOrEqual_0_0, grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0());
             			
@@ -1740,7 +1624,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLessOrEqual"
-    // InternalSCH.g:677:1: entryRuleLessOrEqual returns [EObject current=null] : iv_ruleLessOrEqual= ruleLessOrEqual EOF ;
+    // InternalSCH.g:647:1: entryRuleLessOrEqual returns [EObject current=null] : iv_ruleLessOrEqual= ruleLessOrEqual EOF ;
     public final EObject entryRuleLessOrEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1748,8 +1632,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:677:52: (iv_ruleLessOrEqual= ruleLessOrEqual EOF )
-            // InternalSCH.g:678:2: iv_ruleLessOrEqual= ruleLessOrEqual EOF
+            // InternalSCH.g:647:52: (iv_ruleLessOrEqual= ruleLessOrEqual EOF )
+            // InternalSCH.g:648:2: iv_ruleLessOrEqual= ruleLessOrEqual EOF
             {
              newCompositeNode(grammarAccess.getLessOrEqualRule()); 
             pushFollow(FOLLOW_1);
@@ -1776,7 +1660,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLessOrEqual"
-    // InternalSCH.g:684:1: ruleLessOrEqual returns [EObject current=null] : ( (lv_lessOrEqual_0_0= '<=' ) ) ;
+    // InternalSCH.g:654:1: ruleLessOrEqual returns [EObject current=null] : ( (lv_lessOrEqual_0_0= '<=' ) ) ;
     public final EObject ruleLessOrEqual() throws RecognitionException {
         EObject current = null;
 
@@ -1786,16 +1670,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:690:2: ( ( (lv_lessOrEqual_0_0= '<=' ) ) )
-            // InternalSCH.g:691:2: ( (lv_lessOrEqual_0_0= '<=' ) )
+            // InternalSCH.g:660:2: ( ( (lv_lessOrEqual_0_0= '<=' ) ) )
+            // InternalSCH.g:661:2: ( (lv_lessOrEqual_0_0= '<=' ) )
             {
-            // InternalSCH.g:691:2: ( (lv_lessOrEqual_0_0= '<=' ) )
-            // InternalSCH.g:692:3: (lv_lessOrEqual_0_0= '<=' )
+            // InternalSCH.g:661:2: ( (lv_lessOrEqual_0_0= '<=' ) )
+            // InternalSCH.g:662:3: (lv_lessOrEqual_0_0= '<=' )
             {
-            // InternalSCH.g:692:3: (lv_lessOrEqual_0_0= '<=' )
-            // InternalSCH.g:693:4: lv_lessOrEqual_0_0= '<='
+            // InternalSCH.g:662:3: (lv_lessOrEqual_0_0= '<=' )
+            // InternalSCH.g:663:4: lv_lessOrEqual_0_0= '<='
             {
-            lv_lessOrEqual_0_0=(Token)match(input,19,FOLLOW_2); 
+            lv_lessOrEqual_0_0=(Token)match(input,21,FOLLOW_2); 
 
             				newLeafNode(lv_lessOrEqual_0_0, grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0());
             			
@@ -1831,7 +1715,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDifferent"
-    // InternalSCH.g:708:1: entryRuleDifferent returns [EObject current=null] : iv_ruleDifferent= ruleDifferent EOF ;
+    // InternalSCH.g:678:1: entryRuleDifferent returns [EObject current=null] : iv_ruleDifferent= ruleDifferent EOF ;
     public final EObject entryRuleDifferent() throws RecognitionException {
         EObject current = null;
 
@@ -1839,8 +1723,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:708:50: (iv_ruleDifferent= ruleDifferent EOF )
-            // InternalSCH.g:709:2: iv_ruleDifferent= ruleDifferent EOF
+            // InternalSCH.g:678:50: (iv_ruleDifferent= ruleDifferent EOF )
+            // InternalSCH.g:679:2: iv_ruleDifferent= ruleDifferent EOF
             {
              newCompositeNode(grammarAccess.getDifferentRule()); 
             pushFollow(FOLLOW_1);
@@ -1867,7 +1751,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDifferent"
-    // InternalSCH.g:715:1: ruleDifferent returns [EObject current=null] : ( (lv_different_0_0= '!=' ) ) ;
+    // InternalSCH.g:685:1: ruleDifferent returns [EObject current=null] : ( (lv_different_0_0= '!=' ) ) ;
     public final EObject ruleDifferent() throws RecognitionException {
         EObject current = null;
 
@@ -1877,16 +1761,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:721:2: ( ( (lv_different_0_0= '!=' ) ) )
-            // InternalSCH.g:722:2: ( (lv_different_0_0= '!=' ) )
+            // InternalSCH.g:691:2: ( ( (lv_different_0_0= '!=' ) ) )
+            // InternalSCH.g:692:2: ( (lv_different_0_0= '!=' ) )
             {
-            // InternalSCH.g:722:2: ( (lv_different_0_0= '!=' ) )
-            // InternalSCH.g:723:3: (lv_different_0_0= '!=' )
+            // InternalSCH.g:692:2: ( (lv_different_0_0= '!=' ) )
+            // InternalSCH.g:693:3: (lv_different_0_0= '!=' )
             {
-            // InternalSCH.g:723:3: (lv_different_0_0= '!=' )
-            // InternalSCH.g:724:4: lv_different_0_0= '!='
+            // InternalSCH.g:693:3: (lv_different_0_0= '!=' )
+            // InternalSCH.g:694:4: lv_different_0_0= '!='
             {
-            lv_different_0_0=(Token)match(input,20,FOLLOW_2); 
+            lv_different_0_0=(Token)match(input,22,FOLLOW_2); 
 
             				newLeafNode(lv_different_0_0, grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0());
             			
@@ -1922,7 +1806,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMore"
-    // InternalSCH.g:739:1: entryRuleMore returns [EObject current=null] : iv_ruleMore= ruleMore EOF ;
+    // InternalSCH.g:709:1: entryRuleMore returns [EObject current=null] : iv_ruleMore= ruleMore EOF ;
     public final EObject entryRuleMore() throws RecognitionException {
         EObject current = null;
 
@@ -1930,8 +1814,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:739:45: (iv_ruleMore= ruleMore EOF )
-            // InternalSCH.g:740:2: iv_ruleMore= ruleMore EOF
+            // InternalSCH.g:709:45: (iv_ruleMore= ruleMore EOF )
+            // InternalSCH.g:710:2: iv_ruleMore= ruleMore EOF
             {
              newCompositeNode(grammarAccess.getMoreRule()); 
             pushFollow(FOLLOW_1);
@@ -1958,7 +1842,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMore"
-    // InternalSCH.g:746:1: ruleMore returns [EObject current=null] : ( (lv_more_0_0= '>' ) ) ;
+    // InternalSCH.g:716:1: ruleMore returns [EObject current=null] : ( (lv_more_0_0= '>' ) ) ;
     public final EObject ruleMore() throws RecognitionException {
         EObject current = null;
 
@@ -1968,16 +1852,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:752:2: ( ( (lv_more_0_0= '>' ) ) )
-            // InternalSCH.g:753:2: ( (lv_more_0_0= '>' ) )
+            // InternalSCH.g:722:2: ( ( (lv_more_0_0= '>' ) ) )
+            // InternalSCH.g:723:2: ( (lv_more_0_0= '>' ) )
             {
-            // InternalSCH.g:753:2: ( (lv_more_0_0= '>' ) )
-            // InternalSCH.g:754:3: (lv_more_0_0= '>' )
+            // InternalSCH.g:723:2: ( (lv_more_0_0= '>' ) )
+            // InternalSCH.g:724:3: (lv_more_0_0= '>' )
             {
-            // InternalSCH.g:754:3: (lv_more_0_0= '>' )
-            // InternalSCH.g:755:4: lv_more_0_0= '>'
+            // InternalSCH.g:724:3: (lv_more_0_0= '>' )
+            // InternalSCH.g:725:4: lv_more_0_0= '>'
             {
-            lv_more_0_0=(Token)match(input,21,FOLLOW_2); 
+            lv_more_0_0=(Token)match(input,23,FOLLOW_2); 
 
             				newLeafNode(lv_more_0_0, grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0());
             			
@@ -2013,7 +1897,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLess"
-    // InternalSCH.g:770:1: entryRuleLess returns [EObject current=null] : iv_ruleLess= ruleLess EOF ;
+    // InternalSCH.g:740:1: entryRuleLess returns [EObject current=null] : iv_ruleLess= ruleLess EOF ;
     public final EObject entryRuleLess() throws RecognitionException {
         EObject current = null;
 
@@ -2021,8 +1905,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:770:45: (iv_ruleLess= ruleLess EOF )
-            // InternalSCH.g:771:2: iv_ruleLess= ruleLess EOF
+            // InternalSCH.g:740:45: (iv_ruleLess= ruleLess EOF )
+            // InternalSCH.g:741:2: iv_ruleLess= ruleLess EOF
             {
              newCompositeNode(grammarAccess.getLessRule()); 
             pushFollow(FOLLOW_1);
@@ -2049,7 +1933,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLess"
-    // InternalSCH.g:777:1: ruleLess returns [EObject current=null] : ( (lv_less_0_0= '<' ) ) ;
+    // InternalSCH.g:747:1: ruleLess returns [EObject current=null] : ( (lv_less_0_0= '<' ) ) ;
     public final EObject ruleLess() throws RecognitionException {
         EObject current = null;
 
@@ -2059,16 +1943,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:783:2: ( ( (lv_less_0_0= '<' ) ) )
-            // InternalSCH.g:784:2: ( (lv_less_0_0= '<' ) )
+            // InternalSCH.g:753:2: ( ( (lv_less_0_0= '<' ) ) )
+            // InternalSCH.g:754:2: ( (lv_less_0_0= '<' ) )
             {
-            // InternalSCH.g:784:2: ( (lv_less_0_0= '<' ) )
-            // InternalSCH.g:785:3: (lv_less_0_0= '<' )
+            // InternalSCH.g:754:2: ( (lv_less_0_0= '<' ) )
+            // InternalSCH.g:755:3: (lv_less_0_0= '<' )
             {
-            // InternalSCH.g:785:3: (lv_less_0_0= '<' )
-            // InternalSCH.g:786:4: lv_less_0_0= '<'
+            // InternalSCH.g:755:3: (lv_less_0_0= '<' )
+            // InternalSCH.g:756:4: lv_less_0_0= '<'
             {
-            lv_less_0_0=(Token)match(input,22,FOLLOW_2); 
+            lv_less_0_0=(Token)match(input,24,FOLLOW_2); 
 
             				newLeafNode(lv_less_0_0, grammarAccess.getLessAccess().getLessLessThanSignKeyword_0());
             			
@@ -2104,7 +1988,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperator"
-    // InternalSCH.g:801:1: entryRuleOperator returns [EObject current=null] : iv_ruleOperator= ruleOperator EOF ;
+    // InternalSCH.g:771:1: entryRuleOperator returns [EObject current=null] : iv_ruleOperator= ruleOperator EOF ;
     public final EObject entryRuleOperator() throws RecognitionException {
         EObject current = null;
 
@@ -2112,8 +1996,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:801:49: (iv_ruleOperator= ruleOperator EOF )
-            // InternalSCH.g:802:2: iv_ruleOperator= ruleOperator EOF
+            // InternalSCH.g:771:49: (iv_ruleOperator= ruleOperator EOF )
+            // InternalSCH.g:772:2: iv_ruleOperator= ruleOperator EOF
             {
              newCompositeNode(grammarAccess.getOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -2140,7 +2024,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // InternalSCH.g:808:1: ruleOperator returns [EObject current=null] : (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract ) ;
+    // InternalSCH.g:778:1: ruleOperator returns [EObject current=null] : (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract | this_Equal_4= ruleEqual | this_MoreOrEqual_5= ruleMoreOrEqual | this_LessOrEqual_6= ruleLessOrEqual | this_Different_7= ruleDifferent | this_More_8= ruleMore | this_Less_9= ruleLess ) ;
     public final EObject ruleOperator() throws RecognitionException {
         EObject current = null;
 
@@ -2152,47 +2036,89 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
         EObject this_Subtract_3 = null;
 
+        EObject this_Equal_4 = null;
+
+        EObject this_MoreOrEqual_5 = null;
+
+        EObject this_LessOrEqual_6 = null;
+
+        EObject this_Different_7 = null;
+
+        EObject this_More_8 = null;
+
+        EObject this_Less_9 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSCH.g:814:2: ( (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract ) )
-            // InternalSCH.g:815:2: (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract )
+            // InternalSCH.g:784:2: ( (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract | this_Equal_4= ruleEqual | this_MoreOrEqual_5= ruleMoreOrEqual | this_LessOrEqual_6= ruleLessOrEqual | this_Different_7= ruleDifferent | this_More_8= ruleMore | this_Less_9= ruleLess ) )
+            // InternalSCH.g:785:2: (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract | this_Equal_4= ruleEqual | this_MoreOrEqual_5= ruleMoreOrEqual | this_LessOrEqual_6= ruleLessOrEqual | this_Different_7= ruleDifferent | this_More_8= ruleMore | this_Less_9= ruleLess )
             {
-            // InternalSCH.g:815:2: (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract )
-            int alt9=4;
+            // InternalSCH.g:785:2: (this_Divide_0= ruleDivide | this_Multiply_1= ruleMultiply | this_Add_2= ruleAdd | this_Subtract_3= ruleSubtract | this_Equal_4= ruleEqual | this_MoreOrEqual_5= ruleMoreOrEqual | this_LessOrEqual_6= ruleLessOrEqual | this_Different_7= ruleDifferent | this_More_8= ruleMore | this_Less_9= ruleLess )
+            int alt10=10;
             switch ( input.LA(1) ) {
+            case 28:
+                {
+                alt10=1;
+                }
+                break;
+            case 27:
+                {
+                alt10=2;
+                }
+                break;
             case 26:
                 {
-                alt9=1;
+                alt10=3;
                 }
                 break;
             case 25:
                 {
-                alt9=2;
+                alt10=4;
                 }
                 break;
-            case 24:
+            case 19:
                 {
-                alt9=3;
+                alt10=5;
+                }
+                break;
+            case 20:
+                {
+                alt10=6;
+                }
+                break;
+            case 21:
+                {
+                alt10=7;
+                }
+                break;
+            case 22:
+                {
+                alt10=8;
                 }
                 break;
             case 23:
                 {
-                alt9=4;
+                alt10=9;
+                }
+                break;
+            case 24:
+                {
+                alt10=10;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSCH.g:816:3: this_Divide_0= ruleDivide
+                    // InternalSCH.g:786:3: this_Divide_0= ruleDivide
                     {
 
                     			newCompositeNode(grammarAccess.getOperatorAccess().getDivideParserRuleCall_0());
@@ -2210,7 +2136,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:825:3: this_Multiply_1= ruleMultiply
+                    // InternalSCH.g:795:3: this_Multiply_1= ruleMultiply
                     {
 
                     			newCompositeNode(grammarAccess.getOperatorAccess().getMultiplyParserRuleCall_1());
@@ -2228,7 +2154,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSCH.g:834:3: this_Add_2= ruleAdd
+                    // InternalSCH.g:804:3: this_Add_2= ruleAdd
                     {
 
                     			newCompositeNode(grammarAccess.getOperatorAccess().getAddParserRuleCall_2());
@@ -2246,7 +2172,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSCH.g:843:3: this_Subtract_3= ruleSubtract
+                    // InternalSCH.g:813:3: this_Subtract_3= ruleSubtract
                     {
 
                     			newCompositeNode(grammarAccess.getOperatorAccess().getSubtractParserRuleCall_3());
@@ -2258,6 +2184,114 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
                     			current = this_Subtract_3;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSCH.g:822:3: this_Equal_4= ruleEqual
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getEqualParserRuleCall_4());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Equal_4=ruleEqual();
+
+                    state._fsp--;
+
+
+                    			current = this_Equal_4;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 6 :
+                    // InternalSCH.g:831:3: this_MoreOrEqual_5= ruleMoreOrEqual
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getMoreOrEqualParserRuleCall_5());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MoreOrEqual_5=ruleMoreOrEqual();
+
+                    state._fsp--;
+
+
+                    			current = this_MoreOrEqual_5;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 7 :
+                    // InternalSCH.g:840:3: this_LessOrEqual_6= ruleLessOrEqual
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getLessOrEqualParserRuleCall_6());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_LessOrEqual_6=ruleLessOrEqual();
+
+                    state._fsp--;
+
+
+                    			current = this_LessOrEqual_6;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 8 :
+                    // InternalSCH.g:849:3: this_Different_7= ruleDifferent
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getDifferentParserRuleCall_7());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Different_7=ruleDifferent();
+
+                    state._fsp--;
+
+
+                    			current = this_Different_7;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 9 :
+                    // InternalSCH.g:858:3: this_More_8= ruleMore
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getMoreParserRuleCall_8());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_More_8=ruleMore();
+
+                    state._fsp--;
+
+
+                    			current = this_More_8;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 10 :
+                    // InternalSCH.g:867:3: this_Less_9= ruleLess
+                    {
+
+                    			newCompositeNode(grammarAccess.getOperatorAccess().getLessParserRuleCall_9());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Less_9=ruleLess();
+
+                    state._fsp--;
+
+
+                    			current = this_Less_9;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -2286,7 +2320,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSubtract"
-    // InternalSCH.g:855:1: entryRuleSubtract returns [EObject current=null] : iv_ruleSubtract= ruleSubtract EOF ;
+    // InternalSCH.g:879:1: entryRuleSubtract returns [EObject current=null] : iv_ruleSubtract= ruleSubtract EOF ;
     public final EObject entryRuleSubtract() throws RecognitionException {
         EObject current = null;
 
@@ -2294,8 +2328,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:855:49: (iv_ruleSubtract= ruleSubtract EOF )
-            // InternalSCH.g:856:2: iv_ruleSubtract= ruleSubtract EOF
+            // InternalSCH.g:879:49: (iv_ruleSubtract= ruleSubtract EOF )
+            // InternalSCH.g:880:2: iv_ruleSubtract= ruleSubtract EOF
             {
              newCompositeNode(grammarAccess.getSubtractRule()); 
             pushFollow(FOLLOW_1);
@@ -2322,7 +2356,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSubtract"
-    // InternalSCH.g:862:1: ruleSubtract returns [EObject current=null] : ( (lv_minus_0_0= '-' ) ) ;
+    // InternalSCH.g:886:1: ruleSubtract returns [EObject current=null] : ( (lv_minus_0_0= '-' ) ) ;
     public final EObject ruleSubtract() throws RecognitionException {
         EObject current = null;
 
@@ -2332,16 +2366,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:868:2: ( ( (lv_minus_0_0= '-' ) ) )
-            // InternalSCH.g:869:2: ( (lv_minus_0_0= '-' ) )
+            // InternalSCH.g:892:2: ( ( (lv_minus_0_0= '-' ) ) )
+            // InternalSCH.g:893:2: ( (lv_minus_0_0= '-' ) )
             {
-            // InternalSCH.g:869:2: ( (lv_minus_0_0= '-' ) )
-            // InternalSCH.g:870:3: (lv_minus_0_0= '-' )
+            // InternalSCH.g:893:2: ( (lv_minus_0_0= '-' ) )
+            // InternalSCH.g:894:3: (lv_minus_0_0= '-' )
             {
-            // InternalSCH.g:870:3: (lv_minus_0_0= '-' )
-            // InternalSCH.g:871:4: lv_minus_0_0= '-'
+            // InternalSCH.g:894:3: (lv_minus_0_0= '-' )
+            // InternalSCH.g:895:4: lv_minus_0_0= '-'
             {
-            lv_minus_0_0=(Token)match(input,23,FOLLOW_2); 
+            lv_minus_0_0=(Token)match(input,25,FOLLOW_2); 
 
             				newLeafNode(lv_minus_0_0, grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0());
             			
@@ -2377,7 +2411,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAdd"
-    // InternalSCH.g:886:1: entryRuleAdd returns [EObject current=null] : iv_ruleAdd= ruleAdd EOF ;
+    // InternalSCH.g:910:1: entryRuleAdd returns [EObject current=null] : iv_ruleAdd= ruleAdd EOF ;
     public final EObject entryRuleAdd() throws RecognitionException {
         EObject current = null;
 
@@ -2385,8 +2419,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:886:44: (iv_ruleAdd= ruleAdd EOF )
-            // InternalSCH.g:887:2: iv_ruleAdd= ruleAdd EOF
+            // InternalSCH.g:910:44: (iv_ruleAdd= ruleAdd EOF )
+            // InternalSCH.g:911:2: iv_ruleAdd= ruleAdd EOF
             {
              newCompositeNode(grammarAccess.getAddRule()); 
             pushFollow(FOLLOW_1);
@@ -2413,7 +2447,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdd"
-    // InternalSCH.g:893:1: ruleAdd returns [EObject current=null] : ( (lv_plus_0_0= '+' ) ) ;
+    // InternalSCH.g:917:1: ruleAdd returns [EObject current=null] : ( (lv_plus_0_0= '+' ) ) ;
     public final EObject ruleAdd() throws RecognitionException {
         EObject current = null;
 
@@ -2423,16 +2457,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:899:2: ( ( (lv_plus_0_0= '+' ) ) )
-            // InternalSCH.g:900:2: ( (lv_plus_0_0= '+' ) )
+            // InternalSCH.g:923:2: ( ( (lv_plus_0_0= '+' ) ) )
+            // InternalSCH.g:924:2: ( (lv_plus_0_0= '+' ) )
             {
-            // InternalSCH.g:900:2: ( (lv_plus_0_0= '+' ) )
-            // InternalSCH.g:901:3: (lv_plus_0_0= '+' )
+            // InternalSCH.g:924:2: ( (lv_plus_0_0= '+' ) )
+            // InternalSCH.g:925:3: (lv_plus_0_0= '+' )
             {
-            // InternalSCH.g:901:3: (lv_plus_0_0= '+' )
-            // InternalSCH.g:902:4: lv_plus_0_0= '+'
+            // InternalSCH.g:925:3: (lv_plus_0_0= '+' )
+            // InternalSCH.g:926:4: lv_plus_0_0= '+'
             {
-            lv_plus_0_0=(Token)match(input,24,FOLLOW_2); 
+            lv_plus_0_0=(Token)match(input,26,FOLLOW_2); 
 
             				newLeafNode(lv_plus_0_0, grammarAccess.getAddAccess().getPlusPlusSignKeyword_0());
             			
@@ -2468,7 +2502,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiply"
-    // InternalSCH.g:917:1: entryRuleMultiply returns [EObject current=null] : iv_ruleMultiply= ruleMultiply EOF ;
+    // InternalSCH.g:941:1: entryRuleMultiply returns [EObject current=null] : iv_ruleMultiply= ruleMultiply EOF ;
     public final EObject entryRuleMultiply() throws RecognitionException {
         EObject current = null;
 
@@ -2476,8 +2510,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:917:49: (iv_ruleMultiply= ruleMultiply EOF )
-            // InternalSCH.g:918:2: iv_ruleMultiply= ruleMultiply EOF
+            // InternalSCH.g:941:49: (iv_ruleMultiply= ruleMultiply EOF )
+            // InternalSCH.g:942:2: iv_ruleMultiply= ruleMultiply EOF
             {
              newCompositeNode(grammarAccess.getMultiplyRule()); 
             pushFollow(FOLLOW_1);
@@ -2504,7 +2538,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiply"
-    // InternalSCH.g:924:1: ruleMultiply returns [EObject current=null] : ( (lv_times_0_0= '*' ) ) ;
+    // InternalSCH.g:948:1: ruleMultiply returns [EObject current=null] : ( (lv_times_0_0= '*' ) ) ;
     public final EObject ruleMultiply() throws RecognitionException {
         EObject current = null;
 
@@ -2514,16 +2548,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:930:2: ( ( (lv_times_0_0= '*' ) ) )
-            // InternalSCH.g:931:2: ( (lv_times_0_0= '*' ) )
+            // InternalSCH.g:954:2: ( ( (lv_times_0_0= '*' ) ) )
+            // InternalSCH.g:955:2: ( (lv_times_0_0= '*' ) )
             {
-            // InternalSCH.g:931:2: ( (lv_times_0_0= '*' ) )
-            // InternalSCH.g:932:3: (lv_times_0_0= '*' )
+            // InternalSCH.g:955:2: ( (lv_times_0_0= '*' ) )
+            // InternalSCH.g:956:3: (lv_times_0_0= '*' )
             {
-            // InternalSCH.g:932:3: (lv_times_0_0= '*' )
-            // InternalSCH.g:933:4: lv_times_0_0= '*'
+            // InternalSCH.g:956:3: (lv_times_0_0= '*' )
+            // InternalSCH.g:957:4: lv_times_0_0= '*'
             {
-            lv_times_0_0=(Token)match(input,25,FOLLOW_2); 
+            lv_times_0_0=(Token)match(input,27,FOLLOW_2); 
 
             				newLeafNode(lv_times_0_0, grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0());
             			
@@ -2559,7 +2593,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDivide"
-    // InternalSCH.g:948:1: entryRuleDivide returns [EObject current=null] : iv_ruleDivide= ruleDivide EOF ;
+    // InternalSCH.g:972:1: entryRuleDivide returns [EObject current=null] : iv_ruleDivide= ruleDivide EOF ;
     public final EObject entryRuleDivide() throws RecognitionException {
         EObject current = null;
 
@@ -2567,8 +2601,8 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSCH.g:948:47: (iv_ruleDivide= ruleDivide EOF )
-            // InternalSCH.g:949:2: iv_ruleDivide= ruleDivide EOF
+            // InternalSCH.g:972:47: (iv_ruleDivide= ruleDivide EOF )
+            // InternalSCH.g:973:2: iv_ruleDivide= ruleDivide EOF
             {
              newCompositeNode(grammarAccess.getDivideRule()); 
             pushFollow(FOLLOW_1);
@@ -2595,7 +2629,7 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDivide"
-    // InternalSCH.g:955:1: ruleDivide returns [EObject current=null] : ( (lv_diveded_0_0= '/' ) ) ;
+    // InternalSCH.g:979:1: ruleDivide returns [EObject current=null] : ( (lv_diveded_0_0= '/' ) ) ;
     public final EObject ruleDivide() throws RecognitionException {
         EObject current = null;
 
@@ -2605,16 +2639,16 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSCH.g:961:2: ( ( (lv_diveded_0_0= '/' ) ) )
-            // InternalSCH.g:962:2: ( (lv_diveded_0_0= '/' ) )
+            // InternalSCH.g:985:2: ( ( (lv_diveded_0_0= '/' ) ) )
+            // InternalSCH.g:986:2: ( (lv_diveded_0_0= '/' ) )
             {
-            // InternalSCH.g:962:2: ( (lv_diveded_0_0= '/' ) )
-            // InternalSCH.g:963:3: (lv_diveded_0_0= '/' )
+            // InternalSCH.g:986:2: ( (lv_diveded_0_0= '/' ) )
+            // InternalSCH.g:987:3: (lv_diveded_0_0= '/' )
             {
-            // InternalSCH.g:963:3: (lv_diveded_0_0= '/' )
-            // InternalSCH.g:964:4: lv_diveded_0_0= '/'
+            // InternalSCH.g:987:3: (lv_diveded_0_0= '/' )
+            // InternalSCH.g:988:4: lv_diveded_0_0= '/'
             {
-            lv_diveded_0_0=(Token)match(input,26,FOLLOW_2); 
+            lv_diveded_0_0=(Token)match(input,28,FOLLOW_2); 
 
             				newLeafNode(lv_diveded_0_0, grammarAccess.getDivideAccess().getDivededSolidusKeyword_0());
             			
@@ -2651,23 +2685,65 @@ public class InternalSCHParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
+    protected DFA5 dfa5 = new DFA5(this);
+    static final String dfa_1s = "\12\uffff";
+    static final String dfa_2s = "\1\4\1\16\10\uffff";
+    static final String dfa_3s = "\1\22\1\34\10\uffff";
+    static final String dfa_4s = "\2\uffff\1\5\1\6\1\7\1\10\1\1\1\2\1\3\1\4";
+    static final String dfa_5s = "\12\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\2\1\3\1\5\5\uffff\1\1\4\uffff\2\4",
+            "\1\7\1\10\1\11\2\uffff\12\6",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
+
+    class DFA5 extends DFA {
+
+        public DFA5(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 5;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
+        }
+        public String getDescription() {
+            return "114:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | (otherlv_3= '(' this_Define_4= ruleDefine otherlv_5= ')' ) | (otherlv_6= '(' this_Lambda_7= ruleLambda otherlv_8= ')' ) | (otherlv_9= '(' this_If_10= ruleIf otherlv_11= ')' ) | ( (lv_value_12_0= RULE_INT ) )+ | ( (lv_identifier_13_0= RULE_ID ) )+ | ( (lv_bool_14_0= ruleBool ) )+ | ( (lv_str_15_0= RULE_STRING ) ) )";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001032L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000007800000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000061072L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000001FF80000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000001030L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002020L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000007E0000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000003030L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000060002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000061070L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000002020L});
 
 }

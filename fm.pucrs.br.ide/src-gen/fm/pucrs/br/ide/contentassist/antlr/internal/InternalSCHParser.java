@@ -22,13 +22,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSCHParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_DOUBLE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'", "'define'", "'lambda'", "'if'", "'='", "'>='", "'<='", "'!='", "'>'", "'<'", "'-'", "'+'", "'*'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_DOUBLE", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#t'", "'#f'", "'('", "')'", "'define'", "'lambda'", "'if'", "'='", "'>='", "'<='", "'!='", "'>'", "'<'", "'-'", "'+'", "'*'", "'/'"
     };
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int RULE_DOUBLE=6;
+    public static final int RULE_DOUBLE=7;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -40,6 +40,8 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
@@ -134,7 +136,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_ID)||LA1_0==12) ) {
+                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_STRING)||(LA1_0>=12 && LA1_0<=14)) ) {
                     alt1=1;
                 }
 
@@ -564,20 +566,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleIf"
 
 
-    // $ANTLR start "entryRuleLogicOperator"
-    // InternalSCH.g:203:1: entryRuleLogicOperator : ruleLogicOperator EOF ;
-    public final void entryRuleLogicOperator() throws RecognitionException {
+    // $ANTLR start "entryRuleBool"
+    // InternalSCH.g:203:1: entryRuleBool : ruleBool EOF ;
+    public final void entryRuleBool() throws RecognitionException {
         try {
-            // InternalSCH.g:204:1: ( ruleLogicOperator EOF )
-            // InternalSCH.g:205:1: ruleLogicOperator EOF
+            // InternalSCH.g:204:1: ( ruleBool EOF )
+            // InternalSCH.g:205:1: ruleBool EOF
             {
-             before(grammarAccess.getLogicOperatorRule()); 
+             before(grammarAccess.getBoolRule()); 
             pushFollow(FOLLOW_1);
-            ruleLogicOperator();
+            ruleBool();
 
             state._fsp--;
 
-             after(grammarAccess.getLogicOperatorRule()); 
+             after(grammarAccess.getBoolRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -591,35 +593,35 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleLogicOperator"
+    // $ANTLR end "entryRuleBool"
 
 
-    // $ANTLR start "ruleLogicOperator"
-    // InternalSCH.g:212:1: ruleLogicOperator : ( ( rule__LogicOperator__Alternatives ) ) ;
-    public final void ruleLogicOperator() throws RecognitionException {
+    // $ANTLR start "ruleBool"
+    // InternalSCH.g:212:1: ruleBool : ( ( rule__Bool__Alternatives ) ) ;
+    public final void ruleBool() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:216:2: ( ( ( rule__LogicOperator__Alternatives ) ) )
-            // InternalSCH.g:217:2: ( ( rule__LogicOperator__Alternatives ) )
+            // InternalSCH.g:216:2: ( ( ( rule__Bool__Alternatives ) ) )
+            // InternalSCH.g:217:2: ( ( rule__Bool__Alternatives ) )
             {
-            // InternalSCH.g:217:2: ( ( rule__LogicOperator__Alternatives ) )
-            // InternalSCH.g:218:3: ( rule__LogicOperator__Alternatives )
+            // InternalSCH.g:217:2: ( ( rule__Bool__Alternatives ) )
+            // InternalSCH.g:218:3: ( rule__Bool__Alternatives )
             {
-             before(grammarAccess.getLogicOperatorAccess().getAlternatives()); 
-            // InternalSCH.g:219:3: ( rule__LogicOperator__Alternatives )
-            // InternalSCH.g:219:4: rule__LogicOperator__Alternatives
+             before(grammarAccess.getBoolAccess().getAlternatives()); 
+            // InternalSCH.g:219:3: ( rule__Bool__Alternatives )
+            // InternalSCH.g:219:4: rule__Bool__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__LogicOperator__Alternatives();
+            rule__Bool__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLogicOperatorAccess().getAlternatives()); 
+             after(grammarAccess.getBoolAccess().getAlternatives()); 
 
             }
 
@@ -638,7 +640,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleLogicOperator"
+    // $ANTLR end "ruleBool"
 
 
     // $ANTLR start "entryRuleEqual"
@@ -1489,68 +1491,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Alternatives"
-    // InternalSCH.g:502:1: rule__TerminalExpression__Alternatives : ( ( ( rule__TerminalExpression__Group_0__0 ) ) | ( ( rule__TerminalExpression__Group_1__0 ) ) | ( ( rule__TerminalExpression__Group_2__0 ) ) | ( ( rule__TerminalExpression__Group_3__0 ) ) | ( ( ( rule__TerminalExpression__ValueAssignment_4 ) ) ( ( rule__TerminalExpression__ValueAssignment_4 )* ) ) | ( ( ( rule__TerminalExpression__IdentifierAssignment_5 ) ) ( ( rule__TerminalExpression__IdentifierAssignment_5 )* ) ) );
+    // InternalSCH.g:502:1: rule__TerminalExpression__Alternatives : ( ( ( rule__TerminalExpression__Group_0__0 ) ) | ( ( rule__TerminalExpression__Group_1__0 ) ) | ( ( rule__TerminalExpression__Group_2__0 ) ) | ( ( rule__TerminalExpression__Group_3__0 ) ) | ( ( ( rule__TerminalExpression__ValueAssignment_4 ) ) ( ( rule__TerminalExpression__ValueAssignment_4 )* ) ) | ( ( ( rule__TerminalExpression__IdentifierAssignment_5 ) ) ( ( rule__TerminalExpression__IdentifierAssignment_5 )* ) ) | ( ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* ) ) | ( ( rule__TerminalExpression__StrAssignment_7 ) ) );
     public final void rule__TerminalExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:506:1: ( ( ( rule__TerminalExpression__Group_0__0 ) ) | ( ( rule__TerminalExpression__Group_1__0 ) ) | ( ( rule__TerminalExpression__Group_2__0 ) ) | ( ( rule__TerminalExpression__Group_3__0 ) ) | ( ( ( rule__TerminalExpression__ValueAssignment_4 ) ) ( ( rule__TerminalExpression__ValueAssignment_4 )* ) ) | ( ( ( rule__TerminalExpression__IdentifierAssignment_5 ) ) ( ( rule__TerminalExpression__IdentifierAssignment_5 )* ) ) )
-            int alt4=6;
-            switch ( input.LA(1) ) {
-            case 12:
-                {
-                switch ( input.LA(2) ) {
-                case 14:
-                    {
-                    alt4=2;
-                    }
-                    break;
-                case 15:
-                    {
-                    alt4=3;
-                    }
-                    break;
-                case 16:
-                    {
-                    alt4=4;
-                    }
-                    break;
-                case 23:
-                case 24:
-                case 25:
-                case 26:
-                    {
-                    alt4=1;
-                    }
-                    break;
-                default:
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 4, 1, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_INT:
-                {
-                alt4=5;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt4=6;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt4) {
+            // InternalSCH.g:506:1: ( ( ( rule__TerminalExpression__Group_0__0 ) ) | ( ( rule__TerminalExpression__Group_1__0 ) ) | ( ( rule__TerminalExpression__Group_2__0 ) ) | ( ( rule__TerminalExpression__Group_3__0 ) ) | ( ( ( rule__TerminalExpression__ValueAssignment_4 ) ) ( ( rule__TerminalExpression__ValueAssignment_4 )* ) ) | ( ( ( rule__TerminalExpression__IdentifierAssignment_5 ) ) ( ( rule__TerminalExpression__IdentifierAssignment_5 )* ) ) | ( ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* ) ) | ( ( rule__TerminalExpression__StrAssignment_7 ) ) )
+            int alt5=8;
+            alt5 = dfa5.predict(input);
+            switch (alt5) {
                 case 1 :
                     // InternalSCH.g:507:2: ( ( rule__TerminalExpression__Group_0__0 ) )
                     {
@@ -1763,7 +1713,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     	case 1 :
                     	    // InternalSCH.g:552:5: rule__TerminalExpression__IdentifierAssignment_5
                     	    {
-                    	    pushFollow(FOLLOW_3);
+                    	    pushFollow(FOLLOW_5);
                     	    rule__TerminalExpression__IdentifierAssignment_5();
 
                     	    state._fsp--;
@@ -1787,6 +1737,102 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
                     }
                     break;
+                case 7 :
+                    // InternalSCH.g:557:2: ( ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* ) )
+                    {
+                    // InternalSCH.g:557:2: ( ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* ) )
+                    // InternalSCH.g:558:3: ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* )
+                    {
+                    // InternalSCH.g:558:3: ( ( rule__TerminalExpression__BoolAssignment_6 ) )
+                    // InternalSCH.g:559:4: ( rule__TerminalExpression__BoolAssignment_6 )
+                    {
+                     before(grammarAccess.getTerminalExpressionAccess().getBoolAssignment_6()); 
+                    // InternalSCH.g:560:4: ( rule__TerminalExpression__BoolAssignment_6 )
+                    // InternalSCH.g:560:5: rule__TerminalExpression__BoolAssignment_6
+                    {
+                    pushFollow(FOLLOW_6);
+                    rule__TerminalExpression__BoolAssignment_6();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTerminalExpressionAccess().getBoolAssignment_6()); 
+
+                    }
+
+                    // InternalSCH.g:563:3: ( ( rule__TerminalExpression__BoolAssignment_6 )* )
+                    // InternalSCH.g:564:4: ( rule__TerminalExpression__BoolAssignment_6 )*
+                    {
+                     before(grammarAccess.getTerminalExpressionAccess().getBoolAssignment_6()); 
+                    // InternalSCH.g:565:4: ( rule__TerminalExpression__BoolAssignment_6 )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==12) ) {
+                            alt4=1;
+                        }
+                        else if ( (LA4_0==13) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // InternalSCH.g:565:5: rule__TerminalExpression__BoolAssignment_6
+                    	    {
+                    	    pushFollow(FOLLOW_6);
+                    	    rule__TerminalExpression__BoolAssignment_6();
+
+                    	    state._fsp--;
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+                     after(grammarAccess.getTerminalExpressionAccess().getBoolAssignment_6()); 
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalSCH.g:570:2: ( ( rule__TerminalExpression__StrAssignment_7 ) )
+                    {
+                    // InternalSCH.g:570:2: ( ( rule__TerminalExpression__StrAssignment_7 ) )
+                    // InternalSCH.g:571:3: ( rule__TerminalExpression__StrAssignment_7 )
+                    {
+                     before(grammarAccess.getTerminalExpressionAccess().getStrAssignment_7()); 
+                    // InternalSCH.g:572:3: ( rule__TerminalExpression__StrAssignment_7 )
+                    // InternalSCH.g:572:4: rule__TerminalExpression__StrAssignment_7
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__TerminalExpression__StrAssignment_7();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTerminalExpressionAccess().getStrAssignment_7()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -1804,67 +1850,39 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TerminalExpression__Alternatives"
 
 
-    // $ANTLR start "rule__LogicOperator__Alternatives"
-    // InternalSCH.g:561:1: rule__LogicOperator__Alternatives : ( ( ruleEqual ) | ( ruleMoreOrEqual ) | ( ruleLessOrEqual ) | ( ruleDifferent ) | ( ruleMore ) | ( ruleLess ) );
-    public final void rule__LogicOperator__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__Bool__Alternatives"
+    // InternalSCH.g:580:1: rule__Bool__Alternatives : ( ( '#t' ) | ( '#f' ) );
+    public final void rule__Bool__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:565:1: ( ( ruleEqual ) | ( ruleMoreOrEqual ) | ( ruleLessOrEqual ) | ( ruleDifferent ) | ( ruleMore ) | ( ruleLess ) )
-            int alt5=6;
-            switch ( input.LA(1) ) {
-            case 17:
-                {
-                alt5=1;
-                }
-                break;
-            case 18:
-                {
-                alt5=2;
-                }
-                break;
-            case 19:
-                {
-                alt5=3;
-                }
-                break;
-            case 20:
-                {
-                alt5=4;
-                }
-                break;
-            case 21:
-                {
-                alt5=5;
-                }
-                break;
-            case 22:
-                {
-                alt5=6;
-                }
-                break;
-            default:
+            // InternalSCH.g:584:1: ( ( '#t' ) | ( '#f' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==12) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==13) ) {
+                alt6=2;
+            }
+            else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalSCH.g:566:2: ( ruleEqual )
+                    // InternalSCH.g:585:2: ( '#t' )
                     {
-                    // InternalSCH.g:566:2: ( ruleEqual )
-                    // InternalSCH.g:567:3: ruleEqual
+                    // InternalSCH.g:585:2: ( '#t' )
+                    // InternalSCH.g:586:3: '#t'
                     {
-                     before(grammarAccess.getLogicOperatorAccess().getEqualParserRuleCall_0()); 
-                    pushFollow(FOLLOW_2);
-                    ruleEqual();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getEqualParserRuleCall_0()); 
+                     before(grammarAccess.getBoolAccess().getTKeyword_0()); 
+                    match(input,12,FOLLOW_2); 
+                     after(grammarAccess.getBoolAccess().getTKeyword_0()); 
 
                     }
 
@@ -1872,94 +1890,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:572:2: ( ruleMoreOrEqual )
+                    // InternalSCH.g:591:2: ( '#f' )
                     {
-                    // InternalSCH.g:572:2: ( ruleMoreOrEqual )
-                    // InternalSCH.g:573:3: ruleMoreOrEqual
+                    // InternalSCH.g:591:2: ( '#f' )
+                    // InternalSCH.g:592:3: '#f'
                     {
-                     before(grammarAccess.getLogicOperatorAccess().getMoreOrEqualParserRuleCall_1()); 
-                    pushFollow(FOLLOW_2);
-                    ruleMoreOrEqual();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getMoreOrEqualParserRuleCall_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalSCH.g:578:2: ( ruleLessOrEqual )
-                    {
-                    // InternalSCH.g:578:2: ( ruleLessOrEqual )
-                    // InternalSCH.g:579:3: ruleLessOrEqual
-                    {
-                     before(grammarAccess.getLogicOperatorAccess().getLessOrEqualParserRuleCall_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleLessOrEqual();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getLessOrEqualParserRuleCall_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSCH.g:584:2: ( ruleDifferent )
-                    {
-                    // InternalSCH.g:584:2: ( ruleDifferent )
-                    // InternalSCH.g:585:3: ruleDifferent
-                    {
-                     before(grammarAccess.getLogicOperatorAccess().getDifferentParserRuleCall_3()); 
-                    pushFollow(FOLLOW_2);
-                    ruleDifferent();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getDifferentParserRuleCall_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalSCH.g:590:2: ( ruleMore )
-                    {
-                    // InternalSCH.g:590:2: ( ruleMore )
-                    // InternalSCH.g:591:3: ruleMore
-                    {
-                     before(grammarAccess.getLogicOperatorAccess().getMoreParserRuleCall_4()); 
-                    pushFollow(FOLLOW_2);
-                    ruleMore();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getMoreParserRuleCall_4()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalSCH.g:596:2: ( ruleLess )
-                    {
-                    // InternalSCH.g:596:2: ( ruleLess )
-                    // InternalSCH.g:597:3: ruleLess
-                    {
-                     before(grammarAccess.getLogicOperatorAccess().getLessParserRuleCall_5()); 
-                    pushFollow(FOLLOW_2);
-                    ruleLess();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getLogicOperatorAccess().getLessParserRuleCall_5()); 
+                     before(grammarAccess.getBoolAccess().getFKeyword_1()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getBoolAccess().getFKeyword_1()); 
 
                     }
 
@@ -1980,52 +1918,82 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LogicOperator__Alternatives"
+    // $ANTLR end "rule__Bool__Alternatives"
 
 
     // $ANTLR start "rule__Operator__Alternatives"
-    // InternalSCH.g:606:1: rule__Operator__Alternatives : ( ( ruleDivide ) | ( ruleMultiply ) | ( ruleAdd ) | ( ruleSubtract ) );
+    // InternalSCH.g:601:1: rule__Operator__Alternatives : ( ( ruleDivide ) | ( ruleMultiply ) | ( ruleAdd ) | ( ruleSubtract ) | ( ruleEqual ) | ( ruleMoreOrEqual ) | ( ruleLessOrEqual ) | ( ruleDifferent ) | ( ruleMore ) | ( ruleLess ) );
     public final void rule__Operator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:610:1: ( ( ruleDivide ) | ( ruleMultiply ) | ( ruleAdd ) | ( ruleSubtract ) )
-            int alt6=4;
+            // InternalSCH.g:605:1: ( ( ruleDivide ) | ( ruleMultiply ) | ( ruleAdd ) | ( ruleSubtract ) | ( ruleEqual ) | ( ruleMoreOrEqual ) | ( ruleLessOrEqual ) | ( ruleDifferent ) | ( ruleMore ) | ( ruleLess ) )
+            int alt7=10;
             switch ( input.LA(1) ) {
+            case 28:
+                {
+                alt7=1;
+                }
+                break;
+            case 27:
+                {
+                alt7=2;
+                }
+                break;
             case 26:
                 {
-                alt6=1;
+                alt7=3;
                 }
                 break;
             case 25:
                 {
-                alt6=2;
+                alt7=4;
                 }
                 break;
-            case 24:
+            case 19:
                 {
-                alt6=3;
+                alt7=5;
+                }
+                break;
+            case 20:
+                {
+                alt7=6;
+                }
+                break;
+            case 21:
+                {
+                alt7=7;
+                }
+                break;
+            case 22:
+                {
+                alt7=8;
                 }
                 break;
             case 23:
                 {
-                alt6=4;
+                alt7=9;
+                }
+                break;
+            case 24:
+                {
+                alt7=10;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalSCH.g:611:2: ( ruleDivide )
+                    // InternalSCH.g:606:2: ( ruleDivide )
                     {
-                    // InternalSCH.g:611:2: ( ruleDivide )
-                    // InternalSCH.g:612:3: ruleDivide
+                    // InternalSCH.g:606:2: ( ruleDivide )
+                    // InternalSCH.g:607:3: ruleDivide
                     {
                      before(grammarAccess.getOperatorAccess().getDivideParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2041,10 +2009,10 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:617:2: ( ruleMultiply )
+                    // InternalSCH.g:612:2: ( ruleMultiply )
                     {
-                    // InternalSCH.g:617:2: ( ruleMultiply )
-                    // InternalSCH.g:618:3: ruleMultiply
+                    // InternalSCH.g:612:2: ( ruleMultiply )
+                    // InternalSCH.g:613:3: ruleMultiply
                     {
                      before(grammarAccess.getOperatorAccess().getMultiplyParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2060,10 +2028,10 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSCH.g:623:2: ( ruleAdd )
+                    // InternalSCH.g:618:2: ( ruleAdd )
                     {
-                    // InternalSCH.g:623:2: ( ruleAdd )
-                    // InternalSCH.g:624:3: ruleAdd
+                    // InternalSCH.g:618:2: ( ruleAdd )
+                    // InternalSCH.g:619:3: ruleAdd
                     {
                      before(grammarAccess.getOperatorAccess().getAddParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -2079,10 +2047,10 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSCH.g:629:2: ( ruleSubtract )
+                    // InternalSCH.g:624:2: ( ruleSubtract )
                     {
-                    // InternalSCH.g:629:2: ( ruleSubtract )
-                    // InternalSCH.g:630:3: ruleSubtract
+                    // InternalSCH.g:624:2: ( ruleSubtract )
+                    // InternalSCH.g:625:3: ruleSubtract
                     {
                      before(grammarAccess.getOperatorAccess().getSubtractParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -2091,6 +2059,120 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
 
                      after(grammarAccess.getOperatorAccess().getSubtractParserRuleCall_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSCH.g:630:2: ( ruleEqual )
+                    {
+                    // InternalSCH.g:630:2: ( ruleEqual )
+                    // InternalSCH.g:631:3: ruleEqual
+                    {
+                     before(grammarAccess.getOperatorAccess().getEqualParserRuleCall_4()); 
+                    pushFollow(FOLLOW_2);
+                    ruleEqual();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getEqualParserRuleCall_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalSCH.g:636:2: ( ruleMoreOrEqual )
+                    {
+                    // InternalSCH.g:636:2: ( ruleMoreOrEqual )
+                    // InternalSCH.g:637:3: ruleMoreOrEqual
+                    {
+                     before(grammarAccess.getOperatorAccess().getMoreOrEqualParserRuleCall_5()); 
+                    pushFollow(FOLLOW_2);
+                    ruleMoreOrEqual();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getMoreOrEqualParserRuleCall_5()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalSCH.g:642:2: ( ruleLessOrEqual )
+                    {
+                    // InternalSCH.g:642:2: ( ruleLessOrEqual )
+                    // InternalSCH.g:643:3: ruleLessOrEqual
+                    {
+                     before(grammarAccess.getOperatorAccess().getLessOrEqualParserRuleCall_6()); 
+                    pushFollow(FOLLOW_2);
+                    ruleLessOrEqual();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getLessOrEqualParserRuleCall_6()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalSCH.g:648:2: ( ruleDifferent )
+                    {
+                    // InternalSCH.g:648:2: ( ruleDifferent )
+                    // InternalSCH.g:649:3: ruleDifferent
+                    {
+                     before(grammarAccess.getOperatorAccess().getDifferentParserRuleCall_7()); 
+                    pushFollow(FOLLOW_2);
+                    ruleDifferent();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getDifferentParserRuleCall_7()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalSCH.g:654:2: ( ruleMore )
+                    {
+                    // InternalSCH.g:654:2: ( ruleMore )
+                    // InternalSCH.g:655:3: ruleMore
+                    {
+                     before(grammarAccess.getOperatorAccess().getMoreParserRuleCall_8()); 
+                    pushFollow(FOLLOW_2);
+                    ruleMore();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getMoreParserRuleCall_8()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalSCH.g:660:2: ( ruleLess )
+                    {
+                    // InternalSCH.g:660:2: ( ruleLess )
+                    // InternalSCH.g:661:3: ruleLess
+                    {
+                     before(grammarAccess.getOperatorAccess().getLessParserRuleCall_9()); 
+                    pushFollow(FOLLOW_2);
+                    ruleLess();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getLessParserRuleCall_9()); 
 
                     }
 
@@ -2115,16 +2197,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__0"
-    // InternalSCH.g:639:1: rule__TerminalExpression__Group_0__0 : rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1 ;
+    // InternalSCH.g:670:1: rule__TerminalExpression__Group_0__0 : rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1 ;
     public final void rule__TerminalExpression__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:643:1: ( rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1 )
-            // InternalSCH.g:644:2: rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1
+            // InternalSCH.g:674:1: ( rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1 )
+            // InternalSCH.g:675:2: rule__TerminalExpression__Group_0__0__Impl rule__TerminalExpression__Group_0__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__TerminalExpression__Group_0__0__Impl();
 
             state._fsp--;
@@ -2153,20 +2235,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__0__Impl"
-    // InternalSCH.g:651:1: rule__TerminalExpression__Group_0__0__Impl : ( '(' ) ;
+    // InternalSCH.g:682:1: rule__TerminalExpression__Group_0__0__Impl : ( '(' ) ;
     public final void rule__TerminalExpression__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:655:1: ( ( '(' ) )
-            // InternalSCH.g:656:1: ( '(' )
+            // InternalSCH.g:686:1: ( ( '(' ) )
+            // InternalSCH.g:687:1: ( '(' )
             {
-            // InternalSCH.g:656:1: ( '(' )
-            // InternalSCH.g:657:2: '('
+            // InternalSCH.g:687:1: ( '(' )
+            // InternalSCH.g:688:2: '('
             {
              before(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -2190,16 +2272,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__1"
-    // InternalSCH.g:666:1: rule__TerminalExpression__Group_0__1 : rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2 ;
+    // InternalSCH.g:697:1: rule__TerminalExpression__Group_0__1 : rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2 ;
     public final void rule__TerminalExpression__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:670:1: ( rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2 )
-            // InternalSCH.g:671:2: rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2
+            // InternalSCH.g:701:1: ( rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2 )
+            // InternalSCH.g:702:2: rule__TerminalExpression__Group_0__1__Impl rule__TerminalExpression__Group_0__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_8);
             rule__TerminalExpression__Group_0__1__Impl();
 
             state._fsp--;
@@ -2228,17 +2310,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__1__Impl"
-    // InternalSCH.g:678:1: rule__TerminalExpression__Group_0__1__Impl : ( ruleExpression ) ;
+    // InternalSCH.g:709:1: rule__TerminalExpression__Group_0__1__Impl : ( ruleExpression ) ;
     public final void rule__TerminalExpression__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:682:1: ( ( ruleExpression ) )
-            // InternalSCH.g:683:1: ( ruleExpression )
+            // InternalSCH.g:713:1: ( ( ruleExpression ) )
+            // InternalSCH.g:714:1: ( ruleExpression )
             {
-            // InternalSCH.g:683:1: ( ruleExpression )
-            // InternalSCH.g:684:2: ruleExpression
+            // InternalSCH.g:714:1: ( ruleExpression )
+            // InternalSCH.g:715:2: ruleExpression
             {
              before(grammarAccess.getTerminalExpressionAccess().getExpressionParserRuleCall_0_1()); 
             pushFollow(FOLLOW_2);
@@ -2269,14 +2351,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__2"
-    // InternalSCH.g:693:1: rule__TerminalExpression__Group_0__2 : rule__TerminalExpression__Group_0__2__Impl ;
+    // InternalSCH.g:724:1: rule__TerminalExpression__Group_0__2 : rule__TerminalExpression__Group_0__2__Impl ;
     public final void rule__TerminalExpression__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:697:1: ( rule__TerminalExpression__Group_0__2__Impl )
-            // InternalSCH.g:698:2: rule__TerminalExpression__Group_0__2__Impl
+            // InternalSCH.g:728:1: ( rule__TerminalExpression__Group_0__2__Impl )
+            // InternalSCH.g:729:2: rule__TerminalExpression__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TerminalExpression__Group_0__2__Impl();
@@ -2302,20 +2384,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_0__2__Impl"
-    // InternalSCH.g:704:1: rule__TerminalExpression__Group_0__2__Impl : ( ')' ) ;
+    // InternalSCH.g:735:1: rule__TerminalExpression__Group_0__2__Impl : ( ')' ) ;
     public final void rule__TerminalExpression__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:708:1: ( ( ')' ) )
-            // InternalSCH.g:709:1: ( ')' )
+            // InternalSCH.g:739:1: ( ( ')' ) )
+            // InternalSCH.g:740:1: ( ')' )
             {
-            // InternalSCH.g:709:1: ( ')' )
-            // InternalSCH.g:710:2: ')'
+            // InternalSCH.g:740:1: ( ')' )
+            // InternalSCH.g:741:2: ')'
             {
              before(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -2339,16 +2421,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__0"
-    // InternalSCH.g:720:1: rule__TerminalExpression__Group_1__0 : rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1 ;
+    // InternalSCH.g:751:1: rule__TerminalExpression__Group_1__0 : rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1 ;
     public final void rule__TerminalExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:724:1: ( rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1 )
-            // InternalSCH.g:725:2: rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1
+            // InternalSCH.g:755:1: ( rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1 )
+            // InternalSCH.g:756:2: rule__TerminalExpression__Group_1__0__Impl rule__TerminalExpression__Group_1__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             rule__TerminalExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -2377,20 +2459,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__0__Impl"
-    // InternalSCH.g:732:1: rule__TerminalExpression__Group_1__0__Impl : ( '(' ) ;
+    // InternalSCH.g:763:1: rule__TerminalExpression__Group_1__0__Impl : ( '(' ) ;
     public final void rule__TerminalExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:736:1: ( ( '(' ) )
-            // InternalSCH.g:737:1: ( '(' )
+            // InternalSCH.g:767:1: ( ( '(' ) )
+            // InternalSCH.g:768:1: ( '(' )
             {
-            // InternalSCH.g:737:1: ( '(' )
-            // InternalSCH.g:738:2: '('
+            // InternalSCH.g:768:1: ( '(' )
+            // InternalSCH.g:769:2: '('
             {
              before(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -2414,16 +2496,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__1"
-    // InternalSCH.g:747:1: rule__TerminalExpression__Group_1__1 : rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2 ;
+    // InternalSCH.g:778:1: rule__TerminalExpression__Group_1__1 : rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2 ;
     public final void rule__TerminalExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:751:1: ( rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2 )
-            // InternalSCH.g:752:2: rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2
+            // InternalSCH.g:782:1: ( rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2 )
+            // InternalSCH.g:783:2: rule__TerminalExpression__Group_1__1__Impl rule__TerminalExpression__Group_1__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_8);
             rule__TerminalExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -2452,17 +2534,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__1__Impl"
-    // InternalSCH.g:759:1: rule__TerminalExpression__Group_1__1__Impl : ( ruleDefine ) ;
+    // InternalSCH.g:790:1: rule__TerminalExpression__Group_1__1__Impl : ( ruleDefine ) ;
     public final void rule__TerminalExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:763:1: ( ( ruleDefine ) )
-            // InternalSCH.g:764:1: ( ruleDefine )
+            // InternalSCH.g:794:1: ( ( ruleDefine ) )
+            // InternalSCH.g:795:1: ( ruleDefine )
             {
-            // InternalSCH.g:764:1: ( ruleDefine )
-            // InternalSCH.g:765:2: ruleDefine
+            // InternalSCH.g:795:1: ( ruleDefine )
+            // InternalSCH.g:796:2: ruleDefine
             {
              before(grammarAccess.getTerminalExpressionAccess().getDefineParserRuleCall_1_1()); 
             pushFollow(FOLLOW_2);
@@ -2493,14 +2575,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__2"
-    // InternalSCH.g:774:1: rule__TerminalExpression__Group_1__2 : rule__TerminalExpression__Group_1__2__Impl ;
+    // InternalSCH.g:805:1: rule__TerminalExpression__Group_1__2 : rule__TerminalExpression__Group_1__2__Impl ;
     public final void rule__TerminalExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:778:1: ( rule__TerminalExpression__Group_1__2__Impl )
-            // InternalSCH.g:779:2: rule__TerminalExpression__Group_1__2__Impl
+            // InternalSCH.g:809:1: ( rule__TerminalExpression__Group_1__2__Impl )
+            // InternalSCH.g:810:2: rule__TerminalExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TerminalExpression__Group_1__2__Impl();
@@ -2526,20 +2608,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_1__2__Impl"
-    // InternalSCH.g:785:1: rule__TerminalExpression__Group_1__2__Impl : ( ')' ) ;
+    // InternalSCH.g:816:1: rule__TerminalExpression__Group_1__2__Impl : ( ')' ) ;
     public final void rule__TerminalExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:789:1: ( ( ')' ) )
-            // InternalSCH.g:790:1: ( ')' )
+            // InternalSCH.g:820:1: ( ( ')' ) )
+            // InternalSCH.g:821:1: ( ')' )
             {
-            // InternalSCH.g:790:1: ( ')' )
-            // InternalSCH.g:791:2: ')'
+            // InternalSCH.g:821:1: ( ')' )
+            // InternalSCH.g:822:2: ')'
             {
              before(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_1_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_1_2()); 
 
             }
@@ -2563,16 +2645,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__0"
-    // InternalSCH.g:801:1: rule__TerminalExpression__Group_2__0 : rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1 ;
+    // InternalSCH.g:832:1: rule__TerminalExpression__Group_2__0 : rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1 ;
     public final void rule__TerminalExpression__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:805:1: ( rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1 )
-            // InternalSCH.g:806:2: rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1
+            // InternalSCH.g:836:1: ( rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1 )
+            // InternalSCH.g:837:2: rule__TerminalExpression__Group_2__0__Impl rule__TerminalExpression__Group_2__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__TerminalExpression__Group_2__0__Impl();
 
             state._fsp--;
@@ -2601,20 +2683,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__0__Impl"
-    // InternalSCH.g:813:1: rule__TerminalExpression__Group_2__0__Impl : ( '(' ) ;
+    // InternalSCH.g:844:1: rule__TerminalExpression__Group_2__0__Impl : ( '(' ) ;
     public final void rule__TerminalExpression__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:817:1: ( ( '(' ) )
-            // InternalSCH.g:818:1: ( '(' )
+            // InternalSCH.g:848:1: ( ( '(' ) )
+            // InternalSCH.g:849:1: ( '(' )
             {
-            // InternalSCH.g:818:1: ( '(' )
-            // InternalSCH.g:819:2: '('
+            // InternalSCH.g:849:1: ( '(' )
+            // InternalSCH.g:850:2: '('
             {
              before(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_2_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_2_0()); 
 
             }
@@ -2638,16 +2720,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__1"
-    // InternalSCH.g:828:1: rule__TerminalExpression__Group_2__1 : rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2 ;
+    // InternalSCH.g:859:1: rule__TerminalExpression__Group_2__1 : rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2 ;
     public final void rule__TerminalExpression__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:832:1: ( rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2 )
-            // InternalSCH.g:833:2: rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2
+            // InternalSCH.g:863:1: ( rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2 )
+            // InternalSCH.g:864:2: rule__TerminalExpression__Group_2__1__Impl rule__TerminalExpression__Group_2__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_8);
             rule__TerminalExpression__Group_2__1__Impl();
 
             state._fsp--;
@@ -2676,17 +2758,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__1__Impl"
-    // InternalSCH.g:840:1: rule__TerminalExpression__Group_2__1__Impl : ( ruleLambda ) ;
+    // InternalSCH.g:871:1: rule__TerminalExpression__Group_2__1__Impl : ( ruleLambda ) ;
     public final void rule__TerminalExpression__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:844:1: ( ( ruleLambda ) )
-            // InternalSCH.g:845:1: ( ruleLambda )
+            // InternalSCH.g:875:1: ( ( ruleLambda ) )
+            // InternalSCH.g:876:1: ( ruleLambda )
             {
-            // InternalSCH.g:845:1: ( ruleLambda )
-            // InternalSCH.g:846:2: ruleLambda
+            // InternalSCH.g:876:1: ( ruleLambda )
+            // InternalSCH.g:877:2: ruleLambda
             {
              before(grammarAccess.getTerminalExpressionAccess().getLambdaParserRuleCall_2_1()); 
             pushFollow(FOLLOW_2);
@@ -2717,14 +2799,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__2"
-    // InternalSCH.g:855:1: rule__TerminalExpression__Group_2__2 : rule__TerminalExpression__Group_2__2__Impl ;
+    // InternalSCH.g:886:1: rule__TerminalExpression__Group_2__2 : rule__TerminalExpression__Group_2__2__Impl ;
     public final void rule__TerminalExpression__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:859:1: ( rule__TerminalExpression__Group_2__2__Impl )
-            // InternalSCH.g:860:2: rule__TerminalExpression__Group_2__2__Impl
+            // InternalSCH.g:890:1: ( rule__TerminalExpression__Group_2__2__Impl )
+            // InternalSCH.g:891:2: rule__TerminalExpression__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TerminalExpression__Group_2__2__Impl();
@@ -2750,20 +2832,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_2__2__Impl"
-    // InternalSCH.g:866:1: rule__TerminalExpression__Group_2__2__Impl : ( ')' ) ;
+    // InternalSCH.g:897:1: rule__TerminalExpression__Group_2__2__Impl : ( ')' ) ;
     public final void rule__TerminalExpression__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:870:1: ( ( ')' ) )
-            // InternalSCH.g:871:1: ( ')' )
+            // InternalSCH.g:901:1: ( ( ')' ) )
+            // InternalSCH.g:902:1: ( ')' )
             {
-            // InternalSCH.g:871:1: ( ')' )
-            // InternalSCH.g:872:2: ')'
+            // InternalSCH.g:902:1: ( ')' )
+            // InternalSCH.g:903:2: ')'
             {
              before(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_2_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_2_2()); 
 
             }
@@ -2787,16 +2869,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__0"
-    // InternalSCH.g:882:1: rule__TerminalExpression__Group_3__0 : rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1 ;
+    // InternalSCH.g:913:1: rule__TerminalExpression__Group_3__0 : rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1 ;
     public final void rule__TerminalExpression__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:886:1: ( rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1 )
-            // InternalSCH.g:887:2: rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1
+            // InternalSCH.g:917:1: ( rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1 )
+            // InternalSCH.g:918:2: rule__TerminalExpression__Group_3__0__Impl rule__TerminalExpression__Group_3__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__TerminalExpression__Group_3__0__Impl();
 
             state._fsp--;
@@ -2825,20 +2907,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__0__Impl"
-    // InternalSCH.g:894:1: rule__TerminalExpression__Group_3__0__Impl : ( '(' ) ;
+    // InternalSCH.g:925:1: rule__TerminalExpression__Group_3__0__Impl : ( '(' ) ;
     public final void rule__TerminalExpression__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:898:1: ( ( '(' ) )
-            // InternalSCH.g:899:1: ( '(' )
+            // InternalSCH.g:929:1: ( ( '(' ) )
+            // InternalSCH.g:930:1: ( '(' )
             {
-            // InternalSCH.g:899:1: ( '(' )
-            // InternalSCH.g:900:2: '('
+            // InternalSCH.g:930:1: ( '(' )
+            // InternalSCH.g:931:2: '('
             {
              before(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_3_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getLeftParenthesisKeyword_3_0()); 
 
             }
@@ -2862,16 +2944,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__1"
-    // InternalSCH.g:909:1: rule__TerminalExpression__Group_3__1 : rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2 ;
+    // InternalSCH.g:940:1: rule__TerminalExpression__Group_3__1 : rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2 ;
     public final void rule__TerminalExpression__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:913:1: ( rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2 )
-            // InternalSCH.g:914:2: rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2
+            // InternalSCH.g:944:1: ( rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2 )
+            // InternalSCH.g:945:2: rule__TerminalExpression__Group_3__1__Impl rule__TerminalExpression__Group_3__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_8);
             rule__TerminalExpression__Group_3__1__Impl();
 
             state._fsp--;
@@ -2900,17 +2982,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__1__Impl"
-    // InternalSCH.g:921:1: rule__TerminalExpression__Group_3__1__Impl : ( ruleIf ) ;
+    // InternalSCH.g:952:1: rule__TerminalExpression__Group_3__1__Impl : ( ruleIf ) ;
     public final void rule__TerminalExpression__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:925:1: ( ( ruleIf ) )
-            // InternalSCH.g:926:1: ( ruleIf )
+            // InternalSCH.g:956:1: ( ( ruleIf ) )
+            // InternalSCH.g:957:1: ( ruleIf )
             {
-            // InternalSCH.g:926:1: ( ruleIf )
-            // InternalSCH.g:927:2: ruleIf
+            // InternalSCH.g:957:1: ( ruleIf )
+            // InternalSCH.g:958:2: ruleIf
             {
              before(grammarAccess.getTerminalExpressionAccess().getIfParserRuleCall_3_1()); 
             pushFollow(FOLLOW_2);
@@ -2941,14 +3023,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__2"
-    // InternalSCH.g:936:1: rule__TerminalExpression__Group_3__2 : rule__TerminalExpression__Group_3__2__Impl ;
+    // InternalSCH.g:967:1: rule__TerminalExpression__Group_3__2 : rule__TerminalExpression__Group_3__2__Impl ;
     public final void rule__TerminalExpression__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:940:1: ( rule__TerminalExpression__Group_3__2__Impl )
-            // InternalSCH.g:941:2: rule__TerminalExpression__Group_3__2__Impl
+            // InternalSCH.g:971:1: ( rule__TerminalExpression__Group_3__2__Impl )
+            // InternalSCH.g:972:2: rule__TerminalExpression__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TerminalExpression__Group_3__2__Impl();
@@ -2974,20 +3056,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__Group_3__2__Impl"
-    // InternalSCH.g:947:1: rule__TerminalExpression__Group_3__2__Impl : ( ')' ) ;
+    // InternalSCH.g:978:1: rule__TerminalExpression__Group_3__2__Impl : ( ')' ) ;
     public final void rule__TerminalExpression__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:951:1: ( ( ')' ) )
-            // InternalSCH.g:952:1: ( ')' )
+            // InternalSCH.g:982:1: ( ( ')' ) )
+            // InternalSCH.g:983:1: ( ')' )
             {
-            // InternalSCH.g:952:1: ( ')' )
-            // InternalSCH.g:953:2: ')'
+            // InternalSCH.g:983:1: ( ')' )
+            // InternalSCH.g:984:2: ')'
             {
              before(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_3_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getTerminalExpressionAccess().getRightParenthesisKeyword_3_2()); 
 
             }
@@ -3011,16 +3093,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__0"
-    // InternalSCH.g:963:1: rule__Expression__Group__0 : rule__Expression__Group__0__Impl rule__Expression__Group__1 ;
+    // InternalSCH.g:994:1: rule__Expression__Group__0 : rule__Expression__Group__0__Impl rule__Expression__Group__1 ;
     public final void rule__Expression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:967:1: ( rule__Expression__Group__0__Impl rule__Expression__Group__1 )
-            // InternalSCH.g:968:2: rule__Expression__Group__0__Impl rule__Expression__Group__1
+            // InternalSCH.g:998:1: ( rule__Expression__Group__0__Impl rule__Expression__Group__1 )
+            // InternalSCH.g:999:2: rule__Expression__Group__0__Impl rule__Expression__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_12);
             rule__Expression__Group__0__Impl();
 
             state._fsp--;
@@ -3049,21 +3131,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__0__Impl"
-    // InternalSCH.g:975:1: rule__Expression__Group__0__Impl : ( ( rule__Expression__OpAssignment_0 ) ) ;
+    // InternalSCH.g:1006:1: rule__Expression__Group__0__Impl : ( ( rule__Expression__OpAssignment_0 ) ) ;
     public final void rule__Expression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:979:1: ( ( ( rule__Expression__OpAssignment_0 ) ) )
-            // InternalSCH.g:980:1: ( ( rule__Expression__OpAssignment_0 ) )
+            // InternalSCH.g:1010:1: ( ( ( rule__Expression__OpAssignment_0 ) ) )
+            // InternalSCH.g:1011:1: ( ( rule__Expression__OpAssignment_0 ) )
             {
-            // InternalSCH.g:980:1: ( ( rule__Expression__OpAssignment_0 ) )
-            // InternalSCH.g:981:2: ( rule__Expression__OpAssignment_0 )
+            // InternalSCH.g:1011:1: ( ( rule__Expression__OpAssignment_0 ) )
+            // InternalSCH.g:1012:2: ( rule__Expression__OpAssignment_0 )
             {
              before(grammarAccess.getExpressionAccess().getOpAssignment_0()); 
-            // InternalSCH.g:982:2: ( rule__Expression__OpAssignment_0 )
-            // InternalSCH.g:982:3: rule__Expression__OpAssignment_0
+            // InternalSCH.g:1013:2: ( rule__Expression__OpAssignment_0 )
+            // InternalSCH.g:1013:3: rule__Expression__OpAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Expression__OpAssignment_0();
@@ -3096,16 +3178,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__1"
-    // InternalSCH.g:990:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl rule__Expression__Group__2 ;
+    // InternalSCH.g:1021:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl rule__Expression__Group__2 ;
     public final void rule__Expression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:994:1: ( rule__Expression__Group__1__Impl rule__Expression__Group__2 )
-            // InternalSCH.g:995:2: rule__Expression__Group__1__Impl rule__Expression__Group__2
+            // InternalSCH.g:1025:1: ( rule__Expression__Group__1__Impl rule__Expression__Group__2 )
+            // InternalSCH.g:1026:2: rule__Expression__Group__1__Impl rule__Expression__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_12);
             rule__Expression__Group__1__Impl();
 
             state._fsp--;
@@ -3134,21 +3216,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__1__Impl"
-    // InternalSCH.g:1002:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__LeftAssignment_1 ) ) ;
+    // InternalSCH.g:1033:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__LeftAssignment_1 ) ) ;
     public final void rule__Expression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1006:1: ( ( ( rule__Expression__LeftAssignment_1 ) ) )
-            // InternalSCH.g:1007:1: ( ( rule__Expression__LeftAssignment_1 ) )
+            // InternalSCH.g:1037:1: ( ( ( rule__Expression__LeftAssignment_1 ) ) )
+            // InternalSCH.g:1038:1: ( ( rule__Expression__LeftAssignment_1 ) )
             {
-            // InternalSCH.g:1007:1: ( ( rule__Expression__LeftAssignment_1 ) )
-            // InternalSCH.g:1008:2: ( rule__Expression__LeftAssignment_1 )
+            // InternalSCH.g:1038:1: ( ( rule__Expression__LeftAssignment_1 ) )
+            // InternalSCH.g:1039:2: ( rule__Expression__LeftAssignment_1 )
             {
              before(grammarAccess.getExpressionAccess().getLeftAssignment_1()); 
-            // InternalSCH.g:1009:2: ( rule__Expression__LeftAssignment_1 )
-            // InternalSCH.g:1009:3: rule__Expression__LeftAssignment_1
+            // InternalSCH.g:1040:2: ( rule__Expression__LeftAssignment_1 )
+            // InternalSCH.g:1040:3: rule__Expression__LeftAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Expression__LeftAssignment_1();
@@ -3181,14 +3263,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__2"
-    // InternalSCH.g:1017:1: rule__Expression__Group__2 : rule__Expression__Group__2__Impl ;
+    // InternalSCH.g:1048:1: rule__Expression__Group__2 : rule__Expression__Group__2__Impl ;
     public final void rule__Expression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1021:1: ( rule__Expression__Group__2__Impl )
-            // InternalSCH.g:1022:2: rule__Expression__Group__2__Impl
+            // InternalSCH.g:1052:1: ( rule__Expression__Group__2__Impl )
+            // InternalSCH.g:1053:2: rule__Expression__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Group__2__Impl();
@@ -3214,33 +3296,33 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__2__Impl"
-    // InternalSCH.g:1028:1: rule__Expression__Group__2__Impl : ( ( rule__Expression__RightAssignment_2 )* ) ;
+    // InternalSCH.g:1059:1: rule__Expression__Group__2__Impl : ( ( rule__Expression__RightAssignment_2 )* ) ;
     public final void rule__Expression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1032:1: ( ( ( rule__Expression__RightAssignment_2 )* ) )
-            // InternalSCH.g:1033:1: ( ( rule__Expression__RightAssignment_2 )* )
+            // InternalSCH.g:1063:1: ( ( ( rule__Expression__RightAssignment_2 )* ) )
+            // InternalSCH.g:1064:1: ( ( rule__Expression__RightAssignment_2 )* )
             {
-            // InternalSCH.g:1033:1: ( ( rule__Expression__RightAssignment_2 )* )
-            // InternalSCH.g:1034:2: ( rule__Expression__RightAssignment_2 )*
+            // InternalSCH.g:1064:1: ( ( rule__Expression__RightAssignment_2 )* )
+            // InternalSCH.g:1065:2: ( rule__Expression__RightAssignment_2 )*
             {
              before(grammarAccess.getExpressionAccess().getRightAssignment_2()); 
-            // InternalSCH.g:1035:2: ( rule__Expression__RightAssignment_2 )*
-            loop7:
+            // InternalSCH.g:1066:2: ( rule__Expression__RightAssignment_2 )*
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA7_0>=RULE_INT && LA7_0<=RULE_ID)||LA7_0==12) ) {
-                    alt7=1;
+                if ( ((LA8_0>=RULE_INT && LA8_0<=RULE_STRING)||(LA8_0>=12 && LA8_0<=14)) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalSCH.g:1035:3: rule__Expression__RightAssignment_2
+            	    // InternalSCH.g:1066:3: rule__Expression__RightAssignment_2
             	    {
             	    pushFollow(FOLLOW_3);
             	    rule__Expression__RightAssignment_2();
@@ -3252,7 +3334,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
@@ -3279,16 +3361,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0"
-    // InternalSCH.g:1044:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
+    // InternalSCH.g:1075:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
     public final void rule__Define__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1048:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
-            // InternalSCH.g:1049:2: rule__Define__Group__0__Impl rule__Define__Group__1
+            // InternalSCH.g:1079:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
+            // InternalSCH.g:1080:2: rule__Define__Group__0__Impl rule__Define__Group__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_13);
             rule__Define__Group__0__Impl();
 
             state._fsp--;
@@ -3317,20 +3399,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0__Impl"
-    // InternalSCH.g:1056:1: rule__Define__Group__0__Impl : ( 'define' ) ;
+    // InternalSCH.g:1087:1: rule__Define__Group__0__Impl : ( 'define' ) ;
     public final void rule__Define__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1060:1: ( ( 'define' ) )
-            // InternalSCH.g:1061:1: ( 'define' )
+            // InternalSCH.g:1091:1: ( ( 'define' ) )
+            // InternalSCH.g:1092:1: ( 'define' )
             {
-            // InternalSCH.g:1061:1: ( 'define' )
-            // InternalSCH.g:1062:2: 'define'
+            // InternalSCH.g:1092:1: ( 'define' )
+            // InternalSCH.g:1093:2: 'define'
             {
              before(grammarAccess.getDefineAccess().getDefineKeyword_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getDefineAccess().getDefineKeyword_0()); 
 
             }
@@ -3354,16 +3436,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1"
-    // InternalSCH.g:1071:1: rule__Define__Group__1 : rule__Define__Group__1__Impl rule__Define__Group__2 ;
+    // InternalSCH.g:1102:1: rule__Define__Group__1 : rule__Define__Group__1__Impl rule__Define__Group__2 ;
     public final void rule__Define__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1075:1: ( rule__Define__Group__1__Impl rule__Define__Group__2 )
-            // InternalSCH.g:1076:2: rule__Define__Group__1__Impl rule__Define__Group__2
+            // InternalSCH.g:1106:1: ( rule__Define__Group__1__Impl rule__Define__Group__2 )
+            // InternalSCH.g:1107:2: rule__Define__Group__1__Impl rule__Define__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_12);
             rule__Define__Group__1__Impl();
 
             state._fsp--;
@@ -3392,21 +3474,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1__Impl"
-    // InternalSCH.g:1083:1: rule__Define__Group__1__Impl : ( ( rule__Define__IdAssignment_1 ) ) ;
+    // InternalSCH.g:1114:1: rule__Define__Group__1__Impl : ( ( rule__Define__IdAssignment_1 ) ) ;
     public final void rule__Define__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1087:1: ( ( ( rule__Define__IdAssignment_1 ) ) )
-            // InternalSCH.g:1088:1: ( ( rule__Define__IdAssignment_1 ) )
+            // InternalSCH.g:1118:1: ( ( ( rule__Define__IdAssignment_1 ) ) )
+            // InternalSCH.g:1119:1: ( ( rule__Define__IdAssignment_1 ) )
             {
-            // InternalSCH.g:1088:1: ( ( rule__Define__IdAssignment_1 ) )
-            // InternalSCH.g:1089:2: ( rule__Define__IdAssignment_1 )
+            // InternalSCH.g:1119:1: ( ( rule__Define__IdAssignment_1 ) )
+            // InternalSCH.g:1120:2: ( rule__Define__IdAssignment_1 )
             {
              before(grammarAccess.getDefineAccess().getIdAssignment_1()); 
-            // InternalSCH.g:1090:2: ( rule__Define__IdAssignment_1 )
-            // InternalSCH.g:1090:3: rule__Define__IdAssignment_1
+            // InternalSCH.g:1121:2: ( rule__Define__IdAssignment_1 )
+            // InternalSCH.g:1121:3: rule__Define__IdAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Define__IdAssignment_1();
@@ -3439,14 +3521,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__2"
-    // InternalSCH.g:1098:1: rule__Define__Group__2 : rule__Define__Group__2__Impl ;
+    // InternalSCH.g:1129:1: rule__Define__Group__2 : rule__Define__Group__2__Impl ;
     public final void rule__Define__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1102:1: ( rule__Define__Group__2__Impl )
-            // InternalSCH.g:1103:2: rule__Define__Group__2__Impl
+            // InternalSCH.g:1133:1: ( rule__Define__Group__2__Impl )
+            // InternalSCH.g:1134:2: rule__Define__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Define__Group__2__Impl();
@@ -3472,33 +3554,33 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__2__Impl"
-    // InternalSCH.g:1109:1: rule__Define__Group__2__Impl : ( ( rule__Define__ExAssignment_2 )* ) ;
+    // InternalSCH.g:1140:1: rule__Define__Group__2__Impl : ( ( rule__Define__ExAssignment_2 )* ) ;
     public final void rule__Define__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1113:1: ( ( ( rule__Define__ExAssignment_2 )* ) )
-            // InternalSCH.g:1114:1: ( ( rule__Define__ExAssignment_2 )* )
+            // InternalSCH.g:1144:1: ( ( ( rule__Define__ExAssignment_2 )* ) )
+            // InternalSCH.g:1145:1: ( ( rule__Define__ExAssignment_2 )* )
             {
-            // InternalSCH.g:1114:1: ( ( rule__Define__ExAssignment_2 )* )
-            // InternalSCH.g:1115:2: ( rule__Define__ExAssignment_2 )*
+            // InternalSCH.g:1145:1: ( ( rule__Define__ExAssignment_2 )* )
+            // InternalSCH.g:1146:2: ( rule__Define__ExAssignment_2 )*
             {
              before(grammarAccess.getDefineAccess().getExAssignment_2()); 
-            // InternalSCH.g:1116:2: ( rule__Define__ExAssignment_2 )*
-            loop8:
+            // InternalSCH.g:1147:2: ( rule__Define__ExAssignment_2 )*
+            loop9:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( ((LA8_0>=RULE_INT && LA8_0<=RULE_ID)||LA8_0==12) ) {
-                    alt8=1;
+                if ( ((LA9_0>=RULE_INT && LA9_0<=RULE_STRING)||(LA9_0>=12 && LA9_0<=14)) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt9) {
             	case 1 :
-            	    // InternalSCH.g:1116:3: rule__Define__ExAssignment_2
+            	    // InternalSCH.g:1147:3: rule__Define__ExAssignment_2
             	    {
             	    pushFollow(FOLLOW_3);
             	    rule__Define__ExAssignment_2();
@@ -3510,7 +3592,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop9;
                 }
             } while (true);
 
@@ -3537,16 +3619,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__0"
-    // InternalSCH.g:1125:1: rule__Lambda__Group__0 : rule__Lambda__Group__0__Impl rule__Lambda__Group__1 ;
+    // InternalSCH.g:1156:1: rule__Lambda__Group__0 : rule__Lambda__Group__0__Impl rule__Lambda__Group__1 ;
     public final void rule__Lambda__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1129:1: ( rule__Lambda__Group__0__Impl rule__Lambda__Group__1 )
-            // InternalSCH.g:1130:2: rule__Lambda__Group__0__Impl rule__Lambda__Group__1
+            // InternalSCH.g:1160:1: ( rule__Lambda__Group__0__Impl rule__Lambda__Group__1 )
+            // InternalSCH.g:1161:2: rule__Lambda__Group__0__Impl rule__Lambda__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_14);
             rule__Lambda__Group__0__Impl();
 
             state._fsp--;
@@ -3575,20 +3657,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__0__Impl"
-    // InternalSCH.g:1137:1: rule__Lambda__Group__0__Impl : ( 'lambda' ) ;
+    // InternalSCH.g:1168:1: rule__Lambda__Group__0__Impl : ( 'lambda' ) ;
     public final void rule__Lambda__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1141:1: ( ( 'lambda' ) )
-            // InternalSCH.g:1142:1: ( 'lambda' )
+            // InternalSCH.g:1172:1: ( ( 'lambda' ) )
+            // InternalSCH.g:1173:1: ( 'lambda' )
             {
-            // InternalSCH.g:1142:1: ( 'lambda' )
-            // InternalSCH.g:1143:2: 'lambda'
+            // InternalSCH.g:1173:1: ( 'lambda' )
+            // InternalSCH.g:1174:2: 'lambda'
             {
              before(grammarAccess.getLambdaAccess().getLambdaKeyword_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getLambdaAccess().getLambdaKeyword_0()); 
 
             }
@@ -3612,16 +3694,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__1"
-    // InternalSCH.g:1152:1: rule__Lambda__Group__1 : rule__Lambda__Group__1__Impl rule__Lambda__Group__2 ;
+    // InternalSCH.g:1183:1: rule__Lambda__Group__1 : rule__Lambda__Group__1__Impl rule__Lambda__Group__2 ;
     public final void rule__Lambda__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1156:1: ( rule__Lambda__Group__1__Impl rule__Lambda__Group__2 )
-            // InternalSCH.g:1157:2: rule__Lambda__Group__1__Impl rule__Lambda__Group__2
+            // InternalSCH.g:1187:1: ( rule__Lambda__Group__1__Impl rule__Lambda__Group__2 )
+            // InternalSCH.g:1188:2: rule__Lambda__Group__1__Impl rule__Lambda__Group__2
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__Lambda__Group__1__Impl();
 
             state._fsp--;
@@ -3650,20 +3732,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__1__Impl"
-    // InternalSCH.g:1164:1: rule__Lambda__Group__1__Impl : ( '(' ) ;
+    // InternalSCH.g:1195:1: rule__Lambda__Group__1__Impl : ( '(' ) ;
     public final void rule__Lambda__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1168:1: ( ( '(' ) )
-            // InternalSCH.g:1169:1: ( '(' )
+            // InternalSCH.g:1199:1: ( ( '(' ) )
+            // InternalSCH.g:1200:1: ( '(' )
             {
-            // InternalSCH.g:1169:1: ( '(' )
-            // InternalSCH.g:1170:2: '('
+            // InternalSCH.g:1200:1: ( '(' )
+            // InternalSCH.g:1201:2: '('
             {
              before(grammarAccess.getLambdaAccess().getLeftParenthesisKeyword_1()); 
-            match(input,12,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getLambdaAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -3687,16 +3769,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__2"
-    // InternalSCH.g:1179:1: rule__Lambda__Group__2 : rule__Lambda__Group__2__Impl rule__Lambda__Group__3 ;
+    // InternalSCH.g:1210:1: rule__Lambda__Group__2 : rule__Lambda__Group__2__Impl rule__Lambda__Group__3 ;
     public final void rule__Lambda__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1183:1: ( rule__Lambda__Group__2__Impl rule__Lambda__Group__3 )
-            // InternalSCH.g:1184:2: rule__Lambda__Group__2__Impl rule__Lambda__Group__3
+            // InternalSCH.g:1214:1: ( rule__Lambda__Group__2__Impl rule__Lambda__Group__3 )
+            // InternalSCH.g:1215:2: rule__Lambda__Group__2__Impl rule__Lambda__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_15);
             rule__Lambda__Group__2__Impl();
 
             state._fsp--;
@@ -3725,35 +3807,35 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__2__Impl"
-    // InternalSCH.g:1191:1: rule__Lambda__Group__2__Impl : ( ( rule__Lambda__OuputAssignment_2 )* ) ;
+    // InternalSCH.g:1222:1: rule__Lambda__Group__2__Impl : ( ( rule__Lambda__OuputAssignment_2 )* ) ;
     public final void rule__Lambda__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1195:1: ( ( ( rule__Lambda__OuputAssignment_2 )* ) )
-            // InternalSCH.g:1196:1: ( ( rule__Lambda__OuputAssignment_2 )* )
+            // InternalSCH.g:1226:1: ( ( ( rule__Lambda__OuputAssignment_2 )* ) )
+            // InternalSCH.g:1227:1: ( ( rule__Lambda__OuputAssignment_2 )* )
             {
-            // InternalSCH.g:1196:1: ( ( rule__Lambda__OuputAssignment_2 )* )
-            // InternalSCH.g:1197:2: ( rule__Lambda__OuputAssignment_2 )*
+            // InternalSCH.g:1227:1: ( ( rule__Lambda__OuputAssignment_2 )* )
+            // InternalSCH.g:1228:2: ( rule__Lambda__OuputAssignment_2 )*
             {
              before(grammarAccess.getLambdaAccess().getOuputAssignment_2()); 
-            // InternalSCH.g:1198:2: ( rule__Lambda__OuputAssignment_2 )*
-            loop9:
+            // InternalSCH.g:1229:2: ( rule__Lambda__OuputAssignment_2 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==RULE_ID) ) {
-                    alt9=1;
+                if ( (LA10_0==RULE_ID) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalSCH.g:1198:3: rule__Lambda__OuputAssignment_2
+            	    // InternalSCH.g:1229:3: rule__Lambda__OuputAssignment_2
             	    {
-            	    pushFollow(FOLLOW_14);
+            	    pushFollow(FOLLOW_5);
             	    rule__Lambda__OuputAssignment_2();
 
             	    state._fsp--;
@@ -3763,7 +3845,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -3790,16 +3872,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__3"
-    // InternalSCH.g:1206:1: rule__Lambda__Group__3 : rule__Lambda__Group__3__Impl rule__Lambda__Group__4 ;
+    // InternalSCH.g:1237:1: rule__Lambda__Group__3 : rule__Lambda__Group__3__Impl rule__Lambda__Group__4 ;
     public final void rule__Lambda__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1210:1: ( rule__Lambda__Group__3__Impl rule__Lambda__Group__4 )
-            // InternalSCH.g:1211:2: rule__Lambda__Group__3__Impl rule__Lambda__Group__4
+            // InternalSCH.g:1241:1: ( rule__Lambda__Group__3__Impl rule__Lambda__Group__4 )
+            // InternalSCH.g:1242:2: rule__Lambda__Group__3__Impl rule__Lambda__Group__4
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_12);
             rule__Lambda__Group__3__Impl();
 
             state._fsp--;
@@ -3828,20 +3910,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__3__Impl"
-    // InternalSCH.g:1218:1: rule__Lambda__Group__3__Impl : ( ')' ) ;
+    // InternalSCH.g:1249:1: rule__Lambda__Group__3__Impl : ( ')' ) ;
     public final void rule__Lambda__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1222:1: ( ( ')' ) )
-            // InternalSCH.g:1223:1: ( ')' )
+            // InternalSCH.g:1253:1: ( ( ')' ) )
+            // InternalSCH.g:1254:1: ( ')' )
             {
-            // InternalSCH.g:1223:1: ( ')' )
-            // InternalSCH.g:1224:2: ')'
+            // InternalSCH.g:1254:1: ( ')' )
+            // InternalSCH.g:1255:2: ')'
             {
              before(grammarAccess.getLambdaAccess().getRightParenthesisKeyword_3()); 
-            match(input,13,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getLambdaAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -3865,14 +3947,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__4"
-    // InternalSCH.g:1233:1: rule__Lambda__Group__4 : rule__Lambda__Group__4__Impl ;
+    // InternalSCH.g:1264:1: rule__Lambda__Group__4 : rule__Lambda__Group__4__Impl ;
     public final void rule__Lambda__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1237:1: ( rule__Lambda__Group__4__Impl )
-            // InternalSCH.g:1238:2: rule__Lambda__Group__4__Impl
+            // InternalSCH.g:1268:1: ( rule__Lambda__Group__4__Impl )
+            // InternalSCH.g:1269:2: rule__Lambda__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Lambda__Group__4__Impl();
@@ -3898,21 +3980,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__Group__4__Impl"
-    // InternalSCH.g:1244:1: rule__Lambda__Group__4__Impl : ( ( rule__Lambda__ExAssignment_4 ) ) ;
+    // InternalSCH.g:1275:1: rule__Lambda__Group__4__Impl : ( ( rule__Lambda__ExAssignment_4 ) ) ;
     public final void rule__Lambda__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1248:1: ( ( ( rule__Lambda__ExAssignment_4 ) ) )
-            // InternalSCH.g:1249:1: ( ( rule__Lambda__ExAssignment_4 ) )
+            // InternalSCH.g:1279:1: ( ( ( rule__Lambda__ExAssignment_4 ) ) )
+            // InternalSCH.g:1280:1: ( ( rule__Lambda__ExAssignment_4 ) )
             {
-            // InternalSCH.g:1249:1: ( ( rule__Lambda__ExAssignment_4 ) )
-            // InternalSCH.g:1250:2: ( rule__Lambda__ExAssignment_4 )
+            // InternalSCH.g:1280:1: ( ( rule__Lambda__ExAssignment_4 ) )
+            // InternalSCH.g:1281:2: ( rule__Lambda__ExAssignment_4 )
             {
              before(grammarAccess.getLambdaAccess().getExAssignment_4()); 
-            // InternalSCH.g:1251:2: ( rule__Lambda__ExAssignment_4 )
-            // InternalSCH.g:1251:3: rule__Lambda__ExAssignment_4
+            // InternalSCH.g:1282:2: ( rule__Lambda__ExAssignment_4 )
+            // InternalSCH.g:1282:3: rule__Lambda__ExAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Lambda__ExAssignment_4();
@@ -3945,14 +4027,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__0"
-    // InternalSCH.g:1260:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
+    // InternalSCH.g:1291:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
     public final void rule__If__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1264:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
-            // InternalSCH.g:1265:2: rule__If__Group__0__Impl rule__If__Group__1
+            // InternalSCH.g:1295:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
+            // InternalSCH.g:1296:2: rule__If__Group__0__Impl rule__If__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__If__Group__0__Impl();
@@ -3983,20 +4065,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__0__Impl"
-    // InternalSCH.g:1272:1: rule__If__Group__0__Impl : ( 'if' ) ;
+    // InternalSCH.g:1303:1: rule__If__Group__0__Impl : ( 'if' ) ;
     public final void rule__If__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1276:1: ( ( 'if' ) )
-            // InternalSCH.g:1277:1: ( 'if' )
+            // InternalSCH.g:1307:1: ( ( 'if' ) )
+            // InternalSCH.g:1308:1: ( 'if' )
             {
-            // InternalSCH.g:1277:1: ( 'if' )
-            // InternalSCH.g:1278:2: 'if'
+            // InternalSCH.g:1308:1: ( 'if' )
+            // InternalSCH.g:1309:2: 'if'
             {
              before(grammarAccess.getIfAccess().getIfKeyword_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getIfAccess().getIfKeyword_0()); 
 
             }
@@ -4020,16 +4102,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__1"
-    // InternalSCH.g:1287:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
+    // InternalSCH.g:1318:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
     public final void rule__If__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1291:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
-            // InternalSCH.g:1292:2: rule__If__Group__1__Impl rule__If__Group__2
+            // InternalSCH.g:1322:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
+            // InternalSCH.g:1323:2: rule__If__Group__1__Impl rule__If__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_12);
             rule__If__Group__1__Impl();
 
             state._fsp--;
@@ -4058,21 +4140,31 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__1__Impl"
-    // InternalSCH.g:1299:1: rule__If__Group__1__Impl : ( '(' ) ;
+    // InternalSCH.g:1330:1: rule__If__Group__1__Impl : ( ( rule__If__LogicExAssignment_1 ) ) ;
     public final void rule__If__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1303:1: ( ( '(' ) )
-            // InternalSCH.g:1304:1: ( '(' )
+            // InternalSCH.g:1334:1: ( ( ( rule__If__LogicExAssignment_1 ) ) )
+            // InternalSCH.g:1335:1: ( ( rule__If__LogicExAssignment_1 ) )
             {
-            // InternalSCH.g:1304:1: ( '(' )
-            // InternalSCH.g:1305:2: '('
+            // InternalSCH.g:1335:1: ( ( rule__If__LogicExAssignment_1 ) )
+            // InternalSCH.g:1336:2: ( rule__If__LogicExAssignment_1 )
             {
-             before(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getLeftParenthesisKeyword_1()); 
+             before(grammarAccess.getIfAccess().getLogicExAssignment_1()); 
+            // InternalSCH.g:1337:2: ( rule__If__LogicExAssignment_1 )
+            // InternalSCH.g:1337:3: rule__If__LogicExAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__If__LogicExAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIfAccess().getLogicExAssignment_1()); 
 
             }
 
@@ -4095,16 +4187,16 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__2"
-    // InternalSCH.g:1314:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
+    // InternalSCH.g:1345:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
     public final void rule__If__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1318:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
-            // InternalSCH.g:1319:2: rule__If__Group__2__Impl rule__If__Group__3
+            // InternalSCH.g:1349:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
+            // InternalSCH.g:1350:2: rule__If__Group__2__Impl rule__If__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_12);
             rule__If__Group__2__Impl();
 
             state._fsp--;
@@ -4133,31 +4225,31 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__2__Impl"
-    // InternalSCH.g:1326:1: rule__If__Group__2__Impl : ( ( rule__If__LogicOperatorAssignment_2 ) ) ;
+    // InternalSCH.g:1357:1: rule__If__Group__2__Impl : ( ( rule__If__TrueExAssignment_2 ) ) ;
     public final void rule__If__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1330:1: ( ( ( rule__If__LogicOperatorAssignment_2 ) ) )
-            // InternalSCH.g:1331:1: ( ( rule__If__LogicOperatorAssignment_2 ) )
+            // InternalSCH.g:1361:1: ( ( ( rule__If__TrueExAssignment_2 ) ) )
+            // InternalSCH.g:1362:1: ( ( rule__If__TrueExAssignment_2 ) )
             {
-            // InternalSCH.g:1331:1: ( ( rule__If__LogicOperatorAssignment_2 ) )
-            // InternalSCH.g:1332:2: ( rule__If__LogicOperatorAssignment_2 )
+            // InternalSCH.g:1362:1: ( ( rule__If__TrueExAssignment_2 ) )
+            // InternalSCH.g:1363:2: ( rule__If__TrueExAssignment_2 )
             {
-             before(grammarAccess.getIfAccess().getLogicOperatorAssignment_2()); 
-            // InternalSCH.g:1333:2: ( rule__If__LogicOperatorAssignment_2 )
-            // InternalSCH.g:1333:3: rule__If__LogicOperatorAssignment_2
+             before(grammarAccess.getIfAccess().getTrueExAssignment_2()); 
+            // InternalSCH.g:1364:2: ( rule__If__TrueExAssignment_2 )
+            // InternalSCH.g:1364:3: rule__If__TrueExAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__If__LogicOperatorAssignment_2();
+            rule__If__TrueExAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIfAccess().getLogicOperatorAssignment_2()); 
+             after(grammarAccess.getIfAccess().getTrueExAssignment_2()); 
 
             }
 
@@ -4180,22 +4272,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__3"
-    // InternalSCH.g:1341:1: rule__If__Group__3 : rule__If__Group__3__Impl rule__If__Group__4 ;
+    // InternalSCH.g:1372:1: rule__If__Group__3 : rule__If__Group__3__Impl ;
     public final void rule__If__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1345:1: ( rule__If__Group__3__Impl rule__If__Group__4 )
-            // InternalSCH.g:1346:2: rule__If__Group__3__Impl rule__If__Group__4
+            // InternalSCH.g:1376:1: ( rule__If__Group__3__Impl )
+            // InternalSCH.g:1377:2: rule__If__Group__3__Impl
             {
-            pushFollow(FOLLOW_5);
-            rule__If__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__If__Group__4();
+            rule__If__Group__3__Impl();
 
             state._fsp--;
 
@@ -4218,31 +4305,31 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__If__Group__3__Impl"
-    // InternalSCH.g:1353:1: rule__If__Group__3__Impl : ( ( rule__If__LeftConditionAssignment_3 ) ) ;
+    // InternalSCH.g:1383:1: rule__If__Group__3__Impl : ( ( rule__If__FalseExAssignment_3 ) ) ;
     public final void rule__If__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1357:1: ( ( ( rule__If__LeftConditionAssignment_3 ) ) )
-            // InternalSCH.g:1358:1: ( ( rule__If__LeftConditionAssignment_3 ) )
+            // InternalSCH.g:1387:1: ( ( ( rule__If__FalseExAssignment_3 ) ) )
+            // InternalSCH.g:1388:1: ( ( rule__If__FalseExAssignment_3 ) )
             {
-            // InternalSCH.g:1358:1: ( ( rule__If__LeftConditionAssignment_3 ) )
-            // InternalSCH.g:1359:2: ( rule__If__LeftConditionAssignment_3 )
+            // InternalSCH.g:1388:1: ( ( rule__If__FalseExAssignment_3 ) )
+            // InternalSCH.g:1389:2: ( rule__If__FalseExAssignment_3 )
             {
-             before(grammarAccess.getIfAccess().getLeftConditionAssignment_3()); 
-            // InternalSCH.g:1360:2: ( rule__If__LeftConditionAssignment_3 )
-            // InternalSCH.g:1360:3: rule__If__LeftConditionAssignment_3
+             before(grammarAccess.getIfAccess().getFalseExAssignment_3()); 
+            // InternalSCH.g:1390:2: ( rule__If__FalseExAssignment_3 )
+            // InternalSCH.g:1390:3: rule__If__FalseExAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__If__LeftConditionAssignment_3();
+            rule__If__FalseExAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIfAccess().getLeftConditionAssignment_3()); 
+             after(grammarAccess.getIfAccess().getFalseExAssignment_3()); 
 
             }
 
@@ -4264,258 +4351,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__If__Group__3__Impl"
 
 
-    // $ANTLR start "rule__If__Group__4"
-    // InternalSCH.g:1368:1: rule__If__Group__4 : rule__If__Group__4__Impl rule__If__Group__5 ;
-    public final void rule__If__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1372:1: ( rule__If__Group__4__Impl rule__If__Group__5 )
-            // InternalSCH.g:1373:2: rule__If__Group__4__Impl rule__If__Group__5
-            {
-            pushFollow(FOLLOW_7);
-            rule__If__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__If__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__4"
-
-
-    // $ANTLR start "rule__If__Group__4__Impl"
-    // InternalSCH.g:1380:1: rule__If__Group__4__Impl : ( ( rule__If__RightConditionAssignment_4 ) ) ;
-    public final void rule__If__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1384:1: ( ( ( rule__If__RightConditionAssignment_4 ) ) )
-            // InternalSCH.g:1385:1: ( ( rule__If__RightConditionAssignment_4 ) )
-            {
-            // InternalSCH.g:1385:1: ( ( rule__If__RightConditionAssignment_4 ) )
-            // InternalSCH.g:1386:2: ( rule__If__RightConditionAssignment_4 )
-            {
-             before(grammarAccess.getIfAccess().getRightConditionAssignment_4()); 
-            // InternalSCH.g:1387:2: ( rule__If__RightConditionAssignment_4 )
-            // InternalSCH.g:1387:3: rule__If__RightConditionAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__RightConditionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIfAccess().getRightConditionAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__4__Impl"
-
-
-    // $ANTLR start "rule__If__Group__5"
-    // InternalSCH.g:1395:1: rule__If__Group__5 : rule__If__Group__5__Impl rule__If__Group__6 ;
-    public final void rule__If__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1399:1: ( rule__If__Group__5__Impl rule__If__Group__6 )
-            // InternalSCH.g:1400:2: rule__If__Group__5__Impl rule__If__Group__6
-            {
-            pushFollow(FOLLOW_5);
-            rule__If__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__If__Group__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__5"
-
-
-    // $ANTLR start "rule__If__Group__5__Impl"
-    // InternalSCH.g:1407:1: rule__If__Group__5__Impl : ( ')' ) ;
-    public final void rule__If__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1411:1: ( ( ')' ) )
-            // InternalSCH.g:1412:1: ( ')' )
-            {
-            // InternalSCH.g:1412:1: ( ')' )
-            // InternalSCH.g:1413:2: ')'
-            {
-             before(grammarAccess.getIfAccess().getRightParenthesisKeyword_5()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getRightParenthesisKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__5__Impl"
-
-
-    // $ANTLR start "rule__If__Group__6"
-    // InternalSCH.g:1422:1: rule__If__Group__6 : rule__If__Group__6__Impl ;
-    public final void rule__If__Group__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1426:1: ( rule__If__Group__6__Impl )
-            // InternalSCH.g:1427:2: rule__If__Group__6__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__Group__6__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__6"
-
-
-    // $ANTLR start "rule__If__Group__6__Impl"
-    // InternalSCH.g:1433:1: rule__If__Group__6__Impl : ( ( rule__If__ResultAssignment_6 ) ) ;
-    public final void rule__If__Group__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1437:1: ( ( ( rule__If__ResultAssignment_6 ) ) )
-            // InternalSCH.g:1438:1: ( ( rule__If__ResultAssignment_6 ) )
-            {
-            // InternalSCH.g:1438:1: ( ( rule__If__ResultAssignment_6 ) )
-            // InternalSCH.g:1439:2: ( rule__If__ResultAssignment_6 )
-            {
-             before(grammarAccess.getIfAccess().getResultAssignment_6()); 
-            // InternalSCH.g:1440:2: ( rule__If__ResultAssignment_6 )
-            // InternalSCH.g:1440:3: rule__If__ResultAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__ResultAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIfAccess().getResultAssignment_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__Group__6__Impl"
-
-
     // $ANTLR start "rule__Model__ExpressionsAssignment"
-    // InternalSCH.g:1449:1: rule__Model__ExpressionsAssignment : ( ruleTerminalExpression ) ;
+    // InternalSCH.g:1399:1: rule__Model__ExpressionsAssignment : ( ruleTerminalExpression ) ;
     public final void rule__Model__ExpressionsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1453:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1454:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1403:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1404:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1454:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1455:3: ruleTerminalExpression
+            // InternalSCH.g:1404:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1405:3: ruleTerminalExpression
             {
              before(grammarAccess.getModelAccess().getExpressionsTerminalExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4546,17 +4393,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__ValueAssignment_4"
-    // InternalSCH.g:1464:1: rule__TerminalExpression__ValueAssignment_4 : ( RULE_INT ) ;
+    // InternalSCH.g:1414:1: rule__TerminalExpression__ValueAssignment_4 : ( RULE_INT ) ;
     public final void rule__TerminalExpression__ValueAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1468:1: ( ( RULE_INT ) )
-            // InternalSCH.g:1469:2: ( RULE_INT )
+            // InternalSCH.g:1418:1: ( ( RULE_INT ) )
+            // InternalSCH.g:1419:2: ( RULE_INT )
             {
-            // InternalSCH.g:1469:2: ( RULE_INT )
-            // InternalSCH.g:1470:3: RULE_INT
+            // InternalSCH.g:1419:2: ( RULE_INT )
+            // InternalSCH.g:1420:3: RULE_INT
             {
              before(grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4583,17 +4430,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TerminalExpression__IdentifierAssignment_5"
-    // InternalSCH.g:1479:1: rule__TerminalExpression__IdentifierAssignment_5 : ( RULE_ID ) ;
+    // InternalSCH.g:1429:1: rule__TerminalExpression__IdentifierAssignment_5 : ( RULE_ID ) ;
     public final void rule__TerminalExpression__IdentifierAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1483:1: ( ( RULE_ID ) )
-            // InternalSCH.g:1484:2: ( RULE_ID )
+            // InternalSCH.g:1433:1: ( ( RULE_ID ) )
+            // InternalSCH.g:1434:2: ( RULE_ID )
             {
-            // InternalSCH.g:1484:2: ( RULE_ID )
-            // InternalSCH.g:1485:3: RULE_ID
+            // InternalSCH.g:1434:2: ( RULE_ID )
+            // InternalSCH.g:1435:3: RULE_ID
             {
              before(grammarAccess.getTerminalExpressionAccess().getIdentifierIDTerminalRuleCall_5_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4619,18 +4466,96 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TerminalExpression__IdentifierAssignment_5"
 
 
+    // $ANTLR start "rule__TerminalExpression__BoolAssignment_6"
+    // InternalSCH.g:1444:1: rule__TerminalExpression__BoolAssignment_6 : ( ruleBool ) ;
+    public final void rule__TerminalExpression__BoolAssignment_6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:1448:1: ( ( ruleBool ) )
+            // InternalSCH.g:1449:2: ( ruleBool )
+            {
+            // InternalSCH.g:1449:2: ( ruleBool )
+            // InternalSCH.g:1450:3: ruleBool
+            {
+             before(grammarAccess.getTerminalExpressionAccess().getBoolBoolParserRuleCall_6_0()); 
+            pushFollow(FOLLOW_2);
+            ruleBool();
+
+            state._fsp--;
+
+             after(grammarAccess.getTerminalExpressionAccess().getBoolBoolParserRuleCall_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TerminalExpression__BoolAssignment_6"
+
+
+    // $ANTLR start "rule__TerminalExpression__StrAssignment_7"
+    // InternalSCH.g:1459:1: rule__TerminalExpression__StrAssignment_7 : ( RULE_STRING ) ;
+    public final void rule__TerminalExpression__StrAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:1463:1: ( ( RULE_STRING ) )
+            // InternalSCH.g:1464:2: ( RULE_STRING )
+            {
+            // InternalSCH.g:1464:2: ( RULE_STRING )
+            // InternalSCH.g:1465:3: RULE_STRING
+            {
+             before(grammarAccess.getTerminalExpressionAccess().getStrSTRINGTerminalRuleCall_7_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getTerminalExpressionAccess().getStrSTRINGTerminalRuleCall_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TerminalExpression__StrAssignment_7"
+
+
     // $ANTLR start "rule__Expression__OpAssignment_0"
-    // InternalSCH.g:1494:1: rule__Expression__OpAssignment_0 : ( ruleOperator ) ;
+    // InternalSCH.g:1474:1: rule__Expression__OpAssignment_0 : ( ruleOperator ) ;
     public final void rule__Expression__OpAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1498:1: ( ( ruleOperator ) )
-            // InternalSCH.g:1499:2: ( ruleOperator )
+            // InternalSCH.g:1478:1: ( ( ruleOperator ) )
+            // InternalSCH.g:1479:2: ( ruleOperator )
             {
-            // InternalSCH.g:1499:2: ( ruleOperator )
-            // InternalSCH.g:1500:3: ruleOperator
+            // InternalSCH.g:1479:2: ( ruleOperator )
+            // InternalSCH.g:1480:3: ruleOperator
             {
              before(grammarAccess.getExpressionAccess().getOpOperatorParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4661,17 +4586,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__LeftAssignment_1"
-    // InternalSCH.g:1509:1: rule__Expression__LeftAssignment_1 : ( ruleTerminalExpression ) ;
+    // InternalSCH.g:1489:1: rule__Expression__LeftAssignment_1 : ( ruleTerminalExpression ) ;
     public final void rule__Expression__LeftAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1513:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1514:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1493:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1494:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1514:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1515:3: ruleTerminalExpression
+            // InternalSCH.g:1494:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1495:3: ruleTerminalExpression
             {
              before(grammarAccess.getExpressionAccess().getLeftTerminalExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4702,17 +4627,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__RightAssignment_2"
-    // InternalSCH.g:1524:1: rule__Expression__RightAssignment_2 : ( ruleTerminalExpression ) ;
+    // InternalSCH.g:1504:1: rule__Expression__RightAssignment_2 : ( ruleTerminalExpression ) ;
     public final void rule__Expression__RightAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1528:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1529:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1508:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1509:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1529:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1530:3: ruleTerminalExpression
+            // InternalSCH.g:1509:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1510:3: ruleTerminalExpression
             {
              before(grammarAccess.getExpressionAccess().getRightTerminalExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4743,17 +4668,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__IdAssignment_1"
-    // InternalSCH.g:1539:1: rule__Define__IdAssignment_1 : ( RULE_ID ) ;
+    // InternalSCH.g:1519:1: rule__Define__IdAssignment_1 : ( RULE_ID ) ;
     public final void rule__Define__IdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1543:1: ( ( RULE_ID ) )
-            // InternalSCH.g:1544:2: ( RULE_ID )
+            // InternalSCH.g:1523:1: ( ( RULE_ID ) )
+            // InternalSCH.g:1524:2: ( RULE_ID )
             {
-            // InternalSCH.g:1544:2: ( RULE_ID )
-            // InternalSCH.g:1545:3: RULE_ID
+            // InternalSCH.g:1524:2: ( RULE_ID )
+            // InternalSCH.g:1525:3: RULE_ID
             {
              before(grammarAccess.getDefineAccess().getIdIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4780,17 +4705,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__ExAssignment_2"
-    // InternalSCH.g:1554:1: rule__Define__ExAssignment_2 : ( ruleTerminalExpression ) ;
+    // InternalSCH.g:1534:1: rule__Define__ExAssignment_2 : ( ruleTerminalExpression ) ;
     public final void rule__Define__ExAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1558:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1559:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1538:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1539:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1559:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1560:3: ruleTerminalExpression
+            // InternalSCH.g:1539:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1540:3: ruleTerminalExpression
             {
              before(grammarAccess.getDefineAccess().getExTerminalExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4821,17 +4746,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__OuputAssignment_2"
-    // InternalSCH.g:1569:1: rule__Lambda__OuputAssignment_2 : ( RULE_ID ) ;
+    // InternalSCH.g:1549:1: rule__Lambda__OuputAssignment_2 : ( RULE_ID ) ;
     public final void rule__Lambda__OuputAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1573:1: ( ( RULE_ID ) )
-            // InternalSCH.g:1574:2: ( RULE_ID )
+            // InternalSCH.g:1553:1: ( ( RULE_ID ) )
+            // InternalSCH.g:1554:2: ( RULE_ID )
             {
-            // InternalSCH.g:1574:2: ( RULE_ID )
-            // InternalSCH.g:1575:3: RULE_ID
+            // InternalSCH.g:1554:2: ( RULE_ID )
+            // InternalSCH.g:1555:3: RULE_ID
             {
              before(grammarAccess.getLambdaAccess().getOuputIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4858,17 +4783,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__ExAssignment_4"
-    // InternalSCH.g:1584:1: rule__Lambda__ExAssignment_4 : ( ruleTerminalExpression ) ;
+    // InternalSCH.g:1564:1: rule__Lambda__ExAssignment_4 : ( ruleTerminalExpression ) ;
     public final void rule__Lambda__ExAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1588:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1589:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1568:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1569:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1589:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1590:3: ruleTerminalExpression
+            // InternalSCH.g:1569:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1570:3: ruleTerminalExpression
             {
              before(grammarAccess.getLambdaAccess().getExTerminalExpressionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4898,67 +4823,26 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Lambda__ExAssignment_4"
 
 
-    // $ANTLR start "rule__If__LogicOperatorAssignment_2"
-    // InternalSCH.g:1599:1: rule__If__LogicOperatorAssignment_2 : ( ruleLogicOperator ) ;
-    public final void rule__If__LogicOperatorAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__If__LogicExAssignment_1"
+    // InternalSCH.g:1579:1: rule__If__LogicExAssignment_1 : ( ruleTerminalExpression ) ;
+    public final void rule__If__LogicExAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1603:1: ( ( ruleLogicOperator ) )
-            // InternalSCH.g:1604:2: ( ruleLogicOperator )
+            // InternalSCH.g:1583:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1584:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1604:2: ( ruleLogicOperator )
-            // InternalSCH.g:1605:3: ruleLogicOperator
+            // InternalSCH.g:1584:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1585:3: ruleTerminalExpression
             {
-             before(grammarAccess.getIfAccess().getLogicOperatorLogicOperatorParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleLogicOperator();
-
-            state._fsp--;
-
-             after(grammarAccess.getIfAccess().getLogicOperatorLogicOperatorParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__If__LogicOperatorAssignment_2"
-
-
-    // $ANTLR start "rule__If__LeftConditionAssignment_3"
-    // InternalSCH.g:1614:1: rule__If__LeftConditionAssignment_3 : ( ruleTerminalExpression ) ;
-    public final void rule__If__LeftConditionAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:1618:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1619:2: ( ruleTerminalExpression )
-            {
-            // InternalSCH.g:1619:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1620:3: ruleTerminalExpression
-            {
-             before(grammarAccess.getIfAccess().getLeftConditionTerminalExpressionParserRuleCall_3_0()); 
+             before(grammarAccess.getIfAccess().getLogicExTerminalExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleTerminalExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getLeftConditionTerminalExpressionParserRuleCall_3_0()); 
+             after(grammarAccess.getIfAccess().getLogicExTerminalExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -4977,29 +4861,29 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__If__LeftConditionAssignment_3"
+    // $ANTLR end "rule__If__LogicExAssignment_1"
 
 
-    // $ANTLR start "rule__If__RightConditionAssignment_4"
-    // InternalSCH.g:1629:1: rule__If__RightConditionAssignment_4 : ( ruleTerminalExpression ) ;
-    public final void rule__If__RightConditionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__If__TrueExAssignment_2"
+    // InternalSCH.g:1594:1: rule__If__TrueExAssignment_2 : ( ruleTerminalExpression ) ;
+    public final void rule__If__TrueExAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1633:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1634:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1598:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1599:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1634:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1635:3: ruleTerminalExpression
+            // InternalSCH.g:1599:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1600:3: ruleTerminalExpression
             {
-             before(grammarAccess.getIfAccess().getRightConditionTerminalExpressionParserRuleCall_4_0()); 
+             before(grammarAccess.getIfAccess().getTrueExTerminalExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleTerminalExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getRightConditionTerminalExpressionParserRuleCall_4_0()); 
+             after(grammarAccess.getIfAccess().getTrueExTerminalExpressionParserRuleCall_2_0()); 
 
             }
 
@@ -5018,29 +4902,29 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__If__RightConditionAssignment_4"
+    // $ANTLR end "rule__If__TrueExAssignment_2"
 
 
-    // $ANTLR start "rule__If__ResultAssignment_6"
-    // InternalSCH.g:1644:1: rule__If__ResultAssignment_6 : ( ruleTerminalExpression ) ;
-    public final void rule__If__ResultAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__If__FalseExAssignment_3"
+    // InternalSCH.g:1609:1: rule__If__FalseExAssignment_3 : ( ruleTerminalExpression ) ;
+    public final void rule__If__FalseExAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1648:1: ( ( ruleTerminalExpression ) )
-            // InternalSCH.g:1649:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1613:1: ( ( ruleTerminalExpression ) )
+            // InternalSCH.g:1614:2: ( ruleTerminalExpression )
             {
-            // InternalSCH.g:1649:2: ( ruleTerminalExpression )
-            // InternalSCH.g:1650:3: ruleTerminalExpression
+            // InternalSCH.g:1614:2: ( ruleTerminalExpression )
+            // InternalSCH.g:1615:3: ruleTerminalExpression
             {
-             before(grammarAccess.getIfAccess().getResultTerminalExpressionParserRuleCall_6_0()); 
+             before(grammarAccess.getIfAccess().getFalseExTerminalExpressionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleTerminalExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getResultTerminalExpressionParserRuleCall_6_0()); 
+             after(grammarAccess.getIfAccess().getFalseExTerminalExpressionParserRuleCall_3_0()); 
 
             }
 
@@ -5059,28 +4943,28 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__If__ResultAssignment_6"
+    // $ANTLR end "rule__If__FalseExAssignment_3"
 
 
     // $ANTLR start "rule__Equal__EqualAssignment"
-    // InternalSCH.g:1659:1: rule__Equal__EqualAssignment : ( ( '=' ) ) ;
+    // InternalSCH.g:1624:1: rule__Equal__EqualAssignment : ( ( '=' ) ) ;
     public final void rule__Equal__EqualAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1663:1: ( ( ( '=' ) ) )
-            // InternalSCH.g:1664:2: ( ( '=' ) )
+            // InternalSCH.g:1628:1: ( ( ( '=' ) ) )
+            // InternalSCH.g:1629:2: ( ( '=' ) )
             {
-            // InternalSCH.g:1664:2: ( ( '=' ) )
-            // InternalSCH.g:1665:3: ( '=' )
-            {
-             before(grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0()); 
-            // InternalSCH.g:1666:3: ( '=' )
-            // InternalSCH.g:1667:4: '='
+            // InternalSCH.g:1629:2: ( ( '=' ) )
+            // InternalSCH.g:1630:3: ( '=' )
             {
              before(grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            // InternalSCH.g:1631:3: ( '=' )
+            // InternalSCH.g:1632:4: '='
+            {
+             before(grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0()); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getEqualAccess().getEqualEqualsSignKeyword_0()); 
 
             }
@@ -5108,24 +4992,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MoreOrEqual__MoreOrEqualAssignment"
-    // InternalSCH.g:1678:1: rule__MoreOrEqual__MoreOrEqualAssignment : ( ( '>=' ) ) ;
+    // InternalSCH.g:1643:1: rule__MoreOrEqual__MoreOrEqualAssignment : ( ( '>=' ) ) ;
     public final void rule__MoreOrEqual__MoreOrEqualAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1682:1: ( ( ( '>=' ) ) )
-            // InternalSCH.g:1683:2: ( ( '>=' ) )
+            // InternalSCH.g:1647:1: ( ( ( '>=' ) ) )
+            // InternalSCH.g:1648:2: ( ( '>=' ) )
             {
-            // InternalSCH.g:1683:2: ( ( '>=' ) )
-            // InternalSCH.g:1684:3: ( '>=' )
-            {
-             before(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0()); 
-            // InternalSCH.g:1685:3: ( '>=' )
-            // InternalSCH.g:1686:4: '>='
+            // InternalSCH.g:1648:2: ( ( '>=' ) )
+            // InternalSCH.g:1649:3: ( '>=' )
             {
              before(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            // InternalSCH.g:1650:3: ( '>=' )
+            // InternalSCH.g:1651:4: '>='
+            {
+             before(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0()); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getMoreOrEqualAccess().getMoreOrEqualGreaterThanSignEqualsSignKeyword_0()); 
 
             }
@@ -5153,24 +5037,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LessOrEqual__LessOrEqualAssignment"
-    // InternalSCH.g:1697:1: rule__LessOrEqual__LessOrEqualAssignment : ( ( '<=' ) ) ;
+    // InternalSCH.g:1662:1: rule__LessOrEqual__LessOrEqualAssignment : ( ( '<=' ) ) ;
     public final void rule__LessOrEqual__LessOrEqualAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1701:1: ( ( ( '<=' ) ) )
-            // InternalSCH.g:1702:2: ( ( '<=' ) )
+            // InternalSCH.g:1666:1: ( ( ( '<=' ) ) )
+            // InternalSCH.g:1667:2: ( ( '<=' ) )
             {
-            // InternalSCH.g:1702:2: ( ( '<=' ) )
-            // InternalSCH.g:1703:3: ( '<=' )
-            {
-             before(grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0()); 
-            // InternalSCH.g:1704:3: ( '<=' )
-            // InternalSCH.g:1705:4: '<='
+            // InternalSCH.g:1667:2: ( ( '<=' ) )
+            // InternalSCH.g:1668:3: ( '<=' )
             {
              before(grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            // InternalSCH.g:1669:3: ( '<=' )
+            // InternalSCH.g:1670:4: '<='
+            {
+             before(grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0()); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getLessOrEqualAccess().getLessOrEqualLessThanSignEqualsSignKeyword_0()); 
 
             }
@@ -5198,24 +5082,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Different__DifferentAssignment"
-    // InternalSCH.g:1716:1: rule__Different__DifferentAssignment : ( ( '!=' ) ) ;
+    // InternalSCH.g:1681:1: rule__Different__DifferentAssignment : ( ( '!=' ) ) ;
     public final void rule__Different__DifferentAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1720:1: ( ( ( '!=' ) ) )
-            // InternalSCH.g:1721:2: ( ( '!=' ) )
+            // InternalSCH.g:1685:1: ( ( ( '!=' ) ) )
+            // InternalSCH.g:1686:2: ( ( '!=' ) )
             {
-            // InternalSCH.g:1721:2: ( ( '!=' ) )
-            // InternalSCH.g:1722:3: ( '!=' )
-            {
-             before(grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0()); 
-            // InternalSCH.g:1723:3: ( '!=' )
-            // InternalSCH.g:1724:4: '!='
+            // InternalSCH.g:1686:2: ( ( '!=' ) )
+            // InternalSCH.g:1687:3: ( '!=' )
             {
              before(grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            // InternalSCH.g:1688:3: ( '!=' )
+            // InternalSCH.g:1689:4: '!='
+            {
+             before(grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0()); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getDifferentAccess().getDifferentExclamationMarkEqualsSignKeyword_0()); 
 
             }
@@ -5243,24 +5127,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__More__MoreAssignment"
-    // InternalSCH.g:1735:1: rule__More__MoreAssignment : ( ( '>' ) ) ;
+    // InternalSCH.g:1700:1: rule__More__MoreAssignment : ( ( '>' ) ) ;
     public final void rule__More__MoreAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1739:1: ( ( ( '>' ) ) )
-            // InternalSCH.g:1740:2: ( ( '>' ) )
+            // InternalSCH.g:1704:1: ( ( ( '>' ) ) )
+            // InternalSCH.g:1705:2: ( ( '>' ) )
             {
-            // InternalSCH.g:1740:2: ( ( '>' ) )
-            // InternalSCH.g:1741:3: ( '>' )
-            {
-             before(grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0()); 
-            // InternalSCH.g:1742:3: ( '>' )
-            // InternalSCH.g:1743:4: '>'
+            // InternalSCH.g:1705:2: ( ( '>' ) )
+            // InternalSCH.g:1706:3: ( '>' )
             {
              before(grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            // InternalSCH.g:1707:3: ( '>' )
+            // InternalSCH.g:1708:4: '>'
+            {
+             before(grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0()); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getMoreAccess().getMoreGreaterThanSignKeyword_0()); 
 
             }
@@ -5288,24 +5172,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Less__LessAssignment"
-    // InternalSCH.g:1754:1: rule__Less__LessAssignment : ( ( '<' ) ) ;
+    // InternalSCH.g:1719:1: rule__Less__LessAssignment : ( ( '<' ) ) ;
     public final void rule__Less__LessAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1758:1: ( ( ( '<' ) ) )
-            // InternalSCH.g:1759:2: ( ( '<' ) )
+            // InternalSCH.g:1723:1: ( ( ( '<' ) ) )
+            // InternalSCH.g:1724:2: ( ( '<' ) )
             {
-            // InternalSCH.g:1759:2: ( ( '<' ) )
-            // InternalSCH.g:1760:3: ( '<' )
-            {
-             before(grammarAccess.getLessAccess().getLessLessThanSignKeyword_0()); 
-            // InternalSCH.g:1761:3: ( '<' )
-            // InternalSCH.g:1762:4: '<'
+            // InternalSCH.g:1724:2: ( ( '<' ) )
+            // InternalSCH.g:1725:3: ( '<' )
             {
              before(grammarAccess.getLessAccess().getLessLessThanSignKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            // InternalSCH.g:1726:3: ( '<' )
+            // InternalSCH.g:1727:4: '<'
+            {
+             before(grammarAccess.getLessAccess().getLessLessThanSignKeyword_0()); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getLessAccess().getLessLessThanSignKeyword_0()); 
 
             }
@@ -5333,24 +5217,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Subtract__MinusAssignment"
-    // InternalSCH.g:1773:1: rule__Subtract__MinusAssignment : ( ( '-' ) ) ;
+    // InternalSCH.g:1738:1: rule__Subtract__MinusAssignment : ( ( '-' ) ) ;
     public final void rule__Subtract__MinusAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1777:1: ( ( ( '-' ) ) )
-            // InternalSCH.g:1778:2: ( ( '-' ) )
+            // InternalSCH.g:1742:1: ( ( ( '-' ) ) )
+            // InternalSCH.g:1743:2: ( ( '-' ) )
             {
-            // InternalSCH.g:1778:2: ( ( '-' ) )
-            // InternalSCH.g:1779:3: ( '-' )
-            {
-             before(grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0()); 
-            // InternalSCH.g:1780:3: ( '-' )
-            // InternalSCH.g:1781:4: '-'
+            // InternalSCH.g:1743:2: ( ( '-' ) )
+            // InternalSCH.g:1744:3: ( '-' )
             {
              before(grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            // InternalSCH.g:1745:3: ( '-' )
+            // InternalSCH.g:1746:4: '-'
+            {
+             before(grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0()); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getSubtractAccess().getMinusHyphenMinusKeyword_0()); 
 
             }
@@ -5378,24 +5262,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Add__PlusAssignment"
-    // InternalSCH.g:1792:1: rule__Add__PlusAssignment : ( ( '+' ) ) ;
+    // InternalSCH.g:1757:1: rule__Add__PlusAssignment : ( ( '+' ) ) ;
     public final void rule__Add__PlusAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1796:1: ( ( ( '+' ) ) )
-            // InternalSCH.g:1797:2: ( ( '+' ) )
+            // InternalSCH.g:1761:1: ( ( ( '+' ) ) )
+            // InternalSCH.g:1762:2: ( ( '+' ) )
             {
-            // InternalSCH.g:1797:2: ( ( '+' ) )
-            // InternalSCH.g:1798:3: ( '+' )
-            {
-             before(grammarAccess.getAddAccess().getPlusPlusSignKeyword_0()); 
-            // InternalSCH.g:1799:3: ( '+' )
-            // InternalSCH.g:1800:4: '+'
+            // InternalSCH.g:1762:2: ( ( '+' ) )
+            // InternalSCH.g:1763:3: ( '+' )
             {
              before(grammarAccess.getAddAccess().getPlusPlusSignKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            // InternalSCH.g:1764:3: ( '+' )
+            // InternalSCH.g:1765:4: '+'
+            {
+             before(grammarAccess.getAddAccess().getPlusPlusSignKeyword_0()); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getAddAccess().getPlusPlusSignKeyword_0()); 
 
             }
@@ -5423,24 +5307,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Multiply__TimesAssignment"
-    // InternalSCH.g:1811:1: rule__Multiply__TimesAssignment : ( ( '*' ) ) ;
+    // InternalSCH.g:1776:1: rule__Multiply__TimesAssignment : ( ( '*' ) ) ;
     public final void rule__Multiply__TimesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1815:1: ( ( ( '*' ) ) )
-            // InternalSCH.g:1816:2: ( ( '*' ) )
+            // InternalSCH.g:1780:1: ( ( ( '*' ) ) )
+            // InternalSCH.g:1781:2: ( ( '*' ) )
             {
-            // InternalSCH.g:1816:2: ( ( '*' ) )
-            // InternalSCH.g:1817:3: ( '*' )
-            {
-             before(grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0()); 
-            // InternalSCH.g:1818:3: ( '*' )
-            // InternalSCH.g:1819:4: '*'
+            // InternalSCH.g:1781:2: ( ( '*' ) )
+            // InternalSCH.g:1782:3: ( '*' )
             {
              before(grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            // InternalSCH.g:1783:3: ( '*' )
+            // InternalSCH.g:1784:4: '*'
+            {
+             before(grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0()); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getMultiplyAccess().getTimesAsteriskKeyword_0()); 
 
             }
@@ -5468,24 +5352,24 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Divide__DivededAssignment"
-    // InternalSCH.g:1830:1: rule__Divide__DivededAssignment : ( ( '/' ) ) ;
+    // InternalSCH.g:1795:1: rule__Divide__DivededAssignment : ( ( '/' ) ) ;
     public final void rule__Divide__DivededAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:1834:1: ( ( ( '/' ) ) )
-            // InternalSCH.g:1835:2: ( ( '/' ) )
+            // InternalSCH.g:1799:1: ( ( ( '/' ) ) )
+            // InternalSCH.g:1800:2: ( ( '/' ) )
             {
-            // InternalSCH.g:1835:2: ( ( '/' ) )
-            // InternalSCH.g:1836:3: ( '/' )
-            {
-             before(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0()); 
-            // InternalSCH.g:1837:3: ( '/' )
-            // InternalSCH.g:1838:4: '/'
+            // InternalSCH.g:1800:2: ( ( '/' ) )
+            // InternalSCH.g:1801:3: ( '/' )
             {
              before(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            // InternalSCH.g:1802:3: ( '/' )
+            // InternalSCH.g:1803:4: '/'
+            {
+             before(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0()); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getDivideAccess().getDivededSolidusKeyword_0()); 
 
             }
@@ -5514,22 +5398,65 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // Delegated rules
 
 
+    protected DFA5 dfa5 = new DFA5(this);
+    static final String dfa_1s = "\12\uffff";
+    static final String dfa_2s = "\1\4\1\20\10\uffff";
+    static final String dfa_3s = "\1\16\1\34\10\uffff";
+    static final String dfa_4s = "\2\uffff\1\5\1\6\1\7\1\10\1\2\1\3\1\4\1\1";
+    static final String dfa_5s = "\12\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\2\1\3\1\5\5\uffff\2\4\1\1",
+            "\1\6\1\7\1\10\12\11",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
+
+    class DFA5 extends DFA {
+
+        public DFA5(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 5;
+            this.eot = dfa_1;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
+        }
+        public String getDescription() {
+            return "502:1: rule__TerminalExpression__Alternatives : ( ( ( rule__TerminalExpression__Group_0__0 ) ) | ( ( rule__TerminalExpression__Group_1__0 ) ) | ( ( rule__TerminalExpression__Group_2__0 ) ) | ( ( rule__TerminalExpression__Group_3__0 ) ) | ( ( ( rule__TerminalExpression__ValueAssignment_4 ) ) ( ( rule__TerminalExpression__ValueAssignment_4 )* ) ) | ( ( ( rule__TerminalExpression__IdentifierAssignment_5 ) ) ( ( rule__TerminalExpression__IdentifierAssignment_5 )* ) ) | ( ( ( rule__TerminalExpression__BoolAssignment_6 ) ) ( ( rule__TerminalExpression__BoolAssignment_6 )* ) ) | ( ( rule__TerminalExpression__StrAssignment_7 ) ) );";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001032L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000007072L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001030L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000007800000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000002020L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000007E0000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000003002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000001FF80000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000007070L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000008020L});
 
 }

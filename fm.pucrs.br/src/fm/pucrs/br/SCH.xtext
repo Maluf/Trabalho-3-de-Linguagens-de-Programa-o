@@ -7,7 +7,8 @@ Model:
 	expressions+=TerminalExpression* ;
 	
 TerminalExpression returns Expression:
-    '(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+;
+    '(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+ | bool+= Bool+ | str=STRING;
+
 
 Expression:
 	 op=Operator left=TerminalExpression right+=TerminalExpression* 
@@ -22,12 +23,17 @@ Lambda:
 ;
 
 If:
-	'if' '(' logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression ')' result=TerminalExpression
+	'if' logicEx=TerminalExpression  trueEx=TerminalExpression  falseEx=TerminalExpression 
 ;
 
 LogicOperator:
 	 Equal | MoreOrEqual | LessOrEqual | Different | More | Less
 ;
+
+Bool:
+    '#t' | '#f'	
+;
+
 
 Equal:
 	equal='='
@@ -65,7 +71,7 @@ terminal INT returns ecore::EInt:
     ('0'..'9')+;
 
 Operator:
-	  (Divide | Multiply | Add | Subtract)
+	  (/*Arithmetic */  Divide | Multiply | Add | Subtract | /*Logic */  Equal | MoreOrEqual | LessOrEqual | Different | More | Less)
 ;
 
 Subtract:

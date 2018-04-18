@@ -60,12 +60,18 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueINTTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
 		private final Assignment cIdentifierAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
 		private final RuleCall cIdentifierIDTerminalRuleCall_5_0 = (RuleCall)cIdentifierAssignment_5.eContents().get(0);
+		private final Assignment cBoolAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final RuleCall cBoolBoolParserRuleCall_6_0 = (RuleCall)cBoolAssignment_6.eContents().get(0);
+		private final Assignment cStrAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final RuleCall cStrSTRINGTerminalRuleCall_7_0 = (RuleCall)cStrAssignment_7.eContents().get(0);
 		
 		//TerminalExpression Expression:
-		//	'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+;
+		//	'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+ | bool+=Bool+ |
+		//	str=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+
+		//'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+ | bool+=Bool+ |
+		//str=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' Expression ')'
@@ -127,6 +133,18 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getIdentifierIDTerminalRuleCall_5_0() { return cIdentifierIDTerminalRuleCall_5_0; }
+		
+		//bool+=Bool+
+		public Assignment getBoolAssignment_6() { return cBoolAssignment_6; }
+		
+		//Bool
+		public RuleCall getBoolBoolParserRuleCall_6_0() { return cBoolBoolParserRuleCall_6_0; }
+		
+		//str=STRING
+		public Assignment getStrAssignment_7() { return cStrAssignment_7; }
+		
+		//STRING
+		public RuleCall getStrSTRINGTerminalRuleCall_7_0() { return cStrSTRINGTerminalRuleCall_7_0; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Expression");
@@ -237,58 +255,40 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.If");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLogicOperatorAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLogicOperatorLogicOperatorParserRuleCall_2_0 = (RuleCall)cLogicOperatorAssignment_2.eContents().get(0);
-		private final Assignment cLeftConditionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLeftConditionTerminalExpressionParserRuleCall_3_0 = (RuleCall)cLeftConditionAssignment_3.eContents().get(0);
-		private final Assignment cRightConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cRightConditionTerminalExpressionParserRuleCall_4_0 = (RuleCall)cRightConditionAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cResultAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cResultTerminalExpressionParserRuleCall_6_0 = (RuleCall)cResultAssignment_6.eContents().get(0);
+		private final Assignment cLogicExAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLogicExTerminalExpressionParserRuleCall_1_0 = (RuleCall)cLogicExAssignment_1.eContents().get(0);
+		private final Assignment cTrueExAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTrueExTerminalExpressionParserRuleCall_2_0 = (RuleCall)cTrueExAssignment_2.eContents().get(0);
+		private final Assignment cFalseExAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFalseExTerminalExpressionParserRuleCall_3_0 = (RuleCall)cFalseExAssignment_3.eContents().get(0);
 		
 		//If:
-		//	'if' '(' logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression ')'
-		//	result=TerminalExpression;
+		//	'if' logicEx=TerminalExpression trueEx=TerminalExpression falseEx=TerminalExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' '(' logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression ')'
-		//result=TerminalExpression
+		//'if' logicEx=TerminalExpression trueEx=TerminalExpression falseEx=TerminalExpression
 		public Group getGroup() { return cGroup; }
 		
 		//'if'
 		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
-		//logicOperator=LogicOperator
-		public Assignment getLogicOperatorAssignment_2() { return cLogicOperatorAssignment_2; }
-		
-		//LogicOperator
-		public RuleCall getLogicOperatorLogicOperatorParserRuleCall_2_0() { return cLogicOperatorLogicOperatorParserRuleCall_2_0; }
-		
-		//leftCondition=TerminalExpression
-		public Assignment getLeftConditionAssignment_3() { return cLeftConditionAssignment_3; }
+		//logicEx=TerminalExpression
+		public Assignment getLogicExAssignment_1() { return cLogicExAssignment_1; }
 		
 		//TerminalExpression
-		public RuleCall getLeftConditionTerminalExpressionParserRuleCall_3_0() { return cLeftConditionTerminalExpressionParserRuleCall_3_0; }
+		public RuleCall getLogicExTerminalExpressionParserRuleCall_1_0() { return cLogicExTerminalExpressionParserRuleCall_1_0; }
 		
-		//rightCondition=TerminalExpression
-		public Assignment getRightConditionAssignment_4() { return cRightConditionAssignment_4; }
-		
-		//TerminalExpression
-		public RuleCall getRightConditionTerminalExpressionParserRuleCall_4_0() { return cRightConditionTerminalExpressionParserRuleCall_4_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-		
-		//result=TerminalExpression
-		public Assignment getResultAssignment_6() { return cResultAssignment_6; }
+		//trueEx=TerminalExpression
+		public Assignment getTrueExAssignment_2() { return cTrueExAssignment_2; }
 		
 		//TerminalExpression
-		public RuleCall getResultTerminalExpressionParserRuleCall_6_0() { return cResultTerminalExpressionParserRuleCall_6_0; }
+		public RuleCall getTrueExTerminalExpressionParserRuleCall_2_0() { return cTrueExTerminalExpressionParserRuleCall_2_0; }
+		
+		//falseEx=TerminalExpression
+		public Assignment getFalseExAssignment_3() { return cFalseExAssignment_3; }
+		
+		//TerminalExpression
+		public RuleCall getFalseExTerminalExpressionParserRuleCall_3_0() { return cFalseExTerminalExpressionParserRuleCall_3_0; }
 	}
 	public class LogicOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.LogicOperator");
@@ -324,6 +324,25 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Less
 		public RuleCall getLessParserRuleCall_5() { return cLessParserRuleCall_5; }
+	}
+	public class BoolElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Bool");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Bool:
+		//	'#t' | '#f';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'#t' | '#f'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'#t'
+		public Keyword getTKeyword_0() { return cTKeyword_0; }
+		
+		//'#f'
+		public Keyword getFKeyword_1() { return cFKeyword_1; }
 	}
 	public class EqualElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Equal");
@@ -441,15 +460,21 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMultiplyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cAddParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cSubtractParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cEqualParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMoreOrEqualParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cLessOrEqualParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cDifferentParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cMoreParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cLessParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//Operator:
-		//	Divide | Multiply | Add | Subtract;
+		//	Divide | Multiply | Add | Subtract | Equal | MoreOrEqual | LessOrEqual | Different | More | Less;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Divide | Multiply | Add | Subtract
+		//Divide | Multiply | Add | Subtract | Equal | MoreOrEqual | LessOrEqual | Different | More | Less
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Divide
+		///*Arithmetic */ Divide
 		public RuleCall getDivideParserRuleCall_0() { return cDivideParserRuleCall_0; }
 		
 		//Multiply
@@ -460,6 +485,24 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Subtract
 		public RuleCall getSubtractParserRuleCall_3() { return cSubtractParserRuleCall_3; }
+		
+		///*Logic */ Equal
+		public RuleCall getEqualParserRuleCall_4() { return cEqualParserRuleCall_4; }
+		
+		//MoreOrEqual
+		public RuleCall getMoreOrEqualParserRuleCall_5() { return cMoreOrEqualParserRuleCall_5; }
+		
+		//LessOrEqual
+		public RuleCall getLessOrEqualParserRuleCall_6() { return cLessOrEqualParserRuleCall_6; }
+		
+		//Different
+		public RuleCall getDifferentParserRuleCall_7() { return cDifferentParserRuleCall_7; }
+		
+		//More
+		public RuleCall getMoreParserRuleCall_8() { return cMoreParserRuleCall_8; }
+		
+		//Less
+		public RuleCall getLessParserRuleCall_9() { return cLessParserRuleCall_9; }
 	}
 	public class SubtractElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Subtract");
@@ -530,6 +573,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	private final LambdaElements pLambda;
 	private final IfElements pIf;
 	private final LogicOperatorElements pLogicOperator;
+	private final BoolElements pBool;
 	private final EqualElements pEqual;
 	private final MoreOrEqualElements pMoreOrEqual;
 	private final LessOrEqualElements pLessOrEqual;
@@ -561,6 +605,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLambda = new LambdaElements();
 		this.pIf = new IfElements();
 		this.pLogicOperator = new LogicOperatorElements();
+		this.pBool = new BoolElements();
 		this.pEqual = new EqualElements();
 		this.pMoreOrEqual = new MoreOrEqualElements();
 		this.pLessOrEqual = new LessOrEqualElements();
@@ -615,7 +660,8 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TerminalExpression Expression:
-	//	'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+;
+	//	'(' Expression ')' | '(' Define ')' | '(' Lambda ')' | '(' If ')' | value+=INT+ | identifier+=ID+ | bool+=Bool+ |
+	//	str=STRING;
 	public TerminalExpressionElements getTerminalExpressionAccess() {
 		return pTerminalExpression;
 	}
@@ -655,8 +701,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//If:
-	//	'if' '(' logicOperator=LogicOperator leftCondition=TerminalExpression rightCondition=TerminalExpression ')'
-	//	result=TerminalExpression;
+	//	'if' logicEx=TerminalExpression trueEx=TerminalExpression falseEx=TerminalExpression;
 	public IfElements getIfAccess() {
 		return pIf;
 	}
@@ -673,6 +718,16 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLogicOperatorRule() {
 		return getLogicOperatorAccess().getRule();
+	}
+	
+	//Bool:
+	//	'#t' | '#f';
+	public BoolElements getBoolAccess() {
+		return pBool;
+	}
+	
+	public ParserRule getBoolRule() {
+		return getBoolAccess().getRule();
 	}
 	
 	//Equal:
@@ -758,7 +813,7 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Operator:
-	//	Divide | Multiply | Add | Subtract;
+	//	Divide | Multiply | Add | Subtract | Equal | MoreOrEqual | LessOrEqual | Different | More | Less;
 	public OperatorElements getOperatorAccess() {
 		return pOperator;
 	}

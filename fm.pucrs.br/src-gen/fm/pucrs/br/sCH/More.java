@@ -20,7 +20,7 @@ package fm.pucrs.br.sCH;
  * @model
  * @generated
  */
-public interface More extends LogicOperator
+public interface More extends LogicOperator, Operator
 {
   /**
    * Returns the value of the '<em><b>More</b></em>' attribute.

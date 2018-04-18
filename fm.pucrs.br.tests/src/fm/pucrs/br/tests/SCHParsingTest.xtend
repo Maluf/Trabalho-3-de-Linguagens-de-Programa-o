@@ -58,4 +58,41 @@ class SCHParsingTest {
 		Assert.assertNotNull(result)
 		Assert.assertTrue(result.eResource.errors.isEmpty)
 	}
+	
+	@Test
+	def void loadModel6() {
+		val result = parseHelper.parse('''
+			#f
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	
+	@Test
+	def void loadModel7() {
+		val result = parseHelper.parse('''
+			(if (< 3 4) (+ 33) (* 3 4))
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	
+	@Test
+	def void loadModel8() {
+		val result = parseHelper.parse('''
+			(define a 3)
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	
+	@Test
+	def void loadModel9() {
+		val result = parseHelper.parse('''
+			(lambda (a b) (* a b) )
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
+	}
+	
 }

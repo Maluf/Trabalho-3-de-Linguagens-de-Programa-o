@@ -10,6 +10,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bool" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="op" eType="#//Operator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
@@ -29,32 +32,30 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="logicOperator" eType="#//LogicOperator"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicEx" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="leftCondition" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trueEx" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rightCondition" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="result" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="falseEx" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogicOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="equal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MoreOrEqual" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="MoreOrEqual" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="moreOrEqual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LessOrEqual" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="LessOrEqual" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lessOrEqual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Different" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="Different" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="different" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="More" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="More" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="more" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Less" eSuperTypes="#//LogicOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="Less" eSuperTypes="#//LogicOperator #//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="less" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operator"/>
