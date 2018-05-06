@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="sch"
-			id="org.xtext.example.mydsl.Scheme"
-			name="Scheme Editor">
+			id="fm.pucrs.br.SCH"
+			name="SCH Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="org.xtext.example.mydsl.Scheme.validate">
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="fm.pucrs.br.SCH.validate">
 		<activeWhen>
 			<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 			</reference>
 		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened" />
+				<reference definitionId="fm.pucrs.br.SCH.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="org.xtext.example.mydsl.Scheme.XtextEditor.opened" />
+					<reference definitionId="fm.pucrs.br.SCH.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="org.xtext.example.mydsl.Scheme.Editor.opened">
+		<definition id="fm.pucrs.br.SCH.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="org.xtext.example.mydsl.Scheme"
+						value="fm.pucrs.br.SCH"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="org.xtext.example.mydsl.Scheme.XtextEditor.opened">
+		<definition id="fm.pucrs.br.SCH.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="org.xtext.example.mydsl.Scheme"
+						value="fm.pucrs.br.SCH"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="org.xtext.example.mydsl.Scheme"
-			name="Scheme">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="fm.pucrs.br.SCH"
+			name="SCH">
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 		</page>
 		<page
-			category="org.xtext.example.mydsl.Scheme"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="org.xtext.example.mydsl.Scheme.coloring"
+			category="fm.pucrs.br.SCH"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="fm.pucrs.br.SCH.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 		</page>
 		<page
-			category="org.xtext.example.mydsl.Scheme"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="org.xtext.example.mydsl.Scheme.templates"
+			category="fm.pucrs.br.SCH"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="fm.pucrs.br.SCH.templates"
 			name="Templates">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="org.xtext.example.mydsl.Scheme"
-			name="Scheme">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="fm.pucrs.br.SCH"
+			name="SCH">
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="org.xtext.example.mydsl.ui.keyword_Scheme"
-			label="Scheme"/>
+			id="fm.pucrs.br.ui.keyword_SCH"
+			label="SCH"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 	<command
 			description="Trigger expensive validation"
-			id="org.xtext.example.mydsl.Scheme.validate"
+			id="fm.pucrs.br.SCH.validate"
 			name="Validate">
 	</command>
 	<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			 <command
-				 commandId="org.xtext.example.mydsl.Scheme.validate"
+				 commandId="fm.pucrs.br.SCH.validate"
 				 style="push"
 				 tooltip="Trigger expensive validation">
 			<visibleWhen checkEnabled="false">
 				<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 				</reference>
 			</visibleWhen>
 		</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened" />
+					<reference definitionId="fm.pucrs.br.SCH.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened" />
+					<reference definitionId="fm.pucrs.br.SCH.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="org.xtext.example.mydsl.Scheme.XtextEditor.opened" />
+						<reference definitionId="fm.pucrs.br.SCH.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					<reference definitionId="fm.pucrs.br.SCH.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,72 +195,81 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
+	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="sch"
+			id="fm.pucrs.br.SCH.contenttype"
+			name="SCH File"
+			priority="normal">
+		</content-type>
 	</extension>
 	<!-- adding resource factories -->
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="sch">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="sch">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for org.xtext.example.mydsl.Scheme -->
+	<!-- marker definitions for fm.pucrs.br.SCH -->
 	<extension
-			id="scheme.check.fast"
-			name="Scheme Problem"
+			id="sch.check.fast"
+			name="SCH Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.fast"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
-			id="scheme.check.normal"
-			name="Scheme Problem"
+			id="sch.check.normal"
+			name="SCH Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.normal"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
-			id="scheme.check.expensive"
-			name="Scheme Problem"
+			id="sch.check.expensive"
+			name="SCH Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="sch"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="org.xtext.example.mydsl.Scheme"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="org.xtext.example.mydsl.Scheme.compiler.preferencePage"
+			category="fm.pucrs.br.SCH"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="fm.pucrs.br.SCH.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="org.xtext.example.mydsl.Scheme"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="org.xtext.example.mydsl.Scheme.compiler.propertyPage"
+			category="fm.pucrs.br.SCH"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="fm.pucrs.br.SCH.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -271,20 +280,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="org.xtext.example.mydsl.Scheme.OpenGeneratedCode"
+				id="fm.pucrs.br.SCH.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened" />
+					<reference definitionId="fm.pucrs.br.SCH.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened" />
+				<reference definitionId="fm.pucrs.br.SCH.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -292,11 +301,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -316,33 +325,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.xtext.example.mydsl.Scheme.Editor.opened"/>
+					<reference definitionId="fm.pucrs.br.SCH.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for org.xtext.example.mydsl.Scheme -->
+	<!-- quickfix marker resolution generator for fm.pucrs.br.SCH -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="fm.pucrs.br.ui.scheme.check.fast">
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="fm.pucrs.br.ui.sch.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="fm.pucrs.br.ui.scheme.check.normal">
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="fm.pucrs.br.ui.sch.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="fm.pucrs.br.ui.scheme.check.expensive">
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="fm.pucrs.br.ui.sch.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
@@ -352,11 +361,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+					definitionId="fm.pucrs.br.SCH.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -368,7 +377,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="org.xtext.example.mydsl.Scheme.Editor.opened">
+						definitionId="fm.pucrs.br.SCH.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -376,28 +385,28 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="org.xtext.example.mydsl.Scheme"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="org.xtext.example.mydsl.Scheme.refactoring"
+			category="fm.pucrs.br.SCH"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="fm.pucrs.br.SCH.refactoring"
 			name="Refactoring">
-			<keywordReference id="org.xtext.example.mydsl.ui.keyword_Scheme"/>
+			<keywordReference id="fm.pucrs.br.ui.keyword_SCH"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="org.xtext.example.mydsl.Scheme.compare.contentViewers"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="fm.pucrs.br.SCH.compare.contentViewers"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="sch">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="org.xtext.example.mydsl.Scheme.compare.contentMergeViewers"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="sch" label="Scheme Compare">
+		<viewer id="fm.pucrs.br.SCH.compare.contentMergeViewers"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="sch" label="SCH Compare">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="org.xtext.example.mydsl.Scheme.editors.documentProviders"
-			class="org.xtext.example.mydsl.ui.SchemeExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="fm.pucrs.br.SCH.editors.documentProviders"
+			class="fm.pucrs.br.ui.SCHExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="sch">
 		</provider>
 	</extension>

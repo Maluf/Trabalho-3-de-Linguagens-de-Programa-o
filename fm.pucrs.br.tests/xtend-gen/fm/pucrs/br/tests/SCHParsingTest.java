@@ -4,14 +4,10 @@
 package fm.pucrs.br.tests;
 
 import com.google.inject.Inject;
-import fm.pucrs.br.sCH.Model;
 import fm.pucrs.br.tests.SCHInjectorProvider;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.testing.util.ParseHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -20,131 +16,86 @@ import org.junit.runner.RunWith;
 @SuppressWarnings("all")
 public class SCHParsingTest {
   @Inject
-  private ParseHelper<Model> parseHelper;
+  private /* ParseHelper<Model> */Object parseHelper;
   
   @Test
   public void loadModel1() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(/ 3 3)");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel2() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(* 3 3 3 3 3)");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel3() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(+ 2)");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel4() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(+ 3 (* 3 ) )");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel5() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("2");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel6() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("#f");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel7() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(if (< 3 4) (+ 33) (* 3 4))");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel8() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(define a 3)");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
   
   @Test
   public void loadModel9() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(lambda (a b) (* a b) )");
-      _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
-      Assert.assertNotNull(result);
-      Assert.assertTrue(result.eResource().getErrors().isEmpty());
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe field SCHParsingTest.parseHelper refers to the missing type Model"
+      + "\neResource cannot be resolved"
+      + "\nerrors cannot be resolved"
+      + "\nisEmpty cannot be resolved");
   }
 }
