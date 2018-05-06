@@ -4,18 +4,16 @@
 package org.xtext.example.mydsl.ide;
 
 import com.google.inject.Injector;
-import org.xtext.example.mydsl.SchemeStandaloneSetup;
 
 /**
  * Initialization support for running Xtext languages as language servers.
  */
 @SuppressWarnings("all")
-public class SchemeIdeSetup /* extends SchemeStandaloneSetup  */{
+public class SchemeIdeSetup /* implements SchemeStandaloneSetup  */{
   @Override
   public Injector createInjector() {
     throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from SchemeRuntimeModule to Module"
-      + "\nType mismatch: cannot convert from SchemeIdeModule to Module"
-      + "\nAccess restriction: The type SchemeRuntimeModule is not accessible due to restriction on required project fm.pucrs.br.ide");
+      + "\nSchemeRuntimeModule cannot be resolved."
+      + "\nType mismatch: cannot convert from SchemeIdeModule to Module");
   }
 }
