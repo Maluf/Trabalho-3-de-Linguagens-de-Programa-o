@@ -51,6 +51,51 @@ public interface SCHFactory extends EFactory
   Atom createAtom();
 
   /**
+   * Returns a new object of class '<em>IDexp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>IDexp</em>'.
+   * @generated
+   */
+  IDexp createIDexp();
+
+  /**
+   * Returns a new object of class '<em>IN Texp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>IN Texp</em>'.
+   * @generated
+   */
+  INTexp createINTexp();
+
+  /**
+   * Returns a new object of class '<em>DOUBL Eexp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>DOUBL Eexp</em>'.
+   * @generated
+   */
+  DOUBLEexp createDOUBLEexp();
+
+  /**
+   * Returns a new object of class '<em>BOO Lexp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>BOO Lexp</em>'.
+   * @generated
+   */
+  BOOLexp createBOOLexp();
+
+  /**
+   * Returns a new object of class '<em>ST Rexp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ST Rexp</em>'.
+   * @generated
+   */
+  STRexp createSTRexp();
+
+  /**
    * Returns a new object of class '<em>List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -115,13 +115,51 @@ public interface SCHPackage extends EPackage
   int ATOM = 2;
 
   /**
+   * The number of structural features of the '<em>Atom</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOM_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.IDexpImpl <em>IDexp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.IDexpImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getIDexp()
+   * @generated
+   */
+  int IDEXP = 3;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOM__NAME = EXPRESSION_FEATURE_COUNT + 0;
+  int IDEXP__NAME = ATOM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>IDexp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDEXP_FEATURE_COUNT = ATOM_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.INTexpImpl <em>IN Texp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.INTexpImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getINTexp()
+   * @generated
+   */
+  int IN_TEXP = 4;
 
   /**
    * The feature id for the '<em><b>Ivalue</b></em>' attribute.
@@ -130,16 +168,26 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOM__IVALUE = EXPRESSION_FEATURE_COUNT + 1;
+  int IN_TEXP__IVALUE = ATOM_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Bvalue</b></em>' attribute.
+   * The number of structural features of the '<em>IN Texp</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOM__BVALUE = EXPRESSION_FEATURE_COUNT + 2;
+  int IN_TEXP_FEATURE_COUNT = ATOM_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.DOUBLEexpImpl <em>DOUBL Eexp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.DOUBLEexpImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDOUBLEexp()
+   * @generated
+   */
+  int DOUBL_EEXP = 5;
 
   /**
    * The feature id for the '<em><b>Dvalue</b></em>' attribute.
@@ -148,7 +196,54 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOM__DVALUE = EXPRESSION_FEATURE_COUNT + 3;
+  int DOUBL_EEXP__DVALUE = ATOM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>DOUBL Eexp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBL_EEXP_FEATURE_COUNT = ATOM_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.BOOLexpImpl <em>BOO Lexp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.BOOLexpImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getBOOLexp()
+   * @generated
+   */
+  int BOO_LEXP = 6;
+
+  /**
+   * The feature id for the '<em><b>Bvalue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOO_LEXP__BVALUE = ATOM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>BOO Lexp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOO_LEXP_FEATURE_COUNT = ATOM_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fm.pucrs.br.sCH.impl.STRexpImpl <em>ST Rexp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fm.pucrs.br.sCH.impl.STRexpImpl
+   * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSTRexp()
+   * @generated
+   */
+  int ST_REXP = 7;
 
   /**
    * The feature id for the '<em><b>Svalue</b></em>' attribute.
@@ -157,16 +252,16 @@ public interface SCHPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOM__SVALUE = EXPRESSION_FEATURE_COUNT + 4;
+  int ST_REXP__SVALUE = ATOM_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Atom</em>' class.
+   * The number of structural features of the '<em>ST Rexp</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOM_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 5;
+  int ST_REXP_FEATURE_COUNT = ATOM_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fm.pucrs.br.sCH.impl.ListImpl <em>List</em>}' class.
@@ -176,7 +271,7 @@ public interface SCHPackage extends EPackage
    * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getList()
    * @generated
    */
-  int LIST = 3;
+  int LIST = 8;
 
   /**
    * The feature id for the '<em><b>Called</b></em>' attribute.
@@ -248,59 +343,109 @@ public interface SCHPackage extends EPackage
   EClass getAtom();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Atom#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.IDexp <em>IDexp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>IDexp</em>'.
+   * @see fm.pucrs.br.sCH.IDexp
+   * @generated
+   */
+  EClass getIDexp();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.IDexp#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see fm.pucrs.br.sCH.Atom#getName()
-   * @see #getAtom()
+   * @see fm.pucrs.br.sCH.IDexp#getName()
+   * @see #getIDexp()
    * @generated
    */
-  EAttribute getAtom_Name();
+  EAttribute getIDexp_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Atom#getIvalue <em>Ivalue</em>}'.
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.INTexp <em>IN Texp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>IN Texp</em>'.
+   * @see fm.pucrs.br.sCH.INTexp
+   * @generated
+   */
+  EClass getINTexp();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.INTexp#getIvalue <em>Ivalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Ivalue</em>'.
-   * @see fm.pucrs.br.sCH.Atom#getIvalue()
-   * @see #getAtom()
+   * @see fm.pucrs.br.sCH.INTexp#getIvalue()
+   * @see #getINTexp()
    * @generated
    */
-  EAttribute getAtom_Ivalue();
+  EAttribute getINTexp_Ivalue();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Atom#getBvalue <em>Bvalue</em>}'.
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.DOUBLEexp <em>DOUBL Eexp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Bvalue</em>'.
-   * @see fm.pucrs.br.sCH.Atom#getBvalue()
-   * @see #getAtom()
+   * @return the meta object for class '<em>DOUBL Eexp</em>'.
+   * @see fm.pucrs.br.sCH.DOUBLEexp
    * @generated
    */
-  EAttribute getAtom_Bvalue();
+  EClass getDOUBLEexp();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Atom#getDvalue <em>Dvalue</em>}'.
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.DOUBLEexp#getDvalue <em>Dvalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Dvalue</em>'.
-   * @see fm.pucrs.br.sCH.Atom#getDvalue()
-   * @see #getAtom()
+   * @see fm.pucrs.br.sCH.DOUBLEexp#getDvalue()
+   * @see #getDOUBLEexp()
    * @generated
    */
-  EAttribute getAtom_Dvalue();
+  EAttribute getDOUBLEexp_Dvalue();
 
   /**
-   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.Atom#getSvalue <em>Svalue</em>}'.
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.BOOLexp <em>BOO Lexp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>BOO Lexp</em>'.
+   * @see fm.pucrs.br.sCH.BOOLexp
+   * @generated
+   */
+  EClass getBOOLexp();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.BOOLexp#getBvalue <em>Bvalue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bvalue</em>'.
+   * @see fm.pucrs.br.sCH.BOOLexp#getBvalue()
+   * @see #getBOOLexp()
+   * @generated
+   */
+  EAttribute getBOOLexp_Bvalue();
+
+  /**
+   * Returns the meta object for class '{@link fm.pucrs.br.sCH.STRexp <em>ST Rexp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ST Rexp</em>'.
+   * @see fm.pucrs.br.sCH.STRexp
+   * @generated
+   */
+  EClass getSTRexp();
+
+  /**
+   * Returns the meta object for the attribute '{@link fm.pucrs.br.sCH.STRexp#getSvalue <em>Svalue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Svalue</em>'.
-   * @see fm.pucrs.br.sCH.Atom#getSvalue()
-   * @see #getAtom()
+   * @see fm.pucrs.br.sCH.STRexp#getSvalue()
+   * @see #getSTRexp()
    * @generated
    */
-  EAttribute getAtom_Svalue();
+  EAttribute getSTRexp_Svalue();
 
   /**
    * Returns the meta object for class '{@link fm.pucrs.br.sCH.List <em>List</em>}'.
@@ -396,12 +541,32 @@ public interface SCHPackage extends EPackage
     EClass ATOM = eINSTANCE.getAtom();
 
     /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.IDexpImpl <em>IDexp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.IDexpImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getIDexp()
+     * @generated
+     */
+    EClass IDEXP = eINSTANCE.getIDexp();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOM__NAME = eINSTANCE.getAtom_Name();
+    EAttribute IDEXP__NAME = eINSTANCE.getIDexp_Name();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.INTexpImpl <em>IN Texp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.INTexpImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getINTexp()
+     * @generated
+     */
+    EClass IN_TEXP = eINSTANCE.getINTexp();
 
     /**
      * The meta object literal for the '<em><b>Ivalue</b></em>' attribute feature.
@@ -409,15 +574,17 @@ public interface SCHPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOM__IVALUE = eINSTANCE.getAtom_Ivalue();
+    EAttribute IN_TEXP__IVALUE = eINSTANCE.getINTexp_Ivalue();
 
     /**
-     * The meta object literal for the '<em><b>Bvalue</b></em>' attribute feature.
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.DOUBLEexpImpl <em>DOUBL Eexp</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.DOUBLEexpImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getDOUBLEexp()
      * @generated
      */
-    EAttribute ATOM__BVALUE = eINSTANCE.getAtom_Bvalue();
+    EClass DOUBL_EEXP = eINSTANCE.getDOUBLEexp();
 
     /**
      * The meta object literal for the '<em><b>Dvalue</b></em>' attribute feature.
@@ -425,7 +592,35 @@ public interface SCHPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOM__DVALUE = eINSTANCE.getAtom_Dvalue();
+    EAttribute DOUBL_EEXP__DVALUE = eINSTANCE.getDOUBLEexp_Dvalue();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.BOOLexpImpl <em>BOO Lexp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.BOOLexpImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getBOOLexp()
+     * @generated
+     */
+    EClass BOO_LEXP = eINSTANCE.getBOOLexp();
+
+    /**
+     * The meta object literal for the '<em><b>Bvalue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOO_LEXP__BVALUE = eINSTANCE.getBOOLexp_Bvalue();
+
+    /**
+     * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.STRexpImpl <em>ST Rexp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fm.pucrs.br.sCH.impl.STRexpImpl
+     * @see fm.pucrs.br.sCH.impl.SCHPackageImpl#getSTRexp()
+     * @generated
+     */
+    EClass ST_REXP = eINSTANCE.getSTRexp();
 
     /**
      * The meta object literal for the '<em><b>Svalue</b></em>' attribute feature.
@@ -433,7 +628,7 @@ public interface SCHPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATOM__SVALUE = eINSTANCE.getAtom_Svalue();
+    EAttribute ST_REXP__SVALUE = eINSTANCE.getSTRexp_Svalue();
 
     /**
      * The meta object literal for the '{@link fm.pucrs.br.sCH.impl.ListImpl <em>List</em>}' class.

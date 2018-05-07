@@ -59,53 +59,108 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	public class AtomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.Atom");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cIvalueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cIvalueINTTerminalRuleCall_1_0 = (RuleCall)cIvalueAssignment_1.eContents().get(0);
-		private final Assignment cBvalueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cBvalueBOOLEANTerminalRuleCall_2_0 = (RuleCall)cBvalueAssignment_2.eContents().get(0);
-		private final Assignment cDvalueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cDvalueDOUBLETerminalRuleCall_3_0 = (RuleCall)cDvalueAssignment_3.eContents().get(0);
-		private final Assignment cSvalueAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final RuleCall cSvalueSTRINGTerminalRuleCall_4_0 = (RuleCall)cSvalueAssignment_4.eContents().get(0);
+		private final RuleCall cIDexpParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINTexpParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cBOOLexpParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDOUBLEexpParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cSTRexpParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Atom:
-		//	name=ID | ivalue=INT | bvalue=BOOLEAN | dvalue=DOUBLE | svalue=STRING;
+		//	IDexp | INTexp | BOOLexp | DOUBLEexp | STRexp;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID | ivalue=INT | bvalue=BOOLEAN | dvalue=DOUBLE | svalue=STRING
+		//IDexp | INTexp | BOOLexp | DOUBLEexp | STRexp
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//IDexp
+		public RuleCall getIDexpParserRuleCall_0() { return cIDexpParserRuleCall_0; }
+		
+		//INTexp
+		public RuleCall getINTexpParserRuleCall_1() { return cINTexpParserRuleCall_1; }
+		
+		//BOOLexp
+		public RuleCall getBOOLexpParserRuleCall_2() { return cBOOLexpParserRuleCall_2; }
+		
+		//DOUBLEexp
+		public RuleCall getDOUBLEexpParserRuleCall_3() { return cDOUBLEexpParserRuleCall_3; }
+		
+		//STRexp
+		public RuleCall getSTRexpParserRuleCall_4() { return cSTRexpParserRuleCall_4; }
+	}
+	public class IDexpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.IDexp");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//IDexp:
+		//	name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+	}
+	public class INTexpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.INTexp");
+		private final Assignment cIvalueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cIvalueINTTerminalRuleCall_0 = (RuleCall)cIvalueAssignment.eContents().get(0);
+		
+		//INTexp:
+		//	ivalue=INT;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//ivalue=INT
-		public Assignment getIvalueAssignment_1() { return cIvalueAssignment_1; }
+		public Assignment getIvalueAssignment() { return cIvalueAssignment; }
 		
 		//INT
-		public RuleCall getIvalueINTTerminalRuleCall_1_0() { return cIvalueINTTerminalRuleCall_1_0; }
+		public RuleCall getIvalueINTTerminalRuleCall_0() { return cIvalueINTTerminalRuleCall_0; }
+	}
+	public class DOUBLEexpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.DOUBLEexp");
+		private final Assignment cDvalueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cDvalueDOUBLETerminalRuleCall_0 = (RuleCall)cDvalueAssignment.eContents().get(0);
 		
-		//bvalue=BOOLEAN
-		public Assignment getBvalueAssignment_2() { return cBvalueAssignment_2; }
-		
-		//BOOLEAN
-		public RuleCall getBvalueBOOLEANTerminalRuleCall_2_0() { return cBvalueBOOLEANTerminalRuleCall_2_0; }
+		//DOUBLEexp:
+		//	dvalue=DOUBLE;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//dvalue=DOUBLE
-		public Assignment getDvalueAssignment_3() { return cDvalueAssignment_3; }
+		public Assignment getDvalueAssignment() { return cDvalueAssignment; }
 		
 		//DOUBLE
-		public RuleCall getDvalueDOUBLETerminalRuleCall_3_0() { return cDvalueDOUBLETerminalRuleCall_3_0; }
+		public RuleCall getDvalueDOUBLETerminalRuleCall_0() { return cDvalueDOUBLETerminalRuleCall_0; }
+	}
+	public class BOOLexpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.BOOLexp");
+		private final Assignment cBvalueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cBvalueBOOLEANTerminalRuleCall_0 = (RuleCall)cBvalueAssignment.eContents().get(0);
+		
+		//BOOLexp:
+		//	bvalue=BOOLEAN;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//bvalue=BOOLEAN
+		public Assignment getBvalueAssignment() { return cBvalueAssignment; }
+		
+		//BOOLEAN
+		public RuleCall getBvalueBOOLEANTerminalRuleCall_0() { return cBvalueBOOLEANTerminalRuleCall_0; }
+	}
+	public class STRexpElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.STRexp");
+		private final Assignment cSvalueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cSvalueSTRINGTerminalRuleCall_0 = (RuleCall)cSvalueAssignment.eContents().get(0);
+		
+		//STRexp:
+		//	svalue=STRING;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//svalue=STRING
-		public Assignment getSvalueAssignment_4() { return cSvalueAssignment_4; }
+		public Assignment getSvalueAssignment() { return cSvalueAssignment; }
 		
 		//STRING
-		public RuleCall getSvalueSTRINGTerminalRuleCall_4_0() { return cSvalueSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getSvalueSTRINGTerminalRuleCall_0() { return cSvalueSTRINGTerminalRuleCall_0; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.List");
@@ -147,6 +202,11 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	private final ProgramElements pProgram;
 	private final ExpressionElements pExpression;
 	private final AtomElements pAtom;
+	private final IDexpElements pIDexp;
+	private final INTexpElements pINTexp;
+	private final DOUBLEexpElements pDOUBLEexp;
+	private final BOOLexpElements pBOOLexp;
+	private final STRexpElements pSTRexp;
 	private final ListElements pList;
 	private final TerminalRule tDOUBLE;
 	private final TerminalRule tBOOLEAN;
@@ -164,6 +224,11 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 		this.pProgram = new ProgramElements();
 		this.pExpression = new ExpressionElements();
 		this.pAtom = new AtomElements();
+		this.pIDexp = new IDexpElements();
+		this.pINTexp = new INTexpElements();
+		this.pDOUBLEexp = new DOUBLEexpElements();
+		this.pBOOLexp = new BOOLexpElements();
+		this.pSTRexp = new STRexpElements();
 		this.pList = new ListElements();
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.DOUBLE");
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "fm.pucrs.br.SCH.BOOLEAN");
@@ -218,13 +283,63 @@ public class SCHGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Atom:
-	//	name=ID | ivalue=INT | bvalue=BOOLEAN | dvalue=DOUBLE | svalue=STRING;
+	//	IDexp | INTexp | BOOLexp | DOUBLEexp | STRexp;
 	public AtomElements getAtomAccess() {
 		return pAtom;
 	}
 	
 	public ParserRule getAtomRule() {
 		return getAtomAccess().getRule();
+	}
+	
+	//IDexp:
+	//	name=ID;
+	public IDexpElements getIDexpAccess() {
+		return pIDexp;
+	}
+	
+	public ParserRule getIDexpRule() {
+		return getIDexpAccess().getRule();
+	}
+	
+	//INTexp:
+	//	ivalue=INT;
+	public INTexpElements getINTexpAccess() {
+		return pINTexp;
+	}
+	
+	public ParserRule getINTexpRule() {
+		return getINTexpAccess().getRule();
+	}
+	
+	//DOUBLEexp:
+	//	dvalue=DOUBLE;
+	public DOUBLEexpElements getDOUBLEexpAccess() {
+		return pDOUBLEexp;
+	}
+	
+	public ParserRule getDOUBLEexpRule() {
+		return getDOUBLEexpAccess().getRule();
+	}
+	
+	//BOOLexp:
+	//	bvalue=BOOLEAN;
+	public BOOLexpElements getBOOLexpAccess() {
+		return pBOOLexp;
+	}
+	
+	public ParserRule getBOOLexpRule() {
+		return getBOOLexpAccess().getRule();
+	}
+	
+	//STRexp:
+	//	svalue=STRING;
+	public STRexpElements getSTRexpAccess() {
+		return pSTRexp;
+	}
+	
+	public ParserRule getSTRexpRule() {
+		return getSTRexpAccess().getRule();
 	}
 	
 	//List:

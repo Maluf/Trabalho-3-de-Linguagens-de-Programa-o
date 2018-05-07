@@ -35,11 +35,11 @@ public class SCHParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomAccess().getAlternatives(), "rule__Atom__Alternatives");
 					put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
 					put(grammarAccess.getProgramAccess().getExpressionsAssignment(), "rule__Program__ExpressionsAssignment");
-					put(grammarAccess.getAtomAccess().getNameAssignment_0(), "rule__Atom__NameAssignment_0");
-					put(grammarAccess.getAtomAccess().getIvalueAssignment_1(), "rule__Atom__IvalueAssignment_1");
-					put(grammarAccess.getAtomAccess().getBvalueAssignment_2(), "rule__Atom__BvalueAssignment_2");
-					put(grammarAccess.getAtomAccess().getDvalueAssignment_3(), "rule__Atom__DvalueAssignment_3");
-					put(grammarAccess.getAtomAccess().getSvalueAssignment_4(), "rule__Atom__SvalueAssignment_4");
+					put(grammarAccess.getIDexpAccess().getNameAssignment(), "rule__IDexp__NameAssignment");
+					put(grammarAccess.getINTexpAccess().getIvalueAssignment(), "rule__INTexp__IvalueAssignment");
+					put(grammarAccess.getDOUBLEexpAccess().getDvalueAssignment(), "rule__DOUBLEexp__DvalueAssignment");
+					put(grammarAccess.getBOOLexpAccess().getBvalueAssignment(), "rule__BOOLexp__BvalueAssignment");
+					put(grammarAccess.getSTRexpAccess().getSvalueAssignment(), "rule__STRexp__SvalueAssignment");
 					put(grammarAccess.getListAccess().getCalledAssignment_1(), "rule__List__CalledAssignment_1");
 					put(grammarAccess.getListAccess().getParamsAssignment_2(), "rule__List__ParamsAssignment_2");
 				}

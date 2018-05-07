@@ -68,6 +68,11 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
       case SCHPackage.PROGRAM: return createProgram();
       case SCHPackage.EXPRESSION: return createExpression();
       case SCHPackage.ATOM: return createAtom();
+      case SCHPackage.IDEXP: return createIDexp();
+      case SCHPackage.IN_TEXP: return createINTexp();
+      case SCHPackage.DOUBL_EEXP: return createDOUBLEexp();
+      case SCHPackage.BOO_LEXP: return createBOOLexp();
+      case SCHPackage.ST_REXP: return createSTRexp();
       case SCHPackage.LIST: return createList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -105,6 +110,61 @@ public class SCHFactoryImpl extends EFactoryImpl implements SCHFactory
   {
     AtomImpl atom = new AtomImpl();
     return atom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IDexp createIDexp()
+  {
+    IDexpImpl iDexp = new IDexpImpl();
+    return iDexp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public INTexp createINTexp()
+  {
+    INTexpImpl inTexp = new INTexpImpl();
+    return inTexp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DOUBLEexp createDOUBLEexp()
+  {
+    DOUBLEexpImpl doublEexp = new DOUBLEexpImpl();
+    return doublEexp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BOOLexp createBOOLexp()
+  {
+    BOOLexpImpl booLexp = new BOOLexpImpl();
+    return booLexp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public STRexp createSTRexp()
+  {
+    STRexpImpl stRexp = new STRexpImpl();
+    return stRexp;
   }
 
   /**

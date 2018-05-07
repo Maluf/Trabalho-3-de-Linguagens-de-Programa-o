@@ -10,7 +10,13 @@ Expression:
 Atom | List;
 
 Atom:
-name=ID | ivalue=INT | bvalue=BOOLEAN | dvalue=DOUBLE | svalue=STRING;
+IDexp | INTexp | BOOLexp | DOUBLEexp | STRexp ;
+
+IDexp: name=ID ;
+INTexp: ivalue=INT ;
+DOUBLEexp: dvalue=DOUBLE ;
+BOOLexp: bvalue=BOOLEAN;
+STRexp:svalue=STRING;
 
 List:
 '(' called=ID params+=Expression* ')';

@@ -6,11 +6,20 @@
         eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IDexp" eSuperTypes="#//Atom">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="INTexp" eSuperTypes="#//Atom">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ivalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DOUBLEexp" eSuperTypes="#//Atom">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BOOLexp" eSuperTypes="#//Atom">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bvalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="STRexp" eSuperTypes="#//Atom">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="svalue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Expression">

@@ -10,12 +10,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCH.ecore#//Program/expressions"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//Expression"/>
-    <genClasses ecoreClass="SCH.ecore#//Atom">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Atom/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Atom/ivalue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Atom/bvalue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Atom/dvalue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//Atom/svalue"/>
+    <genClasses ecoreClass="SCH.ecore#//Atom"/>
+    <genClasses ecoreClass="SCH.ecore#//IDexp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//IDexp/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//INTexp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//INTexp/ivalue"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//DOUBLEexp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//DOUBLEexp/dvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//BOOLexp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//BOOLexp/bvalue"/>
+    </genClasses>
+    <genClasses ecoreClass="SCH.ecore#//STRexp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//STRexp/svalue"/>
     </genClasses>
     <genClasses ecoreClass="SCH.ecore#//List">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCH.ecore#//List/called"/>

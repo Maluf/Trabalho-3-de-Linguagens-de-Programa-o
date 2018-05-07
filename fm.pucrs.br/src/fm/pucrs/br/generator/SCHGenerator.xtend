@@ -11,7 +11,11 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import fm.pucrs.br.sCH.Program
 import fm.pucrs.br.sCH.Atom
 import fm.pucrs.br.sCH.List
-import fm.pucrs.br.services.SCHGrammarAccess.AtomElements
+import fm.pucrs.br.sCH.INTexp
+import fm.pucrs.br.sCH.BOOLexp
+import fm.pucrs.br.sCH.DOUBLEexp
+import fm.pucrs.br.sCH.IDexp
+import fm.pucrs.br.sCH.STRexp
 
 /**
  * Generates code from your model files on save.
@@ -39,11 +43,28 @@ public static void main(String[] args) throws Exception {
 }
 '''
 
-def dispatch compile(Atom at) '''
-	«at.ivalue» «at.bvalue»	
-'''
+def dispatch compile(Atom at) '''«at.generateAtom»'''
 
 def dispatch compile(List li) '''
-	«li.called»( «FOR p : li.params» «p.compile», «ENDFOR» );
+	«IF li.called.toString == '+' || li.called.toString == '-' ||
+	li.called.toString == '*' || li.called.toString == '/'»
+		(«FOR p : li.params SEPARATOR ' '+li.called AFTER ''» «p.compile» «ENDFOR» )
+	«ELSEIF li.called.toString == 'def'»
+		var	 «li.params.remove(0).compile» = («FOR p : li.params SEPARATOR ' '+li.called AFTER ''» «p.compile» «ENDFOR» ) ;
+	«ELSE»
+		«li.called»(«FOR p : li.params SEPARATOR ',' AFTER ''» «p.compile» «ENDFOR»  )
+	«ENDIF»
 '''
+	
+
+def dispatch generateAtom(IDexp e)'''«e.name»'''
+
+def dispatch generateAtom(INTexp e)'''«e.ivalue»'''
+
+def dispatch generateAtom(DOUBLEexp e)'''«e.dvalue»'''
+
+def dispatch generateAtom(STRexp e)'''«e.ivalue»'''
+
+def dispatch generateAtom(BOOLexp e)'''«e.bvalue»'''
+		
 }

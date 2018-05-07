@@ -148,99 +148,224 @@ ruleAtom returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				lv_name_0_0=RULE_ID
-				{
-					newLeafNode(lv_name_0_0, grammarAccess.getAtomAccess().getNameIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtomRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_0_0,
-						"fm.pucrs.br.SCH.ID");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAtomAccess().getIDexpParserRuleCall_0());
+		}
+		this_IDexp_0=ruleIDexp
+		{
+			$current = $this_IDexp_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
-		(
-			(
-				lv_ivalue_1_0=RULE_INT
-				{
-					newLeafNode(lv_ivalue_1_0, grammarAccess.getAtomAccess().getIvalueINTTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtomRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"ivalue",
-						lv_ivalue_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAtomAccess().getINTexpParserRuleCall_1());
+		}
+		this_INTexp_1=ruleINTexp
+		{
+			$current = $this_INTexp_1.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
-		(
-			(
-				lv_bvalue_2_0=RULE_BOOLEAN
-				{
-					newLeafNode(lv_bvalue_2_0, grammarAccess.getAtomAccess().getBvalueBOOLEANTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtomRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"bvalue",
-						lv_bvalue_2_0,
-						"fm.pucrs.br.SCH.BOOLEAN");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAtomAccess().getBOOLexpParserRuleCall_2());
+		}
+		this_BOOLexp_2=ruleBOOLexp
+		{
+			$current = $this_BOOLexp_2.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
-		(
-			(
-				lv_dvalue_3_0=RULE_DOUBLE
-				{
-					newLeafNode(lv_dvalue_3_0, grammarAccess.getAtomAccess().getDvalueDOUBLETerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtomRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"dvalue",
-						lv_dvalue_3_0,
-						"fm.pucrs.br.SCH.DOUBLE");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAtomAccess().getDOUBLEexpParserRuleCall_3());
+		}
+		this_DOUBLEexp_3=ruleDOUBLEexp
+		{
+			$current = $this_DOUBLEexp_3.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
+		{
+			newCompositeNode(grammarAccess.getAtomAccess().getSTRexpParserRuleCall_4());
+		}
+		this_STRexp_4=ruleSTRexp
+		{
+			$current = $this_STRexp_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleIDexp
+entryRuleIDexp returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIDexpRule()); }
+	iv_ruleIDexp=ruleIDexp
+	{ $current=$iv_ruleIDexp.current; }
+	EOF;
+
+// Rule IDexp
+ruleIDexp returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
-			(
-				lv_svalue_4_0=RULE_STRING
-				{
-					newLeafNode(lv_svalue_4_0, grammarAccess.getAtomAccess().getSvalueSTRINGTerminalRuleCall_4_0());
+			lv_name_0_0=RULE_ID
+			{
+				newLeafNode(lv_name_0_0, grammarAccess.getIDexpAccess().getNameIDTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getIDexpRule());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtomRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"svalue",
-						lv_svalue_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+				setWithLastConsumed(
+					$current,
+					"name",
+					lv_name_0_0,
+					"fm.pucrs.br.SCH.ID");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleINTexp
+entryRuleINTexp returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getINTexpRule()); }
+	iv_ruleINTexp=ruleINTexp
+	{ $current=$iv_ruleINTexp.current; }
+	EOF;
+
+// Rule INTexp
+ruleINTexp returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_ivalue_0_0=RULE_INT
+			{
+				newLeafNode(lv_ivalue_0_0, grammarAccess.getINTexpAccess().getIvalueINTTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getINTexpRule());
 				}
-			)
+				setWithLastConsumed(
+					$current,
+					"ivalue",
+					lv_ivalue_0_0,
+					"org.eclipse.xtext.common.Terminals.INT");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleDOUBLEexp
+entryRuleDOUBLEexp returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDOUBLEexpRule()); }
+	iv_ruleDOUBLEexp=ruleDOUBLEexp
+	{ $current=$iv_ruleDOUBLEexp.current; }
+	EOF;
+
+// Rule DOUBLEexp
+ruleDOUBLEexp returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_dvalue_0_0=RULE_DOUBLE
+			{
+				newLeafNode(lv_dvalue_0_0, grammarAccess.getDOUBLEexpAccess().getDvalueDOUBLETerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getDOUBLEexpRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"dvalue",
+					lv_dvalue_0_0,
+					"fm.pucrs.br.SCH.DOUBLE");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleBOOLexp
+entryRuleBOOLexp returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBOOLexpRule()); }
+	iv_ruleBOOLexp=ruleBOOLexp
+	{ $current=$iv_ruleBOOLexp.current; }
+	EOF;
+
+// Rule BOOLexp
+ruleBOOLexp returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_bvalue_0_0=RULE_BOOLEAN
+			{
+				newLeafNode(lv_bvalue_0_0, grammarAccess.getBOOLexpAccess().getBvalueBOOLEANTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getBOOLexpRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"bvalue",
+					lv_bvalue_0_0,
+					"fm.pucrs.br.SCH.BOOLEAN");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleSTRexp
+entryRuleSTRexp returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSTRexpRule()); }
+	iv_ruleSTRexp=ruleSTRexp
+	{ $current=$iv_ruleSTRexp.current; }
+	EOF;
+
+// Rule STRexp
+ruleSTRexp returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_svalue_0_0=RULE_STRING
+			{
+				newLeafNode(lv_svalue_0_0, grammarAccess.getSTRexpAccess().getSvalueSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getSTRexpRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"svalue",
+					lv_svalue_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
 		)
 	)
 ;

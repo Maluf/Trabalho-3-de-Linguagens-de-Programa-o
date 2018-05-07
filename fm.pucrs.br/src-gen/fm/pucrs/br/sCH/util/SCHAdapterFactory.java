@@ -91,6 +91,31 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
         return createAtomAdapter();
       }
       @Override
+      public Adapter caseIDexp(IDexp object)
+      {
+        return createIDexpAdapter();
+      }
+      @Override
+      public Adapter caseINTexp(INTexp object)
+      {
+        return createINTexpAdapter();
+      }
+      @Override
+      public Adapter caseDOUBLEexp(DOUBLEexp object)
+      {
+        return createDOUBLEexpAdapter();
+      }
+      @Override
+      public Adapter caseBOOLexp(BOOLexp object)
+      {
+        return createBOOLexpAdapter();
+      }
+      @Override
+      public Adapter caseSTRexp(STRexp object)
+      {
+        return createSTRexpAdapter();
+      }
+      @Override
       public Adapter caseList(List object)
       {
         return createListAdapter();
@@ -158,6 +183,81 @@ public class SCHAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtomAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.IDexp <em>IDexp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.IDexp
+   * @generated
+   */
+  public Adapter createIDexpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.INTexp <em>IN Texp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.INTexp
+   * @generated
+   */
+  public Adapter createINTexpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.DOUBLEexp <em>DOUBL Eexp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.DOUBLEexp
+   * @generated
+   */
+  public Adapter createDOUBLEexpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.BOOLexp <em>BOO Lexp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.BOOLexp
+   * @generated
+   */
+  public Adapter createBOOLexpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fm.pucrs.br.sCH.STRexp <em>ST Rexp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fm.pucrs.br.sCH.STRexp
+   * @generated
+   */
+  public Adapter createSTRexpAdapter()
   {
     return null;
   }

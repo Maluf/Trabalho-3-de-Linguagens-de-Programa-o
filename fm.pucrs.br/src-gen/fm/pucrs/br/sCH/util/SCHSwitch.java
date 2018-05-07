@@ -95,6 +95,51 @@ public class SCHSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SCHPackage.IDEXP:
+      {
+        IDexp iDexp = (IDexp)theEObject;
+        T result = caseIDexp(iDexp);
+        if (result == null) result = caseAtom(iDexp);
+        if (result == null) result = caseExpression(iDexp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.IN_TEXP:
+      {
+        INTexp inTexp = (INTexp)theEObject;
+        T result = caseINTexp(inTexp);
+        if (result == null) result = caseAtom(inTexp);
+        if (result == null) result = caseExpression(inTexp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.DOUBL_EEXP:
+      {
+        DOUBLEexp doublEexp = (DOUBLEexp)theEObject;
+        T result = caseDOUBLEexp(doublEexp);
+        if (result == null) result = caseAtom(doublEexp);
+        if (result == null) result = caseExpression(doublEexp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.BOO_LEXP:
+      {
+        BOOLexp booLexp = (BOOLexp)theEObject;
+        T result = caseBOOLexp(booLexp);
+        if (result == null) result = caseAtom(booLexp);
+        if (result == null) result = caseExpression(booLexp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SCHPackage.ST_REXP:
+      {
+        STRexp stRexp = (STRexp)theEObject;
+        T result = caseSTRexp(stRexp);
+        if (result == null) result = caseAtom(stRexp);
+        if (result == null) result = caseExpression(stRexp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SCHPackage.LIST:
       {
         List list = (List)theEObject;
@@ -151,6 +196,86 @@ public class SCHSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtom(Atom object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>IDexp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>IDexp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIDexp(IDexp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>IN Texp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>IN Texp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseINTexp(INTexp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>DOUBL Eexp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DOUBL Eexp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDOUBLEexp(DOUBLEexp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>BOO Lexp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>BOO Lexp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBOOLexp(BOOLexp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ST Rexp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ST Rexp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSTRexp(STRexp object)
   {
     return null;
   }

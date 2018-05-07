@@ -4,11 +4,16 @@
 package fm.pucrs.br.sCH.impl;
 
 import fm.pucrs.br.sCH.Atom;
+import fm.pucrs.br.sCH.BOOLexp;
+import fm.pucrs.br.sCH.DOUBLEexp;
 import fm.pucrs.br.sCH.Expression;
+import fm.pucrs.br.sCH.IDexp;
+import fm.pucrs.br.sCH.INTexp;
 import fm.pucrs.br.sCH.List;
 import fm.pucrs.br.sCH.Program;
 import fm.pucrs.br.sCH.SCHFactory;
 import fm.pucrs.br.sCH.SCHPackage;
+import fm.pucrs.br.sCH.STRexp;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -45,6 +50,41 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * @generated
    */
   private EClass atomEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass iDexpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inTexpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doublEexpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booLexpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stRexpEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,9 +201,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Name()
+  public EClass getIDexp()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(0);
+    return iDexpEClass;
   }
 
   /**
@@ -171,9 +211,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Ivalue()
+  public EAttribute getIDexp_Name()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)iDexpEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -181,9 +221,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Bvalue()
+  public EClass getINTexp()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(2);
+    return inTexpEClass;
   }
 
   /**
@@ -191,9 +231,9 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Dvalue()
+  public EAttribute getINTexp_Ivalue()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)inTexpEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -201,9 +241,59 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Svalue()
+  public EClass getDOUBLEexp()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(4);
+    return doublEexpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDOUBLEexp_Dvalue()
+  {
+    return (EAttribute)doublEexpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBOOLexp()
+  {
+    return booLexpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBOOLexp_Bvalue()
+  {
+    return (EAttribute)booLexpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSTRexp()
+  {
+    return stRexpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSTRexp_Svalue()
+  {
+    return (EAttribute)stRexpEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -272,11 +362,21 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     expressionEClass = createEClass(EXPRESSION);
 
     atomEClass = createEClass(ATOM);
-    createEAttribute(atomEClass, ATOM__NAME);
-    createEAttribute(atomEClass, ATOM__IVALUE);
-    createEAttribute(atomEClass, ATOM__BVALUE);
-    createEAttribute(atomEClass, ATOM__DVALUE);
-    createEAttribute(atomEClass, ATOM__SVALUE);
+
+    iDexpEClass = createEClass(IDEXP);
+    createEAttribute(iDexpEClass, IDEXP__NAME);
+
+    inTexpEClass = createEClass(IN_TEXP);
+    createEAttribute(inTexpEClass, IN_TEXP__IVALUE);
+
+    doublEexpEClass = createEClass(DOUBL_EEXP);
+    createEAttribute(doublEexpEClass, DOUBL_EEXP__DVALUE);
+
+    booLexpEClass = createEClass(BOO_LEXP);
+    createEAttribute(booLexpEClass, BOO_LEXP__BVALUE);
+
+    stRexpEClass = createEClass(ST_REXP);
+    createEAttribute(stRexpEClass, ST_REXP__SVALUE);
 
     listEClass = createEClass(LIST);
     createEAttribute(listEClass, LIST__CALLED);
@@ -313,6 +413,11 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
 
     // Add supertypes to classes
     atomEClass.getESuperTypes().add(this.getExpression());
+    iDexpEClass.getESuperTypes().add(this.getAtom());
+    inTexpEClass.getESuperTypes().add(this.getAtom());
+    doublEexpEClass.getESuperTypes().add(this.getAtom());
+    booLexpEClass.getESuperTypes().add(this.getAtom());
+    stRexpEClass.getESuperTypes().add(this.getAtom());
     listEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -322,11 +427,21 @@ public class SCHPackageImpl extends EPackageImpl implements SCHPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtom_Name(), ecorePackage.getEString(), "name", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtom_Ivalue(), ecorePackage.getEInt(), "ivalue", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtom_Bvalue(), ecorePackage.getEString(), "bvalue", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtom_Dvalue(), ecorePackage.getEString(), "dvalue", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtom_Svalue(), ecorePackage.getEString(), "svalue", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(iDexpEClass, IDexp.class, "IDexp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIDexp_Name(), ecorePackage.getEString(), "name", null, 0, 1, IDexp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inTexpEClass, INTexp.class, "INTexp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getINTexp_Ivalue(), ecorePackage.getEInt(), "ivalue", null, 0, 1, INTexp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doublEexpEClass, DOUBLEexp.class, "DOUBLEexp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDOUBLEexp_Dvalue(), ecorePackage.getEString(), "dvalue", null, 0, 1, DOUBLEexp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booLexpEClass, BOOLexp.class, "BOOLexp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBOOLexp_Bvalue(), ecorePackage.getEString(), "bvalue", null, 0, 1, BOOLexp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stRexpEClass, STRexp.class, "STRexp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSTRexp_Svalue(), ecorePackage.getEString(), "svalue", null, 0, 1, STRexp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getList_Called(), ecorePackage.getEString(), "called", null, 0, 1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

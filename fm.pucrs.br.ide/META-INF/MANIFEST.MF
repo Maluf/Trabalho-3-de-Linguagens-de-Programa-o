@@ -12,4 +12,4 @@ Require-Bundle: fm.pucrs.br,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: fm.pucrs.br.ide.contentassist.antlr.internal,
  fm.pucrs.br.ide.contentassist.antlr
-
+Import-Package: com.google.inject

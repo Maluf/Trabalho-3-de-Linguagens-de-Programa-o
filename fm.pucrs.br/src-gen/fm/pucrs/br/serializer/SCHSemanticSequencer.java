@@ -4,10 +4,14 @@
 package fm.pucrs.br.serializer;
 
 import com.google.inject.Inject;
-import fm.pucrs.br.sCH.Atom;
+import fm.pucrs.br.sCH.BOOLexp;
+import fm.pucrs.br.sCH.DOUBLEexp;
+import fm.pucrs.br.sCH.IDexp;
+import fm.pucrs.br.sCH.INTexp;
 import fm.pucrs.br.sCH.List;
 import fm.pucrs.br.sCH.Program;
 import fm.pucrs.br.sCH.SCHPackage;
+import fm.pucrs.br.sCH.STRexp;
 import fm.pucrs.br.services.SCHGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -16,7 +20,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -32,14 +38,26 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SCHPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SCHPackage.ATOM:
-				sequence_Atom(context, (Atom) semanticObject); 
+			case SCHPackage.BOO_LEXP:
+				sequence_BOOLexp(context, (BOOLexp) semanticObject); 
+				return; 
+			case SCHPackage.DOUBL_EEXP:
+				sequence_DOUBLEexp(context, (DOUBLEexp) semanticObject); 
+				return; 
+			case SCHPackage.IDEXP:
+				sequence_IDexp(context, (IDexp) semanticObject); 
+				return; 
+			case SCHPackage.IN_TEXP:
+				sequence_INTexp(context, (INTexp) semanticObject); 
 				return; 
 			case SCHPackage.LIST:
 				sequence_List(context, (List) semanticObject); 
 				return; 
 			case SCHPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
+				return; 
+			case SCHPackage.ST_REXP:
+				sequence_STRexp(context, (STRexp) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -48,14 +66,81 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Atom
-	 *     Atom returns Atom
+	 *     Expression returns BOOLexp
+	 *     Atom returns BOOLexp
+	 *     BOOLexp returns BOOLexp
 	 *
 	 * Constraint:
-	 *     (name=ID | ivalue=INT | bvalue=BOOLEAN | dvalue=DOUBLE | svalue=STRING)
+	 *     bvalue=BOOLEAN
 	 */
-	protected void sequence_Atom(ISerializationContext context, Atom semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_BOOLexp(ISerializationContext context, BOOLexp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.BOO_LEXP__BVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.BOO_LEXP__BVALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBOOLexpAccess().getBvalueBOOLEANTerminalRuleCall_0(), semanticObject.getBvalue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns DOUBLEexp
+	 *     Atom returns DOUBLEexp
+	 *     DOUBLEexp returns DOUBLEexp
+	 *
+	 * Constraint:
+	 *     dvalue=DOUBLE
+	 */
+	protected void sequence_DOUBLEexp(ISerializationContext context, DOUBLEexp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.DOUBL_EEXP__DVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.DOUBL_EEXP__DVALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDOUBLEexpAccess().getDvalueDOUBLETerminalRuleCall_0(), semanticObject.getDvalue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns IDexp
+	 *     Atom returns IDexp
+	 *     IDexp returns IDexp
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_IDexp(ISerializationContext context, IDexp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IDEXP__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IDEXP__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIDexpAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns INTexp
+	 *     Atom returns INTexp
+	 *     INTexp returns INTexp
+	 *
+	 * Constraint:
+	 *     ivalue=INT
+	 */
+	protected void sequence_INTexp(ISerializationContext context, INTexp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.IN_TEXP__IVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.IN_TEXP__IVALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getINTexpAccess().getIvalueINTTerminalRuleCall_0(), semanticObject.getIvalue());
+		feeder.finish();
 	}
 	
 	
@@ -81,6 +166,26 @@ public class SCHSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns STRexp
+	 *     Atom returns STRexp
+	 *     STRexp returns STRexp
+	 *
+	 * Constraint:
+	 *     svalue=STRING
+	 */
+	protected void sequence_STRexp(ISerializationContext context, STRexp semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SCHPackage.Literals.ST_REXP__SVALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SCHPackage.Literals.ST_REXP__SVALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSTRexpAccess().getSvalueSTRINGTerminalRuleCall_0(), semanticObject.getSvalue());
+		feeder.finish();
 	}
 	
 	

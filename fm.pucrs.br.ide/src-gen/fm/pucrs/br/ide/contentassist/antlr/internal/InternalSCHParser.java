@@ -22,15 +22,15 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSCHParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_BOOLEAN", "RULE_DOUBLE", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_DOUBLE", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "')'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=11;
-    public static final int RULE_BOOLEAN=6;
+    public static final int RULE_BOOLEAN=7;
     public static final int RULE_STRING=8;
     public static final int RULE_ANY_OTHER=12;
     public static final int RULE_SL_COMMENT=10;
-    public static final int RULE_DOUBLE=7;
+    public static final int RULE_DOUBLE=6;
     public static final int RULE_INT=5;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__13=13;
@@ -346,12 +346,397 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleAtom"
 
 
+    // $ANTLR start "entryRuleIDexp"
+    // InternalSCH.g:135:1: entryRuleIDexp : ruleIDexp EOF ;
+    public final void entryRuleIDexp() throws RecognitionException {
+        try {
+            // InternalSCH.g:136:1: ( ruleIDexp EOF )
+            // InternalSCH.g:137:1: ruleIDexp EOF
+            {
+             before(grammarAccess.getIDexpRule()); 
+            pushFollow(FOLLOW_1);
+            ruleIDexp();
+
+            state._fsp--;
+
+             after(grammarAccess.getIDexpRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIDexp"
+
+
+    // $ANTLR start "ruleIDexp"
+    // InternalSCH.g:144:1: ruleIDexp : ( ( rule__IDexp__NameAssignment ) ) ;
+    public final void ruleIDexp() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:148:2: ( ( ( rule__IDexp__NameAssignment ) ) )
+            // InternalSCH.g:149:2: ( ( rule__IDexp__NameAssignment ) )
+            {
+            // InternalSCH.g:149:2: ( ( rule__IDexp__NameAssignment ) )
+            // InternalSCH.g:150:3: ( rule__IDexp__NameAssignment )
+            {
+             before(grammarAccess.getIDexpAccess().getNameAssignment()); 
+            // InternalSCH.g:151:3: ( rule__IDexp__NameAssignment )
+            // InternalSCH.g:151:4: rule__IDexp__NameAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__IDexp__NameAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIDexpAccess().getNameAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIDexp"
+
+
+    // $ANTLR start "entryRuleINTexp"
+    // InternalSCH.g:160:1: entryRuleINTexp : ruleINTexp EOF ;
+    public final void entryRuleINTexp() throws RecognitionException {
+        try {
+            // InternalSCH.g:161:1: ( ruleINTexp EOF )
+            // InternalSCH.g:162:1: ruleINTexp EOF
+            {
+             before(grammarAccess.getINTexpRule()); 
+            pushFollow(FOLLOW_1);
+            ruleINTexp();
+
+            state._fsp--;
+
+             after(grammarAccess.getINTexpRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleINTexp"
+
+
+    // $ANTLR start "ruleINTexp"
+    // InternalSCH.g:169:1: ruleINTexp : ( ( rule__INTexp__IvalueAssignment ) ) ;
+    public final void ruleINTexp() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:173:2: ( ( ( rule__INTexp__IvalueAssignment ) ) )
+            // InternalSCH.g:174:2: ( ( rule__INTexp__IvalueAssignment ) )
+            {
+            // InternalSCH.g:174:2: ( ( rule__INTexp__IvalueAssignment ) )
+            // InternalSCH.g:175:3: ( rule__INTexp__IvalueAssignment )
+            {
+             before(grammarAccess.getINTexpAccess().getIvalueAssignment()); 
+            // InternalSCH.g:176:3: ( rule__INTexp__IvalueAssignment )
+            // InternalSCH.g:176:4: rule__INTexp__IvalueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__INTexp__IvalueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getINTexpAccess().getIvalueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleINTexp"
+
+
+    // $ANTLR start "entryRuleDOUBLEexp"
+    // InternalSCH.g:185:1: entryRuleDOUBLEexp : ruleDOUBLEexp EOF ;
+    public final void entryRuleDOUBLEexp() throws RecognitionException {
+        try {
+            // InternalSCH.g:186:1: ( ruleDOUBLEexp EOF )
+            // InternalSCH.g:187:1: ruleDOUBLEexp EOF
+            {
+             before(grammarAccess.getDOUBLEexpRule()); 
+            pushFollow(FOLLOW_1);
+            ruleDOUBLEexp();
+
+            state._fsp--;
+
+             after(grammarAccess.getDOUBLEexpRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleDOUBLEexp"
+
+
+    // $ANTLR start "ruleDOUBLEexp"
+    // InternalSCH.g:194:1: ruleDOUBLEexp : ( ( rule__DOUBLEexp__DvalueAssignment ) ) ;
+    public final void ruleDOUBLEexp() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:198:2: ( ( ( rule__DOUBLEexp__DvalueAssignment ) ) )
+            // InternalSCH.g:199:2: ( ( rule__DOUBLEexp__DvalueAssignment ) )
+            {
+            // InternalSCH.g:199:2: ( ( rule__DOUBLEexp__DvalueAssignment ) )
+            // InternalSCH.g:200:3: ( rule__DOUBLEexp__DvalueAssignment )
+            {
+             before(grammarAccess.getDOUBLEexpAccess().getDvalueAssignment()); 
+            // InternalSCH.g:201:3: ( rule__DOUBLEexp__DvalueAssignment )
+            // InternalSCH.g:201:4: rule__DOUBLEexp__DvalueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__DOUBLEexp__DvalueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDOUBLEexpAccess().getDvalueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleDOUBLEexp"
+
+
+    // $ANTLR start "entryRuleBOOLexp"
+    // InternalSCH.g:210:1: entryRuleBOOLexp : ruleBOOLexp EOF ;
+    public final void entryRuleBOOLexp() throws RecognitionException {
+        try {
+            // InternalSCH.g:211:1: ( ruleBOOLexp EOF )
+            // InternalSCH.g:212:1: ruleBOOLexp EOF
+            {
+             before(grammarAccess.getBOOLexpRule()); 
+            pushFollow(FOLLOW_1);
+            ruleBOOLexp();
+
+            state._fsp--;
+
+             after(grammarAccess.getBOOLexpRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleBOOLexp"
+
+
+    // $ANTLR start "ruleBOOLexp"
+    // InternalSCH.g:219:1: ruleBOOLexp : ( ( rule__BOOLexp__BvalueAssignment ) ) ;
+    public final void ruleBOOLexp() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:223:2: ( ( ( rule__BOOLexp__BvalueAssignment ) ) )
+            // InternalSCH.g:224:2: ( ( rule__BOOLexp__BvalueAssignment ) )
+            {
+            // InternalSCH.g:224:2: ( ( rule__BOOLexp__BvalueAssignment ) )
+            // InternalSCH.g:225:3: ( rule__BOOLexp__BvalueAssignment )
+            {
+             before(grammarAccess.getBOOLexpAccess().getBvalueAssignment()); 
+            // InternalSCH.g:226:3: ( rule__BOOLexp__BvalueAssignment )
+            // InternalSCH.g:226:4: rule__BOOLexp__BvalueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__BOOLexp__BvalueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBOOLexpAccess().getBvalueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleBOOLexp"
+
+
+    // $ANTLR start "entryRuleSTRexp"
+    // InternalSCH.g:235:1: entryRuleSTRexp : ruleSTRexp EOF ;
+    public final void entryRuleSTRexp() throws RecognitionException {
+        try {
+            // InternalSCH.g:236:1: ( ruleSTRexp EOF )
+            // InternalSCH.g:237:1: ruleSTRexp EOF
+            {
+             before(grammarAccess.getSTRexpRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSTRexp();
+
+            state._fsp--;
+
+             after(grammarAccess.getSTRexpRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSTRexp"
+
+
+    // $ANTLR start "ruleSTRexp"
+    // InternalSCH.g:244:1: ruleSTRexp : ( ( rule__STRexp__SvalueAssignment ) ) ;
+    public final void ruleSTRexp() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:248:2: ( ( ( rule__STRexp__SvalueAssignment ) ) )
+            // InternalSCH.g:249:2: ( ( rule__STRexp__SvalueAssignment ) )
+            {
+            // InternalSCH.g:249:2: ( ( rule__STRexp__SvalueAssignment ) )
+            // InternalSCH.g:250:3: ( rule__STRexp__SvalueAssignment )
+            {
+             before(grammarAccess.getSTRexpAccess().getSvalueAssignment()); 
+            // InternalSCH.g:251:3: ( rule__STRexp__SvalueAssignment )
+            // InternalSCH.g:251:4: rule__STRexp__SvalueAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__STRexp__SvalueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSTRexpAccess().getSvalueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSTRexp"
+
+
     // $ANTLR start "entryRuleList"
-    // InternalSCH.g:135:1: entryRuleList : ruleList EOF ;
+    // InternalSCH.g:260:1: entryRuleList : ruleList EOF ;
     public final void entryRuleList() throws RecognitionException {
         try {
-            // InternalSCH.g:136:1: ( ruleList EOF )
-            // InternalSCH.g:137:1: ruleList EOF
+            // InternalSCH.g:261:1: ( ruleList EOF )
+            // InternalSCH.g:262:1: ruleList EOF
             {
              before(grammarAccess.getListRule()); 
             pushFollow(FOLLOW_1);
@@ -377,21 +762,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleList"
-    // InternalSCH.g:144:1: ruleList : ( ( rule__List__Group__0 ) ) ;
+    // InternalSCH.g:269:1: ruleList : ( ( rule__List__Group__0 ) ) ;
     public final void ruleList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:148:2: ( ( ( rule__List__Group__0 ) ) )
-            // InternalSCH.g:149:2: ( ( rule__List__Group__0 ) )
+            // InternalSCH.g:273:2: ( ( ( rule__List__Group__0 ) ) )
+            // InternalSCH.g:274:2: ( ( rule__List__Group__0 ) )
             {
-            // InternalSCH.g:149:2: ( ( rule__List__Group__0 ) )
-            // InternalSCH.g:150:3: ( rule__List__Group__0 )
+            // InternalSCH.g:274:2: ( ( rule__List__Group__0 ) )
+            // InternalSCH.g:275:3: ( rule__List__Group__0 )
             {
              before(grammarAccess.getListAccess().getGroup()); 
-            // InternalSCH.g:151:3: ( rule__List__Group__0 )
-            // InternalSCH.g:151:4: rule__List__Group__0
+            // InternalSCH.g:276:3: ( rule__List__Group__0 )
+            // InternalSCH.g:276:4: rule__List__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__List__Group__0();
@@ -424,13 +809,13 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // InternalSCH.g:159:1: rule__Expression__Alternatives : ( ( ruleAtom ) | ( ruleList ) );
+    // InternalSCH.g:284:1: rule__Expression__Alternatives : ( ( ruleAtom ) | ( ruleList ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:163:1: ( ( ruleAtom ) | ( ruleList ) )
+            // InternalSCH.g:288:1: ( ( ruleAtom ) | ( ruleList ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -448,10 +833,10 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalSCH.g:164:2: ( ruleAtom )
+                    // InternalSCH.g:289:2: ( ruleAtom )
                     {
-                    // InternalSCH.g:164:2: ( ruleAtom )
-                    // InternalSCH.g:165:3: ruleAtom
+                    // InternalSCH.g:289:2: ( ruleAtom )
+                    // InternalSCH.g:290:3: ruleAtom
                     {
                      before(grammarAccess.getExpressionAccess().getAtomParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -467,10 +852,10 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:170:2: ( ruleList )
+                    // InternalSCH.g:295:2: ( ruleList )
                     {
-                    // InternalSCH.g:170:2: ( ruleList )
-                    // InternalSCH.g:171:3: ruleList
+                    // InternalSCH.g:295:2: ( ruleList )
+                    // InternalSCH.g:296:3: ruleList
                     {
                      before(grammarAccess.getExpressionAccess().getListParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -503,13 +888,13 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atom__Alternatives"
-    // InternalSCH.g:180:1: rule__Atom__Alternatives : ( ( ( rule__Atom__NameAssignment_0 ) ) | ( ( rule__Atom__IvalueAssignment_1 ) ) | ( ( rule__Atom__BvalueAssignment_2 ) ) | ( ( rule__Atom__DvalueAssignment_3 ) ) | ( ( rule__Atom__SvalueAssignment_4 ) ) );
+    // InternalSCH.g:305:1: rule__Atom__Alternatives : ( ( ruleIDexp ) | ( ruleINTexp ) | ( ruleBOOLexp ) | ( ruleDOUBLEexp ) | ( ruleSTRexp ) );
     public final void rule__Atom__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:184:1: ( ( ( rule__Atom__NameAssignment_0 ) ) | ( ( rule__Atom__IvalueAssignment_1 ) ) | ( ( rule__Atom__BvalueAssignment_2 ) ) | ( ( rule__Atom__DvalueAssignment_3 ) ) | ( ( rule__Atom__SvalueAssignment_4 ) ) )
+            // InternalSCH.g:309:1: ( ( ruleIDexp ) | ( ruleINTexp ) | ( ruleBOOLexp ) | ( ruleDOUBLEexp ) | ( ruleSTRexp ) )
             int alt3=5;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -546,24 +931,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalSCH.g:185:2: ( ( rule__Atom__NameAssignment_0 ) )
+                    // InternalSCH.g:310:2: ( ruleIDexp )
                     {
-                    // InternalSCH.g:185:2: ( ( rule__Atom__NameAssignment_0 ) )
-                    // InternalSCH.g:186:3: ( rule__Atom__NameAssignment_0 )
+                    // InternalSCH.g:310:2: ( ruleIDexp )
+                    // InternalSCH.g:311:3: ruleIDexp
                     {
-                     before(grammarAccess.getAtomAccess().getNameAssignment_0()); 
-                    // InternalSCH.g:187:3: ( rule__Atom__NameAssignment_0 )
-                    // InternalSCH.g:187:4: rule__Atom__NameAssignment_0
-                    {
+                     before(grammarAccess.getAtomAccess().getIDexpParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    rule__Atom__NameAssignment_0();
+                    ruleIDexp();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getAtomAccess().getNameAssignment_0()); 
+                     after(grammarAccess.getAtomAccess().getIDexpParserRuleCall_0()); 
 
                     }
 
@@ -571,24 +950,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSCH.g:191:2: ( ( rule__Atom__IvalueAssignment_1 ) )
+                    // InternalSCH.g:316:2: ( ruleINTexp )
                     {
-                    // InternalSCH.g:191:2: ( ( rule__Atom__IvalueAssignment_1 ) )
-                    // InternalSCH.g:192:3: ( rule__Atom__IvalueAssignment_1 )
+                    // InternalSCH.g:316:2: ( ruleINTexp )
+                    // InternalSCH.g:317:3: ruleINTexp
                     {
-                     before(grammarAccess.getAtomAccess().getIvalueAssignment_1()); 
-                    // InternalSCH.g:193:3: ( rule__Atom__IvalueAssignment_1 )
-                    // InternalSCH.g:193:4: rule__Atom__IvalueAssignment_1
-                    {
+                     before(grammarAccess.getAtomAccess().getINTexpParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    rule__Atom__IvalueAssignment_1();
+                    ruleINTexp();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getAtomAccess().getIvalueAssignment_1()); 
+                     after(grammarAccess.getAtomAccess().getINTexpParserRuleCall_1()); 
 
                     }
 
@@ -596,24 +969,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSCH.g:197:2: ( ( rule__Atom__BvalueAssignment_2 ) )
+                    // InternalSCH.g:322:2: ( ruleBOOLexp )
                     {
-                    // InternalSCH.g:197:2: ( ( rule__Atom__BvalueAssignment_2 ) )
-                    // InternalSCH.g:198:3: ( rule__Atom__BvalueAssignment_2 )
+                    // InternalSCH.g:322:2: ( ruleBOOLexp )
+                    // InternalSCH.g:323:3: ruleBOOLexp
                     {
-                     before(grammarAccess.getAtomAccess().getBvalueAssignment_2()); 
-                    // InternalSCH.g:199:3: ( rule__Atom__BvalueAssignment_2 )
-                    // InternalSCH.g:199:4: rule__Atom__BvalueAssignment_2
-                    {
+                     before(grammarAccess.getAtomAccess().getBOOLexpParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    rule__Atom__BvalueAssignment_2();
+                    ruleBOOLexp();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getAtomAccess().getBvalueAssignment_2()); 
+                     after(grammarAccess.getAtomAccess().getBOOLexpParserRuleCall_2()); 
 
                     }
 
@@ -621,24 +988,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSCH.g:203:2: ( ( rule__Atom__DvalueAssignment_3 ) )
+                    // InternalSCH.g:328:2: ( ruleDOUBLEexp )
                     {
-                    // InternalSCH.g:203:2: ( ( rule__Atom__DvalueAssignment_3 ) )
-                    // InternalSCH.g:204:3: ( rule__Atom__DvalueAssignment_3 )
+                    // InternalSCH.g:328:2: ( ruleDOUBLEexp )
+                    // InternalSCH.g:329:3: ruleDOUBLEexp
                     {
-                     before(grammarAccess.getAtomAccess().getDvalueAssignment_3()); 
-                    // InternalSCH.g:205:3: ( rule__Atom__DvalueAssignment_3 )
-                    // InternalSCH.g:205:4: rule__Atom__DvalueAssignment_3
-                    {
+                     before(grammarAccess.getAtomAccess().getDOUBLEexpParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
-                    rule__Atom__DvalueAssignment_3();
+                    ruleDOUBLEexp();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getAtomAccess().getDvalueAssignment_3()); 
+                     after(grammarAccess.getAtomAccess().getDOUBLEexpParserRuleCall_3()); 
 
                     }
 
@@ -646,24 +1007,18 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSCH.g:209:2: ( ( rule__Atom__SvalueAssignment_4 ) )
+                    // InternalSCH.g:334:2: ( ruleSTRexp )
                     {
-                    // InternalSCH.g:209:2: ( ( rule__Atom__SvalueAssignment_4 ) )
-                    // InternalSCH.g:210:3: ( rule__Atom__SvalueAssignment_4 )
+                    // InternalSCH.g:334:2: ( ruleSTRexp )
+                    // InternalSCH.g:335:3: ruleSTRexp
                     {
-                     before(grammarAccess.getAtomAccess().getSvalueAssignment_4()); 
-                    // InternalSCH.g:211:3: ( rule__Atom__SvalueAssignment_4 )
-                    // InternalSCH.g:211:4: rule__Atom__SvalueAssignment_4
-                    {
+                     before(grammarAccess.getAtomAccess().getSTRexpParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
-                    rule__Atom__SvalueAssignment_4();
+                    ruleSTRexp();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getAtomAccess().getSvalueAssignment_4()); 
+                     after(grammarAccess.getAtomAccess().getSTRexpParserRuleCall_4()); 
 
                     }
 
@@ -688,14 +1043,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__0"
-    // InternalSCH.g:219:1: rule__List__Group__0 : rule__List__Group__0__Impl rule__List__Group__1 ;
+    // InternalSCH.g:344:1: rule__List__Group__0 : rule__List__Group__0__Impl rule__List__Group__1 ;
     public final void rule__List__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:223:1: ( rule__List__Group__0__Impl rule__List__Group__1 )
-            // InternalSCH.g:224:2: rule__List__Group__0__Impl rule__List__Group__1
+            // InternalSCH.g:348:1: ( rule__List__Group__0__Impl rule__List__Group__1 )
+            // InternalSCH.g:349:2: rule__List__Group__0__Impl rule__List__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__List__Group__0__Impl();
@@ -726,17 +1081,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__0__Impl"
-    // InternalSCH.g:231:1: rule__List__Group__0__Impl : ( '(' ) ;
+    // InternalSCH.g:356:1: rule__List__Group__0__Impl : ( '(' ) ;
     public final void rule__List__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:235:1: ( ( '(' ) )
-            // InternalSCH.g:236:1: ( '(' )
+            // InternalSCH.g:360:1: ( ( '(' ) )
+            // InternalSCH.g:361:1: ( '(' )
             {
-            // InternalSCH.g:236:1: ( '(' )
-            // InternalSCH.g:237:2: '('
+            // InternalSCH.g:361:1: ( '(' )
+            // InternalSCH.g:362:2: '('
             {
              before(grammarAccess.getListAccess().getLeftParenthesisKeyword_0()); 
             match(input,13,FOLLOW_2); 
@@ -763,14 +1118,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__1"
-    // InternalSCH.g:246:1: rule__List__Group__1 : rule__List__Group__1__Impl rule__List__Group__2 ;
+    // InternalSCH.g:371:1: rule__List__Group__1 : rule__List__Group__1__Impl rule__List__Group__2 ;
     public final void rule__List__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:250:1: ( rule__List__Group__1__Impl rule__List__Group__2 )
-            // InternalSCH.g:251:2: rule__List__Group__1__Impl rule__List__Group__2
+            // InternalSCH.g:375:1: ( rule__List__Group__1__Impl rule__List__Group__2 )
+            // InternalSCH.g:376:2: rule__List__Group__1__Impl rule__List__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__List__Group__1__Impl();
@@ -801,21 +1156,21 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__1__Impl"
-    // InternalSCH.g:258:1: rule__List__Group__1__Impl : ( ( rule__List__CalledAssignment_1 ) ) ;
+    // InternalSCH.g:383:1: rule__List__Group__1__Impl : ( ( rule__List__CalledAssignment_1 ) ) ;
     public final void rule__List__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:262:1: ( ( ( rule__List__CalledAssignment_1 ) ) )
-            // InternalSCH.g:263:1: ( ( rule__List__CalledAssignment_1 ) )
+            // InternalSCH.g:387:1: ( ( ( rule__List__CalledAssignment_1 ) ) )
+            // InternalSCH.g:388:1: ( ( rule__List__CalledAssignment_1 ) )
             {
-            // InternalSCH.g:263:1: ( ( rule__List__CalledAssignment_1 ) )
-            // InternalSCH.g:264:2: ( rule__List__CalledAssignment_1 )
+            // InternalSCH.g:388:1: ( ( rule__List__CalledAssignment_1 ) )
+            // InternalSCH.g:389:2: ( rule__List__CalledAssignment_1 )
             {
              before(grammarAccess.getListAccess().getCalledAssignment_1()); 
-            // InternalSCH.g:265:2: ( rule__List__CalledAssignment_1 )
-            // InternalSCH.g:265:3: rule__List__CalledAssignment_1
+            // InternalSCH.g:390:2: ( rule__List__CalledAssignment_1 )
+            // InternalSCH.g:390:3: rule__List__CalledAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__List__CalledAssignment_1();
@@ -848,14 +1203,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__2"
-    // InternalSCH.g:273:1: rule__List__Group__2 : rule__List__Group__2__Impl rule__List__Group__3 ;
+    // InternalSCH.g:398:1: rule__List__Group__2 : rule__List__Group__2__Impl rule__List__Group__3 ;
     public final void rule__List__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:277:1: ( rule__List__Group__2__Impl rule__List__Group__3 )
-            // InternalSCH.g:278:2: rule__List__Group__2__Impl rule__List__Group__3
+            // InternalSCH.g:402:1: ( rule__List__Group__2__Impl rule__List__Group__3 )
+            // InternalSCH.g:403:2: rule__List__Group__2__Impl rule__List__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__List__Group__2__Impl();
@@ -886,20 +1241,20 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__2__Impl"
-    // InternalSCH.g:285:1: rule__List__Group__2__Impl : ( ( rule__List__ParamsAssignment_2 )* ) ;
+    // InternalSCH.g:410:1: rule__List__Group__2__Impl : ( ( rule__List__ParamsAssignment_2 )* ) ;
     public final void rule__List__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:289:1: ( ( ( rule__List__ParamsAssignment_2 )* ) )
-            // InternalSCH.g:290:1: ( ( rule__List__ParamsAssignment_2 )* )
+            // InternalSCH.g:414:1: ( ( ( rule__List__ParamsAssignment_2 )* ) )
+            // InternalSCH.g:415:1: ( ( rule__List__ParamsAssignment_2 )* )
             {
-            // InternalSCH.g:290:1: ( ( rule__List__ParamsAssignment_2 )* )
-            // InternalSCH.g:291:2: ( rule__List__ParamsAssignment_2 )*
+            // InternalSCH.g:415:1: ( ( rule__List__ParamsAssignment_2 )* )
+            // InternalSCH.g:416:2: ( rule__List__ParamsAssignment_2 )*
             {
              before(grammarAccess.getListAccess().getParamsAssignment_2()); 
-            // InternalSCH.g:292:2: ( rule__List__ParamsAssignment_2 )*
+            // InternalSCH.g:417:2: ( rule__List__ParamsAssignment_2 )*
             loop4:
             do {
                 int alt4=2;
@@ -912,7 +1267,7 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalSCH.g:292:3: rule__List__ParamsAssignment_2
+            	    // InternalSCH.g:417:3: rule__List__ParamsAssignment_2
             	    {
             	    pushFollow(FOLLOW_3);
             	    rule__List__ParamsAssignment_2();
@@ -951,14 +1306,14 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__3"
-    // InternalSCH.g:300:1: rule__List__Group__3 : rule__List__Group__3__Impl ;
+    // InternalSCH.g:425:1: rule__List__Group__3 : rule__List__Group__3__Impl ;
     public final void rule__List__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:304:1: ( rule__List__Group__3__Impl )
-            // InternalSCH.g:305:2: rule__List__Group__3__Impl
+            // InternalSCH.g:429:1: ( rule__List__Group__3__Impl )
+            // InternalSCH.g:430:2: rule__List__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__List__Group__3__Impl();
@@ -984,17 +1339,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__3__Impl"
-    // InternalSCH.g:311:1: rule__List__Group__3__Impl : ( ')' ) ;
+    // InternalSCH.g:436:1: rule__List__Group__3__Impl : ( ')' ) ;
     public final void rule__List__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:315:1: ( ( ')' ) )
-            // InternalSCH.g:316:1: ( ')' )
+            // InternalSCH.g:440:1: ( ( ')' ) )
+            // InternalSCH.g:441:1: ( ')' )
             {
-            // InternalSCH.g:316:1: ( ')' )
-            // InternalSCH.g:317:2: ')'
+            // InternalSCH.g:441:1: ( ')' )
+            // InternalSCH.g:442:2: ')'
             {
              before(grammarAccess.getListAccess().getRightParenthesisKeyword_3()); 
             match(input,14,FOLLOW_2); 
@@ -1021,17 +1376,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Program__ExpressionsAssignment"
-    // InternalSCH.g:327:1: rule__Program__ExpressionsAssignment : ( ruleExpression ) ;
+    // InternalSCH.g:452:1: rule__Program__ExpressionsAssignment : ( ruleExpression ) ;
     public final void rule__Program__ExpressionsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:331:1: ( ( ruleExpression ) )
-            // InternalSCH.g:332:2: ( ruleExpression )
+            // InternalSCH.g:456:1: ( ( ruleExpression ) )
+            // InternalSCH.g:457:2: ( ruleExpression )
             {
-            // InternalSCH.g:332:2: ( ruleExpression )
-            // InternalSCH.g:333:3: ruleExpression
+            // InternalSCH.g:457:2: ( ruleExpression )
+            // InternalSCH.g:458:3: ruleExpression
             {
              before(grammarAccess.getProgramAccess().getExpressionsExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -1061,22 +1416,22 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Program__ExpressionsAssignment"
 
 
-    // $ANTLR start "rule__Atom__NameAssignment_0"
-    // InternalSCH.g:342:1: rule__Atom__NameAssignment_0 : ( RULE_ID ) ;
-    public final void rule__Atom__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__IDexp__NameAssignment"
+    // InternalSCH.g:467:1: rule__IDexp__NameAssignment : ( RULE_ID ) ;
+    public final void rule__IDexp__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:346:1: ( ( RULE_ID ) )
-            // InternalSCH.g:347:2: ( RULE_ID )
+            // InternalSCH.g:471:1: ( ( RULE_ID ) )
+            // InternalSCH.g:472:2: ( RULE_ID )
             {
-            // InternalSCH.g:347:2: ( RULE_ID )
-            // InternalSCH.g:348:3: RULE_ID
+            // InternalSCH.g:472:2: ( RULE_ID )
+            // InternalSCH.g:473:3: RULE_ID
             {
-             before(grammarAccess.getAtomAccess().getNameIDTerminalRuleCall_0_0()); 
+             before(grammarAccess.getIDexpAccess().getNameIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAtomAccess().getNameIDTerminalRuleCall_0_0()); 
+             after(grammarAccess.getIDexpAccess().getNameIDTerminalRuleCall_0()); 
 
             }
 
@@ -1095,25 +1450,25 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Atom__NameAssignment_0"
+    // $ANTLR end "rule__IDexp__NameAssignment"
 
 
-    // $ANTLR start "rule__Atom__IvalueAssignment_1"
-    // InternalSCH.g:357:1: rule__Atom__IvalueAssignment_1 : ( RULE_INT ) ;
-    public final void rule__Atom__IvalueAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__INTexp__IvalueAssignment"
+    // InternalSCH.g:482:1: rule__INTexp__IvalueAssignment : ( RULE_INT ) ;
+    public final void rule__INTexp__IvalueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:361:1: ( ( RULE_INT ) )
-            // InternalSCH.g:362:2: ( RULE_INT )
+            // InternalSCH.g:486:1: ( ( RULE_INT ) )
+            // InternalSCH.g:487:2: ( RULE_INT )
             {
-            // InternalSCH.g:362:2: ( RULE_INT )
-            // InternalSCH.g:363:3: RULE_INT
+            // InternalSCH.g:487:2: ( RULE_INT )
+            // InternalSCH.g:488:3: RULE_INT
             {
-             before(grammarAccess.getAtomAccess().getIvalueINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getINTexpAccess().getIvalueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getAtomAccess().getIvalueINTTerminalRuleCall_1_0()); 
+             after(grammarAccess.getINTexpAccess().getIvalueINTTerminalRuleCall_0()); 
 
             }
 
@@ -1132,62 +1487,25 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Atom__IvalueAssignment_1"
+    // $ANTLR end "rule__INTexp__IvalueAssignment"
 
 
-    // $ANTLR start "rule__Atom__BvalueAssignment_2"
-    // InternalSCH.g:372:1: rule__Atom__BvalueAssignment_2 : ( RULE_BOOLEAN ) ;
-    public final void rule__Atom__BvalueAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSCH.g:376:1: ( ( RULE_BOOLEAN ) )
-            // InternalSCH.g:377:2: ( RULE_BOOLEAN )
-            {
-            // InternalSCH.g:377:2: ( RULE_BOOLEAN )
-            // InternalSCH.g:378:3: RULE_BOOLEAN
-            {
-             before(grammarAccess.getAtomAccess().getBvalueBOOLEANTerminalRuleCall_2_0()); 
-            match(input,RULE_BOOLEAN,FOLLOW_2); 
-             after(grammarAccess.getAtomAccess().getBvalueBOOLEANTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Atom__BvalueAssignment_2"
-
-
-    // $ANTLR start "rule__Atom__DvalueAssignment_3"
-    // InternalSCH.g:387:1: rule__Atom__DvalueAssignment_3 : ( RULE_DOUBLE ) ;
-    public final void rule__Atom__DvalueAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__DOUBLEexp__DvalueAssignment"
+    // InternalSCH.g:497:1: rule__DOUBLEexp__DvalueAssignment : ( RULE_DOUBLE ) ;
+    public final void rule__DOUBLEexp__DvalueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:391:1: ( ( RULE_DOUBLE ) )
-            // InternalSCH.g:392:2: ( RULE_DOUBLE )
+            // InternalSCH.g:501:1: ( ( RULE_DOUBLE ) )
+            // InternalSCH.g:502:2: ( RULE_DOUBLE )
             {
-            // InternalSCH.g:392:2: ( RULE_DOUBLE )
-            // InternalSCH.g:393:3: RULE_DOUBLE
+            // InternalSCH.g:502:2: ( RULE_DOUBLE )
+            // InternalSCH.g:503:3: RULE_DOUBLE
             {
-             before(grammarAccess.getAtomAccess().getDvalueDOUBLETerminalRuleCall_3_0()); 
+             before(grammarAccess.getDOUBLEexpAccess().getDvalueDOUBLETerminalRuleCall_0()); 
             match(input,RULE_DOUBLE,FOLLOW_2); 
-             after(grammarAccess.getAtomAccess().getDvalueDOUBLETerminalRuleCall_3_0()); 
+             after(grammarAccess.getDOUBLEexpAccess().getDvalueDOUBLETerminalRuleCall_0()); 
 
             }
 
@@ -1206,25 +1524,25 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Atom__DvalueAssignment_3"
+    // $ANTLR end "rule__DOUBLEexp__DvalueAssignment"
 
 
-    // $ANTLR start "rule__Atom__SvalueAssignment_4"
-    // InternalSCH.g:402:1: rule__Atom__SvalueAssignment_4 : ( RULE_STRING ) ;
-    public final void rule__Atom__SvalueAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__BOOLexp__BvalueAssignment"
+    // InternalSCH.g:512:1: rule__BOOLexp__BvalueAssignment : ( RULE_BOOLEAN ) ;
+    public final void rule__BOOLexp__BvalueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:406:1: ( ( RULE_STRING ) )
-            // InternalSCH.g:407:2: ( RULE_STRING )
+            // InternalSCH.g:516:1: ( ( RULE_BOOLEAN ) )
+            // InternalSCH.g:517:2: ( RULE_BOOLEAN )
             {
-            // InternalSCH.g:407:2: ( RULE_STRING )
-            // InternalSCH.g:408:3: RULE_STRING
+            // InternalSCH.g:517:2: ( RULE_BOOLEAN )
+            // InternalSCH.g:518:3: RULE_BOOLEAN
             {
-             before(grammarAccess.getAtomAccess().getSvalueSTRINGTerminalRuleCall_4_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getAtomAccess().getSvalueSTRINGTerminalRuleCall_4_0()); 
+             before(grammarAccess.getBOOLexpAccess().getBvalueBOOLEANTerminalRuleCall_0()); 
+            match(input,RULE_BOOLEAN,FOLLOW_2); 
+             after(grammarAccess.getBOOLexpAccess().getBvalueBOOLEANTerminalRuleCall_0()); 
 
             }
 
@@ -1243,21 +1561,58 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Atom__SvalueAssignment_4"
+    // $ANTLR end "rule__BOOLexp__BvalueAssignment"
+
+
+    // $ANTLR start "rule__STRexp__SvalueAssignment"
+    // InternalSCH.g:527:1: rule__STRexp__SvalueAssignment : ( RULE_STRING ) ;
+    public final void rule__STRexp__SvalueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSCH.g:531:1: ( ( RULE_STRING ) )
+            // InternalSCH.g:532:2: ( RULE_STRING )
+            {
+            // InternalSCH.g:532:2: ( RULE_STRING )
+            // InternalSCH.g:533:3: RULE_STRING
+            {
+             before(grammarAccess.getSTRexpAccess().getSvalueSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getSTRexpAccess().getSvalueSTRINGTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__STRexp__SvalueAssignment"
 
 
     // $ANTLR start "rule__List__CalledAssignment_1"
-    // InternalSCH.g:417:1: rule__List__CalledAssignment_1 : ( RULE_ID ) ;
+    // InternalSCH.g:542:1: rule__List__CalledAssignment_1 : ( RULE_ID ) ;
     public final void rule__List__CalledAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:421:1: ( ( RULE_ID ) )
-            // InternalSCH.g:422:2: ( RULE_ID )
+            // InternalSCH.g:546:1: ( ( RULE_ID ) )
+            // InternalSCH.g:547:2: ( RULE_ID )
             {
-            // InternalSCH.g:422:2: ( RULE_ID )
-            // InternalSCH.g:423:3: RULE_ID
+            // InternalSCH.g:547:2: ( RULE_ID )
+            // InternalSCH.g:548:3: RULE_ID
             {
              before(grammarAccess.getListAccess().getCalledIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -1284,17 +1639,17 @@ public class InternalSCHParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__ParamsAssignment_2"
-    // InternalSCH.g:432:1: rule__List__ParamsAssignment_2 : ( ruleExpression ) ;
+    // InternalSCH.g:557:1: rule__List__ParamsAssignment_2 : ( ruleExpression ) ;
     public final void rule__List__ParamsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSCH.g:436:1: ( ( ruleExpression ) )
-            // InternalSCH.g:437:2: ( ruleExpression )
+            // InternalSCH.g:561:1: ( ( ruleExpression ) )
+            // InternalSCH.g:562:2: ( ruleExpression )
             {
-            // InternalSCH.g:437:2: ( ruleExpression )
-            // InternalSCH.g:438:3: ruleExpression
+            // InternalSCH.g:562:2: ( ruleExpression )
+            // InternalSCH.g:563:3: ruleExpression
             {
              before(grammarAccess.getListAccess().getParamsExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);

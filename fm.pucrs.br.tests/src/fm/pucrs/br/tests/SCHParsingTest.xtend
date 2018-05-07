@@ -4,7 +4,8 @@
 package fm.pucrs.br.tests
 
 import com.google.inject.Inject
-import fm.pucrs.br.sCH.Model
+import fm.pucrs.br.sCH.Program
+
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +17,7 @@ import org.junit.runner.RunWith
 @InjectWith(SCHInjectorProvider)
 class SCHParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<Program> parseHelper
 	
 	@Test
 	def void loadModel1() {
